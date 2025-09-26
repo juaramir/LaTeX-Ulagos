@@ -1,0 +1,64 @@
+
+\chapter{Requisitos del Proyecto}\label{requisitos}
+Especifica en detalle qué debe hacer el sistema. Es recomendable complementar esta sección con diagramas UML para mayor claridad.
+\section{Requisitos de Interfaces Externos (\rojo{OPCIONAL})}
+Detalla cómo el sistema interactuará con usuarios y otros sistemas.
+\subsection{Interfaces de Usuario}
+\subsection{Interfaces de Hardware}
+\subsection{Interfaces de Software}
+\subsection{Interfaces de Comunicación}
+
+\section{Requisitos Funcionales (\rojo{Obligatorio})}
+Describen las funciones que el sistema debe ser capaz de realizar.
+\begin{ejemplo}
+    \begin{itemize}
+        \item \textbf{RF-01}: El sistema debe permitir al administrador registrar nuevos usuarios.
+\item \textbf{RF-02}: El sistema debe generar un reporte de inscripciones en formato PDF.
+    \end{itemize}
+\end{ejemplo}
+\subsection{Requisito funcional x}
+\subsection{Requisito funcional y}
+\section{Requisitos de Rendimiento (\rojo{Opcional})}
+Especifica qué tan bien debe funcionar el sistema en términos de velocidad, capacidad de respuesta y uso de recursos.
+\begin{ejemplo}
+ El sistema debe cargar la página principal en menos de 2 segundos con 100 usuarios concurrentes.
+\end{ejemplo}
+\section{Requisitos de Desarrollo (\rojo{Opcional})}
+ Impone restricciones sobre el proceso de construcción del sistema, como el uso de un estándar de codificación específico o la obligación de usar un sistema de control de versiones.
+\section{Requisitos de Tecnológicos (\rojo{Obligatorio})}
+Detalla las tecnologías específicas (lenguajes, frameworks, bases de datos) que se utilizarán.
+\begin{ejemplo}
+    \begin{itemize}
+        \item \textbf{RT-01}: El backend se desarrollará en Python con el framework Django.
+\item \textbf{RT-02}: La base de datos a utilizar será PostgreSQL.
+    \end{itemize}
+\end{ejemplo}
+\section{Seguridad (\rojo{Obligatorio})}
+Define los requisitos para garantizar la seguridad del sistema y sus datos.
+\begin{ejemplo}
+    \begin{itemize}
+        \item \textbf{RS-01}: Todas las contraseñas de usuario deben almacenarse de forma cifrada
+    \end{itemize}
+\end{ejemplo}
+\section{Modelo de  Datos (\rojo{Obligatorio})}
+Describe la estructura de los datos. Se debe incluir un Modelo Entidad-Relación  y el Modelo Relacional normalizado.  Si se usan bases de datos no relacionales, se debe mostrar la estructura (ej. JSON).
+
+\begin{landscape}
+\begin{figure}[hbt]
+  \centering
+  %\includegraphics{}
+  \caption{Modelo Entidad Relación}
+  \label{f:MER}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[hbt]
+  \centering
+  %\includegraphics{}
+  \caption{Modelo Relación Relacional}
+  \label{f:MR}
+\end{figure}
+\end{landscape}
+
+

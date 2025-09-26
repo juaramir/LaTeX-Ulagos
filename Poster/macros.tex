@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+
+%\usepackage[papersize={1000mm,1500mm},tmargin=70mm,bmargin=70mm,lmargin=70mm,rmargin=30mm]{geometry}%comentar esta linea si desean usar solo tamaño A0, esto es para tamaño 150x100
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+\usepackage{mwe}
+\usepackage[absolute]{textpos}
+%\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+\usepackage{graphicx} % Required for including images
+\graphicspath{{images/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{cite,cancel,lmodern,fancyvrb,textcomp,times,booktabs,amssymb,amsmath,ragged2e,float,subfig,xspace,epic,eepic,multicol,multirow,colortbl,color,graphicx,url,hyperref,pict2e,array,appendixnumberbeamer,listings,pgfpages,eurosym,wasysym,textcase,datetime,amsthm,amsfonts} % For math fonts, symbols and environments
+%\usepackage{multicol,graphicx,fancyhdr,eso-pic,url,float,lmodern,listings,times,textcomp, amsthm,amsmath,amssymb,dsfont,color,colortbl,sidecap,xspace,epic,eepic,anysize,setspace, hyperref, multirow,algorithm,algpseudocode,enumitem,pdflscape,lscape,subfigure,csquotes}
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage[default]{roboto}
+%Colores Ulagos
+%COLOREAR SISTEMA
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{amarillo}{RGB}{255,183,27}
+\definecolor{amarilloc}{RGB}{250,223,141}
+\definecolor{verde}{RGB}{118,188,33}
+\definecolor{verdec}{RGB}{172,219,144}
+\definecolor{rojo}{RGB}{202,54,37}
+\definecolor{rojoc}{RGB}{255,176,192}
+\definecolor{azul}{RGB}{0,61,166}
+\definecolor{celeste}{RGB}{143,199,232}
+\definecolor{negro}{RGB}{35,31,32}
+\definecolor{naranjo}{RGB}{255,103,29}
+\definecolor{naranjoc}{RGB}{255,164,136}
+\definecolor{morado}{RGB}{126,87,197}
+\definecolor{moradoc}{RGB}{220,168,226}
+\definecolor{gris}{RGB}{183,177,169}
+\definecolor{grisc}{RGB}{216,209,202}
+%COLOREAR TEXTO
+\newcommand\rojo[1]{\textcolor[RGB]{202,54,37}{#1}}
+\newcommand\rojoc[1]{\textcolor[RGB]{255,176,192}{#1}}
+\newcommand\gris[1]{\textcolor[RGB]{183,177,169}{#1}}
+\newcommand\grisc[1]{\textcolor[RGB]{216,209,202}{#1}}
+\newcommand\azul[1]{\textcolor[RGB]{0,61,166}{#1}}
+\newcommand\celeste[1]{\textcolor[RGB]{143,199,232}{#1}}
+\newcommand\verde[1]{\textcolor[RGB]{118,188,33}{#1}}
+\newcommand\verdec[1]{\textcolor[RGB]{172,219,144}{#1}}
+\newcommand\naranjo[1]{\textcolor[RGB]{255,103,29}{#1}}
+\newcommand\naranjoc[1]{\textcolor[RGB]{255,164,136}{#1}}
+\newcommand\amarillo[1]{\textcolor[RGB]{255,183,27}{#1}}
+\newcommand\amarilloc[1]{\textcolor[RGB]{250,223,141}{#1}}
+\newcommand\morado[1]{\textcolor[RGB]{126,87,197}{#1}}
+\newcommand\moradoc[1]{\textcolor[RGB]{220,168,226}{#1}}
+\newcommand\negro[1]{\textcolor[RGB]{35,31,32}{#1}}
+
+\providecommand{\keywords}[1]{\textbf{\textit{Palabras Clave---}} #1}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{solucion}{Solución}
+\newtheorem{definir}{Definición}
+\newtheorem{prueba}{Prueba}
+\newtheorem{demo}{Demostración}
+\newtheorem{obs}{Observación}
+
+
+
+  %%%CODIGOS DE PROGRAMACION
+\lstset{%backgroundcolor=\color{lbcolor},
+	frame=Ltb, framerule=0pt, aboveskip=0.5cm, tabsize=4, rulecolor=, %%%CAMBIAR POR LENGUAJE DE PREFERENCIA
+ stringstyle=\ttfamily,  %basicstyle=\footnotesize,
+        upquote=true, aboveskip={1.5\baselineskip}, columns=fixed, showstringspaces=false, extendedchars=true,breaklines=true, prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}, showtabs=false, showspaces=false, showstringspaces=false,
+        %tipos de letra y colores
+        identifierstyle=\ttfamily,
+        keywordstyle=\bfseries  \color[RGB]{0,2,216}, %palabras reservadas
+        commentstyle= \scriptsize\color[rgb]{0,.5,0.2}, %comentarios
+        stringstyle=\color{rojo},%cadena de texto
+        %numeracion de lineas
+          framexleftmargin=0.1cm,%framextopmargin=1pt, framexbottommargin=1pt,
+     aboveskip=2.8mm,belowskip=-1mm,
+        framesep=0pt, rulesep=.4pt, rulesepcolor=\color{gray75}, numbers=left, numbersep=15pt, numberstyle=\tiny, numberfirstline = false, breaklines=true,literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {Ñ}{{\~N}}1 {ñ}{{\~n}}1 {¿}{{?`}}1
+}
+\renewcommand{\lstlistingname}{Código}
+
+\def\Year#1{%
+  \def\yy@##1##2##3##4;{##3##4}%
+  \expandafter\yy@#1;
+}

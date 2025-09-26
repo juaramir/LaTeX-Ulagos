@@ -1,0 +1,402 @@
+
+\newpage
+\section{Ejemplos}
+\subsection{Códigos de Programación}
+En esta sección se presenta la inserción del Código \ref{CodC}, El Código \ref{CodC}. El Código \ref{codP}. El Código \ref{codL}.
+
+
+
+\lstset{language=C}
+\begin{lstlisting}[caption = C\'odigo en C de una sumatoria, label = CodC]
+#include <stdio.h>
+#include <stdlib.h>
+/* Algoritmo para realizar la sumatoria */
+/* S=2+4+6+...+2n */
+
+int main(void){
+	int i,s,n;
+	
+	/* inicializar el valor de la sumatoria en 0 */
+	s=0;
+	printf("ingrese la cantidad de elementos de la sumatoria=");
+	scanf("%d", &n);
+	/* Realiza la iteracion n veces, y el indice "i" lo multiplica por */
+	/* 2 y lo va sumando a s*/
+	for(i=1;i<=n;i++){
+		s = s+ 2*i;
+	} 
+	printf("el resultado de la sumatoria es=%d\n",s);
+
+	return (0);
+}
+\end{lstlisting}
+
+\lstset{language=SQL}
+   \vspace{-0.8cm}
+\begin{lstlisting}[label=codigo1, caption=Ejemplo de SQL]
+-- Database: acuario
+
+-- DROP DATABASE acuario;
+
+CREATE DATABASE acuario
+  WITH OWNER = postgres;
+
+
+CREATE TABLE especies(
+    sno integer PRIMARY KEY,
+    nombre character varying(20),
+    alimento character varying(20)
+);
+
+CREATE TABLE tanques(
+    tno integer PRIMARY KEY,
+    nombre_tanque character varying(20),
+    color_tanque character varying(20),
+    volumen  integer NOT NULL
+);
+
+CREATE TABLE peces(
+    pno integer PRIMARY KEY,
+    nombre_peces character varying(20),
+    color_peces character varying(20),
+    tno integer NOT NULL,
+    sno integer NOT NULL,
+    FOREIGN KEY (tno) REFERENCES tanques (tno) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (sno) REFERENCES especies (sno) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE eventos(
+    eno integer PRIMARY KEY,
+    pno integer NOT NULL,
+    fecha date,
+    FOREIGN KEY (pno) REFERENCES peces (pno) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+
+INSERT INTO especies VALUES(17,'delfin','arenque');
+INSERT INTO especies VALUES(22,'tiburon','cualquier cosa');
+INSERT INTO especies VALUES(74,'olomina','gusano');
+INSERT INTO especies VALUES(93,'ballena','mantequilla de mani');
+INSERT INTO especies VALUES(100,'pez espada','gusano');
+INSERT INTO especies VALUES(120,'pez globo','gusano');
+
+-- select * from especies
+
+INSERT INTO tanques VALUES(55,'charco','verde',300);
+INSERT INTO tanques VALUES(42,'letrina','azul',100);
+INSERT INTO tanques VALUES(35,'laguna','rojo',400);
+INSERT INTO tanques VALUES(85,'letrina','azul',100);
+INSERT INTO tanques VALUES(38,'playa','azul',200);
+INSERT INTO tanques VALUES(44,'laguna','verde',200);
+
+-- select * from tanques
+
+
+INSERT INTO peces VALUES (164, 'charlie', 'naranjo', 42, 74);
+INSERT INTO peces VALUES (347, 'flipper', 'negro', 35, 17);
+INSERT INTO peces VALUES (228, 'killer', 'blanco', 42, 22);
+INSERT INTO peces VALUES (281, 'albert', 'rojo', 55, 17);
+INSERT INTO peces VALUES (119, 'bonnie', 'azul', 42, 22);
+INSERT INTO peces VALUES (388, 'cory', 'morado', 35, 93);
+INSERT INTO peces VALUES (700, 'maureen', 'blanco', 44, 100);
+INSERT INTO peces VALUES (800, 'beni', 'rojo', 55, 17);
+INSERT INTO peces VALUES (900, 'nemo', 'rojo', 44, 74);
+INSERT INTO peces VALUES (150, 'vicky', 'rojo', 55, 100);
+INSERT INTO peces VALUES (160, 'mati', 'amarillo', 42, 100);
+INSERT INTO peces VALUES (110, 'rafa', 'azul', 85, 100);
+INSERT INTO peces VALUES (222, 'jimmy', 'amarillo', 38, 100);
+INSERT INTO peces VALUES (144, 'bisho', 'rojo', 42, 93);
+INSERT INTO peces VALUES (125, 'chris', 'azul', 38, 93);
+INSERT INTO peces VALUES (183, 'sable', 'amarillo', 44, 93);
+INSERT INTO peces VALUES (241, 'taz', 'rojo', 55, 93);
+INSERT INTO peces VALUES (300, 'baltazar', 'azul', 85, 100);
+INSERT INTO peces VALUES (200, 'cash', 'azul', 85, 100);
+INSERT INTO peces VALUES (424, 'bandido', 'verde', 35, 100);
+INSERT INTO peces VALUES (454, 'romo', 'blanco', 85, 93);
+
+
+-- select * from peces
+
+INSERT INTO eventos VALUES 
+(3456 , 347 , '2010-01-26'),
+(6653 , 164 , '2010-05-14'),
+(5644 , 347 , '2010-05-15'),
+(5645 , 347 , '2010-05-30'),
+(6789 , 281 , '2010-04-30'),
+(5211 , 228 , '2010-08-20'),
+(6719 , 700 , '2010-10-22'),
+(4555 , 164 , '2011-11-03'),
+(9647 , 281 , '2011-12-06'),
+(5347 , 281 , '2011-01-01');
+
+--INSERT INTO eventos VALUES (3456, 164, '2010-01-26'); 
+--INSERT INTO eventos VALUES (6653, 347, '2010-05-14'); 
+--INSERT INTO eventos VALUES (5644, 347, '2010-05-15'); 
+--INSERT INTO eventos VALUES (5645, 347, '2010-05-30'); 
+--INSERT INTO eventos VALUES (6789, 228, '2010-04-30'); 
+--INSERT INTO eventos VALUES (5211, 119, '2010-08-20'); 
+--INSERT INTO eventos VALUES (6719, 388, '2010-10-22'); 
+--INSERT INTO eventos VALUES (4555, 164, '2011-11-03'); 
+--INSERT INTO eventos VALUES (9647, 281, '2011-12-21'); 
+--INSERT INTO eventos VALUES (5369, 281, '2011-01-01'); 
+
+
+-- ALTER TABLE tanques ADD medida character varying(2); 
+
+-- UPDATE tanques SET medida = 'ml';
+
+-- select * from tanques;
+
+-- ALTER TABLE tanques DROP medida;
+
+-- SELECT * FROM especies;
+-- SELECT * FROM tanques;
+\end{lstlisting}\vspace{-0.3cm}
+
+
+
+
+\lstset{language=LISP}
+\begin{lstlisting}[caption= C\'odigo LISP de una Lista, label = codL]
+(define (length x)
+    (if (list? x) (length-aux x)
+        (error "x no es una lista")))
+        
+(define (length-aux x)
+    (if (null? x) 0 (+1 (length-aux (cdr x)))))
+\end{lstlisting}
+
+
+
+
+\lstset{language=PROLOG}
+\begin{lstlisting}[caption= C\'odigo PROLOG de un \'arbol geneal\'ogico, label=codP]
+% Arbol genealogico version 1.
+% padre(A,B) significa que B es el padre de A.
+
+padre(juan,alberto).
+padre(luis,alberto).
+padre(alberto,leoncio). 
+padre(geronimo,leoncio).
+padre(luisa,geronimo). 
+
+% Ahora se define las condiciones para que dos individuos sean hermanos hermano(A,B), significa que A es hermano de B.
+hermano(A,B) :- 
+    padre(A,P), 
+    padre(B,P), 
+    A \== B.
+% Ahora se define el parentesco abuelo-nieto.  nieto(A,B) significa que A es nieto de B.
+nieto(A,B) :- 
+    padre(A,P), 
+    padre(P,B). 
+\end{lstlisting}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+   \lstset{language=java}
+\begin{lstlisting}[caption= C\'odigo JAVA de una clase, label=codj]
+class <Nombre>{
+   public static void main(String[] args){
+      instrucciones;
+   }
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+
+\subsection{Entornos}
+Ahora presentamos los entornos Ejemplo \ref{ejemplo1}, Solución \ref{solucion1}, Prueba \ref{prueba1}, Definición \ref{definir1}, Demostración \ref{demo1}, Observación \ref{obs1}.
+
+\begin{ejemplo}\label{ejemplo1}
+\lipsum[1] %reemplazar esta linea
+\end{ejemplo}
+
+\begin{solucion}\label{solucion1}
+\lipsum[1] %reemplazar esta linea
+\end{solucion}
+
+\begin{definir}\label{definir1}
+\lipsum[1] %reemplazar esta linea
+\end{definir}
+
+\begin{prueba}\label{prueba1}
+\lipsum[1] %reemplazar esta linea
+\end{prueba}
+
+\begin{demo} \label{demo1}
+\lipsum[1] %reemplazar esta linea
+\end{demo}
+
+\begin{obs}\label{obs1}
+\lipsum[1] %reemplazar esta linea
+\end{obs}
+
+\subsection{Tablas}
+Por otro lado también se muestra un ejemplo de Tabla \ref{tabla1} llenada, además de la Tabla \ref{tabla2} que tiene 3 columnas y filas con barras, la Tabla \ref{tabla3} que tiene 4 filas y 4 columnas sin barras, por último la Tabla \ref{tabla4} posee títulos que usan más de una columna y fila. 
+
+\begin{table}[hbt]
+\begin{center}
+\begin{tabular}{|l|p{10cm}|}\hline
+\multicolumn{2}{|c|}{\textbf{Información general}}\\
+\hline
+\textbf{Modelo de desarrollo}&desarrollo	Software libre y código abierto\\
+\textbf{Última versión estable}&Kernel: 4.11.3 (info) 25 de mayo de 2017 (10 días)\\
+\textbf{Última versión en pruebas}&	4.12.rc2 (info) 22 de mayo de 2017 (13 días)\\
+\textbf{Escrito en}&	C\\
+\textbf{Núcleo}&	Núcleo Linux\\
+\textbf{Plataformas soportadas}	& DEC Alpha, ARM, AVR32, Blackfin, ETRAX CRIS, FR-V, H8/300, Itanium, M32R, m68k, Microblaze, MIPS, MN103, PA-RISC, PowerPC, s390, S+core, SuperH, SPARC, TILE64, Unicore32, x86, Xtensa\\
+\textbf{Licencia}	&GNU General Public License y otras\\
+\textbf{Estado actual}	&En desarrollo\\
+\textbf{En español}	&Sí\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Información General de GNU/Linux}
+\label{tabla1}
+\end{table}
+
+
+\begin{table}[hbt]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+         &  & \\\hline
+         &  & \\\hline
+         &  & \\\hline
+    \end{tabular}
+    \caption{Ejemplo tabla con barras}
+    \label{tabla2}
+\end{table}
+
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{cccc}
+        1 &2  & 3 & 4\\
+        5 & 6 & 7 & 8\\
+       9  & 10 &11 & 12\\
+    \end{tabular}
+    \caption{Ejemplo tabla con barras}
+    \label{tabla3}
+\end{table}
+
+\begin{table}[htbp]
+ \centering
+ \begin{tabular}{|c|c|c|c|c|c|}\hline
+  \textbf{S}&\textbf{SCT} &\textbf{Asignatura}&\multicolumn{2}{|c|}{\textbf{Total Horas}}&\textbf{Previatura} \\\cline{4-5}
+&&&\textbf{TP}&\textbf{TA}&\\\hline
+\multirow{5}{*}&a&b&c&d&r\\\hline
+\end{tabular}
+    \caption{Títulos de varias columnas y filas}
+    \label{tabla4}
+\end{table}
+
+
+
+\subsection{Formulas Matemáticas}
+A continuación se presentan entornos matemáticos con la Ecuación \ref{ecuacion1} y la Ecuación \ref{ecuacion2}.
+
+\begin{equation}\label{ecuacion1}
+C_L=\frac{(S_{22}-\delta S_{11}^*)^*}{|\varPi S_{22}|^2=-|\pi|^2}
+\end{equation}
+    
+\begin{equation}\label{ecuacion2}
+R_S=\frac{\sqrt{1-g_s}\cdot (1-|S_{11}|^2)}{1-(1-g_s)\cdot|S_{11}|^2}
+\end{equation}
+
+\subsection{Items, Descripciones y Enumeraciones}
+Ejemplo de \texttt{itemize}:
+
+  \begin{itemize}
+  \item Item sin números
+    \begin{itemize}
+  \item nivel 2
+    \begin{itemize}
+    \item nivel 3
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Ejemplo de \texttt{enumerate}:
+\begin{enumerate}
+  \item Item Numerado
+    \begin{enumerate}
+     \item Nivel 2
+    \begin{enumerate}
+      \item Nivel 3
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+Ejemplo de \texttt{description}:
+\begin{description}
+  \item[Descripción] Texto descrito
+  \begin{description}
+  \item[Nivel 2] Texto
+\end{description}
+\end{description}
+
+Ejemplo de uso intercalado
+
+\begin{description}
+  \item[Descripción] Texto descrito
+  \begin{itemize}
+  \item Nivel 2
+  \begin{enumerate}
+      \item Nivel 3
+    \end{enumerate}
+\end{itemize}
+\end{description}
+
+
+
+\subsection{Figuras}
+En la Figura \ref{foto1} se muestra el logo de la Universidad. En cambio en la Figura \ref{figuras} se pueden apreciar 3 imágenes, la primera sería la Figura \ref{fig1}, la segunda la Figura \ref{fig2} y la tercera la Figura \ref{fig3}. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/Logo-ULagos.png}
+    \caption{Logo Universidad de Los Lagos}
+    \label{foto1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{subfigure}{0.31\textwidth}\centering
+    \includegraphics[width=\textwidth]{images/Logo-ULagos.png}
+    \caption{Primera figura}
+    \label{fig1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.31\textwidth}\centering
+    \includegraphics[width=\textwidth]{images/Logo-ULagos.png}
+    \caption{Segunda figura}
+    \label{fig2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.31\textwidth}\centering
+    \includegraphics[width=\textwidth]{images/Logo-ULagos.png}
+    \caption{Tercera figura}
+    \label{fig3}
+\end{subfigure}
+        
+\caption{Insertar subfiguras en \LaTeX.}
+\label{figuras}
+\end{figure}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=8cm]{images/Logo-ULagos.png}
+  \end{center}
+  \caption{Foto entre texto}
+\label{entretexto}
+\end{wrapfigure}
+A continuación se presenta la Figura \ref{entretexto} entre texto, esta figura debe estar antes del texto y la ubicación puede ser L: izquierda; C: centrado; R: derecha. 
+\lipsum[1]
+

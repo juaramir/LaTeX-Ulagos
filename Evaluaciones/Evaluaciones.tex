@@ -1,0 +1,60 @@
+\documentclass[letterpaper,10pt]{article}
+\input{macros}
+\def\TITULO{Titulo}
+%\def\subtitulo{Subtitulo}
+\def\autora{Autor}%autor 1
+\def\correoa{correo@ulagos.cl}
+\def\autorb{Autor}%autor 2
+\def\correob{correo@ulagos.cl}
+\def\autorc{Autor}%autor 3
+\def\correoc{correo@ulagos.cl}
+\def\asignatura{Asignatura}
+\def\campus{Campus}
+\def\carrera{Carrera}
+
+\lstset{language=Python}
+\def\figurename{}
+
+\lhead{\begin{picture}(0,0) \put(0,0){\includegraphics[width=40mm]{images/Logo-ULagos.png}} \end{picture}}
+\rhead{\asignatura}
+\lfoot{}
+\rfoot{\carrera}
+\renewcommand{\headrulewidth}{0.0pt}
+
+\pagestyle{fancy}
+
+\title{\Huge{\TITULO}\\
+	\large{\carrera, \campus}}
+\author{\autora: \correoa
+%\and \autorb: \correob
+%\and \autorc: \correoc
+}
+
+\date{\today}
+
+\newcommand{\middlewavefill}[1]{\begin{center}{\raisebox{0.5em}{\uwave{\hspace{#1}}}}\end{center}}
+
+\begin{document}
+	\includegraphics[width=6cm]{images/Logo-ULagos.png}\vspace{-1cm}
+	
+	\raisebox{-1ex}
+	{
+		\begin{minipage}{16cm}
+			\maketitle
+		\end{minipage}
+	}
+
+\vspace{-0.2cm}
+\textbf{Nombre}:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{Puntaje: \_\_\_\_\_/100}
+\vspace{-0.4cm}
+\begin{multicols}{2}
+\textbf{Rut}:          
+
+\textbf{Nº Lista}:~~~~~~~~~~~~\textbf{Tiempo Total: 80 min}
+\end{multicols}\vspace{-1.2cm}
+
+
+
+
+
+\end{document}

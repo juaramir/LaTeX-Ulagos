@@ -1,0 +1,299 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[spanish,es-lcroman]{babel}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{lscape}
+\usepackage{lmodern} 
+\usepackage{marvosym}
+\usepackage{float}
+\usepackage{array}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{wrapfig} %figura entre texto
+\usepackage{tgpagella}
+\usepackage{appendix}
+\usepackage{marvosym,wasysym}
+\renewcommand{\contentsname}{Documentos Anexos}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+\pagestyle{plain}
+\rhead{\thepage} 
+
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+
+\begin{document}
+
+\begin{center}
+%\thispagestyle{empty}
+\begin{figure}[h]
+\begin{minipage}{0.7 \textwidth} % 0.5 \textwidth = 50% ancho de página
+\begin{center}
+{\Huge \textbf{\textsc{Nombre Completo}}}
+
+{\Large Título Profesional}\\{\Large Posgrado}\\\
+
+\begin{multicols}{2}
+\begin{itemize}\Large
+  \item[\Mobilefone] +569-
+  \item[\phone] +5664-
+  \item[\Letter] nombre@mail.com
+  \item[\ComputerMouse] web
+\end{itemize}
+\end{multicols}
+\end{center}
+
+\end{minipage}
+\  \
+\hfill \begin{minipage}{5cm}
+\begin{center}
+\includegraphics[scale=0.4]{face.png}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+\end{center}
+\vspace{-1.5em}
+\hrule
+\hrule
+\vspace{-0.4em}
+\subsection*{\textsc{Presentación}}
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+\item TEXTO DESCRIPTIVO
+\end{description*}
+\end{indentsection}
+\hrule
+\vspace{-0.4em}
+\begin{figure}[H]
+\vspace{0.4em}
+\subsection*{\textsc{Antecedentes Personales}}
+\begin{itemize}
+	\parskip=0.1em
+	\item 
+	\headerrow
+		{\textbf{Información Personal}}
+		{\textbf{}}
+	   \begin{itemize*}
+		\item \emph{Fecha de Nacimiento}: 
+		\item \emph{Cédula de Identidad}: 
+		\item \emph{Nacionalidad}: 
+		\item \emph{Estado Civil}: 
+		\item \emph{Situación Militar}: 
+		\item \emph{Ciudad}: 
+		\item \emph{Dirección}:
+		\item \emph{Licencia de Conducir}: 
+		%\item[\ComputerMouse] web
+	   \end{itemize*}
+	%\parskip=0.1em
+	\item 
+	\headerrow
+		{\textbf{Títulos Profesionales}}
+		{\textbf{}}
+		\begin{itemize*}
+	    \item Nombre Título (Año).
+	\end{itemize*}
+	\headerrow
+		{\textbf{Certificados y Seminarios}}
+		{\textbf{}}
+		\begin{itemize*}
+		\item Título (Lugar, Año, Duración)
+	\end{itemize*}
+	%{\textbf{Pretenciones de Sueldo}}: 700.000 conversable.
+\end{itemize}
+\begin{picture}(0,0) \put(395,0){\includegraphics[width=30mm]{Contacto.png}} \end{picture}
+\end{figure}
+\hrule
+
+\subsection*{\underline{Experiencia Laboral}}
+
+
+\begin{itemize}
+	\parskip=0.1em
+  \item
+    \headerrow
+    {\textbf{\large{Cargo}}}
+    {\textbf{\large{Lugar, Ciudad}}}\\
+    \headerrow
+    {\emph{\underline{Labor}}}
+    {\emph{Fecha Inicio -- Fecha Fin (o actualidad)}}
+    \emph{\textbf{Contratante}: Nombre.}
+
+  \item
+    \headerrow
+    {\textbf{\large{Cargo}}}
+    {\textbf{\large{Lugar, Ciudad}}}\\
+    \headerrow
+    {\emph{\underline{Labor}}}
+	{\emph{}}
+	\headerrow
+	{~~~Trabajo 1}
+	{\emph{Fecha Inicio -- Fecha Fin (o actualidad)}}\\
+        \headerrow
+	{~~~Trabajo 2}
+	{\emph{Fecha Inicio -- Fecha Fin (o actualidad)}}\\
+        \emph{\textbf{Contratante}: Nombre.}
+  \item
+	\headerrow
+		{\textbf{\large{Alumno Practicante}}}
+		{\textbf{\large{}}}
+	\\
+	\headerrow
+		{\emph{\underline{Practica \dots}}}
+		{\emph{\textbf{Institución/Empresa, Ciudad}: Fecha Inicio -- Fecha Fin (o actualidad)}}
+	\begin{itemize*}
+		\item Resumen de labor
+            \item Docente a cargo: 
+            \item Ingenieros a cargo: .
+	\end{itemize*}
+			\item
+	\headerrow
+		{\textbf{\large{Alumno Ayudante}}}
+		{\textbf{\large{Universidad de Los Lagos, Ciudad}}}
+	\\
+	\headerrow
+		{\emph{\underline{Ayudantía de Cátedra y Laboratorio}}}
+		{\emph{Fecha Inicio -- Fecha Fin (o actualidad)}}
+	\begin{itemize*}
+		\item Asignaturas: Nombre \emph{(Código)}.
+		\item Carreras: .
+            \item Docentes a cargo: .
+	\end{itemize*}
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{\underline{Experiencia de Voluntariado}}
+\begin{itemize}
+	\parskip=0.1em
+\item
+    \headerrow
+    {\textbf{Centro de Estudiantes de Ingeniería Civil en Informática}}
+    {\textbf{Institución, Ciudad}}\\
+    \headerrow
+    {\emph{Presidente (`07- `08), Vicepresidente (`09) y Secretario de Finanzas (`10)}}
+    {\emph{2007 -- 2010 (4 años)}}
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{\underline{Educación}}
+\begin{itemize}
+	\parskip=0.1em
+	\item 	\headerrow
+		{\textbf{Universidad \dots}}
+		{\textbf{Ciudad, Chile}}
+	\\
+	\headerrow
+		{\emph{Título}}
+		{\emph{Año inicio -- Año Fin (Duración total años)}}
+		\item 
+	\headerrow
+		{\textbf{Universidad \dots}}
+		{\textbf{Ciudad, Chile}}
+	\\
+	\headerrow
+		{\emph{Ingeniería Civil en Informática}}
+		{\emph{Año inicio -- Año Fin (Duración total años)}}
+	\begin{itemize*}
+		\item \underline{Áreas}: Ingeniería, Computación, Gestión, Economía, Informática, Software y Sistemas.
+\item \underline{Proyecto de Titulo}: Título
+	\end{itemize*}
+			\item 
+	\headerrow
+		{\textbf{Colegio/Liceo}}
+		{\textbf{Ciudad, Chile}}
+	\\
+	\headerrow
+		{\emph{Educación Media}}
+		{\emph{Año inicio -- Año Fin (Duración total años)}}
+
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{\underline{Conocimientos}}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Lenguajes de Programación:]
+	
+	\item[Contribuciones Open Source:] 
+	\item [Sistemas Operativos:] 
+	\item [Ofimática:] 
+	\item [Conocimientos Prácticos:] 
+	\item[Conocimientos Teóricos:] 
+	\item [Informática General:] 
+	\item [Idiomas: ]Español: Nativo. Inglés Técnico: Alto. Inglés Escrito: Medio. Inglés Hablado: Medio.
+\end{description*}
+\end{indentsection}
+
+
+\hrule
+\vspace{0.4em}
+\subsection*{\underline{Proyectos e Investigación}}
+	\begin{itemize}
+\item 	\textbf{Título}.
+\begin{itemize*}
+	\parskip=0.1em
+	\item []{\textbf{Convocatoria/Concurso}}
+		
+		\item []{\textbf{~\\Institución, Ciudad, Chile}}
+
+\item []\emph{Ejecución}: Año inicio -- Año Fin (Duración total años) 
+\item []\emph{Código}: 
+\end{itemize*}
+\end{itemize}
+\hrule
+\vspace{0.4em}
+\subsection*{\underline{Publicaciones y Conferencias}}
+	\begin{itemize}
+\item 	\textbf{Título}.
+    \begin{itemize*}
+	\parskip=0.1em
+	\item[] {\textbf{Revista }}
+   
+	\item[] \emph{Date}: 
+
+	\item[] \emph{Abstract}: 
+    \end{itemize*}	
+
+\end{itemize}
+\end{document}

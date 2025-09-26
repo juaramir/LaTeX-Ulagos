@@ -1,0 +1,257 @@
+\chapter{Lenguaje de Manipulación de Datos}
+
+\section{Restricciones}
+
+\paragraph{Fecha de Inicio del Proyecto} La fecha de inicio del proyecto debe ser igual o posterior a la fecha y hora actual del servidor.
+   \begin{lstlisting}[caption=Restricción Fecha Inicio Proyecto]
+ALTER TABLE Proyecto ADD CONSTRAINT chk_proyecto_fechainicio_valida CHECK (FechaInicio >= CURRENT_TIMESTAMP);
+-- Nota: now() es una función tradicional de PostgreSQL, CURRENT_TIMESTAMP es el estándar SQL.
+        \end{lstlisting}
+
+\begin{lstlisting}[caption=Insert Impedido por la restricción chk\_proyecto\_fechainicio\_valida]
+INSERT INTO Proyecto (Numero, Patrocinador, FechaInicio, FechaFin, Presupuesto) VALUES
+(10, 'ANID-FONDECYT', '2023-03-15', '2026-03-14', 120000000);
+ERROR:  new row for relation "proyecto" violates check constraint "chk_proyecto_fechainicio_valida"
+DETAIL:  Failing row contains (10, ANID-FONDECYT, 2023-03-15, 2026-03-14, $ 120.000.000,00).
+\end{lstlisting}
+
+
+Dado que se desean almacenar proyectos históricos, se eliminará la restricción \texttt{chk\_pro\-yec\-to\_fechainicio\_valida}, esto se realiza como se muestra en el Código \ref{eliminarrestic1}.
+
+\begin{lstlisting}[caption=Eliminar Restricción Fecha Inicio Proyecto\label{eliminarrestic1}]
+ALTER TABLE Proyecto DROP CONSTRAINT chk_proyecto_fechainicio_valida;
+        \end{lstlisting}
+
+
+\paragraph{Presupuesto No Negativo} El presupuesto asignado a un proyecto no puede ser un valor negativo.
+
+ \begin{lstlisting}[caption=Restricción Presupuesto no negativo]
+ALTER TABLE Proyecto
+ADD CONSTRAINT chk_proyecto_presupuesto CHECK (Presupuesto >= '0'::MONEY);
+        \end{lstlisting}
+\paragraph{Coherencia de Fechas del Proyecto}Si se especifica una fecha de finalización para un proyecto, esta debe ser posterior a su fecha de inicio.
+ \begin{lstlisting}[caption=Coherencia de Fechas del Proyecto]
+ALTER TABLE Proyecto
+ADD CONSTRAINT chk_proyecto_fechas CHECK (FechaFin IS NULL OR FechaFin > FechaInicio);
+\end{lstlisting}
+
+\paragraph{Fecha de Nacimiento Válida}La fecha de nacimiento de un profesor debe ser anterior a la fecha actual.
+ \begin{lstlisting}[caption=Fecha de Nacimiento Válida]
+ALTER TABLE Profesor
+ADD CONSTRAINT chk_profesor_fechanac CHECK (FechaNac < CURRENT_DATE);
+\end{lstlisting}
+
+\paragraph{Rango del Profesor}El rango académico de un profesor debe pertenecer a una lista predefinida de valores válidos (ej. 1:'Titular', 2:'Asociado', 3:'Asistente', 4:'Instructor').
+ \begin{lstlisting}[caption=Rango del Profesor]
+ALTER TABLE Profesor
+ADD CONSTRAINT chk_profesor_rango CHECK (Rango BETWEEN 1 AND 4);
+\end{lstlisting}
+
+
+\paragraph{Auto-Asesoría Inválida}Un alumno no puede ser registrado como su propio asesor.
+ \begin{lstlisting}[caption=Auto-Asesoría Inválida]
+ALTER TABLE Alumno
+ADD CONSTRAINT chk_alumno_no_autoasesor CHECK (Run != Asesor);
+\end{lstlisting}
+
+\paragraph{Porcentaje de Dedicación Válido} El porcentaje de tiempo que un profesor labora en un departamento debe ser un valor positivo y no exceder el 100\%.
+ \begin{lstlisting}[caption=Porcentaje de Dedicación Válido]
+ALTER TABLE Laborar
+ADD CONSTRAINT chk_laborar_porcentaje CHECK (Porcentaje > 0 AND Porcentaje <= 100);
+\end{lstlisting}
+
+\paragraph{Número de departamento positivo}~
+ \begin{lstlisting}[caption=Número de departamento positivo]
+ALTER TABLE Departamento
+ADD CONSTRAINT chk_departamento_numero CHECK (Numero > 0);
+\end{lstlisting}
+
+\paragraph{Número de despacho positivo}~
+ \begin{lstlisting}[caption=Número de despacho positivo]
+ALTER TABLE Departamento
+ADD CONSTRAINT chk_departamento_despacho CHECK (Despacho > 0);
+\end{lstlisting}
+
+\paragraph{Código positivo}~
+ \begin{lstlisting}[caption=Código positivo]
+ALTER TABLE Postgrado
+ADD CONSTRAINT chk_postgrado_codigo CHECK (Codigo > 0);
+\end{lstlisting}
+
+
+\section{Consultas y Vistas}
+\paragraph*{Profesores de máximo rango}Selecciona el nombre y la especialidad de todos los profesores que tienen el rango más alto (4).
+\begin{lstlisting}[caption=Profesores de máximo rango\label{cons1}]
+SELECT Nombre, Apellido, Especialidad
+FROM Profesor
+WHERE Rango = 4;
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Resultado Código \ref{cons1}]
+ nombre | apellido |   especialidad   
+--------+----------+------------------
+ Ana    | Pérez    | Bases de Datos
+ Juan   | Soto     | Sist. Operativos
+ Miguel | Rojas    | Compiladores
+\end{lstlisting}
+
+\paragraph*{Proyectos sin fecha de fin}Obtiene el número, patrocinador y presupuesto de los proyectos que aún no tienen una fecha de finalización definida.
+\begin{lstlisting}[caption=Proyectos sin fecha de fin\label{cons2}]
+SELECT   Numero,  Patrocinador,  Presupuesto
+FROM Proyecto
+WHERE  FechaFin IS NULL;
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Resultado Código \ref{cons2}]
+ numero |    patrocinador    |   presupuesto    
+--------+--------------------+------------------
+     13 | Microsoft Research | $ 250.000.000,00
+     16 | Innova Chile       |  $ 60.000.000,00
+     18 | Tesla              | $ 300.000.000,00
+\end{lstlisting}
+
+\paragraph*{Directores de Departamento (Join Implícito)}Muestra el nombre de cada departamento y el nombre del profesor que lo dirige.
+\begin{lstlisting}[caption=Directores de Departamento (Join Implícito)]
+SELECT
+  D.Nombre AS NombreDepartamento,
+  P.Nombre AS NombreDirector,
+  P.Apellido AS ApellidoDirector
+FROM Departamento AS D, Profesor AS P
+WHERE D.Profesor_id = P.Run;
+\end{lstlisting}
+
+\paragraph*{Proyectos y sus Directores (INNER JOIN)}Lista todos los proyectos junto con el nombre completo del profesor que los dirige.
+\begin{lstlisting}[caption=Proyectos y sus Directores (INNER JOIN)]
+SELECT
+  Proy.Numero AS ProyectoID,
+  Proy.Patrocinador,
+  Prof.Nombre AS Director,
+  Prof.Apellido AS ApellidoDirector
+FROM Proyecto AS Proy
+INNER JOIN Dirigir AS D
+  ON Proy.Numero = D.Proyecto_id
+INNER JOIN Profesor AS Prof
+  ON D.Profesor_id = Prof.Run;
+\end{lstlisting}
+
+\paragraph*{Presupuesto total por patrocinador}Calcula la suma total de los presupuestos de los proyectos, agrupados por cada patrocinador.
+\begin{lstlisting}[caption=Presupuesto total por patrocinador]
+SELECT Patrocinador,
+  SUM(Presupuesto) AS PresupuestoTotal
+FROM Proyecto
+GROUP BY Patrocinador
+ORDER BY PresupuestoTotal DESC;
+\end{lstlisting}
+
+\paragraph*{Profesores que dirigen más de un proyecto}Utiliza \texttt{COUNT} para contar los proyectos por profesor y \texttt{HAVING} para filtrar y mostrar solo a aquellos que dirigen más de uno.
+\begin{lstlisting}[caption=Profesores que dirigen más de un proyecto]
+SELECT P.Nombre, P.Apellido,
+  COUNT(D.Proyecto_id) AS ProyectosDirigidos
+FROM Profesor AS P
+INNER JOIN Dirigir AS D
+  ON P.Run = D.Profesor_id
+GROUP BY P.Run, P.Nombre, P.Apellido
+HAVING COUNT(D.Proyecto_id) > 1;
+\end{lstlisting}
+
+\paragraph*{Alumnos en programas de Magíster (Uso de IN)}Encuentra a todos los alumnos cuyos programas de postgrado contienen la palabra `Magíster'.
+\begin{lstlisting}[caption=Alumnos en programas de Magíster (Uso de IN)]
+SELECT Nombre, Apellido
+FROM Alumno
+WHERE
+  Postgrado_id IN (
+    SELECT Codigo
+    FROM Postgrado
+    WHERE Nombre LIKE 'Magíster%'
+  );
+\end{lstlisting}
+
+\paragraph*{Departamentos con profesores que trabajan al 100\% (Uso de EXISTS)}Lista los departamentos donde existe al menos un profesor que dedica el 100\% de su tiempo a ese departamento.
+\begin{lstlisting}[caption=Departamentos con profesores que trabajan al 100\% (Uso de EXISTS)]
+SELECT  Nombre
+FROM Departamento AS D
+WHERE EXISTS (
+    SELECT 1
+    FROM Laborar AS L
+    WHERE L.Departamento_id = D.Numero AND L.Porcentaje = 100
+  );
+\end{lstlisting}
+
+\paragraph*{Alumnos sin proyecto (Usando LEFT JOIN)}La forma más común y eficiente. Se traen todos los alumnos y se unen con la tabla \texttt{Trabajar}. Aquellos que no tienen correspondencia (\texttt{t.Proyecto\_id} es NULL) son los que no trabajan en proyectos.
+\begin{lstlisting}[caption=Alumnos sin proyecto (Usando LEFT JOIN)]
+SELECT A.Run, A.Nombre, A.Apellido
+FROM Alumno AS A
+LEFT JOIN Trabajar AS T
+  ON A.Run = T.Alumno_id
+WHERE T.Proyecto_id IS NULL;
+\end{lstlisting}
+
+\paragraph*{Alumnos sin proyecto (Usando NOT EXISTS)}Selecciona a los alumnos para los cuales no existe una entrada en la tabla \texttt{Trabajar} que los vincule a un proyecto.
+\begin{lstlisting}[caption=Alumnos sin proyecto (Usando NOT EXISTS)]
+SELECT  A.Nombre,  A.Apellido
+FROM Alumno AS A
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM Trabajar AS T
+    WHERE T.Alumno_id = A.Run
+  );
+\end{lstlisting}
+
+\paragraph*{Creación de una vista ProyectoDetallado}Crea una vista que simplifica las consultas futuras al unir la información clave de los proyectos: el proyecto en sí, el director y el departamento del director.
+\begin{lstlisting}[caption=Creación de una vista ProyectoDetallado]
+CREATE VIEW VistaProyectoDetallado AS
+SELECT
+  Proy.Numero AS ProyectoNumero,
+  Proy.Patrocinador,
+  Proy.Presupuesto,
+  Prof.Nombre AS NombreDirector,
+  Prof.Apellido AS ApellidoDirector,
+  Dep.Nombre AS DepartamentoDirector
+FROM Proyecto AS Proy
+INNER JOIN Dirigir AS Dir
+  ON Proy.Numero = Dir.Proyecto_id
+INNER JOIN Profesor AS Prof
+  ON Dir.Profesor_id = Prof.Run
+INNER JOIN Departamento AS Dep
+  ON Prof.Run = Dep.Profesor_id;
+\end{lstlisting}
+
+\paragraph{Uso de la vista para filtrar proyectos}Una vez creada la vista, se puede consultar como si fuera una tabla normal para encontrar, por ejemplo, todos los proyectos dirigidos por un profesor del departamento de `Inteligencia Artificial'.
+\begin{lstlisting}[caption=Uso de la vista para filtrar proyectos]
+SELECT  *
+FROM VistaProyectoDetallado
+WHERE  DepartamentoDirector = 'Inteligencia Artificial';
+\end{lstlisting}
+
+\paragraph{Supervisión de Alumnos en Proyectos}Muestra una lista detallada de qué alumno es supervisado por qué profesor y en qué proyecto, mostrando los nombres en lugar de los IDs.
+\begin{lstlisting}[caption=Supervisión de Alumnos en Proyectos]
+SELECT
+  P.Nombre AS NombreProyecto,
+  Al.Nombre AS NombreAlumno,
+  Al.Apellido AS ApellidoAlumno,
+  Prof.Nombre AS NombreSupervisor,
+  Prof.Apellido AS ApellidoSupervisor
+FROM Supervisar AS S
+INNER JOIN Proyecto AS P
+  ON S.Proyecto_id = P.Numero
+INNER JOIN Alumno AS Al
+  ON S.Alumno_id = Al.Run
+INNER JOIN Profesor AS Prof
+  ON S.Profesor_id = Prof.Run
+ORDER BY NombreProyecto;
+\end{lstlisting}
+
+\paragraph*{Postgrado con más alumnos}Encuentra el programa de postgrado con el mayor número de alumnos inscritos usando una combinación de \texttt{GROUP BY}, \texttt{ORDER BY}, \texttt{LIMIT} y una subconsulta.
+\begin{lstlisting}[caption=Postgrado con más alumnos]
+SELECT PG.Nombre,
+  COUNT(A.Run) AS NumeroDeAlumnos
+FROM Postgrado AS PG
+INNER JOIN Alumno AS A
+  ON PG.Codigo = A.Postgrado_id
+GROUP BY PG.Nombre
+ORDER BY NumeroDeAlumnos DESC
+LIMIT 1;
+\end{lstlisting}
+%Resultado del motor con LIMIT 10;
+
+

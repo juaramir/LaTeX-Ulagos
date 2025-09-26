@@ -1,0 +1,115 @@
+INSERT INTO Profesor (Run, Nombre, Apellido, FechaNac, Especialidad, Rango) VALUES
+('12345678-5', 'Ana', 'Pérez', '1975-03-12', 'Bases de Datos', 4),
+('11222333-K', 'Luis', 'Gómez', '1980-11-25', 'IA', 3),
+('98765432-1', 'Carla', 'Morales', '1985-01-18', 'Ing. de Software', 2),
+('87654321-0', 'Juan', 'Soto', '1972-07-30', 'Sist. Operativos', 4),
+('76543210-K', 'Sofía', 'Castro', '1990-09-01', 'Redes y Seguridad', 2),
+('15888777-3', 'Miguel', 'Rojas', '1968-04-15', 'Compiladores', 4),
+('13456789-0', 'Elena', 'Vargas', '1982-06-20', 'Computación Gráfica', 3),
+('14258369-7', 'Javier', 'Reyes', '1988-12-05', 'HCI', 2),
+('10987654-3', 'Lucía', 'Méndez', '1979-10-10', 'Algoritmos', 3),
+('16123456-7', 'Pedro', 'Fuentes', '1984-02-28', 'Sist. Distribuidos', 2);
+
+INSERT INTO Postgrado (Codigo, Nombre) VALUES
+(100, 'Magíster en Cs. Computación'),
+(101, 'Magíster en Ing. de Software'),
+(200, 'Doctorado en Cs. Computación'),
+(201, 'Doctorado en IA'),
+(300, 'Magíster en Data Science'),
+(301, 'Magíster en Ciberseguridad'),
+(400, 'Postítulo en Redes'),
+(401, 'Postítulo en Desarrollo Web'),
+(102, 'Magíster en Bioinformática'),
+(202, 'Doctorado en Robótica'),
+(302, 'Magíster en Videojuegos');
+
+INSERT INTO Proyecto (Numero, Patrocinador, FechaInicio, FechaFin, Presupuesto) VALUES
+(10, 'ANID-FONDECYT', '2023-03-15', '2026-03-14', 120000000),
+(11, 'CORFO', '2024-01-20', '2025-07-20', 75000000),
+(12, 'Interno U.', '2024-08-01', '2025-02-01', 30000000),
+(13, 'Microsoft Research', '2023-09-01', NULL, 250000000),
+(14, 'Google AI', '2024-06-01', '2026-05-31', 180000000),
+(15, 'ANID-FONDEF', '2025-03-01', '2027-02-28', 95000000),
+(16, 'Innova Chile', '2023-11-10', NULL, 60000000),
+(17, 'CERN', '2024-05-01', '2026-04-30', 220000000),
+(18, 'Tesla', '2025-01-01', NULL, 300000000),
+(19, 'Interno LabComp', '2024-09-01', '2025-03-01', 25000000);
+
+INSERT INTO Departamento (Numero, Nombre, Despacho, Profesor_id) VALUES
+(1, 'Ingeniería de Software', 301, '98765432-1'),
+(2, 'Ciencias de la Computación', 210, '12345678-5'),
+(3, 'Sistemas y Computación', 420, '87654321-0'),
+(4, 'Redes y Ciberseguridad', 530, '76543210-K'),
+(5, 'Inteligencia Artificial', 215, '11222333-K'),
+(6, 'Computación Gráfica y Robótica', 110, '13456789-0'),
+(7, 'Algoritmia y Teoría', 222, '10987654-3'),
+(8, 'Sistemas Distribuidos', 333, '16123456-7'),
+(9, 'Interacción Humano-Computador', 123, '14258369-7'),
+(10, 'Centro de Investigación', 555, '15888777-3');
+
+
+INSERT INTO Alumno (Run, Nombre, Apellido, FechaNac, Asesor, Departamento_id, Postgrado_id) VALUES
+('20111222-3', 'Fernanda', 'Rojas', '2001-05-20', '20333444-5', 2, 100),
+('20222333-4', 'Martín', 'Soto', '2002-02-15', '20111222-3', 1, 101),
+('20333444-5', 'Camila', 'Vargas', '2000-10-10', '20222333-4', 2, 200),
+('19888777-6', 'Diego', 'Castro', '1999-12-01', '20333444-5', 4, 301),
+('19777666-5', 'Valentina', 'Morales', '1998-03-25', '20111222-3', 3, NULL),
+('21123456-7', 'Benjamín', 'Herrera', '2003-01-30', '20222333-4', 5, 201),
+('21543210-9', 'Isidora', 'Jiménez', '2002-08-14', '19888777-6', 7, NULL),
+('19654321-8', 'Tomás', 'Flores', '1999-07-07', '19777666-5', 6, 102),
+('20876543-2', 'Antonia', 'Reyes', '2001-04-18', '21123456-7', 8, 300),
+('21001002-K', 'Sebastián', 'Silva', '2003-06-22', '19654321-8', 9, 202),
+('19555444-3', 'Javiera', 'Lagos', '1998-11-11', '20111222-3', 2, NULL),
+('19444333-2', 'Matías', 'Nuñez', '1999-09-09', '20333444-5', 1, 101);
+
+INSERT INTO Dirigir (Proyecto_id, Profesor_id) VALUES
+(10, '12345678-5'), -- Ana dirige proyecto 10
+(11, '98765432-1'), -- Carla dirige proyecto 11
+(12, '98765432-1'), -- Carla también dirige proyecto 12
+(13, '11222333-K'), -- Luis dirige proyecto 13
+(14, '11222333-K'), -- Luis también dirige proyecto 14
+(15, '76543210-K'), -- Sofía dirige proyecto 15
+(16, '87654321-0'), -- Juan dirige proyecto 16
+(17, '15888777-3'), -- Miguel dirige proyecto 17
+(18, '13456789-0'), -- Elena dirige proyecto 18
+(19, '14258369-7'); -- Javier dirige proyecto 19
+
+INSERT INTO Laborar (Profesor_id, Departamento_id, Porcentaje) VALUES
+('12345678-5', 2, 100), -- Ana en Cs. de la Computación
+('11222333-K', 5, 100), -- Luis en IA
+('98765432-1', 1, 100), -- Carla en Ing. de Software
+('87654321-0', 3, 100), -- Juan en Sistemas y Computación
+('76543210-K', 4, 100), -- Sofía en Redes y Ciberseguridad
+('15888777-3', 2, 50),  -- Miguel 50% en Cs. de la Comp.
+('15888777-3', 7, 50),  -- y 50% en Algoritmia
+('13456789-0', 6, 100), -- Elena en Comp. Gráfica
+('10987654-3', 7, 100), -- Lucía en Algoritmia
+('16123456-7', 8, 100), -- Pedro en Sist. Distribuidos
+('14258369-7', 9, 100); -- Javier en HCI
+
+INSERT INTO Trabajar (Proyecto_id, Alumno_id) VALUES
+(10, '20111222-3'), -- Fernanda en proyecto 10
+(10, '20333444-5'), -- Camila en proyecto 10
+(11, '20222333-4'), -- Martín en proyecto 11
+(13, '21123456-7'), -- Benjamín en proyecto 13
+(13, '20111222-3'), -- Fernanda también en proyecto 13
+(14, '19888777-6'), -- Diego en proyecto 14
+(15, '21543210-9'), -- Isidora en proyecto 15
+(17, '19654321-8'), -- Tomás en proyecto 17
+(18, '20876543-2'), -- Antonia en proyecto 18
+(18, '21001002-K'), -- Sebastián en proyecto 18
+(19, '19555444-3'); -- Javiera en proyecto 19
+
+INSERT INTO Supervisar (Proyecto_id, Profesor_id, Alumno_id) VALUES
+(10, '12345678-5', '20111222-3'), -- En P10, Ana supervisa a Fernanda
+(10, '15888777-3', '20333444-5'), -- En P10, Miguel supervisa a Camila
+(11, '98765432-1', '20222333-4'), -- En P11, Carla supervisa a Martín
+(13, '11222333-K', '21123456-7'), -- En P13, Luis supervisa a Benjamín
+(13, '11222333-K', '20111222-3'), -- En P13, Luis también supervisa a Fernanda
+(14, '11222333-K', '19888777-6'), -- En P14, Luis supervisa a Diego
+(15, '76543210-K', '21543210-9'), -- En P15, Sofía supervisa a Isidora
+(17, '15888777-3', '19654321-8'), -- En P17, Miguel supervisa a Tomás
+(18, '13456789-0', '20876543-2'), -- En P18, Elena supervisa a Antonia
+(18, '13456789-0', '21001002-K'), -- En P18, Elena también supervisa a Sebastián
+(19, '14258369-7', '19555444-3'); -- En P19, Javier supervisa a Javiera
+

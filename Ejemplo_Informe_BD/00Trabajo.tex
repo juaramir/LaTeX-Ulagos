@@ -1,0 +1,56 @@
+\documentclass[letterpaper,12pt]{report}
+\input{Macros}
+\def\TITULO{Proyecto Sistema Para Universidad}
+\def\subtitulo{Proyecto MultiAsignatura}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\autord{Autor}
+\def\correod{correo@alumnos.ulagos.cl}
+\def\asignatura{Asignatura}
+\def\campus{Campus Osorno}
+\def\carrera{Ingeniería Civil en Informática}
+\lstset{language=SQL}
+
+
+\begin{document}
+	
+	%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%
+	%\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+	\maketitle
+	
+	\cleardoublepage
+	\pagenumbering{roman}
+	\setcounter{page}{1}
+	
+	%INDICE GENERAL
+	\tableofcontents
+	%INDICE DE FIGURAS
+	\listoffigures
+	%INDICE DE TABLAS
+	\renewcommand{\listtablename}{Índice de tablas}\listoftables
+	\renewcommand{\lstlistlistingname}{Índice de algoritmos}
+	\lstlistoflistings
+	%\addcontentsline
+	%%%%%%%%%%%%%FIN PORTADA%%%%%%%%%%%%%%%%
+	
+	%\thispagestyle{empty}
+	%\begin{abstract}
+	%\end{abstract}
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+
+
+%%%%%%%%%%%%%FIN PORTADA%%%%%%%%%%%%%%%%
+
+\input{01Metodologia}
+\input{02MER}
+\input{03MR}
+\input{04Normalizacion}
+\input{05SQL}
+\input{06Consultas}
+\end{document}

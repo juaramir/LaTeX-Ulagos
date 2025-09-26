@@ -1,0 +1,253 @@
+%\usepackage[utf8]{inputenc}
+
+
+%\renewcommand{\labelenumi}{\arabic{enumi}.} % (1., 2., 3.,...)
+%\renewcommand{\labelenumi}{\roman{enumi}.} %  (i., ii., iii.,...)
+%\renewcommand{\labelenumi}{\Roman{enumi}.} %  (I., II., III.,...)
+%\renewcommand{\labelenumi}{\alph{enumi}.}   % (a., b., c.,...)
+%\renewcommand{\labelenumi}{(\alph{enumi})} % [(a), (b), (c),...]
+%\renewcommand{\labelenumi}{\Alph{enumi}.}  %  (A., B., C.,...)
+
+%%%%%%Glosario
+%\usepackage[acronym]{glossaries}
+%\makeglossaries
+%\renewcommand{\glossaryname}{Glosario}
+%\renewcommand{\acronymname}{Acrónimos}
+
+%\usepackage[style=ieee]{biblatex}%bibliografias Bibtex
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[default]{roboto}
+\usepackage[letterpaper, margin=2cm, includeheadfoot]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{color, colortbl}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{sidecap}
+\usepackage{xspace}
+\usepackage{epic, eepic}
+\usepackage{algorithm, algpseudocode}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{units}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{datetime}
+\usepackage{cite}
+\usepackage{layout}
+\usepackage{lipsum}
+\usepackage{multirow}
+% --- DEFINICIONES DE DATOS PARA LA PORTADA ---
+
+
+% --- ENCABEZADO Y PIE DE PÁGINA ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Limpia todos los campos
+\rhead{\carrera}
+\lfoot{\asignatura}
+\rfoot{Universidad de Los Lagos}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[R]{\carrera}
+	\fancyfoot[L]{\asignatura}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{Universidad de Los Lagos}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0.5pt}
+}
+
+% --- HYPERREF (casi siempre el último) ---
+\usepackage{hyperref}
+
+
+
+% --- CONFIGURACIÓN DE LA PORTADA ---
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+	\put(-3,0){
+		\parbox[b][\paperheight]{\paperwidth}{
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight]{portada.png}
+			\vfill
+		}
+	}
+}
+
+\title{
+	\vspace{2cm}\huge{\MakeUppercase{\textbf{\TITULO}}}\\
+	\upshape \large{\textit{\MakeUppercase{\subtitulo}}}\\ \vspace{1cm}
+	\Large \MakeUppercase{Departamento de Ciencias de La Ingeniería}\\
+	\Large \MakeUppercase{\carrera}\\
+	\Large \MakeUppercase{\asignatura}\\
+	\large \MakeUppercase{\campus, Chile}
+}
+\author{
+	\href{mailto:\correoa}{\autora}
+}
+\date{\vspace{3cm}\today}
+
+% Se redefine el comando \maketitle para crear la portada personalizada
+\makeatletter
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{%
+	\thispagestyle{empty}%
+	\AddToShipoutPicture*{\BackgroundPic}%
+	{\color{white}\oldmaketitle}%
+	\ClearShipoutPicture%
+}
+\makeatother
+
+%Colores Ulagos
+%COLOREAR SISTEMA
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{amarillo}{RGB}{255,183,27}
+\definecolor{amarilloc}{RGB}{250,223,141}
+\definecolor{verde}{RGB}{118,188,33}
+\definecolor{verdec}{RGB}{172,219,144}
+\definecolor{rojo}{RGB}{202,54,37}
+\definecolor{rojoc}{RGB}{255,176,192}
+\definecolor{azul}{RGB}{0,61,166}
+\definecolor{celeste}{RGB}{143,199,232}
+\definecolor{negro}{RGB}{35,31,32}
+\definecolor{naranjo}{RGB}{255,103,29}
+\definecolor{naranjoc}{RGB}{255,164,136}
+\definecolor{morado}{RGB}{126,87,197}
+\definecolor{moradoc}{RGB}{220,168,226}
+\definecolor{gris}{RGB}{183,177,169}
+\definecolor{grisc}{RGB}{216,209,202}
+\definecolor{turquesa}{RGB}{72,209,204}
+\colorlet{punct}{red!60!black}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+%COLOREAR TEXTO
+\newcommand\rojo[1]{\textcolor[RGB]{202,54,37}{#1}}
+\newcommand\rojoc[1]{\textcolor[RGB]{255,176,192}{#1}}
+\newcommand\gris[1]{\textcolor[RGB]{183,177,169}{#1}}
+\newcommand\grisc[1]{\textcolor[RGB]{216,209,202}{#1}}
+\newcommand\azul[1]{\textcolor[RGB]{0,61,166}{#1}}
+\newcommand\celeste[1]{\textcolor[RGB]{143,199,232}{#1}}
+\newcommand\verde[1]{\textcolor[RGB]{118,188,33}{#1}}
+\newcommand\verdec[1]{\textcolor[RGB]{172,219,144}{#1}}
+\newcommand\naranjo[1]{\textcolor[RGB]{255,103,29}{#1}}
+\newcommand\naranjoc[1]{\textcolor[RGB]{255,164,136}{#1}}
+\newcommand\amarillo[1]{\textcolor[RGB]{255,183,27}{#1}}
+\newcommand\amarilloc[1]{\textcolor[RGB]{250,223,141}{#1}}
+\newcommand\morado[1]{\textcolor[RGB]{126,87,197}{#1}}
+\newcommand\moradoc[1]{\textcolor[RGB]{220,168,226}{#1}}
+\newcommand\negro[1]{\textcolor[RGB]{35,31,32}{#1}}
+\newcommand\turquesa[1]{\textcolor[RGB]{72,209,204}{#1}}
+
+
+  \providecommand{\keywords}[1]{\textbf{\textit{Palabras Clave---}} #1}
+
+% --- COMANDOS Y ENTORNOS PERSONALIZADOS ---
+\newcommand\notaautor[1]{{\scriptsize\begin{flushright}\emph{(#1)}\end{flushright}}}
+%%%Entornos de desarrollo
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{cuadro1}{}
+\newenvironment{cuadro}
+  {\begin{mdframed}\begin{cuadro1}}
+  {\end{cuadro1}\end{mdframed}}
+  
+\newtheorem{solucion}{Solución}
+\newtheorem{definir}{Definición}
+\newtheorem{prueba}{Prueba}
+\newtheorem{demo}{Demostración}
+\newtheorem{obs}{Observación}
+\newtheorem{entrada}{Entrada}
+\newtheorem{salida}{Salida}
+
+% --- CONFIGURACIÓN PARA LISTINGS (CÓDIGO) ---
+% Tu definición de lenguaje HTML5 es muy extensa, la incluyo tal cual
+\lstdefinelanguage{HTML5}{
+	sensitive=true,
+	keywords={%
+		% JavaScript
+		break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with,
+		% HTML
+		html, title, meta, style, head, body, script, canvas,
+		% CSS
+		accelerator,azimuth,background,background-attachment,background-color,background-image,background-position,background-position-x,background-position-y,background-repeat,behavior,border,border-bottom,border-bottom-color,border-bottom-style,border-bottom-width,border-collapse,border-color,border-left,border-left-color,border-left-style,border-left-width,border-right,border-right-color,border-right-style,border-right-width,border-spacing,border-style,border-top,border-top-color,border-top-style,border-top-width,border-width,bottom,caption-side,clear,clip,color,content,counter-increment,counter-reset,cue,cue-after,cue-before,cursor,direction,display,elevation,empty-cells,filter,float,font,font-family,font-size,font-size-adjust,font-stretch,font-style,font-variant,font-weight,height,ime-mode,include-source,layer-background-color,layer-background-image,layout-flow,layout-grid,layout-grid-char,layout-grid-char-spacing,layout-grid-line,layout-grid-mode,layout-grid-type,left,letter-spacing,line-break,line-height,list-style,list-style-image,list-style-position,list-style-type,margin,margin-bottom,margin-left,margin-right,margin-top,marker-offset,marks,max-height,max-width,min-height,min-width,-moz-binding,-moz-border-radius,-moz-border-radius-topleft,-moz-border-radius-topright,-moz-border-radius-bottomright,-moz-border-radius-bottomleft,-moz-border-top-colors,-moz-border-right-colors,-moz-border-bottom-colors,-moz-border-left-colors,-moz-opacity,-moz-outline,-moz-outline-color,-moz-outline-style,-moz-outline-width,-moz-user-focus,-moz-user-input,-moz-user-modify,-moz-user-select,orphans,outline,outline-color,outline-style,outline-width,overflow,overflow-X,overflow-Y,padding,padding-bottom,padding-left,padding-right,padding-top,page,page-break-after,page-break-before,page-break-inside,pause,pause-after,pause-before,pitch,pitch-range,play-during,position,quotes,-replace,richness,right,ruby-align,ruby-overhang,ruby-position,-set-link-source,size,speak,speak-header,speak-numeral,speak-punctuation,speech-rate,stress,scrollbar-arrow-color,scrollbar-base-color,scrollbar-dark-shadow-color,scrollbar-face-color,scrollbar-highlight-color,scrollbar-shadow-color,scrollbar-3d-light-color,scrollbar-track-color,table-layout,text-align,text-align-last,text-decoration,text-indent,text-justify,text-overflow,text-shadow,text-transform,text-autospace,text-kashida-space,text-underline-position,top,unicode-bidi,-use-link-source,vertical-align,visibility,voice-family,volume,white-space,widows,width,word-break,word-spacing,word-wrap,writing-mode,z-index,zoom,section,header,footer,aside,figure,html},
+	otherkeywords={<, </, >,</a, <a, </a>,</abbr, <abbr, </abbr>,</address, <address, </address>,</area, <area, </area>,</area, <area, </area>,</article, <article, </article>,</aside, <aside, </aside>,</audio, <audio, </audio>,</audio, <audio, </audio>,</b, <b, </b>,</base, <base, </base>,</bdi, <bdi, </bdi>,</bdo, <bdo, </bdo>,</blockquote, <blockquote, </blockquote>,</body, <body, </body>,</br, <br, </br>,</button, <button, </button>,</canvas, <canvas, </canvas>,</caption, <caption, </caption>,</cite, <cite, </cite>,</code, <code, </code>,</col, <col, </col>,</colgroup, <colgroup, </colgroup>,</data, <data, </data>,</datalist, <datalist, </datalist>,</dd, <dd, </dd>,</del, <del, </del>,</details, <details, </details>,</dfn, <dfn, </dfn>,</div, <div, </div>,</dl, <dl, </dl>,</dt, <dt, </dt>,</em, <em, </em>,</embed, <embed, </embed>,</fieldset, <fieldset, </fieldset>,</figcaption, <figcaption, </figcaption>,</figure, <figure, </figure>,</footer, <footer, </footer>,</form, <form, </form>,</h1, <h1, </h1>,</h2, <h2, </h2>,</h3, <h3, </h3>,</h4, <h4, </h4>,</h5, <h5, </h5>,</h6, <h6, </h6>,</head, <head, </head>,</header, <header, </header>,</hr, <hr, </hr>,</html, <html, </html>,</i, <i, </i>,</iframe, <iframe, </iframe>,</img, <img, </img>,</input, <input, </input>,</ins, <ins, </ins>,</kbd, <kbd, </kbd>,</keygen, <keygen, </keygen>,</label, <label, </label>,</legend, <legend, </legend>,</li, <li, </li>,</link, <link, </link>,</main, <main, </main>,</map, <map, </map>,</mark, <mark, </mark>,</math, <math, </math>,</menu, <menu, </menu>,</menuitem, <menuitem, </menuitem>,</meta, <meta, </meta>,</meter, <meter, </meter>,</nav, <nav, </nav>,</noscript, <noscript, </noscript>,</object, <object, </object>,</ol, <ol, </ol>,</optgroup, <optgroup, </optgroup>,</option, <option, </option>,</output, <output, </output>,</p, <p, </p>,</param, <param, </param>,</pre, <pre, </pre>,</progress, <progress, </progress>,</q, <q, </q>,</rp, <rp, </rp>,</rt, <rt, </rt>,</ruby, <ruby, </ruby>,</s, <s, </s>,</samp, <samp, </samp>,</script, <script, </script>,</section, <section, </section>,</select, <select, </select>,</small, <small, </small>,</source, <source, </source>,</span, <span, </span>,</strong, <strong, </strong>,</style, <style, </style>,</summary, <summary, </summary>,</sup, <sup, </sup>,</svg, <svg, </svg>,</table, <table, </table>,</tbody, <tbody, </tbody>,</td, <td, </td>,</template, <template, </template>,</textarea, <textarea, </textarea>,</tfoot, <tfoot, </tfoot>,</th, <th, </th>,</thead, <thead, </thead>,</time, <time, </time>,</title, <title, </title>,</tr, <tr, </tr>,</track, <track, </track>,</u, <u, </u>,</ul, <ul, </ul>,</var, <var, </var>,</video, <video, </video>,</wbr, <wbr, </wbr>,/>, <!},
+	ndkeywords={=, accept=, accept-charset=, accesskey=, action=, align=, alt=, async=, autocomplete=, autofocus=, autoplay=, autosave=, bgcolor=, border=, buffered=, challenge=, charset=, checked=, cite=, class=, code=, codebase=, color=, cols=, colspan=, content=, contenteditable=, contextmenu=, controls=, coords=, data=, datetime=, default=, defer=, dir=, dirname=, disabled=, download=, draggable=, dropzone=, enctype=, for=, form=, formaction=, headers=, height=, hidden=, high=, href=, hreflang=, http-equiv=, icon=, id=, ismap=, itemprop=, keytype=, kind=, label=, lang=, language=, list=, loop=, low=, manifest=, max=, maxlength=, media=, method=, min=, multiple=, name=, novalidate=, open=, optimum=, pattern=, ping=, placeholder=, poster=, preload=, pubdate=, radiogroup=, readonly=, rel=, required=, reversed=, rows=, rowspan=, sandbox=, scope=, scoped=, seamless=, selected=, shape=, size=, sizes=, span=, spellcheck=, src=, srcdoc=, srclang=, start=, step=, style=, summary=, tabindex=, target=, title=, type=, usemap=, value=, width=, wrap=, accelerator:,azimuth:,background:,background-attachment:,background-color:,background-image:,background-position:,background-position-x:,background-position-y:,background-repeat:,behavior:,border:,border-bottom:,border-bottom-color:,border-bottom-style:,border-bottom-width:,border-collapse:,border-color:,border-left:,border-left-color:,border-left-style:,border-left-width:,border-right:,border-right-color:,border-right-style:,border-right-width:,border-spacing:,border-style:,border-top:,border-top-color:,border-top-style:,border-top-width:,border-width:,bottom:,caption-side:,clear:,clip:,color:,content:,counter-increment:,counter-reset:,cue:,cue-after:,cue-before:,cursor:,direction:,display:,elevation:,empty-cells:,filter:,float:,font:,font-family:,font-size:,font-size-adjust:,font-stretch:,font-style:,font-variant:,font-weight:,height:,ime-mode:,include-source:,layer-background-color:,layer-background-image:,layout-flow:,layout-grid:,layout-grid-char:,layout-grid-char-spacing:,layout-grid-line:,layout-grid-mode:,layout-grid-type:,left:,letter-spacing:,line-break:,line-height:,list-style:,list-style-image:,list-style-position:,list-style-type:,margin:,margin-bottom:,margin-left:,margin-right:,margin-top:,marker-offset:,marks:,max-height:,max-width:,min-height:,min-width:,transition-duration:,transition-property:,transition-timing-function:,transform:,-moz-transform:,-moz-binding:,-moz-border-radius:,-moz-border-radius-topleft:,-moz-border-radius-topright:,-moz-border-radius-bottomright:,-moz-border-radius-bottomleft:,-moz-border-top-colors:,-moz-border-right-colors:,-moz-border-bottom-colors:,-moz-border-left-colors:,-moz-opacity:,-moz-outline:,-moz-outline-color:,-moz-outline-style:,-moz-outline-width:,-moz-user-focus:,-moz-user-input:,-moz-user-modify:,-moz-user-select:,orphans:,outline:,outline-color:,outline-style:,outline-width:,overflow:,overflow-X:,overflow-Y:,padding:,padding-bottom:,padding-left:,padding-right:,padding-top:,page:,page-break-after:,page-break-before:,page-break-inside:,pause:,pause-after:,pause-before:,pitch:,pitch-range:,play-during:,position:,quotes:,-replace:,richness:,right:,ruby-align:,ruby-overhang:,ruby-position:,-set-link-source:,size:,speak:,speak-header:,speak-numeral:,speak-punctuation:,speech-rate:,stress:,scrollbar-arrow-color:,scrollbar-base-color:,scrollbar-dark-shadow-color:,scrollbar-face-color:,scrollbar-highlight-color:,scrollbar-shadow-color:,scrollbar-3d-light-color:,scrollbar-track-color:,table-layout:,text-align:,text-align-last:,text-decoration:,text-indent:,text-justify:,text-overflow:,text-shadow:,text-transform:,text-autospace:,text-kashida-space:,text-underline-position:,top:,unicode-bidi:,-use-link-source:,vertical-align:,visibility:,voice-family:,volume:,white-space:,widows:,width:,word-break:,word-spacing:,word-wrap:,writing-mode:,z-index:,zoom:},
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morecomment=[s]{<!}{>},
+	morestring=[b]',
+	morestring=[b]",
+	alsoletter={-},
+	alsodigit={:}
+}
+
+% Configuración específica para SQL
+\lstdefinelanguage[CustomSQL]{SQL}[]{SQL}{
+    morecomment=[l]{//}, % Agrega soporte para // como comentario en SQL
+}
+
+\lstset{
+	frame=Ltb, 
+	framerule=0pt, 
+	aboveskip=0.5cm, 
+	tabsize=4, 
+	rulecolor=,
+	basicstyle=\ttfamily,
+	inputpath=code,
+	upquote=true, 
+	aboveskip={1.5\baselineskip}, 
+	columns=fixed, 
+	showstringspaces=false, 
+	extendedchars=true,
+	breaklines=true, 
+	prebreak = {\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}}, 
+	showtabs=false, 
+	showspaces=false, 
+	identifierstyle=\ttfamily,
+	keywordstyle=\ttfamily\bfseries\azul,
+	commentstyle= \ttfamily\scriptsize\verde,
+	stringstyle=\ttfamily\rojo,
+	framexleftmargin=0.1cm,
+	aboveskip=2.8mm,
+	belowskip=-1mm,
+	framesep=0pt, 
+	rulesep=.4pt, 
+	rulesepcolor=\color{black}, 
+	numbers=left, 
+	numbersep=6pt, 
+	numberstyle=\tiny, 
+	numberfirstline = false, 
+	breaklines=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1 {Ñ}{{\~N}}1 {ñ}{{\~n}}1 {¿}{{?`}}1
+}
+\renewcommand{\lstlistingname}{Código}
+
+\newcommand{\juaramir}[1]{{\vspace{2mm}\noindent \bf \rojo{Juaramir:}}~ #1 \hfill \rojo{\bf {END.}}\\}

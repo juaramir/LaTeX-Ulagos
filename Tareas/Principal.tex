@@ -1,0 +1,79 @@
+\documentclass[letterpaper,12pt]{article}
+\input{macros.tex}
+\def\TITULO{TITULO}
+\def\subtitulo{SUBTITULO}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\autord{Autor}
+\def\correod{correo@alumnos.ulagos.cl}
+\def\autore{Autor}
+\def\correoe{correo@alumnos.ulagos.cl}
+\def\asignatura{CURSO}
+\def\campus{Campus Osorno}
+\def\carrera{Ingeniería Civil en Informática}
+%opening
+\title{\TITULO}
+\author{\href{\correoa}{\autora} %autor 1
+\and \href{\correob}{\autorb} %autor 2
+\and \href{\correoc}{\autorc} %autor 3
+\and \href{\correod}{\autord} %autor 3
+\and \href{\correoe}{\autore} %autor 3
+}
+
+
+
+\lhead{\begin{picture}(0,0) \put(0,0){\includegraphics[width=40mm]{images/Logo-ULagos.png}} \end{picture}}
+\rhead{\asignatura}
+\lfoot{}
+\rfoot{\carrera}
+\renewcommand{\headrulewidth}{0.0pt}
+
+\pagestyle{fancy}
+
+\title{\Huge{\TITULO}\\
+\large{\carrera, \campus}}
+\date{\today}
+\newcommand{\middlewavefill}[1]{\begin{center}{\raisebox{0.5em}{\uwave{\hspace{#1}}}}\end{center}}
+
+
+\begin{document}
+ \includegraphics[width=6cm]{images/Logo-ULagos.png}\vspace{-1cm}
+
+\raisebox{-1ex}
+{
+    \begin{minipage}{16cm}
+       \maketitle
+    \end{minipage}
+}
+\section{}
+\input{Ejemplos}
+
+%agregar referencias
+\bibliographystyle{IEEEtran}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliography{bibliografia.bib}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

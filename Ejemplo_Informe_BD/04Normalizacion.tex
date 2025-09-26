@@ -1,0 +1,91 @@
+\section{Normalización}
+
+A continuación, se detalla el análisis de normalización para cada tabla del esquema proporcionado, identificando si se encuentran en Tercera Forma Normal (3NF) o en una forma normal inferior. Se asume que todas las tablas ya cumplen con la Primera Forma Normal (1NF).
+
+
+\subsection{Tablas que Cumplen con la Tercera Forma Normal (3NF)}
+
+La gran mayoría de las tablas en el esquema proporcionado se encuentran en 3NF. Una tabla está en 3NF si ya está en 2NF y no existen dependencias transitivas (un atributo no-clave no depende de otro atributo no-clave).
+
+\begin{itemize}
+    \item \textbf{\texttt{Proyecto}:}
+    \begin{itemize}
+        \item \textbf{Clave Primaria (PK):} \texttt{Numero}.
+        \item \textbf{Análisis:} Al tener una clave primaria simple, la tabla está automáticamente en 2NF. No existen dependencias transitivas; los atributos \texttt{Patrocinador}, \texttt{Fe\-cha\-I\-ni\-ci\-o}, \texttt{Fe\-cha\-Fin} y \texttt{Presupuesto} dependen directamente del \texttt{Numero} del proyecto. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+
+    \item \textbf{\texttt{Postgrado}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Codigo}.
+        \item \textbf{Análisis:} Tiene una clave simple y un único atributo no-clave (\texttt{Nombre}) que depende directamente de ella. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+    
+    \item \textbf{\texttt{Profesor}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Run}.
+        \item \textbf{Análisis:} Tiene una clave simple, por lo que cumple 2NF. No existen dependencias transitivas entre sus atributos no-clave como \texttt{Especialidad} o \texttt{Rango}. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+
+    \item \textbf{\texttt{Dirigir}} y \textbf{\texttt{Trabajar}:}
+    \begin{itemize}
+        \item \textbf{Análisis:} Son tablas asociativas puras que solo contienen las claves foráneas que forman su clave primaria. Al no tener atributos no-clave, no pueden tener dependencias parciales ni transitivas. \textbf{Se encuentran en 3NF} (y en una forma superior, BCNF).
+    \end{itemize}
+
+    \item \textbf{\texttt{Laborar}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{(Profesor\_id, Departamento\_id)}.
+        \item \textbf{Análisis:} El único atributo no-clave, \texttt{Porcentaje}, depende de la combinación completa de un profesor y un departamento, no de solo uno de ellos, por lo que cumple con 2NF. Al no haber otros atributos no-clave, no pueden existir dependencias transitivas. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+
+    \item \textbf{\texttt{Alumno}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Run}.
+        \item \textbf{Análisis:} Tiene clave simple, cumpliendo 2NF. Los atributos no-clave, incluyendo las claves foráneas \texttt{Asesor}, \texttt{Departamento\_id} y \texttt{Postgrado\_id}, son todos características directas del alumno y no dependen entre sí. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+
+    \item \textbf{\texttt{Supervisar}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{(Proyecto\_id, Alumno\_id)}.
+        \item \textbf{Análisis:} El atributo no-clave \texttt{Profesor\_id} depende funcionalmente de la clave primaria completa, ya que un alumno en un proyecto específico tiene un único supervisor. Por lo tanto, cumple con 2NF. Al no haber otros atributos no-clave, no es posible una dependencia transitiva. \textbf{Se encuentra en 3NF}.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Tablas que NO se Encuentran en Tercera Forma Normal (3NF)}\label{s:normalizado}
+
+Basado en una interpretación lógica de los atributos, solo una tabla presenta una clara violación a la 3NF.
+
+\begin{itemize}
+    \item \textbf{\texttt{Departamento}:}
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Numero}.
+        \item \textbf{Atributos no-clave:} \texttt{Nombre}, \texttt{Despacho}, \texttt{Profesor\_id}.
+        \item \textbf{Análisis de Violación a 3NF:}
+        \begin{enumerate}
+            \item La tabla tiene una clave primaria simple (\texttt{Numero}), por lo que cumple con la 2NF.
+            \item Sin embargo, existe una \textbf{dependencia transitiva} si se asume que el \texttt{Despacho} (oficina) del departamento es en realidad la oficina personal del profesor que lo dirige (\texttt{Profesor\_id}).
+            \item Bajo esta suposición, tenemos la siguiente cadena de dependencias funcionales:
+            \[ \texttt{Numero} \rightarrow \texttt{Profesor\_id} \]
+            \[ \texttt{Profesor\_id} \rightarrow \texttt{Despacho} \]
+            \item Como el atributo no-clave \texttt{Despacho} depende de otro atributo no-clave (\texttt{Pro\-fe\-sor\_\-id}), y no directamente de la clave primaria \texttt{Numero}, la tabla \texttt{De\-par\-ta\-men\-to} \textbf{no se encuentra en 3NF}. Estaría en 2NF.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+    
+\subsubsection{Proceso de Normalizar}
+
+
+
+\begin{landscape}
+\subsection{Modelo Relacional Normalizado}
+Considerando las entidades que debieron ser normalizadas de la sección \ref{s:normalizado} se obtiene el conjunto de entidades completamente normalizada en 3ra Forma Normal de la Figura \ref{f:3fn}, este nivel de normalización asegura una estabilidad y rapidez en las consultas considerable.
+
+\begin{figure}[H]
+    \centering
+ \includegraphics[width=0.95\linewidth]{images/MR/MR_Universidad_Casoestudio_Normalizado.png}
+        \caption{Modelo Relacional Normalizado de la universidad}
+    \label{f:3fn}
+\end{figure}
+\juaramir{Quiero aclarar que para el resto del informe se asumirá que el despacho es una oficina independiente del profesor que administra el departamento, por lo que no se considerará esta normalización en el resto del informe.}
+\end{landscape}
+
+

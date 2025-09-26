@@ -1,0 +1,79 @@
+DROP TABLE IF EXISTS Proyecto cascade;
+DROP TABLE IF EXISTS Departamento cascade;
+DROP TABLE IF EXISTS Profesor cascade;
+DROP TABLE IF EXISTS Trabajar cascade;
+DROP TABLE IF EXISTS Supervisar cascade;
+DROP TABLE IF EXISTS Dirigir cascade;
+DROP TABLE IF EXISTS Laborar cascade;
+DROP TABLE IF EXISTS Alumno cascade;
+DROP TABLE IF EXISTS Postgrado cascade;
+
+
+CREATE TABLE Proyecto (
+    Numero INTEGER PRIMARY KEY NOT NULL,
+    Patrocinador VARCHAR(40),
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE,
+    Presupuesto MONEY);
+
+CREATE TABLE Postgrado (
+    Codigo INTEGER PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(30) NOT NULL);
+
+CREATE TABLE Profesor (
+    Run VARCHAR(10) PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(40),
+    Apellido VARCHAR(30),
+    Fechanac DATE,
+    Especialidad VARCHAR(30),
+    Rango INTEGER);
+
+CREATE TABLE Departamento (
+    Numero INTEGER PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(40),
+    Despacho INTEGER,
+    Profesor_id VARCHAR(10) NOT NULL UNIQUE,
+    FOREIGN KEY (Profesor_id) REFERENCES Profesor(Run) ON DELETE CASCADE ON UPDATE CASCADE);
+
+CREATE TABLE Dirigir (
+    Proyecto_id INTEGER NOT NULL,
+    Profesor_id VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Proyecto_id) REFERENCES Proyecto(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Profesor_id) REFERENCES Profesor(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Proyecto_id,Profesor_id));
+
+CREATE TABLE Laborar (
+    Profesor_id VARCHAR(10) NOT NULL,
+    Departamento_id INTEGER NOT NULL,
+    Porcentaje INTEGER NOT NULL,
+    FOREIGN KEY (Profesor_id) REFERENCES Profesor(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Departamento_id) REFERENCES Departamento(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Profesor_id,Departamento_id));
+
+CREATE TABLE Alumno (
+    Run VARCHAR(10) PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(30) NOT NULL,
+    Apellido VARCHAR(30) NOT NULL,
+    FechaNac DATE NOT NULL,
+    Asesor VARCHAR(10) NOT NULL,
+    Departamento_id INTEGER NOT NULL,
+    Postgrado_id INTEGER,
+    FOREIGN KEY (Asesor) REFERENCES Alumno(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Departamento_id) REFERENCES Departamento(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Postgrado_id) REFERENCES Postgrado(Codigo) ON DELETE SET NULL ON UPDATE CASCADE);
+
+CREATE TABLE Supervisar (
+    Proyecto_id INTEGER NOT NULL,
+    Profesor_id VARCHAR(10) NOT NULL,
+    Alumno_id VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Proyecto_id) REFERENCES Proyecto(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Profesor_id) REFERENCES Profesor(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Alumno_id) REFERENCES Alumno(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Proyecto_id,Alumno_id));
+
+CREATE TABLE Trabajar (
+    Proyecto_id INTEGER NOT NULL,
+    Alumno_id VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Proyecto_id) REFERENCES Proyecto(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Alumno_id) REFERENCES Alumno(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Proyecto_id,Alumno_id));

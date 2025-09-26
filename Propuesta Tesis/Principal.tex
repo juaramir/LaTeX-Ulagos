@@ -1,0 +1,177 @@
+\documentclass[letterpaper,12pt]{article}
+\input{macros}
+
+\def\TITULO{NO SUPERAR LAS 4 HOJAS}
+\def\subtitulo{Propuesta Proyecto de Titulación}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\asignatura{Proyecto de Titulación}
+\def\campus{Campus Osorno}
+\def\carrera{Ingeniería Civil en Informática}
+\lstset{language=Python}
+
+
+\title{\TITULO}
+
+\author{\href{\correoa}{\autora} %autor 1
+\and \href{\correob}{\autorb} %autor 2
+\and \href{\correoc}{\autorc} %autor 3
+}
+
+
+
+\begin{document}
+
+ \includegraphics[width=6cm]{images/Logo-ULagos.png}\vspace{-1cm}
+
+\raisebox{-1ex}
+{
+    \begin{minipage}{16cm}
+       \maketitle
+    \end{minipage}
+}
+
+\section{Generalidades}
+Esta sección es la introducción formal del proyecto. Debe guiar al lector desde el contexto general hasta el problema específico, justificando la necesidad del trabajo y presentando la solución propuesta.
+
+
+Introduce la terminología, destaca las contribuciones del documento y da una breve descripción de la organización de éste
+
+\section{Origen del Tema}
+Contextualiza el trabajo respecto de investigaciones previas de otros autores y propias, señala las diferencias con trabajos previos. Algunas veces se incluye en la introducción o bien en la discusión del trabajo (secciones finales).
+\section{Planteamiento}
+
+Provee un \naranjo{marco de referencia} para interpretar los resultados y conectarlos a la literatura existente sobre el fenómeno, orienta sobre cómo se realizará el estudio.
+
+ Ayuda a prevenir errores que se han cometido en otros estudios, conduce al establecimiento de la hipótesis o afirmaciones que se someterán a prueba.
+ 
+ Amplia el horizonte del estudio y centra al investigador en el problema, para evitar desviaciones del planteamiento original.
+
+Considera una \naranjo{revisión bibliográfica} que consiste en detectar, obtener y consultar la bibliografía y otros materiales que pueden ser útiles para los propósitos del estudio.
+
+La revisión bibliográfica debe ser selectiva, se puede realizar a partir de tres fuentes principales:
+
+\begin{itemize}\justifying
+  \item \naranjo{Primarias (directas):} Libros, artículos, antologías, tesis, disertaciones, entre otros.
+  \item \naranjo{Secundarias:} Compilaciones, resúmenes de listados de referencias publicadas en un área en particular, bases de datos.
+  \item \naranjo{Terciarias:} Documentos que reúnen nombres y títulos de revistas y otras publicaciones.
+\end{itemize}
+
+
+\section{Justificación del Proyecto (Opcional)}
+\subsection{Utilidad del Sistema}
+Explica cómo el sistema mejorará procesos como la centralización de información  o la optimización de tareas. 
+
+Los siguientes subtítulos son algunas ideas:
+\subsubsection{Centralización e Integración de la Información}
+\subsubsection{Optimización de Procesos}
+\subsubsection{Facilitación del Acceso a la Información}
+\subsubsection{Soporte para la Generación de Informes y Estadísticas}
+\subsection{Aporte del Sistema a \dots...}
+Detalla los beneficios institucionales, como la mejora en la toma de decisiones  o la modernización tecnológica.
+
+Los siguientes subtítulos son algunas ideas:
+
+\subsubsection{Mejora de la Eficiencia Operativa}
+\subsubsection{Fortalecimiento de la Toma de Decisiones Estratégicas}
+\subsubsection{Impulso a la Gestión}
+\subsubsection{Mejora en la Gestión y Apoyo}
+\subsubsection{Incremento de la Transparencia y Rendición de Cuentas}
+\subsubsection{Modernización Tecnológica y Base para el Futuro}
+
+
+\section{Análisis de Viabilidad del Proyecto (Opcional)}
+Evalúa si el proyecto puede llevarse a cabo con los recursos y plazos disponibles.
+
+Los siguientes subtítulos son algunas ideas:
+\subsection{Viabilidad Técnica}
+  ¿Se cuenta con la tecnología y el conocimiento necesarios? 
+\subsubsection{Tecnologías Maduras y Disponibles}
+\subsubsection{Complejidad Manejable}
+\subsubsection{Recursos Humanos Calificados}
+\subsubsection{Infraestructura Requerida}
+\subsubsection{Escalabilidad y Rendimiento}
+\subsection{Viabilidad Operativa}
+¿El sistema será aceptado y utilizado por los usuarios?
+\subsection{Viabilidad de Plazos (Cronograma)}
+¿El cronograma propuesto es realista?
+
+
+\section{Alcance (Opcional)}
+Define con precisión los límites del proyecto. Debe quedar claro qué hará y qué no hará el software.
+\begin{itemize}
+    \item Identificar el producto por su nombre. 
+    \item Describir la aplicación, sus beneficios y objetivos.
+\end{itemize}
+
+Esta subdivisión debe:
+\begin{enumerate}\justifying
+  \item Identifique el producto del software para ser diseñado por el nombre (por ejemplo, Anfitrión DBMS, el Generador del Reporte, etc.);
+  \item Explique eso que el producto (del software hará y que no hará.
+  \item Describe la aplicación del software especificándose los beneficios pertinentes, objetivos, y metas;
+  \item Sea consistente con las declaraciones similares en las especificaciones de niveles superiores (por ejemplo, las especificaciones de los requisitos del sistema), si ellos existen.
+\end{enumerate}
+
+
+
+
+
+
+\section{Fundamentación}
+
+Expresan los fines concretos del proyecto. Deben ser medibles, factibles y comenzar con un verbo en infinitivo (ej. Analizar, Diseñar, Implementar)
+
+\subsection{Objetivo General}
+Declara el propósito principal y final del proyecto en una sola frase.
+\begin{ejemplo}
+Desarrollar e implementar un sistema de base de datos web integral y eficiente que satisfaga los requisitos de gestión de información académica y de investigación de [Nombre del Cliente o Empresa Cliente], permitiendo la administración centralizada y estructurada de datos relativos a profesores, alumnos, proyectos, departamentos y asignaturas, y facilitando el acceso y la operatividad a los usuarios designados.
+\end{ejemplo}
+
+\subsection{Específicos}
+Son los pasos o hitos necesarios para alcanzar el objetivo general.
+\begin{ejemplo}
+\begin{enumerate}
+    \item \textbf{Formulación y Modelado Conceptual}:
+   Analizar exhaustivamente los requisitos funcionales y de datos proporcionados por el cliente, para formular el presente informe técnico y diseñar un modelo de datos conceptual y lógico que represente fielmente las entidades, atributos y relaciones identificadas, sirviendo como base para la estructura de la base de datos.
+   \item \textbf{Diseño e Implementación de la Base de Datos}:
+   Traducir el modelo de datos lógico a un diseño físico de base de datos optimizado, seleccionando un sistema gestor de base de datos (SGBD) adecuado, y proceder con la creación de la estructura de la base de datos, incluyendo tablas, relaciones, restricciones de integridad y los índices necesarios para asegurar la eficiencia y consistencia de los datos.
+   \item \textbf{Diseño y Desarrollo del Sistema Web con Integración de Datos}:
+   Diseñar la arquitectura del sistema web y desarrollar una interfaz de usuario intuitiva y funcional que permita la interacción con la base de datos implementada. Esto incluye la implementación de los procesos CRUD (Crear, Leer, Actualizar, Eliminar) para todas las entidades gestionadas, asegurando una correcta integración entre la capa de presentación y la capa de datos.
+   \item \textbf{Pruebas, Validación y Despliegue}:
+   Ejecutar un plan de pruebas exhaustivo que abarque pruebas unitarias, de integración, de sistema y de aceptación del usuario, con el fin de validar el correcto funcionamiento del sistema web y la base de datos, asegurar el cumplimiento de los requisitos iniciales, corregir posibles errores y preparar el sistema para su despliegue en el entorno productivo del cliente.
+\end{enumerate}
+\end{ejemplo}
+
+\section{Académico Guía}
+
+Nombre 1\hspace{5cm}Nombre 2
+
+%agregar referencias
+\bibliographystyle{IEEEtran}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliography{bibliografia.bib}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

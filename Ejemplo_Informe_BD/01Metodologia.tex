@@ -1,0 +1,679 @@
+
+\chapter{Formulación del Proyecto}
+
+\section{Introducción}
+
+El presente documento se ha elaborado en respuesta a la solicitud de [Nombre del Cliente o Empresa Cliente] para el desarrollo de un sistema de base de datos web destinado a gestionar la información académica y de investigación de su institución. Comprendemos la necesidad de contar con una plataforma robusta, escalable y eficiente que permita administrar de manera integrada los datos relativos a profesores, alumnos, proyectos, departamentos y asignaturas.
+
+Este informe tiene como objetivo principal presentar una propuesta detallada del modelo de datos que servirá como pilar fundamental para la construcción del sistema. Un modelo de datos bien definido es crucial para garantizar la integridad de la información, facilitar el desarrollo de funcionalidades complejas, optimizar las consultas y asegurar la futura adaptabilidad del sistema a nuevas necesidades.
+
+La información contenida en las siguientes secciones ha sido cuidadosamente analizada a partir de los requisitos proporcionados. Se expondrá la identificación de las entidades principales, sus atributos y las relaciones que existen entre ellas. Esta estructura ha sido pensada para ser comprensible tanto por el equipo de gerencia, para la toma de decisiones estratégicas, como por el equipo de desarrollo, quienes se encargarán de la implementación técnica.
+
+Confiamos en que este análisis y la propuesta de diseño que se presenta a continuación constituirán una base sólida para el exitoso desarrollo del sistema de base de datos web que su institución requiere. Estamos a su disposición para discutir cualquier aspecto de este informe y para colaborar estrechamente en las siguientes fases del proyecto.
+
+Perfecto. A continuación, te presento una propuesta para el objetivo general y los objetivos específicos del proyecto, considerando las etapas que mencionaste:
+
+\section{Objetivos del Proyecto}
+\subsection{Objetivo General}
+Desarrollar e implementar un sistema de base de datos web integral y eficiente que satisfaga los requisitos de gestión de información académica y de investigación de [Nombre del Cliente o Empresa Cliente], permitiendo la administración centralizada y estructurada de datos relativos a profesores, alumnos, proyectos, departamentos y asignaturas, y facilitando el acceso y la operatividad a los usuarios designados.
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+    \item \textbf{Formulación y Modelado Conceptual}:
+   Analizar exhaustivamente los requisitos funcionales y de datos proporcionados por el cliente, para formular el presente informe técnico y diseñar un modelo de datos conceptual y lógico que represente fielmente las entidades, atributos y relaciones identificadas, sirviendo como base para la estructura de la base de datos.
+   \item \textbf{Diseño e Implementación de la Base de Datos}:
+   Traducir el modelo de datos lógico a un diseño físico de base de datos optimizado, seleccionando un sistema gestor de base de datos (SGBD) adecuado, y proceder con la creación de la estructura de la base de datos, incluyendo tablas, relaciones, restricciones de integridad y los índices necesarios para asegurar la eficiencia y consistencia de los datos.
+   \item \textbf{Diseño y Desarrollo del Sistema Web con Integración de Datos}:
+   Diseñar la arquitectura del sistema web y desarrollar una interfaz de usuario intuitiva y funcional que permita la interacción con la base de datos implementada. Esto incluye la implementación de los procesos CRUD (Crear, Leer, Actualizar, Eliminar) para todas las entidades gestionadas, asegurando una correcta integración entre la capa de presentación y la capa de datos.
+   \item \textbf{Pruebas, Validación y Despliegue}:
+   Ejecutar un plan de pruebas exhaustivo que abarque pruebas unitarias, de integración, de sistema y de aceptación del usuario, con el fin de validar el correcto funcionamiento del sistema web y la base de datos, asegurar el cumplimiento de los requisitos iniciales, corregir posibles errores y preparar el sistema para su despliegue en el entorno productivo del cliente.
+\end{enumerate}
+
+\section{Metodología de Trabajo}\label{sec:mettrabajo}
+
+A continuación, se presenta el desglose de actividades y tareas necesarias para la consecución de cada objetivo específico del proyecto.
+
+\subsection{Objetivo Específico 1: Formulación y Modelado Conceptual}
+\subsubsection{Actividades y Tareas}
+\begin{enumerate}
+    \item  Elaboración del Informe Técnico y Planificación Temporal del Informe
+ \begin{enumerate}
+
+     \item Revisión y validación final de la comprensión de los requisitos del cliente.
+     \item Definición detallada de la estructura y secciones del presente informe (Índice).
+     \item Redacción de la Introducción y Justificación del proyecto (ya avanzado).
+     \item Redacción de los Objetivos General y Específicos (ya avanzado).
+    \item Desarrollo de la sección de Planificación de Actividades y Tareas (en curso).
+    \item Estimación de tiempos para cada sección del informe y elaboración de un cronograma para la entrega del mismo.
+    \item Consolidación y revisión general del informe técnico.
+     \end{enumerate}
+\item  Análisis de Requisitos y Modelado Entidad-Relación (MER)
+\begin{enumerate}
+    \item  Identificación de Entidades: Extraer y listar todas las entidades principales a partir de los requisitos del cliente (Profesor, Proyecto, Alumno, ProgramaPostgrado, Departamento, Asignatura).
+     \item  Definición de Atributos: Para cada entidad, detallar sus atributos, especificando el tipo de dato preliminar y las restricciones conocidas (ej. RUN como identificador único).
+      \begin{enumerate}
+          \item Profesor: RUN (PK), nombre, edad, rango, especialidad\_investigacion.
+       \item Proyecto: numero\_proyecto (PK), nombre\_patrocinador, fecha\_comienzo, fecha\_finalizacion, presupuesto.
+       \item Alumno: RUN (PK), nombre, edad.
+       \item ProgramaPostgrado: codigo\_programa (PK), nombre\_programa.
+       \item Departamento: numero\_departamento (PK), nombre\_departamento, despacho\_principal.
+       \item Asignatura: (Se necesitará un identificador, ej. codigo\_asignatura (PK), nombre\_asignatura).
+       \end{enumerate}
+     \item Identificación de Relaciones: Determinar las relaciones entre las entidades basándose en los requisitos.
+     \begin{enumerate}
+         \item Profesor dirige Proyecto (Investigador Principal).
+       \item Profesor trabaja en Proyecto (Investigador).
+       \item  Alumno Postgrado trabaja en Proyecto (Ayudante).
+       \item  Profesor supervisa Alumno en Proyecto.
+       \item  Alumno pertenece (o no) a ProgramaPostgrado.
+       \item  Departamento tiene un Profesor Director.
+      \item  Profesor trabaja en Departamento (con \% de tiempo).
+       \item  Alumno Postgrado tiene un Departamento Principal.
+      \item  Alumno Postgrado tiene un Alumno Asesor.
+       \item  Profesor dicta Asignatura.
+     \end{enumerate}
+       
+     \item Especificación de Cardinalidad y Opcionalidad: Definir la cardinalidad (uno a uno, uno a muchos, muchos a muchos) y la opcionalidad (obligatoria o opcional) para cada relación.
+    \item Creación del Diagrama Entidad-Relación (DER): Elaborar el diagrama visual utilizando una notación estándar (Chen, Crow's Foot, etc.) que represente las entidades, atributos y relaciones con su cardinalidad.
+     \item Documentación y Validación del MER: Describir textualmente el MER, justificando las decisiones de diseño y validarlo contra los requisitos para asegurar que toda la información y reglas de negocio estén correctamente representadas.
+     \end{enumerate}
+\end{enumerate}
+
+\subsection{Objetivo Específico 2: Diseño e Implementación de la Base de Datos}
+\subsubsection{Actividades y Tareas}
+\begin{enumerate}
+    \item  Transformación del Modelo Entidad-Relación a Modelo Relacional
+  \begin{enumerate}
+      \item Mapear cada entidad del MER a una tabla en el modelo relacional.
+     \item Mapear los atributos de las entidades a columnas en sus respectivas tablas, definiendo tipos de datos SQL específicos.
+     \item Convertir las relaciones del MER:
+     \begin{enumerate}
+         \item Relaciones 1:N se implementan mediante claves foráneas en la tabla del lado ``N''.
+       \item Relaciones M:N se convierten en una nueva tabla asociativa con claves foráneas a las tablas originales.
+       \item Relaciones 1:1 se analizan para decidir la ubicación de la clave foránea o si se fusionan las tablas.
+     \end{enumerate}
+
+     \item Definir formalmente las Claves Primarias (PK) para cada tabla y las Claves Foráneas (FK) para implementar las relaciones.
+  \end{enumerate}
+
+ \item Normalización de la Base de Datos
+\begin{enumerate}
+    \item Analizar las dependencias funcionales en cada tabla propuesta.
+     \item Verificar y aplicar la Primera Forma Normal (1FN): Asegurar que todos los atributos sean atómicos y no haya grupos repetitivos.
+     \item Verificar y aplicar la Segunda Forma Normal (2FN): Asegurar que la tabla esté en 1FN y que todos los atributos no clave dependan completamente de la clave primaria completa (relevante para claves primarias compuestas).
+    \item Verificar y aplicar la Tercera Forma Normal (3FN): Asegurar que la tabla esté en 2FN y que no existan dependencias transitivas (atributos no clave que dependan de otros atributos no clave).
+     \item Documentar el proceso de normalización y las decisiones tomadas para cada tabla.
+     \end{enumerate}
+\item Creación de Scripts de Creación de Tablas (DDL) con Restricciones de Integridad
+\begin{enumerate}
+    \item  Escribir las sentencias SQL CREATE TABLE para cada tabla definida en el modelo relacional normalizado.
+     \item Incluir la definición de columnas con sus tipos de datos SQL precisos.
+     \item Especificar las restricciones de PRIMARY KEY para cada tabla.
+     \item Especificar las restricciones de FOREIGN KEY con las cláusulas REFERENCES y acciones referenciales (ej. ON DELETE CASCADE, ON UPDATE RESTRICT).
+     \item Añadir otras restricciones de integridad necesarias: NOT NULL, UNIQUE, CHECK (ej. para rangos de valores, formatos específicos como el RUN, etc.).
+     \item Organizar los scripts en un orden lógico que respete las dependencias referenciales para su correcta ejecución.
+     \end{enumerate}
+\item Carga de Datos de Prueba y Verificación de Consistencia
+\begin{enumerate}
+    \item  Diseñar un conjunto de datos de prueba coherentes y representativos que cubran diversas casuísticas (ej. profesores con y sin proyectos, alumnos en distintos programas, proyectos con múltiples investigadores y ayudantes).
+     \item Escribir sentencias SQL INSERT INTO para poblar las tablas con los datos de prueba.
+     \item Ejecutar los scripts de carga de datos.
+     \item Verificar la consistencia de los datos cargados mediante consultas SELECT, comprobando que las relaciones y restricciones se cumplen (ej. un alumno de postgrado tiene un departamento principal válido, un proyecto tiene un investigador principal existente).
+     \end{enumerate}
+\item Implementación de Índices y Definición de Consultas y Vistas Predefinidas
+\begin{enumerate}
+    \item  Identificar columnas frecuentemente usadas en cláusulas WHERE, JOIN, ORDER BY que podrían beneficiarse de la creación de índices.
+     \item Crear índices (CREATE INDEX) sobre dichas columnas para optimizar el rendimiento de las consultas.
+     \item Diseñar y escribir consultas SQL complejas que el sistema podría requerir frecuentemente (ej. Listar todos los proyectos de un profesor, obtener los ayudantes de un proyecto específico con sus supervisores, mostrar profesores por departamento con su porcentaje de tiempo).
+    \item Crear vistas (CREATE VIEW) para simplificar el acceso a datos que requieren uniones complejas o para presentar subconjuntos específicos de datos a ciertos roles de usuario.
+     \item Evaluar la capacidad de respuesta y fiabilidad del sistema ejecutando las consultas y vistas predefinidas con los datos de prueba, analizando sus planes de ejecución si es necesario.
+\end{enumerate}
+     \end{enumerate}
+\subsection{Objetivo Específico 3: Diseño y Desarrollo del Sistema Web con Integración de Datos}
+\subsubsection{Actividades y Tareas}
+\begin{enumerate}
+\item Configuración del Entorno de Desarrollo Web
+\begin{enumerate}
+    \item  Seleccionar e instalar un servidor web (ej. Apache, Nginx).
+     Instalar y configurar el intérprete de PHP y las extensiones necesarias (ej. para la conexión con la base de datos).
+     Asegurar que el entorno de desarrollo tenga acceso al servidor de base de datos.
+\end{enumerate}
+    
+\item  Diseño de Maquetas del Sistema (Wireframes y Mockups)
+ \begin{enumerate}
+     \item Crear wireframes de bajo nivel para esbozar la estructura y navegación de las principales pantallas del sistema web (ej. login, listados, formularios de alta/edición).
+     \item Desarrollar mockups de mayor fidelidad que muestren la apariencia visual (colores, tipografía, disposición de elementos) para la interfaz de usuario general, la interfaz de usuario limitado y la interfaz de administrador.
+      \end{enumerate}
+\item  Desarrollo del Frontend (HTML, CSS)
+\begin{enumerate}
+    \item  Traducir los mockups a código HTML5 semántico para estructurar las páginas web.
+     \item  Desarrollar hojas de estilo CSS3 para aplicar el diseño visual, la tipografía, colores y el layout definido en los mockups.
+     \item  Crear estilos CSS diferenciados para la interfaz de usuario con funcionalidades limitadas y la interfaz de administrador, asegurando una apariencia distintiva para cada una.
+     \item  Considerar principios de diseño responsivo básico para la correcta visualización en diferentes tamaños de pantalla.
+     \end{enumerate}
+\item  Desarrollo del Backend (PHP) y Conexión a la Base de Datos
+\begin{enumerate}
+    \item  Establecer la lógica de conexión segura desde PHP a la base de datos implementada (ej. usando PDO o MySQLi para MySQL, pg\_connect para PostgreSQL, etc.).
+     \item Organizar el código PHP en una estructura modular y mantenible (ej. separando lógica de presentación, lógica de negocio y acceso a datos).
+     \end{enumerate}
+\item  Implementación de Lógica de Negocio, Procesos CRUD y Automatización (PHP, Funciones/Triggers PL/SQL o similar)
+\begin{enumerate}
+    \item Desarrollar scripts PHP para manejar las solicitudes HTTP (GET, POST) y ejecutar la lógica de negocio.
+      \item  Implementar funciones PHP para realizar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para cada entidad gestionable a través del sistema web.
+      \item  Realizar validaciones de datos tanto en el lado del cliente (JavaScript, opcional) como, fundamentalmente, en el lado del servidor (PHP) antes de interactuar con la base de datos.
+      \item  Diseñar e implementar funciones y/o procedimientos almacenados en el SGBD (ej. en PL/pgSQL para PostgreSQL, T-SQL para SQL Server, PL/SQL para Oracle) para encapsular lógica de negocio compleja, mejorar la seguridad o el rendimiento.
+      \item  Diseñar e implementar triggers en la base de datos para automatizar procesos (ej. actualizar una fecha de modificación, mantener logs de auditoría básicos, verificar ciertas condiciones antes de una inserción/actualización) y asegurar la integridad referencial o de negocio que no se pueda cubrir con restricciones declarativas.
+     \end{enumerate}
+\item  Diseño e Implementación de Interfaces de Usuario Específicas por Rol
+\begin{enumerate}
+    \item  Desarrollar la interfaz de usuario  ``estándar'' o  ``limitada'', enfocada en las necesidades de usuarios con permisos restringidos, ofreciendo las funcionalidades CRUD que les correspondan (ej. un alumno podría ver sus datos y proyectos, pero no modificar datos de profesores).
+     \item  Desarrollar la interfaz de ``administrador'' con acceso completo a todas las funcionalidades CRUD del sistema, gestión de usuarios (si aplica), y posiblemente otras herramientas de mantenimiento o configuración.
+     \item  Implementar un sistema de autenticación y autorización para controlar el acceso a las diferentes interfaces y funcionalidades según el rol del usuario.
+     \item  Asegurar que cada interfaz tenga la apariencia distintiva definida con CSS.
+     \end{enumerate}
+     \end{enumerate}
+\subsection{Objetivo Específico 4: Pruebas, Validación y Despliegue}
+\subsubsection{Actividades y Tareas}
+\begin{enumerate}
+    \item  Establecimiento del Plan de Pruebas y Validación
+\begin{enumerate}
+     \item  Definir la estrategia general de pruebas: tipos de pruebas a realizar, alcance, criterios de aceptación.
+     \item Diseñar casos de prueba detallados para cada funcionalidad del sistema, cubriendo flujos exitosos, casos límite y manejo de errores.
+     \item Especificar los datos de entrada y los resultados esperados para cada caso de prueba.
+     \item Preparar el entorno de pruebas, asegurando que sea lo más similar posible al entorno de producción.
+      \end{enumerate}
+\item  Ejecución de Pruebas Unitarias y de Integración
+\begin{enumerate}
+     \item  Probar individualmente los módulos de código PHP, funciones PL/SQL (o similar) y otros componentes para verificar su correcto funcionamiento aislado (pruebas unitarias).
+     \item Probar la interacción entre los componentes del sistema: frontend con backend, backend con la base de datos, y la correcta ejecución de funciones/triggers en la BD al ser invocados por la aplicación (pruebas de integración).
+      \end{enumerate}
+\item  Ejecución de Pruebas de Sistema y Funcionales
+\begin{enumerate}
+     \item Realizar pruebas del sistema completo para verificar que todas las funcionalidades implementadas operan según los requisitos especificados.
+     \item Probar la correcta implementación de las operaciones CRUD para todas las entidades y roles de usuario.
+     \item Verificar la lógica de negocio, las reglas de validación y la integridad de los datos.
+     \item Evaluar la usabilidad y navegabilidad de las interfaces de usuario (general, limitada y administrador).
+     \item Realizar pruebas de seguridad básicas para identificar vulnerabilidades comunes (ej. Cross-Site Scripting, Inyección SQL, manejo de sesiones).
+      \end{enumerate}
+\item  Pruebas de Aceptación del Usuario (UAT)
+\begin{enumerate}
+    \item  Coordinar y facilitar sesiones de prueba con el cliente o usuarios finales designados.
+     \item Guiar a los usuarios en la ejecución de los casos de prueba definidos o en la exploración libre del sistema.
+     \item Recopilar y documentar el feedback de los usuarios, incluyendo errores encontrados, sugerencias de mejora y confirmación de funcionalidades.
+     \end{enumerate}
+\item  Corrección de Errores y Refinamiento del Sistema
+\begin{enumerate}
+    \item  Analizar los errores y problemas reportados durante todas las fases de prueba.
+     \item  Priorizar y asignar la corrección de errores al equipo de desarrollo.
+     \item  Implementar las correcciones necesarias en el código y/o en la base de datos.
+     \item  Realizar pruebas de regresión para asegurar que las correcciones no hayan introducido nuevos problemas.
+     \item  Refinar la interfaz de usuario y las funcionalidades basándose en el feedback recibido, si se considera pertinente y dentro del alcance.
+     \end{enumerate}
+\item  Preparación para el Despliegue (Actividades Preliminares)
+\begin{enumerate}
+    \item  Elaborar la documentación final del sistema: manual de usuario (dirigido a los distintos roles), manual técnico (para mantenimiento y futuras ampliaciones).
+      \item  Preparar los scripts y procedimientos necesarios para el despliegue del sistema en un entorno de producción.
+      \item  Planificar la capacitación de los usuarios finales, si es necesario.
+\end{enumerate}
+\end{enumerate}
+
+\begin{landscape}
+\section{Plan del Proyecto}
+En base a la metodología de trabajo expuesta en la Sección \ref{sec:mettrabajo} se presenta la Carta Gantt de la Figura \ref{f:gantt}.
+
+\begin{figure}[hbt]
+\centering
+ % \includegraphics[width=23cm]{}
+  \caption{Carta Gantt del proyecto \dots}
+  \label{f:gantt}
+\end{figure}
+\end{landscape}
+
+\section[Justificación y Aporte]{Justificación del Proyecto, Utilidad y Aporte para la Universidad}
+
+\subsection{Justificación del Proyecto}
+La gestión eficiente de la información académica y de investigación es un pilar fundamental para el funcionamiento y la excelencia de cualquier institución de educación superior. En el contexto actual, donde las universidades manejan un volumen creciente y complejo de datos relacionados con su personal docente, alumnado, proyectos de investigación, programas de postgrado y estructura departamental, la necesidad de contar con herramientas tecnológicas robustas y centralizadas se vuelve imperativa.
+
+Actualmente, es común que esta información se encuentre dispersa en múltiples sistemas aislados, hojas de cálculo o incluso en formatos manuales, lo que genera ineficiencias, dificulta la toma de decisiones informadas, incrementa el riesgo de inconsistencias y limita la capacidad de análisis integral del quehacer universitario. El presente proyecto se justifica por la necesidad de superar estas limitaciones mediante el desarrollo de un sistema de base de datos web diseñado a medida, que permita una administración integrada, ágil y precisa de todos estos datos críticos.
+
+\subsection{Utilidad del Sistema para la Universidad}
+
+El sistema de base de datos web propuesto ofrecerá una utilidad transversal a diversas áreas y niveles de la Universidad:
+\begin{enumerate}
+    \item \textbf{Centralización e Integración de la Información}: Se consolidarán los datos de profesores, alumnos, proyectos, departamentos, programas de postgrado y asignaturas en una única plataforma. Esto eliminará redundancias, mejorará la consistencia de los datos y proporcionará una visión unificada de las actividades académicas y de investigación.
+\item \textbf{Optimización de Procesos Administrativos}: Se simplificarán y agilizarán numerosas tareas administrativas, tales como:
+\begin{itemize}
+    \item La asignación de profesores a proyectos y la gestión de sus roles (investigador principal, investigador).
+\item El seguimiento de la participación de alumnos de postgrado en proyectos como ayudantes de investigación y la asignación de sus supervisores.
+\item La administración de la carga docente y la afiliación de profesores a departamentos con sus respectivos porcentajes de dedicación.
+\item La gestión de la información de los programas de postgrado y la adscripción de los alumnos.
+La asignación de directores de departamento y asesores de alumnos.
+\end{itemize}
+\item \textbf{Facilitación del Acceso a la Información}: Permitirá a los usuarios autorizados (desde personal administrativo hasta directivos y los propios académicos y alumnos, según sus perfiles) acceder de manera rápida y segura a la información que necesitan, mejorando la transparencia y la capacidad de respuesta.
+\item \textbf{Soporte para la Generación de Informes y Estadísticas}: Al contar con datos estructurados y centralizados, el sistema facilitará la generación de informes detallados y estadísticas relevantes para la evaluación del desempeño, la planificación estratégica y la acreditación institucional. Por ejemplo, se podrá conocer fácilmente la productividad investigadora, la carga académica por departamento o la tasa de participación de alumnos en proyectos.
+\end{enumerate}
+
+\subsection{Aporte del Sistema a la Universidad}
+La implementación de este sistema representará un aporte significativo para la Universidad en múltiples dimensiones:
+\begin{enumerate}
+    \item \textbf{Mejora de la Eficiencia Operativa}:
+\begin{itemize}
+    \item Reducción del tiempo dedicado a la búsqueda y consolidación manual de información.
+\item Automatización de procesos clave, disminuyendo la carga de trabajo administrativo y la probabilidad de errores humanos.
+\item Optimización en la asignación de recursos humanos y financieros en proyectos y departamentos.
+\end{itemize}
+\item \textbf{Fortalecimiento de la Toma de Decisiones Estratégicas}:
+\begin{itemize}
+\item Proporcionará a la gerencia y a los responsables de unidades académicas información fiable y oportuna para la planificación a corto, mediano y largo plazo.
+\item Permitirá identificar fortalezas, debilidades, oportunidades y amenazas en el ámbito académico y de investigación con base en evidencia concreta.
+ \item Facilitará la evaluación del impacto de programas y políticas institucionales.
+ \end{itemize}
+ \item \textbf{Impulso a la Gestión de la Investigación}:
+\begin{itemize}
+\item Mejorará el seguimiento de los proyectos de investigación: sus participantes, financiamiento, plazos y supervisión.
+\item Facilitará la identificación de sinergias y posibles colaboraciones entre investigadores y departamentos.
+\item Contribuirá a la visibilidad de la producción científica de la institución.
+\end{itemize}
+ \item \textbf{Mejora en la Gestión y Apoyo Académico}:
+\begin{itemize}
+    \item Optimizará la administración de los programas de postgrado y el seguimiento de sus estudiantes.
+\item Facilitará la labor de supervisión y asesoría a los alumnos.
+\item Permitirá una gestión más clara de las responsabilidades docentes y de investigación del cuerpo académico.
+\end{itemize}
+
+\item \textbf{Incremento de la Transparencia y Rendición de Cuentas}:
+\begin{itemize}
+\item Proporcionará un registro claro y auditable de las actividades y asignaciones.
+\item Facilitará la preparación de informes para organismos de acreditación, entidades financiadoras y la comunidad universitaria en general.
+\end{itemize}
+
+\item\textbf{Modernización Tecnológica y Base para el Futuro}:
+
+\begin{itemize}
+\item Representa un paso adelante en la modernización de la infraestructura tecnológica de la Universidad.
+\item Un sistema bien diseñado y escalable podrá adaptarse a futuras necesidades e integrarse con otras plataformas institucionales, consolidando el ecosistema digital de la Universidad.
+\end{itemize}
+\end{enumerate}
+En resumen, este sistema no solo resolverá problemas operativos existentes, sino que también se convertirá en una herramienta estratégica que potenciará la capacidad de gestión, la calidad de la investigación y la formación académica, y la eficiencia general de la Universidad, contribuyendo directamente al cumplimiento de su misión y visión institucional.
+
+\section{Análisis de Viabilidad del Proyecto}
+La implementación del sistema de base de datos web propuesto para la Universidad se considera viable tras analizar los siguientes aspectos:
+
+\subsection{Viabilidad Técnica}
+El proyecto es técnicamente viable por las siguientes razones:
+\begin{itemize}
+    \item \textbf{Tecnologías Maduras y Disponibles}: Las tecnologías propuestas para el desarrollo (HTML, CSS, JavaScript para el frontend; PHP para el backend; un Sistema Gestor de Base de Datos SQL como MySQL o PostgreSQL) son estándares en la industria, maduras, ampliamente documentadas y con una gran comunidad de soporte. Existen abundantes herramientas de desarrollo, muchas de ellas de código abierto, que facilitan su implementación.
+\item \textbf{Complejidad Manejable}: Si bien el sistema integra diversas entidades y relaciones, la lógica de negocio (operaciones CRUD, gestión de roles, reglas de integridad) es abordable con las tecnologías mencionadas. El modelado relacional y la normalización (hasta 3FN) asegurarán una base de datos robusta y eficiente. La implementación de funciones y triggers (PL/SQL o similar, según el SGBD) está dentro de las capacidades estándar de los SGBD modernos.
+\item \textbf{Recursos Humanos Calificados}: Se asume la disponibilidad de un equipo de desarrollo con experiencia en análisis de sistemas, diseño de bases de datos, desarrollo web full-stack (PHP, HTML, CSS) y gestión de proyectos.
+\item \textbf{Infraestructura Requerida}: La infraestructura necesaria (servidores web y de base de datos) puede ser implementada en las instalaciones de la Universidad o mediante servicios de cloud computing, ofreciendo flexibilidad y escalabilidad. Se considera que la Universidad cuenta con la capacidad para alojar o contratar estos servicios.
+\item \textbf{Escalabilidad y Rendimiento}: El diseño propuesto, incluyendo una correcta normalización, indexación y la posibilidad de optimizar consultas, permitirá que el sistema maneje el volumen de datos y la carga de usuarios esperada en una institución universitaria. El sistema podrá escalar horizontal o verticalmente según las necesidades futuras.
+
+\end{itemize}
+\subsection{Viabilidad Económica}
+Se estima que el proyecto es económicamente viable, considerando:
+
+\subsubsection{Costos de Desarrollo}
+\begin{itemize}
+    \item \textbf{Personal}: Principal componente de costo, incluyendo analistas, diseñadores, desarrolladores (frontend y backend), especialistas en bases de datos y testers durante los 15 meses.
+\item \textbf{Software}: Potencialmente, costos de licencias para el SGBD o herramientas de desarrollo especializadas, aunque se priorizará el uso de software de código abierto o con licenciamiento favorable para instituciones educativas.
+\item \textbf{Hardware/Infraestructura}: Costos iniciales de adquisición o configuración de servidores, o costos recurrentes si se opta por servicios en la nube.
+\end{itemize}
+\subsubsection{Costos Operativos (Post-Implementación)}
+\begin{itemize}
+    \item Mantenimiento del software y la base de datos.
+\item Soporte técnico a usuarios.
+\item Costos continuos de infraestructura (energía, conectividad, cloud si aplica).
+\item Capacitación continua.
+\end{itemize}
+\subsubsection{Retorno de la Inversión (ROI) y Beneficios} Aunque muchos beneficios son cualitativos, su impacto económico es considerable:
+\begin{itemize}
+    \item \textbf{Reducción de Costos Directos}: Disminución de horas-hombre dedicadas a tareas manuales de gestión de datos, generación de informes y resolución de inconsistencias.
+\item \textbf{Eficiencia Mejorada}: Optimización de procesos que liberan tiempo de personal cualificado para tareas de mayor valor añadido.
+\item \textbf{Mejora en la Toma de Decisiones}: Decisiones basadas en datos precisos y oportunos pueden llevar a una asignación más eficiente de recursos, optimización de programas académicos y mejora en la captación de fondos de investigación.
+\item \textbf{Cumplimiento y Acreditación}: Un sistema robusto facilita el cumplimiento de normativas y los procesos de acreditación, evitando posibles sanciones o asegurando financiamiento.
+\item \textbf{Reducción de Errores}: La automatización y validaciones disminuyen la incidencia de errores costosos.
+\end{itemize}
+La inversión inicial se justifica por los ahorros a mediano y largo plazo, la mejora en la calidad de la gestión y el soporte a las funciones críticas de la Universidad. Se recomienda realizar un análisis costo-beneficio más detallado una vez afinados los requerimientos técnicos específicos y la selección de plataformas.
+
+\subsection{Viabilidad Operativa}
+
+El sistema se considera operativamente viable, ya que:
+\begin{itemize}
+    \item \textbf{Alineación con Necesidades del Usuario}: El sistema se diseñará basándose en los requisitos específicos proporcionados, buscando resolver problemáticas concretas de la gestión académica y de investigación. Las interfaces diferenciadas para usuarios y administradores con distintos niveles de funcionalidad CRUD están pensadas para adaptarse a sus roles.
+\item \textbf{Aceptación por parte de los Usuarios}: Se mitigarán resistencias al cambio mediante:
+\begin{itemize}
+\item \textbf{Capacitación}: Se planificarán sesiones de capacitación para los diferentes perfiles de usuario.
+\item \textbf{Diseño Intuitivo}: Se priorizará una interfaz de usuario clara, amigable y fácil de usar.
+\item \textbf{Participación}: Involucrar a representantes de los usuarios finales durante las fases de diseño y pruebas de aceptación (UAT) para asegurar que el sistema cumpla con sus expectativas y facilite su trabajo diario.
+\end{itemize}
+\item \textbf{Integración en Flujos de Trabajo}: El sistema está concebido para integrarse y optimizar los flujos de trabajo existentes. Es posible que se requiera una adaptación de ciertos procesos manuales para aprovechar al máximo las capacidades del nuevo sistema, lo cual se gestionará como parte del proceso de implementación.
+\item \textbf{Soporte y Mantenimiento}: Se deberá establecer un plan de soporte técnico continuo (interno o externo) para resolver incidencias, realizar mantenimiento preventivo y aplicar futuras actualizaciones o mejoras. La documentación técnica y de usuario generada facilitará estas labores.
+\item \textbf{Seguridad de la Información}: Se implementarán medidas de seguridad adecuadas para proteger la integridad, confidencialidad y disponibilidad de los datos, incluyendo gestión de accesos basada en roles, protección contra amenazas comunes y políticas de respaldo.
+\end{itemize}
+
+
+\subsection{Viabilidad de Plazos (Cronograma – 15 Meses)}
+
+Un plazo total de 15 meses de trabajo efectivo se considera factible para la realización de este proyecto, dada su envergadura y la adopción de la metodología Scrum. Este marco de trabajo ágil permitirá entregas incrementales y una adaptación continua a lo largo del desarrollo.
+
+La planificación temporal se estructura de la siguiente manera, considerando los períodos de receso académico:
+\begin{itemize}
+    \item \textbf{Inicio del Proyecto:} Septiembre 2025.
+    \item \textbf{Duración Total de Trabajo Efectivo:} 15 meses.
+    \item \textbf{Meses No Laborables (Receso Académico):} Febrero 2026 y Agosto 2026.
+    \item \textbf{Finalización Estimada del Proyecto:} Enero 2027.
+\end{itemize}
+
+El desarrollo se organizará en Sprints (ciclos de trabajo cortos, por ejemplo, de 4 semanas). Los objetivos específicos se distribuirán en bloques de trabajo de la siguiente forma:
+
+\begin{itemize}
+    \item \textbf{Bloque 1: Objetivo Específico 1 (Formulación y Modelado Conceptual).}
+    \begin{itemize}
+        \item \textbf{Período de Trabajo:} Septiembre 2025 – Enero 2026 (5 meses de trabajo).
+        \item \textbf{Sprints Estimados:} Aproximadamente 5 Sprints.
+        \item \textbf{Enfoque Principal:} Dedicado a la elaboración del informe técnico inicial (incluyendo análisis de viabilidad, justificación, etc.), análisis exhaustivo de requisitos, y el diseño detallado del Modelo Entidad-Relación (MER) y el Modelo Conceptual de la base de datos.
+    \end{itemize}
+
+    \item \textbf{Bloque 2: Objetivo Específico 2 (Diseño e Implementación de la Base de Datos).}
+    \begin{itemize}
+        \item \textbf{Período de Trabajo:} Marzo 2026 – Julio 2026 (5 meses de trabajo, posterior al receso de Febrero 2026).
+        \item \textbf{Sprints Estimados:} Aproximadamente 5 Sprints.
+        \item \textbf{Enfoque Principal:} Centrado en la transformación del modelo conceptual al modelo relacional, aplicación de técnicas de normalización (hasta 3FN), escritura de los scripts DDL para la creación de tablas y restricciones, carga de datos de prueba, y la implementación de índices y vistas predefinidas para optimizar consultas.
+    \end{itemize}
+
+    \item \textbf{Bloque 3: Objetivos Específicos 3 y 4 (Diseño y Desarrollo del Sistema Web, Integración con la Base de Datos, Procesos CRUD, Pruebas y Validación).}
+    \begin{itemize}
+        \item \textbf{Período de Trabajo:} Septiembre 2026 – Enero 2027 (5 meses de trabajo, posterior al receso de Agosto 2026).
+        \item \textbf{Sprints Estimados:} Aproximadamente 5 Sprints.
+        \item \textbf{Enfoque Principal:} Esta fase comprenderá el diseño de maquetas del sistema web, el desarrollo frontend (HTML, CSS) y backend (PHP), la conexión con la base de datos implementada, y la programación de las funcionalidades CRUD. De forma paralela e integrada en los Sprints, se llevará a cabo el Objetivo 4, realizando pruebas unitarias, de integración, de sistema, y las pruebas de aceptación del usuario (UAT). Se finalizará con la corrección de errores, la elaboración de la documentación final y la preparación para el despliegue.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Consideraciones para cumplir el plazo:}
+El cumplimiento de este cronograma dependerá de varios factores críticos:
+\begin{itemize}
+    \item \textbf{Gestión de Riesgos Eficaz:} Identificación temprana y mitigación proactiva de posibles riesgos, como cambios no controlados en el alcance (scope creep), retrasos en la toma de decisiones o validaciones por parte del ``cliente'' (en este caso, el profesorado del curso), o la aparición de problemas técnicos imprevistos.
+    \item \textbf{Dedicación y Compromiso del Equipo:} Es fundamental contar con la dedicación adecuada del equipo de desarrollo estudiantil y un compromiso con los objetivos de cada Sprint y las entregas planificadas.
+    \item \textbf{Aplicación Rigurosa de Scrum:} La correcta implementación de las ceremonias (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective) y artefactos (Product Backlog, Sprint Backlog, Incremento) de Scrum facilitará la transparencia, la inspección y la adaptación continua, elementos clave para el manejo eficiente del tiempo.
+    \item \textbf{Comunicación Constante y Fluida:} Mantener una comunicación efectiva dentro del equipo de desarrollo y con el ``cliente'' para asegurar la alineación y la rápida resolución de dudas o problemas que puedan surgir.
+\end{itemize}
+
+En conclusión, el plazo de 15 meses de trabajo efectivo, distribuido según el calendario propuesto y gestionado mediante la metodología ágil Scrum, ofrece un marco temporal realista y estructurado para la finalización exitosa del proyecto por parte del equipo de estudiantes.
+
+\section[Equipo de Trabajo]{Equipo de Desarrollo del Proyecto y Asignación de Responsabilidades}
+
+\noindent \textbf{1. Javier Rojas}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Jefe de Proyecto \& Desarrollador Full-Stack Senior
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Coordinación general del equipo y del proyecto.
+        \item Planificación de sprints/iteraciones y seguimiento del cronograma (Viabilidad de Plazos).
+        \item Principal punto de comunicación con el ``cliente'' (profesor/ayudante del curso).
+        \item Gestión de riesgos y resolución de impedimentos.
+        \item Supervisión técnica general y toma de decisiones arquitectónicas clave.
+        \item Desarrollo de componentes backend críticos y lógica de negocio compleja (Objetivo 3).
+        \item Supervisión y validación del modelado de datos (Objetivo 1).
+        \item Revisión de la optimización de la base de datos (Objetivo 2).
+        \item Participación en pruebas unitarias y de integración (Objetivo 4).
+        \item Coordinación de las Pruebas de Aceptación del Usuario (UAT) y del plan de despliegue (Objetivo 4).
+    \end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{2. Carolina Silva}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Analista de Sistemas \& Diseñadora de Bases de Datos
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Liderazgo en el Objetivo 1:
+        \begin{itemize}
+            \item Elaboración de la sección técnica del informe inicial.
+            \item Análisis detallado de los requisitos del cliente.
+            \item Creación y documentación del Modelo Entidad-Relación (MER).
+        \end{itemize}
+        \item Liderazgo en el diseño de la BD (parte del Objetivo 2):
+        \begin{itemize}
+            \item Transformación del MER al Modelo Relacional.
+            \item Proceso de Normalización de la base de datos (hasta 3FN).
+            \item Especificación detallada de tablas, atributos, claves primarias y foráneas, y restricciones de integridad para los scripts DDL.
+        \end{itemize}
+        \item Colaboración en la validación de maquetas desde la perspectiva del flujo de datos (Objetivo 3).
+        \item Participación activa en la documentación técnica inicial.
+    \end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{3. Martín Pizarro}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Desarrollador Backend \& Administrador de Base de Datos (DBA) Junior
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Liderazgo en la implementación de la BD (parte del Objetivo 2):
+        \begin{itemize}
+            \item Escritura de los scripts DDL (\texttt{CREATE TABLE}) basados en el diseño de Carolina.
+            \item Carga de datos de prueba y verificación de consistencia inicial.
+            \item Implementación de índices, consultas y vistas predefinidas.
+        \end{itemize}
+        \item Liderazgo en el desarrollo backend (parte del Objetivo 3):
+        \begin{itemize}
+            \item Configuración de la conexión PHP a la base de datos.
+            \item Desarrollo de la lógica de negocio principal y funciones PHP para las operaciones CRUD.
+            \item Implementación de funciones y/o triggers (PL/SQL o similar, según SGBD) para automatización y asegurar integridad en la BD.
+            \item Optimización de consultas a la base de datos.
+        \end{itemize}
+        \item Colaboración en la configuración del entorno de desarrollo web.
+        \item Participación en pruebas unitarias y de integración del backend.
+    \end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{4. Sofía Castro}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Desarrolladora Full-Stack \& Diseñadora UI/UX
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Liderazgo en el diseño y desarrollo frontend (Objetivo 3):
+        \begin{itemize}
+            \item Diseño de maquetas del sistema (wireframes y mockups) para las interfaces de usuario y administrador.
+            \item Desarrollo de la estructura HTML5 y estilos CSS3, asegurando la apariencia distintiva para cada rol.
+            \item Implementación de la interfaz de usuario, enfocándose en la usabilidad y experiencia del usuario.
+        \end{itemize}
+        \item Colaboración en la definición de requisitos desde la perspectiva del usuario (Objetivo 1).
+        \item Desarrollo de componentes PHP para la integración del frontend con el backend y la lógica CRUD.
+        \item Participación activa en las pruebas funcionales y de usabilidad (Objetivo 4).
+        \item Soporte durante las Pruebas de Aceptación del Usuario (UAT), especialmente en aspectos de interfaz.
+    \end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{5. Diego Valdés}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Desarrollador Full-Stack \& Soporte de Entornos
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Liderazgo en la configuración del entorno de desarrollo y pruebas (Objetivo 3):
+        \begin{itemize}
+            \item Montaje del servidor web, PHP y SGBD local o en la nube.
+        \end{itemize}
+        \item Soporte en la carga de datos de prueba y verificaciones de consistencia (Objetivo 2).
+        \item Desarrollo de módulos frontend y backend según se requiera, apoyando a Martín y Sofía (Objetivo 3):
+        \begin{itemize}
+            \item Implementación de funcionalidades CRUD y lógica de negocio.
+        \end{itemize}
+        \item Participación activa en pruebas unitarias y de integración.
+        \item Elaboración de parte del manual técnico y guías de despliegue (Objetivo 4).
+        \item Apoyo en la corrección de errores detectados durante las pruebas.
+    \end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{6. Valentina Herrera}
+\begin{itemize}
+    \item \textbf{Rol Principal:} Encargada de Calidad (QA) \& Documentación Técnica
+    \item \textbf{Responsabilidades Clave:}
+    \begin{itemize}
+        \item Liderazgo en el Objetivo 4 (Pruebas y Validación):
+        \begin{itemize}
+            \item Establecimiento del plan de pruebas y diseño de casos de prueba.
+            \item Ejecución de pruebas funcionales, de sistema y de regresión.
+            \item Registro y seguimiento de errores (bug tracking).
+            \item Coordinación de las pruebas de integración desde la perspectiva de QA.
+            \item Preparación del entorno y guía durante las Pruebas de Aceptación del Usuario (UAT).
+        \end{itemize}
+        \item Gestión de la Documentación del Proyecto:
+        \begin{itemize}
+            \item Consolidación y mantenimiento de la documentación técnica (MER, diseño de BD, manuales).
+            \item Elaboración del manual de usuario.
+            \item Revisión y corrección de estilo de la documentación generada por el equipo (incluido el informe inicial).
+        \end{itemize}
+        \item Apoyo en la redacción y estructuración del informe inicial (Objetivo 1).
+    \end{itemize}
+\end{itemize}
+\vspace{1em}
+
+\subsection{Responsabilidades Compartidas por Todo el Equipo}
+\begin{itemize}
+    \item \textbf{Comprensión de Requisitos:} Todos los miembros participarán en la discusión y comprensión de los requisitos del cliente.
+    \item \textbf{Revisiones de Código:} Se realizarán revisiones cruzadas de código para mejorar la calidad y compartir conocimiento.
+    \item \textbf{Pruebas:} Aunque Valentina lidera QA, todos los desarrolladores son responsables de las pruebas unitarias de su código y colaborarán en la identificación y corrección de errores.
+    \item \textbf{Reuniones de Equipo:} Participación activa en reuniones periódicas de seguimiento, planificación y resolución de problemas, siguiendo la metodología Scrum.
+    \item \textbf{Gestión del Conocimiento:} Compartir aprendizajes y soluciones encontradas durante el desarrollo.
+    \item \textbf{Adaptabilidad:} Estar dispuestos a asumir tareas fuera de su rol principal si el proyecto lo requiere, dada la dinámica de un equipo pequeño y un proyecto formativo.
+\end{itemize}
+
+
+
+
+\section[Metodología de Desarrollo]{Metodología de Desarrollo Propuesta: Scrum}
+Para un equipo de 6 estudiantes de Ingeniería Civil en Informática que están comenzando a conocer las metodologías de desarrollo de software y que tienen un proyecto de 15 meses, la metodología más apropiada sería \textbf{Scrum}.
+
+\subsection*{Justificación de la Elección de Scrum}
+
+Scrum es un marco de trabajo ágil que se adapta muy bien a las características de este proyecto y del equipo por las siguientes razones:
+
+\begin{enumerate}
+    \item \textbf{Desarrollo Iterativo e Incremental:}
+    Scrum divide el proyecto en ciclos cortos llamados \textit{Sprints} (generalmente de 2 a 4 semanas). Al final de cada Sprint, el equipo entrega un incremento funcional del producto. Esto es ideal para un proyecto de 15 meses, ya que permite al equipo mostrar progreso tangible de forma regular, obtener retroalimentación temprana del ``cliente'' (profesor del curso) y ajustar el rumbo si es necesario. Para estudiantes, ver resultados funcionales de forma periódica es altamente motivador.
+
+    \item \textbf{Adaptabilidad y Flexibilidad:}
+    Aunque los requisitos iniciales están definidos, es probable que surjan nuevos entendimientos o se necesiten ajustes, especialmente en la interfaz de usuario y la experiencia de usuario (UI/UX). Scrum permite la adaptación a cambios entre Sprints, incorporando nuevos requisitos o modificaciones en el \textit{Product Backlog}.
+
+    \item \textbf{Estructura y Claridad para Equipos Nuevos:}
+    Para estudiantes que recién se inician en metodologías, Scrum ofrece un marco con roles, eventos y artefactos definidos que proporcionan una estructura clara:
+    \begin{itemize}
+        \item \textit{Roles Adaptados:} Para el contexto estudiantil, estos roles pueden ser:
+        \begin{itemize}
+            \item \textbf{Product Owner (Dueño del Producto):} Rol asumido idealmente por el ``cliente'' (profesor) o, de forma interna y en representación del cliente, por un miembro del equipo (ej. el Jefe de Proyecto, Javier Rojas) encargado de definir y priorizar los ítems del Product Backlog.
+            \item \textbf{Scrum Master (Facilitador):} Rol que podría ser asumido por el Jefe de Proyecto (Javier Rojas), enfocándose en asegurar que el equipo siga las prácticas de Scrum, facilitar las reuniones y eliminar impedimentos.
+            \item \textbf{Development Team (Equipo de Desarrollo):} Los 6 estudiantes, como un equipo auto-organizado y multidisciplinario, responsable de entregar el incremento del producto.
+        \end{itemize}
+        \item \textit{Eventos (Reuniones):}
+        \begin{itemize}
+            \item \textit{Sprint Planning:} Planificación del trabajo a realizar en el Sprint.
+            \item \textit{Daily Scrum:} Reunión diaria corta para sincronizar al equipo.
+            \item \textit{Sprint Review:} Demostración del incremento del producto y recolección de feedback.
+            \item \textit{Sprint Retrospective:} Reflexión sobre el Sprint anterior para identificar mejoras en el proceso.
+        \end{itemize}
+        Estas reuniones estructuradas ayudan a mantener el enfoque y la comunicación.
+        \item \textit{Artefactos:}
+        \begin{itemize}
+            \item \textit{Product Backlog:} Lista priorizada de todas las funcionalidades y requisitos del proyecto.
+            \item \textit{Sprint Backlog:} Conjunto de ítems del Product Backlog seleccionados para un Sprint, más el plan para entregarlos.
+            \item \textit{Incremento del Producto:} La suma de todos los ítems del Product Backlog completados durante un Sprint y Sprints anteriores, que debe ser potencialmente entregable.
+        \end{itemize}
+    \end{itemize}
+    Esta estructura es fundamental para guiar al equipo a lo largo de los 15 meses de proyecto.
+
+    \item \textbf{Fomenta la Colaboración y Comunicación:}
+    El tamaño del equipo (6 personas) es ideal para Scrum. Las reuniones como el Daily Scrum y la planificación y revisión conjuntas de los Sprints aseguran que todos los miembros estén alineados, compartan información y colaboren estrechamente para alcanzar el objetivo del Sprint.
+
+    \item \textbf{Gestión de Riesgos Temprana:}
+    La naturaleza iterativa y las revisiones constantes (Sprint Review, Sprint Retrospective) permiten identificar problemas, riesgos o malentendidos de forma temprana, en lugar de esperar hasta el final del proyecto. Esto es crucial en un proyecto de 15 meses, donde los problemas no detectados pueden escalar significativamente.
+
+    \item \textbf{Enfoque en la Entrega de Valor:}
+    Cada Sprint se enfoca en entregar las funcionalidades de mayor valor para el cliente (priorizadas en el Product Backlog), lo que asegura que el sistema evolucione de manera útil y relevante desde las primeras etapas.
+
+    \item \textbf{Oportunidad de Aprendizaje Práctico:}
+    Implementar Scrum proporcionará al equipo una valiosa experiencia práctica con una de las metodologías ágiles más utilizadas en la industria del software. Esto constituye un objetivo de aprendizaje importante en su formación como Ingenieros Civiles en Informática, preparándolos para entornos de trabajo reales.
+\end{enumerate}
+
+Aunque otras metodologías ágiles como Kanban podrían ser consideradas por su simplicidad visual y enfoque en el flujo, la estructura de Sprints de Scrum, junto con sus roles y ceremonias definidas, ofrece un andamiaje más robusto y guiado para un equipo de estudiantes que se enfrenta a un proyecto de duración considerable y que necesita aprender a gestionar su trabajo de forma sistemática, colaborativa y adaptativa. Les ayudará a mantener un ritmo sostenible y a asegurar entregas consistentes y de valor a lo largo de los 15 meses del proyecto.
+
+
+\section[Planificación Temporal]{Planificación Temporal del Desarrollo del Proyecto (Metodología Scrum)}
+
+\noindent\textbf{Consideraciones Generales de la Planificación:}
+\begin{itemize}
+    \item \textbf{Inicio del Proyecto:} Septiembre 2025.
+    \item \textbf{Duración Total:} 15 meses de trabajo efectivo.
+    \item \textbf{Meses No Laborables (Receso Académico):} Febrero 2026 y Agosto 2026 no se consideran meses de trabajo.
+    \item \textbf{Sprints:} Se asumen Sprints de 4 semanas de duración. Un mes de trabajo tiene aproximadamente un Sprint.
+    \item \textbf{Planificación Adaptativa:} El contenido exacto de cada Sprint (Sprint Backlog) será definido por el equipo al inicio de cada uno, tomando tareas del Product Backlog priorizado. La  Tabla \ref{tab:planificacion} ofrece una guía de alto nivel sobre el foco de cada Sprint.
+\end{itemize}
+
+\noindent\textbf{Notas Importantes para el Equipo:}
+\begin{itemize}
+    \item \textbf{Flexibilidad del Product Backlog:} Aunque se presenta un foco, el equipo priorizará las tareas del Product Backlog al inicio de cada Sprint (Sprint Planning) según el valor que aporten y el estado del proyecto.
+    \item \textbf{Reuniones Scrum:} Se deben llevar a cabo todas las ceremonias de Scrum: Sprint Planning, Daily Scrums, Sprint Review y Sprint Retrospective.
+    \item \textbf{Testing Continuo:} Aunque el Bloque 3 tiene un fuerte componente del Objetivo 4 (Pruebas), las pruebas unitarias y de integración deben ser una actividad continua desde que se empieza a escribir código.
+    \item \textbf{Objetivo del Sprint:} Cada Sprint debe tener un ``Sprint Goal'' claro, que es un objetivo conciso de lo que el Sprint intentará lograr.
+\end{itemize}
+
+\begin{landscape}
+{\small % Reduce font size for the table if needed
+\begin{longtable}{>{\RaggedRight}p{2.8cm} >{\Centering}p{1.3cm} >{\RaggedRight}p{2cm} >{\Centering}p{1cm} >{\RaggedRight}p{1.8cm} >{\RaggedRight}p{5.5cm} >{\RaggedRight}p{5cm}}
+\caption{Planificación Temporal del Proyecto (Metodología Scrum)}\label{tab:planificacion}\\
+\toprule
+\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada del Sprint} & \textbf{Foco Principal y Actividades Clave del Sprint (basado en Objetivos)} & \textbf{Entregables Clave del Sprint (Ejemplos)} \\
+\midrule
+\endfirsthead
+\caption[]{Planificación Temporal del Proyecto (Metodología Scrum) (Continuación)}\\
+\toprule
+\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada del Sprint} & \textbf{Foco Principal y Actividades Clave del Sprint (basado en Objetivos)} & \textbf{Entregables Clave del Sprint (Ejemplos)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{{\footnotesize Continuará en la página siguiente...}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 1 & Sep 2025 & 1 & 4 semanas & Inicio del proyecto, configuración del equipo y entorno Scrum. Revisión detallada de requisitos. Estructura del informe técnico. Planificación inicial del Product Backlog. & Acta de constitución del proyecto (simplificada), Plan de trabajo inicial, Product Backlog inicial. \\
+\midrule
+\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 2 & Oct 2025 & 2 & 4 semanas & Redacción secciones clave del informe (Introducción, Objetivos, Justificación, Viabilidad, Metodología). Identificación inicial de entidades y atributos. & Borrador avanzado del informe técnico. Lista de entidades y atributos preliminares. \\
+\midrule
+\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 3 & Nov 2025 & 3 & 4 semanas & Detalle de atributos. Identificación de relaciones y cardinalidad. Inicio del diseño del Diagrama Entidad-Relación (DER). & Especificación detallada de atributos. Borrador inicial del DER. \\
+\midrule
+\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 4 & Dic 2025 & 4 & 4 semanas & Finalización y refinamiento del DER. Documentación del Modelo Entidad-Relación (MER). & Diagrama Entidad-Relación (DER) finalizado. Documentación completa del MER. \\
+\midrule
+\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 5 & Ene 2026 & 5 & 4 semanas & Validación final del MER y del informe técnico con el ``cliente'' (profesor). Consolidación del informe. Preparación para el Bloque 2. Refinamiento del Product Backlog para Obj. 2. & Informe técnico final (Obj. 1). Modelo Conceptual de Datos aprobado. \\
+\midrule
+\textit{Receso Académico} & -- & \textit{Feb 2026} & -- & -- & \textit{Mes no laborable} & -- \\
+\midrule
+\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 6 & Mar 2026 & 6 & 4 semanas & Transformación del MER al Modelo Relacional. Inicio de Normalización (1FN, 2FN). & Modelo Relacional preliminar. Tablas identificadas con atributos y PK/FK iniciales. \\
+\midrule
+\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 7 & Abr 2026 & 7 & 4 semanas & Finalización de Normalización (3FN). Diseño detallado de tablas, tipos de datos y restricciones de integridad. & Modelo Relacional Normalizado (3FN) y documentado. Especificaciones detalladas para scripts DDL. \\
+\midrule
+\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 8 & May 2026 & 8 & 4 semanas & Desarrollo de scripts DDL (\texttt{CREATE TABLE}). Creación de la estructura de la base de datos en el SGBD elegido. & Scripts DDL funcionales. Base de datos creada (estructura vacía). \\
+\midrule
+\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 9 & Jun 2026 & 9 & 4 semanas & Diseño y carga de un conjunto inicial de datos de prueba representativos. Verificación de consistencia de datos y restricciones. & Base de datos poblada con datos de prueba. Informe de consistencia de datos. \\
+\midrule
+\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 10 & Jul 2026 & 10 & 4 semanas & Implementación de Índices en columnas clave. Diseño y creación de Consultas y Vistas predefinidas importantes. Evaluación inicial de rendimiento. Preparación para el Bloque 3. & Índices creados. Vistas y consultas predefinidas funcionales. \\
+\midrule
+\textit{Receso Académico} & -- & \textit{Ago 2026} & -- & -- & \textit{Mes no laborable} & -- \\
+\midrule
+\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 11 & Sep 2026 & 11 & 4 semanas & \textbf{O3:} Configuración del entorno de desarrollo web. Diseño de maquetas (wireframes/mockups) V1. Inicio desarrollo Frontend (HTML/CSS estructura base). \newline \textbf{O4:} Elaboración del Plan de Pruebas detallado. & Maquetas V1. Estructura base del frontend. Plan de Pruebas V1. \\
+\midrule
+\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 12 & Oct 2026 & 12 & 4 semanas & \textbf{O3:} Desarrollo Frontend (vistas principales). Inicio desarrollo Backend (PHP, conexión BD). Implementación CRUD básico para 1-2 entidades. \newline \textbf{O4:} Diseño de casos de prueba (unitarios, integración). Ejecución de pruebas unitarias del código desarrollado. & Vistas principales del frontend. CRUD funcional para 1-2 entidades. Casos de prueba documentados. \\
+\midrule
+\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 13 & Nov 2026 & 13 & 4 semanas & \textbf{O3:} Desarrollo Frontend (interfaces Admin/Usuario). Desarrollo Backend (más entidades CRUD, lógica de negocio). Implementación de Funciones/Triggers PL/SQL (o similar) según necesidad. \newline \textbf{O4:} Ejecución de Pruebas de Integración (Frontend-Backend-DB). & Interfaces Admin/Usuario funcionales para módulos desarrollados. Funciones/Triggers implementados. Informe de pruebas de integración. \\
+\midrule
+\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 14 & Dic 2026 & 14 & 4 semanas & \textbf{O3:} Finalización desarrollo de funcionalidades principales. Refinamiento UI/UX. Integración completa. \newline \textbf{O4:} Ejecución de Pruebas de Sistema. Inicio Pruebas de Aceptación del Usuario (UAT) con ``cliente''. Corrección de errores identificados. & Sistema integrado con funcionalidades clave. Informe de pruebas de sistema. Feedback inicial de UAT. \\
+\midrule
+\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 15 & Ene 2027 & 15 & 4 semanas & \textbf{O3:} Últimos ajustes basados en feedback de UAT. \newline \textbf{O4:} Finalización de UAT. Corrección de errores finales. Preparación para el despliegue (documentación final: manual de usuario, manual técnico). Sprint Review y Retrospectiva final del proyecto. & Sistema validado y listo para ``entrega''. Documentación final completa. Lecciones aprendidas del proyecto. \\
+\end{longtable}
+} % End \small
+\end{landscape}
+
+\section{Diagramas UML}

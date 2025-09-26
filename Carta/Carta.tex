@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Memo
+% LaTeX Template
+% Version 1.0 (30/12/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rob Oakes (http://www.oak-tree.us) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,12pt]{texMemo} % Set the paper size (letterpaper, a4paper, etc) and font size (10pt, 11pt or 12pt)
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{xspace,epic,eepic}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{caption}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\usepackage[color={[gray]{0.8}},angle=55,scale=1.5, text=Borrador]{draftwatermark}%Marca de agua
+\usepackage{parskip} % Adds spacing between paragraphs
+\usepackage[sfdefault]{roboto}
+\setlength{\parindent}{15pt} % Indent paragraphs
+\fancyhf{}
+\lhead{\begin{picture}(0,0) \put(-20,-5){\includegraphics[width=30mm]{Ulagos.png}} \end{picture}}
+\rhead{\begin{picture}(0,0) \put(-70,-5){\includegraphics[width=30mm]{Acreditacion.png}} \end{picture}}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\thepage}
+%\lfoot{\begin{picture}(0,0) \put(20,-5){\includegraphics[width=30mm]{FIRMAI.png}} \end{picture}\textsc{Juan José Ramírez Lama}\\16217315-4}
+%\rfoot{\begin{picture}(0,0) \put(30,-5){\includegraphics[width=30mm]{FIRMAD.png}} \end{picture}\textsc{Juan José Ramírez Lama}\\16217315-4}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+fancyhf{}
+\fancyhead[L]{fotoi}
+\fancyhead[R]{fotor}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{fancy}
+
+%----------------------------------------------------------------------------------------
+%	MEMO INFORMATION
+%--------------------------------------------------------------------------------------
+\memotitle{Carta}
+
+\memoto{Nombre\\  Universidad de los Lagos} % Recipient(s)
+
+\memofrom{Nombre\\ Universidad de los Lagos} % Sender(s)
+
+\memosubject{\textsc{}} % Memo subject
+
+\memodate{\today} % Date, set to \today for automatically printing todays date
+%\logo{}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the memo header information
+
+%----------------------------------------------------------------------------------------
+%	MEMO CONTENT
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{minipage}[t]{0.45\textwidth}
+\begin{center}\vspace{1cm}
+\begin{tabular}{p{1cm}cp{1cm}}\hline
+  &\textsc{Nombre} &\\
+  &Rut&\\
+\end{tabular}
+\end{center}
+%\end{minipage} \hfill
+%\begin{minipage}[t]{0.45\textwidth} 
+%\begin{center}\vspace{1cm}
+%\begin{tabular}{p{1cm}cp{1cm}}\hline
+%  &\textsc{Nombre} &\\
+%  &Rut&\\
+%\end{tabular}
+%\end{center}
+%\end{minipage}
+
+
+
+\end{document}

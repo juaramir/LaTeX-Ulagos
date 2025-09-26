@@ -1,0 +1,24 @@
+
+ALTER TABLE Proyecto ADD CONSTRAINT chk_proyecto_fechainicio_valida CHECK (FechaInicio >= CURRENT_TIMESTAMP);
+-- Nota: now() es una función tradicional de PostgreSQL, CURRENT_TIMESTAMP es el estándar SQL.
+ALTER TABLE Proyecto DROP CONSTRAINT chk_proyecto_fechainicio_valida;
+-- No implementaré esta restricción para así poner fechas historicas igualmente.
+
+ALTER TABLE Proyecto ADD CONSTRAINT chk_proyecto_presupuesto CHECK (Presupuesto >= '0'::MONEY);
+
+ALTER TABLE Proyecto ADD CONSTRAINT chk_proyecto_fechas CHECK (FechaFin IS NULL OR FechaFin > FechaInicio);
+
+ALTER TABLE Profesor ADD CONSTRAINT chk_profesor_fechanac CHECK (FechaNac < CURRENT_DATE);
+
+ALTER TABLE Profesor ADD CONSTRAINT chk_profesor_rango CHECK (Rango BETWEEN 1 AND 4);
+
+ALTER TABLE Alumno ADD CONSTRAINT chk_alumno_no_autoasesor CHECK (Run != Asesor);
+
+ALTER TABLE Laborar ADD CONSTRAINT chk_laborar_porcentaje CHECK (Porcentaje > 0 AND Porcentaje <= 100);
+
+ALTER TABLE Departamento ADD CONSTRAINT chk_departamento_numero CHECK (Numero > 0);
+
+ALTER TABLE Departamento ADD CONSTRAINT chk_departamento_despacho CHECK (Despacho > 0);
+
+ALTER TABLE Postgrado ADD CONSTRAINT chk_postgrado_codigo CHECK (Codigo > 0);
+

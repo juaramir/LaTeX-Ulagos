@@ -1,0 +1,81 @@
+\documentclass[12pt]{report}
+\def\TITULO{Título}
+\def\subtitulo{Subtítulo}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\guiaa{Guía}
+\def\correoguiaa{correo@ulagos.cl}
+\def\guiab{Guía}
+\def\correoguiab{correo@ulagos.cl}
+\def\asignatura{Proyecto de Título}
+\def\campus{Campus ???}
+\def\carrera{Ingeniería Civil en Informática}
+\input{Macros}
+\lstset{language=Python}
+
+
+     
+
+\begin{document}
+	
+	%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+\maketitle
+
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+
+%%%%Agradecimientos
+\input{Agradecimientos}
+%%%%%%%%RESUMEN
+\input{Resumen}
+%INDICE GENERAL
+\tableofcontents
+%INDICE DE FIGURAS
+\listoffigures
+%INDICE DE TABLAS
+\renewcommand{\listtablename}{Índice de tablas}\listoftables
+%%%%%%%%%%%%%FIN PORTADA%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistlistingname}{Índice de algoritmos}
+\lstlistoflistings
+%\addcontentsline
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%%%%%%%%COMIENZO
+
+INDICACIONES BÁSICAS:
+ \begin{itemize}
+     \item CADA IMÁGEN O LOGO, TABLA Y ALGORITMO DEBEN TENER CAPTION (PIE DE...) Y DEBEN SER REFERENCIADAS EN EL TEXTO.
+     \item CADA CITE DEBE SER ANTES DE UN PUNTO.
+ \end{itemize}
+
+\input{Capitulo1}
+\input{Capitulo2}
+\input{Capitulo3}
+\input{Capitulo4}
+\input{Capitulo5}
+\input{Capitulo6}
+\input{Capitulo7}
+
+\input{Conclusion}
+
+
+%%%%%REFERENCIAS
+\renewcommand{\refname}{Referencias}
+\bibliographystyle{IEEEtran}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliography{bibliografia}
+
+
+\input{Anexos}
+\input{Ejemplos}
+\end{document}

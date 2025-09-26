@@ -1,0 +1,171 @@
+\documentclass[a0,portrait]{a0poster}
+\input{macros}
+\def\TITULO{Titulo}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\autord{Autor}
+\def\correod{correo@alumnos.ulagos.cl}
+\def\autore{Autor}
+\def\correoe{correo@alumnos.ulagos.cl}
+\def\autorf{Autor}
+\def\correof{correo@alumnos.ulagos.cl}
+\def\autorg{Autor}
+\def\correog{correo@alumnos.ulagos.cl}
+\def\campus{Ciudad}
+\def\carrera{Ingenier\'ia Civil en ...}
+\lstset{language=PYTHON}%Cambiar el Lenguaje de Programación
+%SQL, PYTHON, HTML5, PHP, JAVA, C
+
+
+\def\proyecto{Feria de las Ingenierías}
+\begin{document}
+\input{Cabecera}
+
+\begin{multicols}{3} % Aca pueden cambiar cuantas columnas quieren el poster, 2 a 3 
+
+%%RESUMEN
+\begin{abstract}
+Un resumen Establece el problema, Dice porqué es interesante, Señala los logros y desafíos; debe ser llamativo, motivador, descriptivo y sin contenido específico. \textbf{No incluye}: citas, referencias, conclusiones, figuras ni tablas.
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCCION
+%----------------------------------------------------------------------------------------
+
+%\color{rojo} % Color de la introduccion
+\color{negro}
+\section*{Generalidades}
+
+Es lo que comúnmente se conoce como introducción, conduce al lector desde un tema de un área general hacia un campo de investigación específico, describe el contexto, el problema, motiva al lector.
+
+Introduce la terminología, destaca las contribuciones del documento y da una breve descripción de la organización de éste.
+
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVOS
+%----------------------------------------------------------------------------------------
+
+ %Color del contenido
+
+\subsection*{Origen del Tema}
+Contextualiza el trabajo respecto de investigaciones previas de otros autores y propias, señala las diferencias con trabajos previos. Algunas veces se incluye en la introducción o bien en la discusión del trabajo (secciones finales) \cite{000}. 
+
+\subsection*{Justificación y Aporte}
+Justificar la conveniencia del proyecto desde diversos puntos de vista \cite{003}.
+
+Preguntas clave:
+  \begin{itemize}
+  \item ¿Para qué sirve la investigación?
+  \item ¿Quiénes se benefician con los resultados?
+  \item ¿Ayuda a resolver algún problema práctico?
+  \item ¿Contribuye a aumentar el conocimiento?
+  \item ¿Se podrán generalizar los resultado?
+\end{itemize}
+
+\section*{Objetivo General}
+Optimizar e implementar soluciones algorítmicas eficientes, utilizando diversas estructuras de datos y distintos paradigmas de programación, para procesar reparaciones a bases de datos inconsistentes, garantizando la semántica de los datos con el propósito de obtener respuestas a consultas de agregación para la toma de decisiones.
+\subsection*{Específicos}
+\begin{enumerate}
+ \item Identificar los operadores ideales para computar consultas en una base de datos.
+\item Comparar las diversas estructuras de datos y lenguajes de programación que permitan resolver este problema eficientemente con su posterior implementación.
+\item Verificar empíricamente que las soluciones algorítmicas permiten resolver el problema planteado, determinando su eficiencia al compararlos con diferentes herramientas existentes en la literatura.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+
+\section*{Desarrollo}
+
+En esta parte deben describir el trabajo realizado, desde el inicio hasta el final, incluyendo la descripción de las tablas, figuras, codigos y formulas usadas en el proyecto que se presentan en este informe, tambien si se usan referencias bibliograficas, deben incluirlas en el texto.
+
+El Código \ref{codigo1} es... La Figura \ref{foto1} muestra .... la Tabla \ref{tabla1} presenta... El autor \cite{001} presenta. La ecuación \ref{ecuacion1} representa...
+
+%------------------------------------------------
+
+\subsection*{subtitulo}
+\begin{lstlisting}[caption=Código de Ciclo while,label=codigo1]
+i=0
+p=0
+n=0
+while i<20:
+    n=int(input('ingrese'))
+    if n<0:
+        n=n+1
+    elif n>0:
+        p=p+1
+    else:
+        print('hola')
+    i=i+1
+\end{lstlisting}
+
+
+\begin{eqnarray}\label{ecuacion1}
+\cos\bar{\phi}_j Q_{j+1,k,t} + Q_{j+1,k,y}+\frac{\sin^2\bar{\phi}_j}{T\cos\bar{\phi}_j} Q_{j+1,k}&=&\nonumber \\
+-\cos\phi_j Q_{j,k,t} + Q_{j,k,y}-\frac{\sin^2\phi_j}{T\cos\phi_j} Q_{j,k}.\label{edgej}
+\end{eqnarray} 
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+\subsection*{Resultados}
+En este apartado deben destacar lo logrado en el proyecto.
+
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{Forma de poner imágenes}
+\label{foto1}
+\end{center}\vspace{1cm}
+
+\begin{center}\vspace{1cm}
+    \begin{tabular}{ l l p{8cm}}\hline
+       texto1  & texto2 & texto3\\\hline
+        texto4 texto4 & texto5 texto5 texto5& Es lo que comúnmente se conoce como introducción, conduce al lector desde un tema de un área general hacia un campo de investigación específico, describe el contexto, el problema, motiva al lector.\\\hline
+        texto7 &texto8  &texto9 \\\hline
+    \end{tabular}
+\captionof{table}{Forma de poner Tablas}
+\label{tabla1}
+\end{center}\vspace{1cm}
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+%\color{rojo} % SaddleBrown color for the conclusions to make them stand out
+
+\section*{Conclusiones}
+
+En las conclusiones se destaca lo mostrado en el trabajo, resaltando los resultados. Se indican los trabajos futuros.
+
+\subsection*{Trabajo Futuro}
+
+Deben explicar que cosas del proyecto podrían mejorar a futuro, que cosas se podrían añadir, etc.
+
+ %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+\color{celeste}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliographystyle{IEEEtran} % Plain referencing style
+\bibliography{bibliografia.bib} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\section*{Agradecimientos}
+
+%Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdiet urna arcu a arcu. Donec nec ante a dui tempus consectetur. Cras nisi turpis, dapibus sit amet mattis sed, laoreet.
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}
+\input{Pie}
+\end{document}

@@ -1,0 +1,281 @@
+\documentclass[12pt]{report}
+\def\TITULO{Título}
+\def\subtitulo{Subtítulo}
+\def\autora{Autor}
+\def\correoa{correo@alumnos.ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\autord{Autor}
+\def\correod{correo@alumnos.ulagos.cl}
+\def\asignatura{Asignatura}
+\def\campus{Campus ???}
+\def\carrera{Ingeniería Civil en Informática}
+\input{Macros}
+
+\lstset{language=Python}
+
+\begin{document}
+	
+	%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+\maketitle
+
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+%INDICE GENERAL
+\tableofcontents
+%INDICE DE FIGURAS
+\listoffigures
+%INDICE DE TABLAS
+\renewcommand{\listtablename}{Índice de tablas}\listoftables
+\renewcommand{\lstlistlistingname}{Índice de algoritmos}
+\lstlistoflistings
+%\addcontentsline
+%%%%%%%%%%%%%FIN PORTADA%%%%%%%%%%%%%%%%
+
+%\thispagestyle{empty}
+%\begin{abstract}
+%\end{abstract}
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+
+
+
+%%%%%%%RESUMEN%%%%%%%%%%%
+\begin{abstract}\thispagestyle{empty}
+
+Resume en un (1) párrafo el contenido del informe en un máximo de 350 palabras.
+Debe ser preciso:
+\begin{itemize}\justifying
+  \item Establece el problema
+  \item Dice porqué es interesante
+  \item Señala los logros y desafíos
+\end{itemize}
+Un resumen debe ser llamativo, motivador, descriptivo y sin contenido específico. \textbf{No incluye}: citas, referencias, conclusiones, figuras ni tablas.
+
+
+
+\keywords{Palabra1, Palabra2, Palabra3, Palabra4, Palabra5}
+\end{abstract}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+
+
+
+%%%%%%%%COMIENZO
+
+
+\chapter{Generalidades}
+Es lo que comúnmente se conoce como introducción, conduce al lector desde un tema de un área general hacia un campo de investigación específico, describe el contexto, el problema, motiva al lector.
+
+Introduce la terminología, destaca las contribuciones del documento y da una breve descripción de la organización de éste.
+
+Ejemplo de uso de una referencia \cite{001}. Ejemplo de referencia doble \cite{001,002}.
+
+\section{Origen del Tema}
+Contextualiza el trabajo respecto de investigaciones previas de otros autores y propias, señala las diferencias con trabajos previos. Algunas veces se incluye en la introducción o bien en la discusión del trabajo (secciones finales). Largo aproximado: 2 páginas.
+\section{Planteamiento}
+
+Provee un \naranjo{marco de referencia} para interpretar los resultados y conectarlos a la literatura existente sobre el fenómeno, orienta sobre cómo se realizará el estudio.
+
+ Ayuda a prevenir errores que se han cometido en otros estudios, conduce al establecimiento de la hipótesis o afirmaciones que se someterán a prueba.
+ 
+ Amplia el horizonte del estudio y centra al investigador en el problema, para evitar desviaciones del planteamiento original.
+
+Considera una \naranjo{revisión bibliográfica} que consiste en detectar, obtener y consultar la bibliografía y otros materiales que pueden ser útiles para los propósitos del estudio.
+
+La revisión bibliográfica debe ser selectiva, se puede realizar a partir de tres fuentes principales:
+
+\begin{itemize}\justifying
+  \item \naranjo{Primarias (directas):} Libros, artículos, antologías, tesis, disertaciones, entre otros.
+  \item \naranjo{Secundarias:} Compilaciones, resúmenes de listados de referencias publicadas en un área en particular, bases de datos.
+  \item \naranjo{Terciarias:} Documentos que reúnen nombres y títulos de revistas y otras publicaciones.
+\end{itemize}
+
+
+\begin{ejemplo}
+\lipsum[1]%reemplazar esta linea
+\end{ejemplo} 
+
+
+\section{Árbol de Problemas}
+\lipsum[1]%reemplazar esta linea
+
+\section{Justificación y Aporte}
+Justificar la conveniencia del proyecto desde diversos puntos de vista.
+
+Preguntas clave:
+  \begin{itemize}
+  \item ¿Para qué sirve la investigación?
+  \item ¿Quiénes se benefician con los resultados?
+  \item ¿Ayuda a resolver algún problema práctico?
+  \item ¿Contribuye a aumentar el conocimiento?
+  \item ¿Se podrán generalizar los resultado?
+\end{itemize}
+
+
+\begin{ejemplo}
+\lipsum[1]%reemplazar esta linea
+\end{ejemplo}
+
+
+\section{Viabilidad}
+Analizar la disponibilidad de recursos financieros, humanos y materiales.
+
+Preguntas clave:
+  \begin{itemize}\justifying
+  \item ¿Puede llevarse a cabo esta investigación?
+  \item ¿Cuánto tiempo tomará realizarla?
+\end{itemize}
+
+
+\section{Alcance}
+Que se planea realizar y hasta que punto se espera llegar.
+
+Esta subdivisión debe:
+\begin{enumerate}\justifying
+  \item Identifique el producto del software para ser diseñado por el nombre (por ejemplo, Anfitrión DBMS, el Generador del Reporte, etc.);
+  \item Explique eso que el producto (del software hará y que no hará.
+  \item Describe la aplicación del software especificándose los beneficios pertinentes, objetivos, y metas;
+  \item Sea consistente con las declaraciones similares en las especificaciones de niveles superiores (por ejemplo, las especificaciones de los requisitos del sistema), si ellos existen.
+\end{enumerate}
+
+
+
+
+
+
+\chapter{Fundamentación}
+
+\section{Objetivos}\label{objetivos}
+
+Se deben abordar desde el principio de la investigación, expresan los fines que se esperan lograr con el estudio del problema planteado, responden a la pregunta \naranjo{¿Para qué se lleva a cabo la investigación?}, por lo general comienzan con un verbo en infinitivo: Determinar, identificar, establecer, distinguir, medir, cuantificar, entre otros.
+
+Deben enunciar un resultado unívoco, preciso, factible y medible. Su formulación debe ser clara, concisa y bien orientada hacia el fin, en función de ellos se plantean los métodos de recolección de datos, pruebas estadísticas, entre otros.
+
+Evitar unir objetivos, idealmente, un objetivo general y varios específicos.
+
+Cada objetivo específico se ``mapea'' a una pregunta de investigación.
+Por ejemplo:
+  \begin{itemize}
+  \item \textbf{\naranjo{Objetivo:}} Optimizar los métodos de acceso a disco.
+  \item \textbf{\naranjo{Preguntas de investigación:}} ¿Cuáles son los métodos de acceso a disco?
+\end{itemize}
+\subsection{General}
+\lipsum[1]%reemplazar esta linea
+
+\subsection{Específicos}
+\begin{enumerate}\justifying
+  \item \lipsum[1]%reemplazar esta linea
+ 
+  \item \lipsum[1]%reemplazar esta linea
+
+\end{enumerate}
+
+
+
+\section{Metodología}
+Esto no es hacer referencia a métodos y herramientas que se usarán en el desarrollo del trabajo. Sino que describir como se llevará a cabo el trabajo.
+
+Por lo tanto, nuevamente se puede plantear la solución (el proyecto) en términos explícitos de: los objetivos generales y específicos.
+
+Posteriormente relacionar el cumplimiento de los objetivos específicos con tareas o actividades a desarrollar (al final se debe incluir seguramente actividades de validación y prueba del producto - plan de prueba).
+
+\subsection{Planificación}
+\lipsum[1]%reemplazar esta linea
+
+
+
+\subsection{Equipo de Trabajo}
+\lipsum[1]%reemplazar esta linea
+
+
+\begin{landscape}
+\subsection{Carta Gantt}\label{sec:gantt}
+\begin{figure}[hbt]
+  \centering
+  %\includegraphics{}
+  \caption{Carta Gantt del Proyecto XYZ}
+  \label{gantt}
+\end{figure}
+\end{landscape}
+
+
+
+
+
+
+
+En la Tabla \ref{t:info} se muestran las características de los sistemas GNU/Linux, obtenidas desde \cite{001}.
+
+
+\begin{table}[hbt]
+\begin{center}
+\begin{tabular}{|l|p{10cm}|}\hline
+\multicolumn{2}{|c|}{\textbf{Información general}}\\
+\hline
+\textbf{Modelo de desarrollo}&desarrollo	Software libre y código abierto\\
+\textbf{Última versión estable}&Kernel: 4.11.3 (info) 25 de mayo de 2017 (10 días)\\
+\textbf{Última versión en pruebas}&	4.12.rc2 (info) 22 de mayo de 2017 (13 días)\\
+\textbf{Escrito en}&	C\\
+\textbf{Núcleo}&	Núcleo Linux\\
+\textbf{Plataformas soportadas}	& DEC Alpha, ARM, AVR32, Blackfin, ETRAX CRIS, FR-V, H8/300, Itanium, M32R, m68k, Microblaze, MIPS, MN103, PA-RISC, PowerPC, s390, S+core, SuperH, SPARC, TILE64, Unicore32, x86, Xtensa\\
+\textbf{Licencia}	&GNU General Public License y otras\\
+\textbf{Estado actual}	&En desarrollo\\
+\textbf{En español}	&Sí\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Información General de GNU/Linux}
+\label{t:info}
+\end{table}
+
+
+\chapter{Desarrollo del Proyecto}
+\lipsum[1]%reemplazar esta linea
+
+\section{Definición del Problema}
+\lipsum[1]%reemplazar esta linea
+
+\section{Propuesta de Solución}
+\lipsum[1]%reemplazar esta linea
+
+
+
+\chapter{Conclusión}
+En las conclusiones se destaca lo mostrado en el trabajo, resaltando los resultados. Se indican los trabajos futuros. Usualmente, luego de las conclusiones se incluye un párrafo de agradecimientos a quienes auspician la investigación.
+\section{Principales aportes}
+\lipsum[1]%reemplazar esta linea
+
+\section{Contraste de resultados}
+\lipsum[1]%reemplazar esta linea
+
+\section{Trabajo Futuro}
+\lipsum[1]%reemplazar esta linea
+
+
+
+
+
+%%%%%
+%agregar referencias
+\bibliographystyle{IEEEtran}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliography{bibliografia.bib}
+
+\input{Anexos}
+
+\end{document}
