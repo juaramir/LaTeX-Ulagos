@@ -1,0 +1,226 @@
+\documentclass[aspectratio=169]{beamer}%[handout]
+\input{Macros}
+
+\def\titulo{Título}
+\def\subtitulo{Subtítulo}
+\def\autora{Autor}
+\def\correoa{correo@ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@ulagos.cl}
+\def\asignatura{Asignatura}
+\def\campus{Campus}
+\def\carrera{Ingeniería Civil en Informática}
+
+\lstset{language=SQL}
+
+%Unico AUTOR
+%\author[\autora]{\hspace{5cm}\raggedright\autora\\\hspace{5cm}\href{mailto:\correoa}{\correoa}}
+   \author[NOMBRE AUTOR]{
+	\href{mailto:\correoa}{\autora}\\
+	\href{mailto:\correob}{\autorb}\\
+	\href{mailto:\correoc}{\autorc}}
+\institute[ULAGOS]{\hspace{5cm}\raggedright{\carrera}}
+%%%%%%%%%%%%%FIN PORTADA
+
+
+%%%%%Carpeta predeterminada fotos
+
+
+\begin{document}
+
+
+%Pagina de Portada
+\begin {frame} [plain]
+
+\titlepage
+\end {frame}
+\setbeamertemplate{background}{}
+%%%%%%%%%%%%%%%%ÍNDICES
+\section[Contenido]{}
+\frame{
+  \frametitle{\textbf{Contenido}}
+\setcounter{tocdepth}{2}%1: solo titulo principal, 2: titulo y subtitulo, 3....
+\scriptsize
+\tableofcontents[]
+}%Generacion de Indice por capitulo
+\AtBeginSection[]{
+\begin{frame}
+\frametitle{\textbf{Contenido}}
+\scriptsize
+\tableofcontents[currentsection]
+\end{frame}}
+
+\AtBeginSubsection[]{
+\begin{frame}
+\frametitle{\textbf{Contenido}}  
+\scriptsize
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+%%%%%%%%%%%%%%%%FIN ÍNDICES
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%INICIO PRESENTACION
+\section{Introducción}
+\section{Marco Teórico}
+\section{Estado del Arte}
+\section{Justificación}
+\section{Objetivos}
+\section{Desarrollo}
+\subsection{Metodología de Desarrollo}
+\subsection{Modelo de Datos}
+\subsection{Requisitos}
+\begin{frame}[fragile]
+	\frametitle{Colores y Bloques}
+	\justifying
+	Lo siguiente son ejemplos de texto en colores: \rojo{Hola}, \verde{Hola}, \azul{hola}, \naranjo{hola}
+	
+	\begin{block}{Titulo}\justifying
+		Contenido
+	\end{block}
+	
+	
+	\begin{exampleblock}{Titulo ejemplo}\justifying
+		Contenido
+	\end{exampleblock}
+	
+	
+	\begin{alertblock}{Titulo alerta}\justifying
+		Contenido
+	\end{alertblock}
+	
+	\begin{sintaxis}\justifying
+	\end{sintaxis}
+	
+	\begin{resultado}\justifying
+	\end{resultado}
+	
+\end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Items, Descripciones y Enumeraciones}
+	\justifying
+	\transdissolve
+	\begin{itemize}\justifying
+		\item Item sin números
+		\begin{itemize}\justifying
+			\item nivel 2
+			\begin{itemize}\justifying
+				\item nivel 3
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{enumerate}\justifying
+		\item Item Numerado
+		\begin{enumerate}\justifying
+			\item Nivel 2
+			\begin{enumerate}\justifying
+				\item Nivel 3
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+	
+	\begin{description}\justifying
+		\item[Descripción] Texto descrito
+		\begin{description}\justifying
+			\item[Nivel 2] Texto
+		\end{description}
+		
+	\end{description}
+\end{frame}
+
+
+
+
+\subsection{Códigos}
+\begin{frame}[fragile]
+	\justifying
+	\frametitle{Código}
+	\lstset{language=C}
+	\begin{lstlisting}
+		#include<stdio.h>
+		int main(){
+			printf("Hola Mundo1");
+			return 0;
+		}
+	\end{lstlisting}
+	\begin{block}{SQL}%\vspace{-0.3cm}
+		\lstset{language=SQL}
+		\begin{lstlisting}
+			Select *
+			from navegantes n
+			where categoria=7;
+		\end{lstlisting}%\vspace{-0.3cm}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Código multicolumna}
+	\justifying
+	\lstset{language=C}
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{lstlisting}
+			#include<stdio.h>
+			int main(){
+				printf("Hola Mundo2");
+				return 0;
+			}
+		\end{lstlisting}
+	\end{minipage} \hfill
+	\begin{minipage}[t]{0.49\textwidth} 
+		\lstset{firstnumber=6} %cambiar numero de inicio
+		\begin{lstlisting}
+			#include<stdio.h>
+			int main(){
+				printf("Hola Mundo3");
+				return 0;
+			}
+		\end{lstlisting}
+	\end{minipage}
+\end{frame}
+\subsection{Matemática}
+\begin{frame}[fragile]
+	\frametitle{Ejemplo de Función Matemática}
+	\justifying
+	\begin{displaymath}
+		C_L=\frac{(S_{22}-\delta S_{11}^*)^*}{|\varPi S_{22}|^2=-|\pi|^2}
+	\end{displaymath}
+	
+	\begin{displaymath}
+		R_S=\frac{\sqrt{1-g_s}\cdot (1-|S_{11}|^2)}{1-(1-g_s)\cdot|S_{11}|^2}
+	\end{displaymath}
+	
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+	\frametitle{Tabla}
+	\justifying
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}\hline
+			\textbf{S}&\textbf{SCT} &\textbf{Asignatura}&\multicolumn{2}{|c|}{\textbf{Total Horas}}&\textbf{Previatura} \\\cline{4-5}
+			&&&\textbf{TP}&\textbf{TA}&\\\hline
+			\multirow{5}{*}&a&b&c&d&r\\\hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\section{Conclusión}
+\section{Trabajo Futuro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%FIN DOCUMENTO
+\end{document}
