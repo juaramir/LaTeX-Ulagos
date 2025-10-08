@@ -1,0 +1,12 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {2}{Ídea de Proyecto}{4}{0}{1}
+\beamer@sectionintoc {3}{Planteamiento del Problema}{13}{0}{2}
+\beamer@subsectionintoc {3}{1}{Objetivos}{14}{0}{2}
+\beamer@subsectionintoc {3}{2}{Justificación}{17}{0}{2}
+\beamer@subsectionintoc {3}{3}{Viabilidad o Factibilidad}{19}{0}{2}
+\beamer@subsectionintoc {3}{4}{Metodología de Trabajo}{20}{0}{2}
+\beamer@subsubsectionintoc {3}{4}{1}{Ejemplo}{21}{0}{2}
+\beamer@sectionintoc {4}{Planificación}{22}{0}{3}
+\beamer@subsectionintoc {4}{1}{Herramientas de Apoyo}{24}{0}{3}
+\beamer@subsubsectionintoc {4}{1}{1}{Gantt}{26}{0}{3}
+\beamer@sectionintoc {5}{Marco Teórico}{33}{0}{4}

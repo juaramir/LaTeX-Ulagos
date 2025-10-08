@@ -1,0 +1,1624 @@
+\documentclass[aspectratio=169]{beamer}%[handout]
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{beamerthemeshadow,beamerthemesplit,cite,cancel,lmodern,eso-pic,fancyvrb,textcomp,times,booktabs,amssymb,amsmath,ragged2e,float,subfig,xspace,epic,eepic,multicol,multirow,colortbl,color,graphicx,url,hyperref,array,appendixnumberbeamer,listings,pgfpages}
+\usepackage[normalem]{ulem} %tachar texto con \sout{}
+
+\setcounter{tocdepth}{3}
+\usepackage[figurename=]{caption}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TEXTDRAW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[usenames,dvipsnames]{pstricks}
+% \usepackage{epsfig}
+% \usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+% \usepackage[space]{grffile} % For spaces in paths
+% \usepackage{etoolbox} % For spaces in paths
+% \makeatletter % For spaces in paths
+% \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+% \makeatother
+
+\mode<handout>{
+\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm, landscape]
+}
+
+%Colores Ulagos
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{amarillo}{RGB}{255,182,18}
+\definecolor{verde}{RGB}{52,178,51}
+\definecolor{rojo}{RGB}{237,41,57}
+\definecolor{azulu}{RGB}{19,83,139}
+\definecolor{azul}{RGB}{0,91,187}
+\definecolor{negro}{RGB}{35,31,32}
+\definecolor{naranjo}{RGB}{251,79,20}
+\newcommand\rojo[1]{\textcolor[RGB]{237,41,57}{#1}}
+\newcommand\gris[1]{\textcolor[gray]{.65}{#1}}
+\newcommand\azul[1]{\textcolor[RGB]{19,15,204}{#1}}
+\newcommand\verde[1]{\textcolor[RGB]{52,178,51}{#1}}
+\newcommand\naranjo[1]{\textcolor[RGB]{251,79,20}{#1}}
+\newcommand\amarillo[1]{\textcolor[RGB]{255,182,18}{#1}}
+
+\newcommand\cita[1]{{\scriptsize \begin{flushright}\emph{(#1)}\end{flushright}}}
+\newcommand{\ignore}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tikz
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning} % LATEX and plain TEX
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%TEMA
+\mode<presentation>
+\usetheme{CambridgeUS}
+\usecolortheme[named=azul]{structure}
+\useinnertheme{rectangles}    
+\useoutertheme{infolines} 
+\setbeamercovered{transparent}
+\setbeamerfont{block title}{size={}}
+\setbeamerfont{title}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+\setbeamerfont{author}{shape=\scshape}
+\setbeamerfont{institute}{shape=\scshape}
+\setbeamerfont{block title}{shape=\scshape}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{description item}[align left]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=false,shadow=false]
+\setbeamercolor*{palette primary}{use=structure,fg=azulu,bg=gray97}%texto titulo y fecha
+\setbeamercolor*{palette secondary}{use=structure,fg=azulu,bg=gray97}%fondo titulo abajo
+\setbeamercolor*{palette tertiary}{use=structure,fg=gray97,bg=azulu}
+\setbeamercolor*{title}{use=structure,fg=white}%Portada
+\setbeamercolor*{author}{use=structure,fg=white}%Portada
+\setbeamercolor*{institute}{use=structure,fg=white}%Portada
+\setbeamercolor{frametitle right}{bg=azul!50!white}
+\setbeamercolor{structure}{fg=azul}
+%Bloques
+\setbeamercolor{block title}{use=structure,fg=white,bg=amarillo}
+\setbeamercolor{block body}{use=structure,fg=negro,bg=amarillo!20!white}
+\setbeamercolor{block title example}{use=structure,fg=white,bg=verde!80!black}
+\setbeamercolor{block body example}{use=structure,fg=negro,bg=verde!20!white}
+\setbeamercolor{block title alerted}{use=structure,fg=white,bg=rojo!90!negro}
+\setbeamercolor{block body alerted}{use=structure,fg=negro,bg=rojo!20!white}
+\setbeamertemplate{background}{\centering\includegraphics[height=9cm,width=16cm]{fondoula}}
+%%%%%%%%%%%%%%%%%%%%%FIN TEMA
+
+%lstlisting %%%%%CODIGOS
+\lstset{tabsize=2,language=tex,basicstyle=\small,keywordstyle=\color{azul}, commentstyle= \scriptsize\color{verde},showstringspaces=false, stringstyle=\color{red},breaklines=true,literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {Ñ}{{\~N}}1 {ñ}{{\~n}}1 {¿}{{?`}}1}
+  
+%%%%%%%%%%%%%%PORTADA
+\title[Primer documento en \LaTeX{}]{\textbf{\huge{Primer documento en \LaTeX{}}}}
+%\subtitle{Formación General\vspace{-0.3cm}}
+\author[Juan José Ramírez Lama]{\small{\textbf{Juan José Ramírez Lama} \\ \texttt{juan.ramirez@ulagos.cl}}}
+\institute[ULagos]{\small{\textbf{Departamento de Ciencias Exactas}}}
+\date[]{}
+%%%%%%%%%%%%%FIN PORTADA
+
+\begin{document}
+\setbeamertemplate{background}{\includegraphics[height=10cm,width=16cm]{fondoula}}%4:3
+%\setbeamertemplate{background}{\centering\includegraphics[height=8.6cm,width=16.1cm]{fondoula169}}%16:9
+
+
+%Pagina de Portada
+\begin {frame} [plain]
+
+\titlepage
+\end {frame}
+\setbeamertemplate{background}{}
+%%%%%%%%%%%%%%%%ÍNDICES
+\section[Contenido]{}
+\frame{
+  \frametitle{\textbf{Contenido}}
+\setcounter{tocdepth}{2}%1: solo titulo principal, 2: titulo y subtitulo, 3....
+\scriptsize
+\tableofcontents[]
+}%Generacion de Indice por capitulo
+\AtBeginSection[]{
+\begin{frame}
+\frametitle{\textbf{Contenido}}
+\scriptsize
+\tableofcontents[currentsection]
+\end{frame}}
+
+\AtBeginSubsection[]{
+\begin{frame}
+\frametitle{\textbf{Contenido}}  
+\scriptsize
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+%%%%%%%%%%%%%%%%FIN ÍNDICES
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%INICIO PRESENTACION
+\section{Bases del Lenguaje \LaTeX{}}
+\subsection{Formato de Archivos}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Formato de Archivos}}
+\justifying
+ \begin{block}{Archivos de Texto Plano}
+\begin{itemize}\justifying
+  \item Se escribe un archivo de texto plano que contiene el contenido del documento y etiquetas que lo estructuran.
+  \item Separación de formato y contenido.
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+\subsection{Comandos}
+\begin{frame}[fragile]
+\frametitle{\textbf{Comandos}}
+\justifying
+ \begin{block}{Formato de los comandos}
+\begin{itemize}\justifying
+  \item \verb+\comando[opciones{parametros}]+
+\end{itemize}
+\end{block}
+
+\begin{exampleblock}{}
+	\verb+\includegraphics[width=6cm]{logoulagos.png}+
+\end{exampleblock}
+
+
+\begin{block}{Entornos}
+\begin{itemize}\justifying
+  \item Afectan a una sección de código.
+  \item \verb+\begin{entorno}...\end{entorno}+
+\end{itemize}
+\end{block}
+
+\begin{exampleblock}{}
+\verb+\begin{center} Texto Centrado \end{center}+\end{exampleblock}
+
+\end{frame}
+\subsection{Caracteres y Espaciado}
+\begin{frame}[fragile]
+\frametitle{\textbf{Gestión del Espaciado}}
+\justifying
+
+\begin{itemize}\justifying
+  \item \LaTeX{} ignora varios espacios en blanco seguidos (tabuladores, espacios, líneas en blanco, etc).
+  \item Los párrafos se separan con una linea en blanco.
+\end{itemize}
+ \begin{block}{Sintaxis}
+   
+      \vspace{-0.3cm}
+\begin{lstlisting}
+Prueba            de       espaciado y contracci\'on        de     espacios.
+
+Nuevo p\'arrafo tras linea en blanco.
+\end{lstlisting}\vspace{-0.3cm}
+\end{block}
+
+\begin{exampleblock}{Resultado}
+Prueba            de       espaciado y contracci\'on        de     espacios.
+
+Nuevo p\'arrafo tras linea en blanco.
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Caracteres Reservados}}
+\justifying
+ \begin{itemize}\justifying
+  \item Hay algunos caracteres especiales que están reservados para \LaTeX{}.
+  \item \verb+ # $ % ^ & _ { } ~ \+
+  \item No se pueden introducir directamente como carácter, hay que introducir su código.
+\end{itemize}
+
+\begin{block}{Sintaxis}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\# \$  \^{} \& \_ \{ \} \~{} \textbackslash \%
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{block}
+
+\begin{exampleblock}{Resultado:}
+\# \$  \^{} \& \_ \{ \} \~{} \textbackslash \%
+\end{exampleblock}
+
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Comantarios}}
+\justifying
+ \begin{itemize}\justifying
+  \item Es posible introducir comentarios en el texto que no se visualizarán.
+  \item Útil para dejarse notas, separar partes del documento, detectar errores...
+  \item Carácter \%.
+\end{itemize}
+
+\begin{block}{Sintaxis}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+Esto es un %muy breve
+texto para demostrar c\'omo insertar comentarios.
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{block}
+
+\begin{exampleblock}{Resultado}
+Esto es un % muy breve
+texto para demostrar c\'omo insertar comentarios.
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Acentos y Caracteres No Estándar}}
+\justifying
+ \begin{itemize}\justifying
+  \item Se usan caracteres de 7 bit (estándar).
+  \item Caracteres de 8 bit (acentos eñes, etc): mediante comandos especiales. Se guardan como carácteres de 7 bit y el compilador los interpreta.
+  \item Ejemplo: \verb+Ram\'irez+
+  \item ?`Por qué?, para mantener la portabilidad. Todos los sistemas interpretan estos caracteres de la misma forma.
+  \item Aunque no es obligación usarlos en todos los editores.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Acentos y Caracteres No Estándar}}
+\justifying
+ \begin{minipage}[l]{0.48\linewidth}
+\begin{center}
+Acentos Comunes
+
+\begin{tabular}{|c|c|}\hline
+  \verb+\'a+&\'a \\
+  \verb+\'e+&\'e \\
+  \verb+\'i+&\'i \\
+  \verb+\'o+&\'o \\
+  \verb+\'u+&\'u \\
+  \verb+\~n+&\~n \\
+  \verb+?`+&?` \\
+  \verb+?+&? \\
+  \verb+!` +&!`\\
+  \verb+!+&! \\\hline
+\end{tabular}
+\end{center}
+
+
+\end{minipage}\hfill
+\begin{minipage}[r]{0.48\linewidth}
+\begin{center}
+Acentos en modo texto
+
+\begin{tabular}{|c|c|}\hline
+ \verb+\'{o}+ & \'{o}\\
+ \verb+\`{o}+ & \`{o}\\
+ \verb+\^{o}+ & \^{o}\\
+ \verb+\"{o}+ & \"{o}\\
+ \verb+\~{o}+ & \~{o}\\
+ \verb+\~{n}+ & \~{n}\\
+ \verb+\c{c}+ & \c{c}\\
+ \verb+\={o}+ & \={o}\\
+ \verb+\b{o}+ & \b{o}\\
+ \verb+\.{o}+ & \.{o}\\
+ \verb+\d{o}+ & \d{o}\\
+ \verb+\r{o}+ & \r{o}\\
+ \verb+\v{o}+ & \v{o}\\
+ \verb+\t{oo}+ & \t{oo}\\
+	\hline
+\end{tabular}
+
+\end{center}
+
+\end{minipage}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Acentos y Caracteres No Estántar}}
+\justifying
+ \begin{itemize}\justifying
+  \item El paquete \textbf{inputenc} permite escribir esos caracteres directamente (es decir, á en lugar de \verb+\'a+).
+  \item Se pierde cierta portabilidad.
+  \item En realidad casi todos los editores (como \TeX{}Maker) permiten seleccionar la codificación.
+  \item Posible solucion: Buscar y reemplazar.
+  \item Hay editores (como Kile) que según escribes convierten los caracteres a la nomenclatura estándar.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Estructura Básica de un Archivo}}
+\justifying
+ \begin{itemize}\justifying
+  \item Se define el tipo de documento.
+  \item Preámbulo, donde se cargan paquetes, se modifican comandos, etc.
+  \item Cuerpo del documento.
+\end{itemize}
+
+
+
+\begin{exampleblock}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \usepackage[utf8]{inputenc}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    % Comienzo del documento
+    \begin{document}
+    % contenido del documento
+    Texto del documento
+    \end{document}
+\end{lstlisting}\vspace{-0.3cm}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Incluir Archivos}}
+\justifying
+ \begin{itemize}\justifying
+  \item \LaTeX{} permite que el documento se divida en varios archivos.
+\begin{itemize}\justifying
+  \item Útil para modularizar documentos grandes.
+  \item Facilita la redacción colaborativa de documentos.
+  \item Permite separar preámbulos y contenido.
+\end{itemize}
+  \item Comando \textbf{input}
+  \item \verb+\input{documento}+
+\end{itemize}
+\begin{exampleblock}{}
+\lstset{basicstyle=\scriptsize}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \usepackage[utf8]{inputenc}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    % Comienzo del documento
+    \begin{document}
+    % contenido del documento
+    \input{introduccion.tex}
+    \input{formulas.tex}
+    \input{bibliografia.tex}
+    Texto del documento
+    \end{document}
+\end{lstlisting}\vspace{-0.3cm}
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Clases de Documentos}}
+\justifying
+ \begin{description}\justifying
+  \item[article] Para artículos de revistas científicas, congresos, informes breves, documentación de programas, invitaciones, etc.
+  \item[proc] Para Proceedings.
+  \item[report] para informes más largos que contengan varios capítulos como pequeños libros, tesis doctorales, proyectos de titulo, etc.
+  \item[boot] para libros o incluso tesis más extensas.
+  \item[beamer] para presentaciones.
+\end{description}
+
+\end{frame}
+
+\section{Creando un Documento}
+\subsection{Formato Básico}
+\begin{frame}[fragile]
+\frametitle{\textbf{Preparando el directorio en \LaTeX{}}}
+\justifying
+ \begin{itemize}\justifying
+  \item En primer lugar, crea una carpeta para meter dentro el documento.
+  \item Dentro irá el archivo principal .tex, las imágenes y cualquier otro archivo que desees incluir.
+  \item y también los archivos que se generan al compilar.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Empezando a escribir en \LaTeX{}}}
+\justifying
+ \begin{itemize}\justifying
+  \item Escribimos un documento con el texto indicado abajo.
+  \item Lo guardamos en un directorio conocido con extensión .tex.
+  \item Compilamos y vemos el resultado.
+%  \item Si quieres, puedes probar a compilar con \LaTeX{}, visualizar el .dvi y despues convertir a otros formatos
+\end{itemize}
+
+\begin{exampleblock}{}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    % Comienzo del documento
+    \begin{document}
+    % contenido del documento
+    HOLA MUNDO
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Datos del Documento}}
+\justifying
+ \begin{itemize}\justifying
+  \item Añadimos algunos datos al documento: título, autor y fecha.
+  \item Lo escribimos en el preámbulo (antes del \verb+\begin{document}+)
+  \item Compilamos de nuevo para ver el resultado.
+\end{itemize}
+
+\begin{exampleblock}{}
+%\lstset{basicstyle=\small}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \title{Apuntes curso \LaTeX{}}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    \date{Octubre 2015}
+    % Comienzo del documento
+    \begin{document}
+    % contenido del documento
+    Hola Mundo
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Datos del Documento}}
+\justifying
+ \begin{itemize}\justifying
+  \item ?`Todo igual?, Hay que decirle a \LaTeX{} que genere un título: \verb+\maketitle+.
+  \item Esto va dentro del documento (es título es parte del contenido).
+\end{itemize}
+\begin{exampleblock}{}
+\lstset{basicstyle=\small}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \title{Apuntes curso \LaTeX{}}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    \date{Octubre 2015}
+    % Comienzo del documento
+    \begin{document}
+    \maketitle
+    % contenido del documento
+    Hola Mundo
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+
+ \begin{block}{}
+Nada de lo que va antes de \verb+\begin{document}+ se muestra, son solo sentencias de control.
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Soporte para acentos}}
+\justifying
+ \begin{itemize}\justifying
+  \item ?`Faltan los tildes?
+  \item Incluir el paquete \textbf{inputenc} para soporte de tildes.
+  \item No es parte del contenido: en el preámbulo.
+\end{itemize}
+\begin{exampleblock}{}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \usepackage[utf8]{inputenc}
+    \title{Apuntes curso \LaTeX{}}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    \date{Octubre 2015}
+    % Comienzo del documento
+    \begin{document}
+    \maketitle
+    % contenido del documento
+    Hola Mundo
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Insertando un abstract (resumen)}}
+\justifying
+\begin{block}{Entorno Resumen}
+	\verb+\begin{abstract}...\end{abstract}+
+\end{block}
+
+\begin{exampleblock}{}
+\begin{lstlisting}
+    \begin{document}
+    \maketitle
+    % contenido del documento
+    
+    \begin{abstract}
+        Texto del abstract
+    \end{abstract}
+    
+    Hola Mundo
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+
+\end{frame}
+\subsubsection{División del documento}
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento: Capítulos, secciones, ...}}
+\justifying
+ \begin{itemize}\justifying
+  \item Para estructurar el documento, hay que dividirlo en secciones y subsecciones.
+  \item Se usan órdenes de \LaTeX{} que toman el título de la sección como argumento.
+\end{itemize}
+Las divisiones disponibles dependen del tipo de documento.
+\begin{itemize}\justifying
+  \item Clase \rojo{article}:
+  \begin{itemize}\justifying
+  \item \verb+\section{}+, \verb+\subsection{}+, \verb+\subsubsection{}+
+  \item \verb+\paragraph{}+, \verb+\subparagraph{}+
+  \item División que no afecta a la numeración de secciones: \verb+\part{}+.
+\end{itemize}
+
+  \item Clase \rojo{report} y \rojo{book}:
+  \begin{itemize}\justifying
+  \item Otra división adicional: \verb+\chapter{}+.
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento: Capítulos, secciones, ...}}
+\justifying
+ Comandos \verb+\chapter{}+, \verb+\section{}+ y \verb+\subsection{}+.
+ 
+ \begin{block}{Para Practicar}
+\begin{itemize}\justifying
+  \item Inserta el capítulo: Creación de documentos en \LaTeX{}.
+  \item Inserta las siguientes secciones: Introducción y Principios Básicos.
+  \item Inserta dentro de la ultima sección la subsección: Comandos y Entornos \LaTeX{}.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento: Capítulos, secciones, ...}}
+\justifying
+\begin{block}{}
+	Comandos \verb+\chapter{}+, \verb+\section{}+, \verb+\subsection{}+, \verb+\subsubsection{}+, \verb+\paragraph{}+ y \verb+\subparagraph{}+
+\end{block}
+
+ 
+ \begin{exampleblock}{}
+\begin{lstlisting}
+\begin{document}
+\maketitle
+% Contenido
+\chapter{Capitulo}
+\section{Titulo}
+\subsection{Subtitulo}
+\subsubsection{Subtitulo del subtitulo}
+\paragraph{Parrafo}
+\subparagraph{subparrafo}
+
+Hola Mundo
+\end{document}
+\end{lstlisting}
+
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento: Capítulos, secciones, ...}}
+\justifying
+ \begin{block}{Capítulos tipo Apéndice}
+\begin{itemize}\justifying
+  \item El comando \verb+\appendix+ hace que los siguientes capítulos se numeren como apéndices (con letras).
+  \item Si estamos usando la clase article, cambia la numeración de secciones.
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento en varios archivos}}
+\justifying
+ 
+ \begin{itemize}\justifying
+  \item El comando \verb+input+ permite introducir en el documento texto escrito en otro archivo .tex
+  \item Se puede usar para separa diferentes partes del contenido (como capítulos de una tesis), o para separar preámbulo y contenido (tener un archivo a parte para configuración e importarlo).
+\end{itemize}
+
+ 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{División del documento en varios archivos}}
+\justifying
+ \begin{alertblock}{Para Practicar}
+\begin{itemize}
+  \item Crea en el mismo directorio otro archivo .tex con contenido (no se debe escribir de nuevo \verb+\begin{document}+), solo contenido.
+  \item Importalo desde el documento principal usando \verb+\input{nombreArchivo}+.
+  \item Recuerda no usar tildes ni espacios en el nombre del archivo.
+\end{itemize}
+
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Generando un Índice}}
+\justifying
+ \begin{itemize}\justifying
+  \item Comando \verb+\tableofcontents+
+  \item Necesario compilar varias veces para que asigne la numeración correctamente.
+\end{itemize}
+
+\begin{exampleblock}{}
+\begin{lstlisting}
+\begin{document}
+\maketitle
+\tableofcontents
+
+% Contenido
+\chapter{Creaci\'on de documentos en \LaTeX{}}
+\section{Introducci\'on}
+\section{Principios B\'asicos}
+\subsection{Comandos y Entornos \LaTeX{}}
+
+Hola Mundo
+\end{document}
+\end{lstlisting}
+\end{exampleblock}
+
+
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\textbf{Selección de Idioma}}
+\justifying
+ \begin{itemize}\justifying
+  \item Tenemos palabras en inglés: Chapter, Table of Contents, etc.
+  \item Cambiar el idioma con el paquete babel
+  \item \verb+\usepackage[spanish]{babel}+
+\end{itemize}
+
+\begin{exampleblock}{}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}
+    \documentclass[letter,10pt]{article}
+    \usepackage[spanish]{babel}
+    
+    \usepackage[utf8]{inputenc}
+    \title{Apuntes curso \LaTeX{}}
+    \author{Juan Jos\'e Ram\'irez Lama}
+    \date{Octubre 2015}
+    % Comienzo del documento
+    \begin{document}
+    \maketitle
+    \listofcontents
+    % contenido del documento
+    \chapter{Creaci\'on de documentos en \LaTeX{}}
+    \section{Introducci\'on}
+    \section{Principios B\'asicos}
+    \subsection{Comandos y Entornos \LaTeX{}}
+    Hola Mundo
+    \end{document}
+\end{lstlisting}
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Notas al Pie}}
+\justifying
+ Comando \verb+\footnote{}+
+ 
+  \begin{block}{Ejemplo}
+  \begin{lstlisting}
+Hola Mundo\footnote{Palabra usada com\'unmente al crear un primer programa o documento}
+  \end{lstlisting}
+\end{block}
+ 
+ \begin{exampleblock}{Resultado}
+Hola Mundo\footnote{Palabra usada comunmente al crear un primer programa o documento}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Creación de Enlaces}}
+\justifying
+ \begin{itemize}\justifying
+  \item Usando el comando \verb+\url{}+ podemos crear enlaces.
+  \item Incluir en el preámbulos los paquetes \verb+url+ y \verb+hyperref+
+  \item \verb+hyperref+ crea enlaces internos, por ejemplo, en el índice y los pies de página.
+  \item Los enlaces se muestran recuadrados en el pdf, pero esos recuadros no se verán al imprimir el documento.
+\end{itemize}
+\begin{block}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\usepackage{url}
+\usepackage[breaklinks=true]{hyperref}
+\section{Introducci\'on}
+Las presentaciones est\'an en UlagosVirtual\footnote{\url{https://www.ulagosvirtual.cl/login/index.php}}.
+\end{document}
+\end{lstlisting}\vspace{-0.3cm}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Creación de Enlaces}}
+\justifying
+ \begin{itemize}\justifying
+  \item También podemos crear enlaces con un texto diferente a la dirección del enlace.
+  \item Para ello usaremos el comando \verb+\href+, de la siguiente forma:
+  \item []\verb+\href{pagina a enlazar}{texto enlace}+
+\end{itemize}
+
+\begin{block}{Sintaxis}
+\verb+\href{http://www.juaramir.com}{Mi P\'agina Personal}+
+\end{block}
+\begin{exampleblock}{Resultado}
+\href{http://www.juaramir.com}{Mi Página Personal}
+\end{exampleblock}
+
+
+
+
+\end{frame}
+
+\subsection{Formato de palabras y párrafos}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Enfatizar Palabras}}
+\justifying
+ \begin{description}\justifying
+  \item[emph] Para enfatizar palabras, de acuerdo al texto. \emph{Recomendado}.
+  \item [textbf] Para texto en \textbf{Negrita}
+  \item [textit] Para tecto en \textit{Cursiva}
+  \item [underline] Para texto \underline{subrayado}
+  \item [texttt] Para texto estilo \texttt{máquina de escribir}
+  \item [textsf] Para texto \textsf{Sans-Serif}
+\end{description}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Alineación de Párradfo}}
+\justifying
+ \begin{description}\justifying
+  \item [flushleft] Entorno para alinear el texto a la izquierda.
+  \item [flushright] Entorno para alinear el texto a la derecha.
+  \item [center] Entorno para centrar un párrafo, tabla, una figura, etc.
+\end{description}
+
+\begin{exampleblock}{Ejemplos}
+\begin{verbatim}
+\begin{flushleft}Texto Izquierda\end{flushleft}
+\begin{flushright}Texto Derecha\end{flushright}
+\begin{center}Texto Centrado\end{center}
+\end{verbatim}
+\end{exampleblock}
+
+\begin{block}{}
+\begin{flushleft}Texto Izquierda\end{flushleft}
+\begin{flushright}Texto Derecha\end{flushright}
+\begin{center}Texto Centrado\end{center}
+\end{block}
+
+
+\end{frame}
+
+\subsection{Otros entornos útiles}
+\begin{frame}[fragile]
+\frametitle{\textbf{Algunos entornos útiles: verbatim}}
+\justifying
+ \begin{itemize}\justifying
+  \item El entorno verbatim permite introducir código que no sea interpretado. 
+  \item Para usarlo dentro de un párrafo: \verb+\verb+++
+\end{itemize}
+\begin{exampleblock}{}
+\begin{lstlisting}
+Para enfatizar texto se usa el comando:
+ \verb+\emph{}+.
+Por ejemplo:
+\verb+\emph{esto va enfatizado}+
+\end{lstlisting}
+\end{exampleblock}
+
+\begin{block}{}
+Para enfatizar texto se usa el comando \verb+\emph{}+.
+Por ejemplo:
+\verb+\emph{esto va enfatizado}+
+\end{block}
+
+
+
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\textbf{Entorno verbatim}}
+\justifying
+ \begin{itemize}\justifying
+  \item En párrafo separado:
+  \item []\verb+\begin{verbatim}...\end{verbatim}+
+
+\end{itemize}
+\begin{exampleblock}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{verbatim}
+Se pueden crear listas como sigue:
+\begin{itemize}
+  \item item 1
+  \item item 2
+\end{itemize}
+\end{verbatim}
+\end{lstlisting}\vspace{-0.3cm}
+\end{exampleblock}
+
+\begin{block}{}
+\begin{verbatim}
+Se pueden crear listas como sigue:
+\begin{itemize}
+  \item item 1
+  \item item 2
+\end{itemize}
+\end{verbatim}
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Enumeración, Listas, y Descripción}}
+\justifying
+\begin{description}\justifying
+  \item [enumerate] Permite crear listas numeradas
+  \item [itemize] Permite crear listas no numeradas
+  \item [description] Permite crear listas de definiciones
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Enumeración}}
+\justifying
+ 
+ \begin{exampleblock}{Sintasis}
+\begin{lstlisting}
+\begin{enumerate}
+\item Naranjas
+\item Manzanas
+\item Bananas
+\end{enumerate}
+\end{lstlisting}
+\end{exampleblock}
+
+\begin{block}{Resultado}
+\begin{enumerate}
+\item Naranjas
+\item Manzanas
+\item Bananas
+\end{enumerate}
+\end{block} 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Listas}}
+\justifying
+ \begin{exampleblock}{Sintaxis}
+\begin{lstlisting}
+\begin{itemize}
+\item Tomates
+\item Pepinos
+\item Cebollas
+\end{itemize}
+\end{lstlisting}
+
+\end{exampleblock}
+
+\begin{block}{Resultado}
+\begin{itemize}
+\item Tomates
+\item Pepinos
+\item Cebollas
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Descripción}}
+\justifying
+ \begin{exampleblock}{Sintasis}
+\begin{lstlisting}
+\begin{description}
+  \item [Chocolate] Elaborado a base de cacao
+  \item [Caramelo] Elaborado a base de az\'ucar
+\end{description}
+\end{lstlisting}
+
+\end{exampleblock}
+
+\begin{block}{Resultado}
+\begin{description}
+  \item [Chocolate] Elaborado a base de cacao
+  \item [Caramelo] Elaborado a base de az\'ucar
+\end{description}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Cambiar el formato de la Enumeración}}
+\justifying
+ Por ejemplo, para que la numeración de segundo nivel sea de la forma 1.1.
+ 
+ \begin{exampleblock}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumi .\theenumii .}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Citas y Poemas}}
+\justifying
+ \begin{description}\justifying
+  \item [quote] permite escribir citas, frases importantes o ejemplos.
+  \item [quotation] es útil para citas largas que ocupen varios párrafos.
+  \item [verse] para escribir versos.
+\end{description}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{quote}}
+\justifying
+ \begin{exampleblock}{ejemplo}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+Una regla tipogr\'afica para la longitud de la l\'inea es la siguiente:
+\begin{quote}
+    De media, ninguna l\'inea deber\'ia superar los 66 caracteres. 
+\end{quote}
+Por eso las p\'aginas \LaTeX{} tienen por defecto m\'argenes tan amplios.
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+
+\begin{block}{Resultado}
+Una regla tipogr\'afica para la longitud de la l\'inea es la siguiente:
+\begin{quote}
+    De media, ninguna l\'inea deber\'ia superar los 66 caracteres. 
+\end{quote}
+Por eso las p\'aginas \LaTeX{} tienen por defecto m\'argenes tan amplios.
+\end{block}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\textbf{verse}}
+\justifying
+ \begin{exampleblock}{ejemplo}
+   \lstset{basicstyle=\scriptsize}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{verse}
+    \'Erase de un marinero\\
+    que hizo un jard\'in junto al mar,\\
+    y se met\'io a jardinero.\\
+    Estaba en el jard\'in en flor,\\
+    y el jardinero se fue\\
+    por esos mares de Dios.
+\end{verse}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+
+\begin{block}{Resultado}
+\begin{verse}
+    \'Erase de un marinero\\
+    que hizo un jard\'in junto al mar,\\
+    y se met\'io a jardinero.\\
+    Estaba en el jard\'in en flor,\\
+    y el jardinero se fue\\
+    por esos mares de Dios.
+\end{verse}
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Theorem}}
+\justifying
+ \begin{itemize}\justifying
+  \item Permite insertar sentencias separadas del texto y con números identificadores
+  \item Se pueden usar para cualquier cosa que nos interese.
+  \item Requiere el paquete \texttt{amsthm}.
+  \item Se visualiza diferente en un documento y en una presentación.
+\end{itemize}
+
+\begin{exampleblock}{Ejemplo}
+\begin{lstlisting}
+  \newtheorem{midef}{Definici\'on}
+\begin{midef}
+    Esto es una definici\'on.
+\end{midef}
+\end{lstlisting}
+
+\end{exampleblock}
+
+
+
+\newtheorem{midef}{Definici\'on}
+\begin{midef}
+    Esto es una definici\'on.
+\end{midef}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Theorem}}
+\justifying
+ \begin{itemize}\justifying
+  \item El comando \verb+\newtheorem+ solo se pone una vez en todo el documento, para crear un nuevo tipo de \texttt{theorem} y asignarle un nombre.
+  \item Cada vez que se quiera usar, se pone:
+  \item [] \verb+\begin{nombre}...\end{nombre}+
+  \item siendo \texttt{nombre} el nombre que le hemos asignado.
+\end{itemize}
+\end{frame}
+
+\subsection{Referencias Cruzadas}\label{subsec:refcruzada}
+\begin{frame}[fragile]
+\frametitle{\textbf{Referencias Cruzadas}}
+\justifying
+ \begin{itemize}\justifying
+  \item Permiten referenciar secciones, figuras, páginas, etc.
+  \item \LaTeX{} maneja las referencias de forma muy efectiva.
+  \item [] \verb+\label{etiqueta}+, \verb+\ref{etiqueta}+, \verb+pageref{etiqueta}+
+\end{itemize}
+
+\begin{exampleblock}{Ejemplo}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\subsection{Referencias cruzadas}\label{subsec:refcruzada}
+
+Como se ha descrito en la Subsecci\'on \ref{subsec:refcruzada}.
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+
+
+\begin{block}{}
+Como se ha descrito en la Subsecci\'on \ref{subsec:refcruzada}.
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Referencias Cruzadas}}
+\justifying
+ \begin{description}\justifying
+  \item [$\textbackslash$label\{etiqueta\}] Asigna una etiqueta a una sección, subsección, figura, tabla, fórmula, etc. Se suele indicar el tipo de objeto al que se referencia (sec, fig, tab).
+  \item [$\textbackslash$ref\{etiqueta\}] Inserta una referencia al objeto con la etiqueta indicada. La referencia consiste en el número de sección, figura, etc.
+  \item [$\textbackslash$pageref\{etiqueta\}] Inserta la página en que se encuentra la referencia indicada.
+  \item [$\textbackslash$nameref\{etiqueta\}] Introduce el nombre del objeto que se quiere referenciar. Requiere la inclusión de paquete \texttt{nameref}.
+\end{description}
+
+\end{frame}
+
+\subsection{Figuras y Tablas}
+\begin{frame}[fragile]
+\frametitle{\textbf{Tablas}}
+\justifying
+\begin{block}{Entorno tabular}
+	 \begin{itemize}\justifying
+  \item [] \verb+\begin{tabular}[pos]{formato}+
+\item[] \verb+Tabla \end{tabular}+    
+\end{itemize}
+\end{block}
+
+
+\begin{exampleblock}{Ejemplo}
+\begin{minipage}[l]{0.48\linewidth}
+\begin{lstlisting}
+  \begin{center}
+\begin{tabular}{l|c|r}
+ Uno & Dos & Tres \\
+  \hline
+ Cuatro & Cinco & Seis \\
+Siete  & Ocho & Nueve\\
+\hline
+\end{tabular}
+\end{center}
+\end{lstlisting}
+
+\end{minipage}\hfill
+\begin{minipage}[r]{0.48\linewidth}
+  \begin{center}
+\begin{tabular}{l|c|r}
+ Uno & Dos & Tres \\
+  \hline
+ Cuatro & Cinco & Seis \\
+Siete  & Ocho & Nueve\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{minipage}
+
+\end{exampleblock}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile,shrink]
+\frametitle{\textbf{Tablas}}
+\justifying
+\begin{block}{}
+	 \begin{itemize}\justifying
+  \item [] \verb+\begin{tabular}[pos]{formato}+
+\item[] \verb+Tabla \end{tabular}+    
+\end{itemize}
+\end{block}
+\begin{block}{Entorno Tabular}
+\textbf{Formato}:
+	\begin{description}
+  \item [l] Alinear a la izquierda.
+  \item [c] Centrar
+  \item [r] Alinear a la derecha
+  \item [p\{width\}] para párrafos
+  \item [$|$] Genera una linea vertical
+\end{description}
+
+\textbf{Posición}:
+\begin{description}
+  \item [c] Centrada respecto al texto
+  \item [t] Encima del texto
+  \item [d] debajo del texto
+\end{description}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Tablas}}
+\justifying
+\begin{block}{}
+	 \begin{itemize}\justifying
+  \item [] \verb+\begin{tabular}[pos]{formato}+
+\item[] \verb+Tabla \end{tabular}+    
+\end{itemize}
+\end{block}
+\begin{block}{Entorno Tabular}
+\textbf{Otros Comandos}:
+
+\begin{description}
+  \item [\&] pasa a la siguiente columna
+  \item [$\textbackslash\textbackslash$] nueva fila
+  \item [$\textbackslash$hline] genera una línea horizontal
+  \item [$\textbackslash$cline{i-j}] genera una línea de la columna $i$ hasta la $j$
+\end{description}
+
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Tablas}}
+\justifying
+
+\begin{exampleblock}{Ejemplo}
+\begin{lstlisting}
+\begin{center}\begin{tabular}{|l|p{4cm}|r|} \hline \hlineArt\'iculo & Descripci\'on & Precio\\ \hline \hline23543 & Laptop Sony Vaio VGN-NR21Z & 900 \\ \hline64534 & Mouse inal\'ambrico Dell & 20 \\ \hline\hline \end{tabular}\end{center}
+\end{lstlisting}
+\end{exampleblock}
+
+\begin{block}{}
+  \begin{center}\begin{tabular}{|l|p{4cm}|r|} \hline \hlineArtículo & Descripción & Precio\\ \hline \hline23543 & Laptop Sony Vaio VGN-NR21Z & 900 \\ \hline64534 & Mouse inalámbrico Dell & 20 \\ \hline\hline \end{tabular}\end{center}	
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Tablas con Booktabs}}
+\justifying
+ \begin{itemize}\justifying
+  \item Tablas de Aspecto Profesional.
+  \item [] Requiere el paquete \texttt{booktabs}.
+\end{itemize}
+
+\begin{exampleblock}{Ejemplos}
+\begin{minipage}[l]{0.48\linewidth}\small
+\begin{table}[htb!]
+\begin{tabular}[b]{llr}\topruleAnimal & Description & Price (\$)\\\midruleGnat & per gram & 13.65 \\&each & 0.01 \\Gnu & stuffed & 92.50 \\Emu & stuffed & 33.33 \\ Armadillo & frozen & 8.99 \\\bottomrule 
+\end{tabular}
+\caption{con booktabs}
+\end{table}
+\end{minipage}\hfill
+\begin{minipage}[r]{0.48\linewidth}\small
+\begin{table}[htb!]
+\begin{tabular}[b]{llr}\hlineAnimal & Description & Price (\$)\\\hlineGnat & per gram & 13.65 \\&each & 0.01 \\Gnu & stuffed & 92.50 \\Emu & stuffed & 33.33 \\ Armadillo & frozen & 8.99 \\\hline 
+\end{tabular}
+\caption{sin booktabs}
+\end{table}
+\end{minipage}
+
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Tablas con Booktabs}}
+\justifying
+ \begin{block}{Comandos de booktabs}
+\begin{description}\justifying\small
+  \item [toprule] genera la línea superior de la tabla. Se pone justo al principio.
+  \item [midrule] línea que delimita el comienzo de los datos de la tabla.
+  \item [bottomrule] genera la línea inferior de la tabla.
+  \item [cmidrule] es el comando análogo a \texttt{cline}, y dibuja una línea horizontal desde la columna $a$ a la columba $b$ que se le indique.
+\end{description}
+
+\end{block}
+
+\begin{exampleblock}{}
+\begin{center}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{tabular}[b]{llr}\topruleAnimal & Description & Price (\$)\\\midruleGnat & per gram & 13.65 \\&each & 0.01 \\Emu & stuffed & 33.33 \\ Armadillo & frozen & 8.99 \\\bottomrule 
+\end{tabular}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{center}
+
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Figuras}}
+\justifying
+ \begin{itemize}\justifying
+  \item Comando \texttt{includegraphics}.
+  \item \verb+\usepackage{graphics}+
+  \item \verb+\includegraphics[clave=valor]{archivo}]+
+\end{itemize}
+
+\begin{exampleblock}{}
+\begin{minipage}[l]{0.6\linewidth}
+   \lstset{language=}%SQL,basicstyle=\small}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\includegraphics[width=6cm]{fondoula}
+\end{lstlisting}\vspace{-0.3cm}
+\end{minipage}\hfill
+\begin{minipage}[r]{0.28\linewidth}
+\includegraphics[width=3cm]{fondoula}
+\end{minipage}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Figuras}}
+\justifying
+ \begin{itemize}\justifying
+  \item \verb+\includegraphics[clave=valor]{archivo}]+
+  \item Opciones:
+  \begin{description}\justifying
+  \item [width] ancho de la imagen.
+  \item [height] altura.
+  \item [angle] permite rotar la imagen (en la dirección contraria a las agujas del reloj).
+  \item [scale] para escalar la imagen.
+\end{description}
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Entorno float}}
+\justifying
+ \begin{itemize}\justifying
+  \item \verb+\begin{figure}[posicion]...\end{figure}+
+  \item \verb+\begin{table}[posicion]...\end{table}+
+  \item Posición:
+  \begin{description}\justifying
+  \item [h] intenta insertar el elemento ahí mismo.
+  \item [t] en la parte superior de la página.
+  \item [b] al final de la página.
+  \item [p] en una página especial de tablas y figuras.
+  \item [!] ignorar parámetros internos de \LaTeX{}, como el número máximo de figuras seguidas.
+\end{description}
+\item Se sigue un orden secuencial para insertar los elementos.
+\item Si no se puede colocar uno, los demás se van acumulando.
+\item User siempre más de un indicador de posición. Ejemplo \texttt{[htp!]}
+\item El comando \texttt{clearpage} hace que se muestren todos los floats pendientes y se empiece una nueva página.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Entorno float}}
+\justifying\scriptsize
+ \begin{itemize}\justifying
+  \item Otras Funcionalidades:
+  \begin{description}\justifying
+  \item [$\textbackslash$caption\{\}] permite poner título a un float.\\ \texttt{$\textbackslash$caption[short]\{long\}}.
+  \item [$\textbackslash$label\{\}] permite poner una etiqueta para referenciarlo.\\ \texttt{$\textbackslash$label\{etiqueta\}}.
+  \item [$\textbackslash$listoffigures] genera un índice de figuras.
+  \item [$\textbackslash$listoftables] genera un índice de tablas.
+\end{description}
+
+\end{itemize}
+
+\begin{minipage}[l]{0.48\linewidth}\small
+   \lstset{language=,basicstyle=\scriptsize}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{table}[htb!]\caption{Tabla de ejemplo}\label{tab:EjemploTablas1} \begin{tabular}{l|c|r}\hlineUno & Dos & Tres \\Cuatro & Cinco & Seis \\ Siete & Ocho & Nueve \\\hline \end{tabular}\end{table}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{minipage}\hfill
+\begin{minipage}[r]{0.48\linewidth}
+\begin{table}[htb!]\caption{Tabla de ejemplo}\label{tab:EjemploTablas1} \begin{tabular}{l|c|r}\hlineUno & Dos & Tres \\Cuatro & Cinco & Seis \\ Siete & Ocho & Nueve \\\hline \end{tabular}\end{table}
+\end{minipage}
+
+\begin{alertblock}{Importante}\scriptsize
+Siempre pon el \texttt{caption} antes del \texttt{label}, primero le das el nombre y luego haces la referencia.
+\end{alertblock}
+
+\end{frame}
+
+\section{Fórmulas Matemáticas}
+\begin{frame}[fragile]
+\frametitle{\textbf{Fórmulas Matemáticas}}
+\justifying
+ Incluir el paquete \texttt{amsmath}: \verb+\usepackage{amsmath}+
+ \begin{block}{Tipos de fórmulas matemáticas}
+\begin{description}\justifying
+  \item [Entorno math] permite insertar fórmulas en una línea, así $x = \frac{y}{2}$. se puede abreviar con \$ formula \$.
+  \item [Entorno displaymath] Para mostrar fórmulas en un párrafo a parte. Se puede abreviar con \texttt{$\textbackslash$[ $\textbackslash$]}. Ejemplo:
+  \[x = \frac{y}{2}\]
+  \item [Entorno equation] Permite introducir fórmulas numeradas a las que se pueden hacer referencias cruzadas.
+\end{description}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Fórmulas Matemáticas}}
+\justifying
+ \begin{exampleblock}{Ejemplo}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{displaymath}\cos(2\theta) = \cos^2 \theta - \sin^2 \theta\end{displaymath}
+    
+Como $\omega=2 \pi \cdot f$...
+    
+\begin{equation}\frac{n!}{k!(n-k) !} = \binom{n}{k} \end{equation}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+\begin{block}{}
+\begin{displaymath}\cos(2\theta) = \cos^2 \theta - \sin^2 \theta\end{displaymath}
+    Como $\omega=2 \pi \cdot f$...
+
+\begin{equation}\frac{n!}{k!(n-k) !} = \binom{n}{k} \end{equation}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Elementos habituales en fórmulas}}
+\justifying
+ \begin{description}\justifying
+  \item [Subíndices] Se escriben con \_. Si el subíndice consta de más de un carácter, hay que encerrarlos entre llaves.\\ Ejemplo: \verb+X_i+ $\rightarrow X_i$, \verb+X_{21}+ $\rightarrow X_{21}$.
+  \item [Superíndices] Se indican  con el carácter \^.\\ Ejemplo: \verb+X^2+ $\rightarrow X^2$, \verb+X^{21}+ $\rightarrow X^{21}$.
+  \item [Fracciones] \verb+\frac{numerado}{denominador}+. Si numerador o denominador se componen solo de un número, no es necesario usar llaves.\\ Ejemplo: \verb+\frac 1 2+ $\rightarrow \frac{1}{2}$, \verb+\frac{X_{11}}{Y_{12}}+ $\rightarrow \frac{X_{11}}{Y_{12}}$
+\end{description}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Elementos habituales en fórmulas}}
+\justifying
+ \begin{description}\justifying
+  \item [Signo multiplicación] el punto de multiplicación se escribe \verb+\cdot+\\Ejemplo: \verb+X\cdot Y+ $\rightarrow X \cdot Y$.\\Ojo: despues de cualquier comando (que empieza por $\textbackslash$) deja un espacio en blanco.
+  \item [Más Menos] El signo más y el menos se escriben directamente $+$, $-$.\\ El signo más-menos se escribe de la siguiente forma: \verb+\pm+, y menos-más como \verb+\mp+\\Ejemplo: \verb+a \pm b+ $\rightarrow a \pm b$.
+\end{description}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Elementos habituales en fórmulas}}
+\justifying
+Signos Comparativos:
+ \begin{description}\justifying
+  \item [Menor]
+\begin{itemize}\justifying
+  \item \verb+<+ $\rightarrow <$
+  \item $\textbackslash$ll $\rightarrow \ll$
+  \item$\textbackslash$lll $\rightarrow \lll$
+  \item$\textbackslash$leq $\rightarrow \leq$
+  \item$\textbackslash$lneq $\rightarrow \lneq$
+\end{itemize}
+\item [Mayor]
+\begin{itemize}\justifying
+  \item \verb+>+ $\rightarrow >$
+  \item$\textbackslash$gg $\rightarrow \ll$
+  \item$\textbackslash$ggg $\rightarrow \lll$
+  \item$\textbackslash$geq $\rightarrow \leq$
+  \item$\textbackslash$gneq $\rightarrow \lneq$
+\end{itemize}
+\end{description}
+
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\textbf{Elementos habituales en fórmulas}}
+\justifying
+ \begin{description}\justifying
+  \item[Paréntesis, llaves, etc.] Se pueden escribir paréntesis, corchetes, llaves, etc. directamente, pero si queremos que se adapten al tamaño de la fórmula:\\
+     \lstset{language=}%SQL,basicstyle=\small}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\left(, \left[ y para cerrar \right), \right], etc.
+\end{lstlisting}\vspace{-0.3cm}
+Ejemplo: \verb+X_1 \cdot \left( \frac Y Z \right)+ $\rightarrow X_1 \cdot \left( \frac Y Z \right)$
+\item [Letras Griegas]
+  \texttt{$\textbackslash$alpha, $\textbackslash$beta, $\textbackslash$gamma, $\textbackslash$Gamma}
+ $\rightarrow  \alpha  \beta \gamma \varGamma$
+\item [Funciones] Algunas funciones están definidas como tales, y se pueden escribir en lugar de como texto:\\
+Ejemplo: \texttt{$\textbackslash$sin x $\textbackslash$log 26} $\rightarrow \sin x log 26$
+\end{description}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Elementos habituales en fórmulas}}
+\justifying
+ \begin{description}\justifying
+  \item[Texto] Inserción de espacio en blanco: \texttt{$\textbackslash$quad}.\\ Texto: \texttt{$\textbackslash$texto\{texto\}}.
+\end{description}
+\begin{exampleblock}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{displaymath}Z_0 J_n=\frac{\pi \varDelta}{2\sqrt{g_{n-1}\cdot g_n}} \quad \text{para n = 2, 3, \ldots, N} 
+\end{displaymath}
+\end{lstlisting}\vspace{-0.3cm}
+
+\end{exampleblock}
+\begin{block}{}
+\begin{displaymath}Z_0 J_n=\frac{\pi \varDelta}{2\sqrt{g_{n-1}\cdot g_n}} \quad \text{para n = 2, 3, \ldots, N} 
+\end{displaymath}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Fórmulas Matemáticas}}
+\justifying
+ \begin{exampleblock}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\begin{displaymath}C_L=\frac{(S_{22}-\varDelta S_{11}^*)^*}{|S_{22}|^2=-|\Delta|^2}\end{displaymath}
+    \begin{displaymath}R_S=\frac{\sqrt{1-g_s}\cdot (1-|S_{11}|^2)}{1-(1-g_s)\cdot|S_{11}|^2}\end{displaymath}
+\end{lstlisting}\vspace{-0.3cm}
+\end{exampleblock}
+
+
+\begin{block}{}
+\begin{displaymath}C_L=\frac{(S_{22}-\varDelta S_{11}^*)^*}{|S_{22}|^2=-|\varDelta|^2}\end{displaymath}\begin{displaymath}R_S=\frac{\sqrt{1-g_s}\cdot (1-|S_{11}|^2)}{1-(1-g_s)\cdot|S_{11}|^2}\end{displaymath}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Referencias para Fórmulas en \LaTeX{}}}
+\justifying
+ \begin{description}\justifying
+  \item [Wikibooks: \LaTeX{}] \url{https://es.wikibooks.org/wiki/Manual_de_LaTeX}
+  \item [Manual extenso de símbolos] \url{http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf}
+  \item [Mathmode: Fórmulas matemáticas avanzadas] \url{http://www.tex.ac.uk/tex-archive/info/math/voss/mathmode/}
+\end{description}
+
+\end{frame}
+
+\section{Personalización del Documento}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Personalización del Documento}}
+\justifying
+\begin{block}{Configurar el aspecto}
+ \begin{itemize}\justifying
+  \item Cuando trabajamos con \LaTeX{} \textbf{todo} es configurable.
+  \item Podemos buscar cómo hacerlo en el manual de \LaTeX{} o en otros recursos online.
+\end{itemize}
+\end{block}
+
+\begin{block}{Configurar los parámetros}
+Se pueden cambiar parámetros de configuración del documento.
+\begin{itemize}\justifying
+  \item Para anular la identificación de párrafos:
+  \begin{itemize}\justifying
+  \item \texttt{$\textbackslash$setlength\{$\textbackslash$parindent\}\{0cm\}}
+\end{itemize}
+  \item Aumentar separación entre párrafos:
+  \begin{itemize}\justifying
+  \item \texttt{$\textbackslash$setlength\{$\textbackslash$parskip\}\{8pt\}}
+\end{itemize}
+
+\end{itemize}
+
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textbf{Cambiar nombre de capítulos, secciones, índices...}}
+\justifying
+ Se pueden cambiar los títulos de índices, imágenes, tablas, etc.
+\begin{block}{}
+   \vspace{-0.3cm}
+\begin{lstlisting}
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}\renewcommand{\indexname}{Lista Alfab\'etica}
+\renewcommand{\appendixname}{Ap\'endice}\renewcommand{\figurename}{Figura}
+\renewcommand{\listfigurename}{Lista de Figuras}\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{Lista de Tablas}\renewcommand{\abstractname}{Resumen}
+\renewcommand{\chaptername}{Cap\'itulo}\renewcommand{\refname}{Bibliograf\'ia}
+\end{lstlisting}\vspace{-0.3cm}
+\end{block}
+
+
+\end{frame}
+
+
+\end{document}

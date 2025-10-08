@@ -1,0 +1,1844 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.1)  3 AUG 2022 09:23
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"02 Metodos de Desarrollo.tex"
+(./02 Metodos de Desarrollo.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2022/02/08 v3.66 A class for typesetting presentations
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count185
+)
+\beamer@tempbox=\box50
+\beamer@tempcount=\count186
+\c@beamerpauses=\count187
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count188
+\beamer@minimum=\count189
+\beamer@decode@box=\box51
+)
+\beamer@commentbox=\box52
+\beamer@modecount=\count190
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen138
+\footheight=\dimen139
+\sidebarheight=\dimen140
+\beamer@tempdim=\dimen141
+\beamer@finalheight=\dimen142
+\beamer@animht=\dimen143
+\beamer@animdp=\dimen144
+\beamer@animwd=\dimen145
+\beamer@leftmargin=\dimen146
+\beamer@rightmargin=\dimen147
+\beamer@leftsidebar=\dimen148
+\beamer@rightsidebar=\dimen149
+\beamer@boxsize=\dimen150
+\beamer@vboxoffset=\dimen151
+\beamer@descdefault=\dimen152
+\beamer@descriptionwidth=\dimen153
+\beamer@lastskip=\skip47
+\beamer@areabox=\box53
+\beamer@animcurrent=\box54
+\beamer@animshowbox=\box55
+\beamer@sectionbox=\box56
+\beamer@logobox=\box57
+\beamer@linebox=\box58
+\beamer@sectioncount=\count191
+\beamer@subsubsectionmax=\count192
+\beamer@subsectionmax=\count193
+\beamer@sectionmax=\count194
+\beamer@totalheads=\count195
+\beamer@headcounter=\count196
+\beamer@partstartpage=\count197
+\beamer@sectionstartpage=\count198
+\beamer@subsectionstartpage=\count199
+\beamer@animationtempa=\count266
+\beamer@animationtempb=\count267
+\beamer@xpos=\count268
+\beamer@ypos=\count269
+\beamer@ypos@offset=\count270
+\beamer@showpartnumber=\count271
+\beamer@currentsubsection=\count272
+\beamer@coveringdepth=\count273
+\beamer@sectionadjust=\count274
+\beamer@toclastsection=\count275
+\beamer@tocsectionnumber=\count276
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+\beamer@paperwidth=\skip48
+\beamer@paperheight=\skip49
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks17
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box59
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen164
+\pgf@xa=\dimen165
+\pgf@xb=\dimen166
+\pgf@xc=\dimen167
+\pgf@y=\dimen168
+\pgf@ya=\dimen169
+\pgf@yb=\dimen170
+\pgf@yc=\dimen171
+\c@pgf@counta=\count280
+\c@pgf@countb=\count281
+\c@pgf@countc=\count282
+\c@pgf@countd=\count283
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen172
+\pgfmath@count=\count284
+\pgfmath@box=\box60
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count285
+))) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count286
+\c@pgf@countb=\count287
+\c@pgf@countc=\count288
+\c@pgf@countd=\count289
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count290
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count291
+\pgfsyssoftpath@bigbuffer@items=\count292
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count293
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen259
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen263
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen264
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box64
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count296
+\XC@countmixins=\count297
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen265
+\Hy@linkcounter=\count298
+\Hy@pagecounter=\count299
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count300
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4018.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4018.
+Package hyperref Info: Option `implicit' set `false' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count301
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen266
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count302
+\Field@Width=\dimen267
+\Fld@charsize=\dimen268
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+\Hy@abspage=\count303
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count304
+\c@bookmark@seq@number=\count305
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaserequires.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasefont.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+))))) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count306
+\beamer@lastskipcover=\skip50
+\beamer@trivlistdepth=\count307
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count308
+\c@part=\count309
+\c@section=\count310
+\c@subsection=\count311
+\c@subsubsection=\count312
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box65
+\beamer@frametitlebox=\box66
+\beamer@zoombox=\box67
+\beamer@zoomcount=\count313
+\beamer@zoomframecount=\count314
+\beamer@frametextheight=\dimen269
+\c@subsectionslide=\count315
+\beamer@frametopskip=\skip51
+\beamer@framebottomskip=\skip52
+\beamer@frametopskipautobreak=\skip53
+\beamer@framebottomskipautobreak=\skip54
+\beamer@envbody=\toks29
+\framewidth=\dimen270
+\c@framenumber=\count316
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box68
+\beamer@autobreakcount=\count317
+\beamer@autobreaklastheight=\dimen271
+\beamer@frametitletoks=\toks30
+\beamer@framesubtitletoks=\toks31
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+\beamer@footins=\box69
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasecolor.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box70
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks32
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box71
+\bmb@colorbox=\box72
+\bmb@boxwidth=\dimen272
+\bmb@boxheight=\dimen273
+\bmb@prevheight=\dimen274
+\bmb@temp=\dimen275
+\bmb@dima=\dimen276
+\bmb@dimb=\dimen277
+\bmb@prevheight=\dimen278
+)
+\beamer@blockheadheight=\dimen279
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks33
+)
+\beamer@bibiconwidth=\skip55
+\c@figure=\count318
+\c@table=\count319
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+\beamer@section@min@dim=\dimen280
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen281
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen282
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count320
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count321
+\leftroot@=\count322
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count323
+\DOTSCASE@=\count324
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box73
+\strutbox@=\box74
+\big@size=\dimen283
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count325
+\c@MaxMatrixCols=\count326
+\dotsspace@=\muskip17
+\c@parentequation=\count327
+\dspbrk@lvl=\count328
+\tag@help=\toks35
+\row@=\count329
+\column@=\count330
+\maxfields@=\count331
+\andhelp@=\toks36
+\eqnshift@=\dimen284
+\alignsep@=\dimen285
+\tagshift@=\dimen286
+\tagwidth@=\dimen287
+\totwidth@=\dimen288
+\lineht@=\dimen289
+\@envbody=\toks37
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
+\dth@everypar=\toks44
+)
+\c@theorem=\count332
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+\beamer@dima=\dimen290
+\beamer@dimb=\dimen291
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks45
+\inpenc@posthook=\toks46
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/02/26 3.73 The Babel package
+\babel@savecnt=\count333
+\U@D=\dimen292
+\l@unhyphenated=\language87
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read3
+LaTeX Info: Redefining \textlatin on input line 3969.
+\bbl@dirlevel=\count334
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks47
+\es@quotdepth=\count335
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemeshadow.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerouterthemeshadow.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerfontthemestructurebold.sty)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemesplit.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen293
+\ESO@tempdimb=\dimen294
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+\FV@CodeLineNo=\count336
+\FV@InFile=\read4
+\FV@TabBox=\box75
+\c@FancyVerbLine=\count337
+\FV@StepNumber=\count338
+\FV@OutFile=\write5
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen295
+\lightrulewidth=\dimen296
+\cmidrulewidth=\dimen297
+\belowrulesep=\dimen298
+\belowbottomsep=\dimen299
+\aboverulesep=\dimen300
+\abovetopsep=\dimen301
+\cmidrulesep=\dimen302
+\cmidrulekern=\dimen303
+\defaultaddspace=\dimen304
+\@cmidla=\count339
+\@cmidlb=\count340
+\@aboverulesep=\dimen305
+\@belowrulesep=\dimen306
+\@thisruleclass=\count341
+\@lastruleclass=\count342
+\@thisrulewidth=\dimen307
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2021/12/15 v3.1 ragged2e Package
+\CenteringLeftskip=\skip64
+\RaggedLeftLeftskip=\skip65
+\RaggedRightLeftskip=\skip66
+\CenteringRightskip=\skip67
+\RaggedLeftRightskip=\skip68
+\RaggedRightRightskip=\skip69
+\CenteringParfillskip=\skip70
+\RaggedLeftParfillskip=\skip71
+\RaggedRightParfillskip=\skip72
+\JustifyingParfillskip=\skip73
+\CenteringParindent=\skip74
+\RaggedLeftParindent=\skip75
+\RaggedRightParindent=\skip76
+\JustifyingParindent=\skip77
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count343
+\float@exts=\toks48
+\float@box=\box76
+\@float@everytoks=\toks49
+\@floatcapt=\box77
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen308
+\captionmargin=\dimen309
+\caption@leftmargin=\dimen310
+\caption@rightmargin=\dimen311
+\caption@width=\dimen312
+\caption@indent=\dimen313
+\caption@parindent=\dimen314
+\caption@hangindent=\dimen315
+Package caption Info: beamer document class detected.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption-beamer.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
+))
+\c@caption@flags=\count344
+\c@continuedfloat=\count345
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+\c@KVtest=\count346
+\sf@farskip=\skip78
+\sf@captopadj=\dimen316
+\sf@capskip=\skip79
+\sf@nearskip=\skip80
+\c@subfigure=\count347
+\c@subfigure@save=\count348
+\c@depth=\count349
+\c@subtable=\count350
+\c@subtable@save=\count351
+\sf@top=\skip81
+\sf@bottom=\skip82
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/eepic/epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count352
+\d@lta=\count353
+\@delta=\dimen317
+\@@delta=\dimen318
+\@gridcnt=\count354
+\@joinkind=\count355
+\@dotgap=\dimen319
+\@ddotgap=\dimen320
+\@x@diff=\count356
+\@y@diff=\count357
+\x@diff=\dimen321
+\y@diff=\dimen322
+\@dotbox=\box78
+\num@segments=\count358
+\num@segmentsi=\count359
+\@datafile=\read5
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/eepic/eepic.sty
+Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
+\@gphlinewidth=\count360
+\@eepictcnt=\count361
+\@tempdimc=\dimen323
+\maxovaldiam=\dimen324
+\@filltype=\box79
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count362
+\mult@box=\box80
+\multicol@leftmargin=\dimen325
+\c@unbalance=\count363
+\c@collectmore=\count364
+\doublecol@number=\count365
+\multicoltolerance=\count366
+\multicolpretolerance=\count367
+\full@width=\dimen326
+\page@free=\dimen327
+\premulticols=\dimen328
+\postmulticols=\dimen329
+\multicolsep=\skip83
+\multicolbaselineskip=\skip84
+\partial@page=\box81
+\last@line=\box82
+\maxbalancingoverflow=\dimen330
+\mult@rightbox=\box83
+\mult@grightbox=\box84
+\mult@firstbox=\box85
+\mult@gfirstbox=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\c@minrows=\count368
+\c@columnbadness=\count369
+\c@finalcolumnbadness=\count370
+\last@try=\dimen331
+\multicolovershoot=\dimen332
+\multicolundershoot=\dimen333
+\mult@nat@firstbox=\box123
+\colbreak@box=\box124
+\mc@col@check@num=\count371
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip85
+\multirow@cntb=\count372
+\multirow@dima=\skip86
+\bigstrutjot=\dimen334
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen335
+\ar@mcellbox=\box125
+\extrarowheight=\dimen336
+\NC@list=\toks50
+\extratabsurround=\skip87
+\backup@length=\skip88
+\ar@cellbox=\box126
+)
+\everycr=\toks51
+\minrowclearance=\skip89
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count373
+\lst@gtempboxa=\box127
+\lst@token=\toks52
+\lst@length=\count374
+\lst@currlwidth=\dimen337
+\lst@column=\count375
+\lst@pos=\count376
+\lst@lostspace=\dimen338
+\lst@width=\dimen339
+\lst@newlines=\count377
+\lst@lineno=\count378
+\lst@maxwidth=\dimen340
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count379
+\lst@skipnumbers=\count380
+\lst@framebox=\box128
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfpages.sty
+Package: pgfpages 2011/01/05 ver 0.02
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count381
+\calc@Bcount=\count382
+\calc@Adimen=\dimen341
+\calc@Bdimen=\dimen342
+\calc@Askip=\skip90
+\calc@Bskip=\skip91
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count383
+\calc@Cskip=\skip92
+)
+\pgf@logicalpages=\count384
+\pgf@firstshipout=\count385
+\pgf@lastshipout=\count386
+\pgf@currentshipout=\count387
+\pgf@cpn=\count388
+\pgf@shipoutnextto=\count389
+\pgfphysicalheight=\dimen343
+\pgfphysicalwidth=\dimen344
+\pgfpages@shipoutbox=\box129
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box130
+\UL@hyphenbox=\box131
+\UL@skip=\skip93
+\UL@hook=\toks53
+\UL@height=\dimen345
+\UL@pe=\count390
+\UL@pixel=\dimen346
+\ULC@box=\box132
+Package: ulem 2019/11/18
+\ULdepth=\dimen347
+)
+Package caption Info: Option `figurename' requires the `newfloat' package on input line 10.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box133
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen348
+\pgf@nodesepend=\dimen349
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen350
+\pgffor@skip=\dimen351
+\pgffor@stack=\toks54
+\pgffor@toks=\toks55
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count391
+\pgfplotmarksize=\dimen352
+)
+\tikz@lastx=\dimen353
+\tikz@lasty=\dimen354
+\tikz@lastxsaved=\dimen355
+\tikz@lastysaved=\dimen356
+\tikz@lastmovetox=\dimen357
+\tikz@lastmovetoy=\dimen358
+\tikzleveldistance=\dimen359
+\tikzsiblingdistance=\dimen360
+\tikz@figbox=\box134
+\tikz@figbox@bg=\box135
+\tikz@tempbox=\box136
+\tikz@tempbox@bg=\box137
+\tikztreelevel=\count392
+\tikznumberofchildren=\count393
+\tikznumberofcurrentchild=\count394
+\tikz@fig@count=\count395
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count396
+\pgfmatrixcurrentcolumn=\count397
+\pgf@matrix@numberofcolumns=\count398
+)
+\tikz@expandcount=\count399
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the decoration libraries instead of the snakes library on input line 14.
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen361
+\pgfdecoratedremainingdistance=\dimen362
+\pgfdecoratedinputsegmentcompleteddistance=\dimen363
+\pgfdecoratedinputsegmentremainingdistance=\dimen364
+\pgf@decorate@distancetomove=\dimen365
+\pgf@decorate@repeatstate=\count400
+\pgfdecorationsegmentamplitude=\dimen366
+\pgfdecorationsegmentlength=\dimen367
+)
+\tikz@lib@dec@box=\box138
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.shapes.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.shapes.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen368
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodepartlowerbox=\box139
+\pgfnodeparttwobox=\box140
+\pgfnodepartthreebox=\box141
+\pgfnodepartfourbox=\box142
+\pgfnodeparttwentybox=\box143
+\pgfnodepartnineteenbox=\box144
+\pgfnodeparteighteenbox=\box145
+\pgfnodepartseventeenbox=\box146
+\pgfnodepartsixteenbox=\box147
+\pgfnodepartfifteenbox=\box148
+\pgfnodepartfourteenbox=\box149
+\pgfnodepartthirteenbox=\box150
+\pgfnodeparttwelvebox=\box151
+\pgfnodepartelevenbox=\box152
+\pgfnodeparttenbox=\box153
+\pgfnodepartninebox=\box154
+\pgfnodeparteightbox=\box155
+\pgfnodepartsevenbox=\box156
+\pgfnodepartsixbox=\box157
+\pgfnodepartfivebox=\box158
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@layerbox@background=\box159
+\pgf@layerboxsaved@background=\box160
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemeCambridgeUS.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemestructure.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty) (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 119.
+
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 128.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count401
+\l__pdf_internal_box=\box161
+) (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.aux
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+)
+\openout1 = `"02 Metodos de Desarrollo.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(10.88002pt, 433.48404pt, 10.88002pt)
+* v-part:(T,H,B)=(0.0pt, 284.52756pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=284.52756pt
+* \textwidth=433.48404pt
+* \textheight=256.07483pt
+* \oddsidemargin=-61.38997pt
+* \evensidemargin=-61.38997pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count402
+\scratchdimen=\dimen369
+\scratchbox=\box162
+\nofMPsegments=\count403
+\nofMParguments=\count404
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count405
+\MPscratchDim=\dimen370
+\MPnumerator=\count406
+\makeMPintoPDFobject=\count407
+\everyMPtoPDFconversion=\toks57
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring OFF on input line 128.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count408
+)
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.out) (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.out)
+\@outlinefile=\write6
+\openout6 = `"02 Metodos de Desarrollo.out"'.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmss/b/n --> OT1/phv/b/n on input line 128.
+\symnumbers=\mathgroup6
+\sympureletters=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/phv/m/n --> T1/ptm/m/n on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> T1/phv/b/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/bx/n --> T1/phv/b/n on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> T1/phv/m/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> T1/phv/m/n on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> T1/phv/m/it on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/bx/it --> T1/phv/m/it on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> T1/pcr/m/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> T1/pcr/m/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/phv/b/n --> T1/ptm/b/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 128.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/pcr/m/n --> T1/pcr/b/n on input line 128.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count409
+Package newfloat Info: `float' package detected.
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.nav)
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 136.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+<fondoula.png, id=41, 1927.6818pt x 1084.5318pt>
+File: fondoula.png Graphic file (type png)
+<use fondoula.png>
+Package pdftex.def Info: fondoula.png  used on input line 136.
+(pdftex.def)             Requested size: 455.24075pt x 284.5201pt.
+ [1
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./fondoula.png>] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [2
+
+]
+(/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [3
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 4.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 4.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+) [4
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [5
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [6
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [7
+
+] [8
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [9
+
+]
+<images/cscada.png, id=339, 527.9725pt x 473.77pt>
+File: images/cscada.png Graphic file (type png)
+<use images/cscada.png>
+Package pdftex.def Info: images/cscada.png  used on input line 245.
+(pdftex.def)             Requested size: 237.58542pt x 213.19452pt.
+ [10
+
+ <./images/cscada.png>] [11
+
+]
+<images/cascadaiteracion.png, id=396, 753.76343pt x 573.72237pt>
+File: images/cascadaiteracion.png Graphic file (type png)
+<use images/cascadaiteracion.png>
+Package pdftex.def Info: images/cascadaiteracion.png  used on input line 261.
+(pdftex.def)             Requested size: 271.35461pt x 206.53989pt.
+ [12
+
+ <./images/cascadaiteracion.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/ssadm.png, id=425, 668.4975pt x 344.78813pt>
+File: images/ssadm.png Graphic file (type png)
+<use images/ssadm.png>
+Package pdftex.def Info: images/ssadm.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 176.10266pt.
+) [13
+
+ <./images/ssadm.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/mein.png, id=455, 792.9625pt x 409.53pt>
+File: images/mein.png Graphic file (type png)
+<use images/mein.png>
+Package pdftex.def Info: images/mein.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 176.33817pt.
+)
+[14
+
+ <./images/mein.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/ie.png, id=485, 546.04pt x 278.03876pt>
+File: images/ie.png Graphic file (type png)
+<use images/ie.png>
+Package pdftex.def Info: images/ie.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 173.8544pt.
+) [15
+
+ <./images/ie.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/merise.png, id=514, 792.9625pt x 409.53pt>
+File: images/merise.png Graphic file (type png)
+<use images/merise.png>
+Package pdftex.def Info: images/merise.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 176.33817pt.
+) [16
+
+ <./images/merise.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/oracle.png, id=543, 662.97687pt x 288.07625pt>
+File: images/oracle.png Graphic file (type png)
+<use images/oracle.png>
+Package pdftex.def Info: images/oracle.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 148.35872pt.
+) [17
+
+ <./images/oracle.png>]
+<images/incremental.png, id=572, 978.65625pt x 588.1975pt>
+File: images/incremental.png Graphic file (type png)
+<use images/incremental.png>
+Package pdftex.def Info: images/incremental.png  used on input line 318.
+(pdftex.def)             Requested size: 352.31598pt x 211.75093pt.
+ [18
+
+ <./images/incremental.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/modelodesincremental.png, id=602, 687.56876pt x 500.87125pt>
+File: images/modelodesincremental.png Graphic file (type png)
+<use images/modelodesincremental.png>
+Package pdftex.def Info: images/modelodesincremental.png  used on input line 4.
+(pdftex.def)             Requested size: 312.46658pt x 227.62204pt.
+) [19
+
+ <./images/modelodesincremental.png>] [20
+
+]
+<images/cascadasubproyecto.png, id=659, 732.20921pt x 479.89816pt>
+File: images/cascadasubproyecto.png Graphic file (type png)
+<use images/cascadasubproyecto.png>
+Package pdftex.def Info: images/cascadasubproyecto.png  used on input line 346.
+(pdftex.def)             Requested size: 292.8785pt x 191.95586pt.
+ [21
+
+ <./images/cascadasubproyecto.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/modelolinealprototipo.png, id=688, 557.08125pt x 613.29124pt>
+File: images/modelolinealprototipo.png Graphic file (type png)
+<use images/modelolinealprototipo.png>
+Package pdftex.def Info: images/modelolinealprototipo.png  used on input line 4.
+(pdftex.def)             Requested size: 193.8338pt x 213.39566pt.
+) [22
+
+ <./images/modelolinealprototipo.png>]
+<images/cascadareduccion.png, id=718, 726.50368pt x 467.85316pt>
+File: images/cascadareduccion.png Graphic file (type png)
+<use images/cascadareduccion.png>
+Package pdftex.def Info: images/cascadareduccion.png  used on input line 362.
+(pdftex.def)             Requested size: 290.59631pt x 187.13794pt.
+ [23
+
+ <./images/cascadareduccion.png>]
+<images/cascadareduccion2.png, id=747, 725.2358pt x 451.37053pt>
+File: images/cascadareduccion2.png Graphic file (type png)
+<use images/cascadareduccion2.png>
+Package pdftex.def Info: images/cascadareduccion2.png  used on input line 367.
+(pdftex.def)             Requested size: 290.08917pt x 180.54501pt.
+ [24
+
+ <./images/cascadareduccion2.png>]
+<images/cascadasolapada.png, id=776, 760.8425pt x 329.23pt>
+File: images/cascadasolapada.png Graphic file (type png)
+<use images/cascadasolapada.png>
+Package pdftex.def Info: images/cascadasolapada.png  used on input line 372.
+(pdftex.def)             Requested size: 304.3316pt x 131.68965pt.
+ [25
+
+ <./images/cascadasolapada.png>]
+<images/cascadaetapas.png, id=806, 602.88394pt x 516.6671pt>
+File: images/cascadaetapas.png Graphic file (type png)
+<use images/cascadaetapas.png>
+Package pdftex.def Info: images/cascadaetapas.png  used on input line 377.
+(pdftex.def)             Requested size: 241.14929pt x 206.66318pt.
+ [26
+
+ <./images/cascadaetapas.png>]
+<images/cascadaplanificacion.png, id=836, 653.59973pt x 517.935pt>
+File: images/cascadaplanificacion.png Graphic file (type png)
+<use images/cascadaplanificacion.png>
+Package pdftex.def Info: images/cascadaplanificacion.png  used on input line 382.
+(pdftex.def)             Requested size: 261.43526pt x 207.17032pt.
+ [27
+
+ <./images/cascadaplanificacion.png>]
+<images/cascadaevolutiva.png, id=864, 645.99237pt x 483.0679pt>
+File: images/cascadaevolutiva.png Graphic file (type png)
+<use images/cascadaevolutiva.png>
+Package pdftex.def Info: images/cascadaevolutiva.png  used on input line 387.
+(pdftex.def)             Requested size: 258.39236pt x 193.22372pt.
+ [28
+
+ <./images/cascadaevolutiva.png>] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [29
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [30
+
+]
+<images/evolutivo.png, id=958, 452.00447pt x 469.755pt>
+File: images/evolutivo.png Graphic file (type png)
+<use images/evolutivo.png>
+Package pdftex.def Info: images/evolutivo.png  used on input line 415.
+(pdftex.def)             Requested size: 180.79857pt x 187.89867pt.
+
+Overfull \hbox (2.3214pt too wide) in paragraph at lines 415--415
+[]$[]$ $[]$ 
+ []
+
+[31
+
+ <./images/evolutivo.png>]
+<images/espiral.png, id=988, 467.21921pt x 444.39711pt>
+File: images/espiral.png Graphic file (type png)
+<use images/espiral.png>
+Package pdftex.def Info: images/espiral.png  used on input line 421.
+(pdftex.def)             Requested size: 233.60902pt x 222.198pt.
+ [32
+
+ <./images/espiral.png>] [33
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/modeloreuso.png, id=1045, 496.35437pt x 448.67625pt>
+File: images/modeloreuso.png Graphic file (type png)
+<use images/modeloreuso.png>
+Package pdftex.def Info: images/modeloreuso.png  used on input line 4.
+(pdftex.def)             Requested size: 251.8044pt x 227.62204pt.
+) [34
+
+ <./images/modeloreuso.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [35
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/modeloevoconcurrente.png, id=1101, 563.60562pt x 620.3175pt>
+File: images/modeloevoconcurrente.png Graphic file (type png)
+<use images/modeloevoconcurrente.png>
+Package pdftex.def Info: images/modeloevoconcurrente.png  used on input line 4.
+(pdftex.def)             Requested size: 206.81082pt x 227.62204pt.
+) [36
+
+ <./images/modeloevoconcurrente.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [37
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/evolutivoprototipo.png, id=1159, 586.19pt x 443.6575pt>
+File: images/evolutivoprototipo.png Graphic file (type png)
+<use images/evolutivoprototipo.png>
+Package pdftex.def Info: images/evolutivoprototipo.png  used on input line 4.
+(pdftex.def)             Requested size: 284.52756pt x 215.34286pt.
+) [38
+
+ <./images/evolutivoprototipo.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/prototipoevolutivo.png, id=1187, 572.63937pt x 224.33812pt>
+File: images/prototipoevolutivo.png Graphic file (type png)
+<use images/prototipoevolutivo.png>
+Package pdftex.def Info: images/prototipoevolutivo.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 133.76181pt.
+) [39
+
+ <./images/prototipoevolutivo.png>] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [40
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [41
+
+] [42
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [43
+
+] [44
+
+] [45
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 639.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 639.
+
+Underfull \hbox (badness 1742) in paragraph at lines 639--639
+[]|\T1/phv/m/n/9 Basada en heu-r�s-ti-cas pro-ve-nien-tes de
+ []
+
+[46
+
+] [47
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [48
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [49
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [50
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/scrum2.png, id=1543, 470.75874pt x 448.67625pt>
+File: images/scrum2.png Graphic file (type png)
+<use images/scrum2.png>
+Package pdftex.def Info: images/scrum2.png  used on input line 4.
+(pdftex.def)             Requested size: 238.81953pt x 227.62204pt.
+) [51
+
+ <./images/scrum2.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/scrumciclo.png, id=1574, 642.4pt x 260.975pt>
+File: images/scrumciclo.png Graphic file (type png)
+<use images/scrumciclo.png>
+Package pdftex.def Info: images/scrumciclo.png  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 138.71033pt.
+) [52
+
+ <./images/scrumciclo.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb) [53
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [54
+
+] [55
+
+]
+<images/evolutivoincremental.png, id=1699, 1099.10625pt x 319.1925pt>
+File: images/evolutivoincremental.png Graphic file (type png)
+<use images/evolutivoincremental.png>
+Package pdftex.def Info: images/evolutivoincremental.png  used on input line 738.
+(pdftex.def)             Requested size: 351.72118pt x 102.14368pt.
+ [56
+
+ <./images/evolutivoincremental.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/XP.png, id=1729, 457.2282pt x 618.6312pt>
+File: images/XP.png Graphic file (type png)
+<use images/XP.png>
+Package pdftex.def Info: images/XP.png  used on input line 3.
+(pdftex.def)             Requested size: 168.22992pt x 227.62204pt.
+) [57
+
+ <./images/XP.png>] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+]
+<images/proyectoxp.png, id=1958, 1342.01375pt x 547.04375pt>
+File: images/proyectoxp.png Graphic file (type png)
+<use images/proyectoxp.png>
+Package pdftex.def Info: images/proyectoxp.png  used on input line 851.
+(pdftex.def)             Requested size: 369.88582pt x 150.77554pt.
+ [65
+
+ <./images/proyectoxp.png>] [66
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [67
+
+]
+<images/RAD.png, id=2056, 865.2325pt x 280.04625pt>
+File: images/RAD.png Graphic file (type png)
+<use images/RAD.png>
+Package pdftex.def Info: images/RAD.png  used on input line 892.
+(pdftex.def)             Requested size: 346.08687pt x 112.0165pt.
+ [68
+
+ <./images/RAD.png>]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+
+(/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/ModeloRAD.png, id=2086, 1119.2214pt x 555.0336pt>
+File: images/ModeloRAD.png Graphic file (type png)
+<use images/ModeloRAD.png>
+Package pdftex.def Info: images/ModeloRAD.png  used on input line 4.
+(pdftex.def)             Requested size: 398.33858pt x 197.54222pt.
+) [69
+
+ <./images/ModeloRAD.png>] [70
+
+] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [80
+
+]
+<images/imagen23.png, id=2440, 641.39626pt x 316.18124pt>
+File: images/imagen23.png Graphic file (type png)
+<use images/imagen23.png>
+Package pdftex.def Info: images/imagen23.png  used on input line 1039.
+(pdftex.def)             Requested size: 192.42035pt x 94.8551pt.
+ [81
+
+ <./images/imagen23.png (PNG copy)>] [82
+
+] [83
+
+]
+<images/rupiterativo.png, id=2526, 665.48625pt x 314.17375pt>
+File: images/rupiterativo.png Graphic file (type png)
+<use images/rupiterativo.png>
+Package pdftex.def Info: images/rupiterativo.png  used on input line 1075.
+(pdftex.def)             Requested size: 332.74231pt x 157.08649pt.
+ [84
+
+ <./images/rupiterativo.png>] [85
+
+] [86
+
+] [87
+
+] [88
+
+] [89
+
+] [90
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [91
+
+] [92
+
+] [93
+
+]
+<images/rupesquema.png, id=2821, 525.965pt x 316.18124pt>
+File: images/rupesquema.png Graphic file (type png)
+<use images/rupesquema.png>
+Package pdftex.def Info: images/rupesquema.png  used on input line 1177.
+(pdftex.def)             Requested size: 262.98184pt x 158.09023pt.
+ [94
+
+ <./images/rupesquema.png>] [95
+
+] [96
+
+] [97
+
+] (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+) [98
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+Underfull \hbox (badness 3219) in paragraph at lines 11--11
+[]|\T1/phv/m/n/10.95 Multimedia, aun-que sus �l-ti-mas
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 11--11
+\T1/phv/m/n/10.95 ver-sio-nes es-t�n orien-ta-das a la
+ []
+
+) [99
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/phv/m/n/10.95 Proceso Uni-fi-ca-do de
+ []
+
+) [100
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+Underfull \hbox (badness 2460) in paragraph at lines 8--8
+[]|\T1/phv/m/n/10.95 Specification and mo-de-
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 9--9
+[]|\T1/phv/m/n/10.95 A UML-Based metho-do-
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 9--9
+\T1/phv/m/n/10.95 logy for hy-per-me-dia de-
+ []
+
+) [101
+
+]
+\openout4 = `"02 Metodos de Desarrollo.vrb"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.vrb
+<images/HFPM.png, id=3053, 541.52313pt x 660.96938pt>
+File: images/HFPM.png Graphic file (type png)
+<use images/HFPM.png>
+Package pdftex.def Info: images/HFPM.png  used on input line 4.
+(pdftex.def)             Requested size: 186.4869pt x 227.62204pt.
+) [102
+
+ <./images/HFPM.png>]
+\tf@nav=\write7
+\openout7 = `"02 Metodos de Desarrollo.nav"'.
+
+\tf@toc=\write8
+\openout8 = `"02 Metodos de Desarrollo.toc"'.
+
+\tf@snm=\write9
+\openout9 = `"02 Metodos de Desarrollo.snm"'.
+
+ (/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.aux
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+)
+Package rerunfilecheck Info: File `"02 Metodos de Desarrollo".out' has not changed.
+(rerunfilecheck)             Checksum: 6F5C97BD6819B8AAB1173C40750696E1;626.
+ ) 
+Here is how much of TeX's memory you used:
+ 35903 strings out of 478268
+ 760346 string characters out of 5846348
+ 1172666 words of memory out of 5000000
+ 52975 multiletter control sequences out of 15000+600000
+ 572881 words of font info for 118 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,15n,122p,777b,690s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on "/Volumes/GoogleDrive/Mi unidad/Clases ULA/Modelamiento y Paradigmas de Programación/RA2/Modelamiento RA2 Metodos Desarrollo/02 Metodos de Desarrollo/.texpadtmp/02 Metodos de Desarrollo.pdf" (102 pages, 3561264 bytes).
+PDF statistics:
+ 3154 PDF objects out of 3580 (max. 8388607)
+ 2932 compressed objects within 30 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {2}{Enfoques}{3}{0}{1}
+\beamer@sectionintoc {3}{Cascada}{9}{0}{2}
+\beamer@sectionintoc {4}{Modelo Evolutivo}{29}{0}{3}
+\beamer@sectionintoc {5}{Métodos Ágiles}{40}{0}{4}
+\beamer@subsectionintoc {5}{1}{SCRUM}{48}{0}{4}
+\beamer@subsectionintoc {5}{2}{XP}{54}{0}{4}
+\beamer@subsectionintoc {5}{3}{Desarrollo Rápido (RAD o DRA)}{67}{0}{4}
+\beamer@subsectionintoc {5}{4}{Proceso Unificado Racional (RUP)}{80}{0}{4}
+\beamer@subsectionintoc {5}{5}{UML}{91}{0}{4}
+\beamer@sectionintoc {6}{Metodologías Web}{98}{0}{5}

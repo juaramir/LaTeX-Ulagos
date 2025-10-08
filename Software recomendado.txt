@@ -1,0 +1,7 @@
+Para el uso offline:
+
+Linux:
+sudo apt-get -y install kile gummi latexila preview-latex-style texlive-full gedit-latex-plugin texlive texlive-latex-extra texlive-pstricks texlive-science aspell aspell-es texstudio
+
+Windows
+https://www.texstudio.org/
