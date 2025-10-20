@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {2}{Introducción}{3}{0}{1}
+\beamer@sectionintoc {3}{Marco Teórico}{7}{0}{2}
+\beamer@sectionintoc {4}{Estado del Arte}{8}{0}{3}
+\beamer@sectionintoc {5}{Justificación}{9}{0}{4}
+\beamer@sectionintoc {6}{Objetivos}{10}{0}{5}
+\beamer@sectionintoc {7}{Desarrollo}{11}{0}{6}
+\beamer@subsectionintoc {7}{1}{Metodología de Desarrollo}{12}{0}{6}
+\beamer@subsectionintoc {7}{2}{Modelo de Datos}{13}{0}{6}
+\beamer@subsectionintoc {7}{3}{Requisitos}{14}{0}{6}
+\beamer@subsectionintoc {7}{4}{Códigos}{17}{0}{6}
+\beamer@subsectionintoc {7}{5}{Matemática}{20}{0}{6}
+\beamer@sectionintoc {8}{Conclusión y Trabajo Futuro}{23}{0}{7}

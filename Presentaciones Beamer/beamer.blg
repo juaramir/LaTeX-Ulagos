@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: beamer.aux
+The style file: apalike.bst
+Database file #1: bibliografia.bib
+Warning--entry type for "003" isn't style-file defined
+--line 34 of file bibliografia.bib
+You've used 5 entries,
+            1935 wiz_defined-function locations,
+            505 strings with 4471 characters,
+and the built_in function-call counts, 1681 in all, are:
+= -- 168
+> -- 58
+< -- 5
++ -- 20
+- -- 18
+* -- 134
+:= -- 308
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 34
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 64
+empty$ -- 116
+format.name$ -- 27
+if$ -- 319
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 4
+newline$ -- 27
+num.names$ -- 15
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 34
+quote$ -- 0
+skip$ -- 50
+stack$ -- 0
+substring$ -- 112
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 0
+while$ -- 14
+width$ -- 0
+write$ -- 65
+(There was 1 warning)
