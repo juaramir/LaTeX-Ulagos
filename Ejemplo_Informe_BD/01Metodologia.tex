@@ -216,18 +216,214 @@ A continuación, se presenta el desglose de actividades y tareas necesarias para
 \end{enumerate}
 \end{enumerate}
 
-\begin{landscape}
-\section{Plan del Proyecto}
-En base a la metodología de trabajo expuesta en la Sección \ref{sec:mettrabajo} se presenta la Carta Gantt de la Figura \ref{f:gantt}.
+\section[Equipo de Trabajo]{Equipo de Desarrollo del Proyecto y Asignación de Responsabilidades}\label{equipo}
 
+\noindent \textbf{1. Javier Rojas}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Jefe de Proyecto \& Desarrollador Full-Stack Senior
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Coordinación general del equipo y del proyecto.
+		\item Planificación de sprints/iteraciones y seguimiento del cronograma (Viabilidad de Plazos).
+		\item Principal punto de comunicación con el ``cliente'' (profesor/ayudante del curso).
+		\item Gestión de riesgos y resolución de impedimentos.
+		\item Supervisión técnica general y toma de decisiones arquitectónicas clave.
+		\item Desarrollo de componentes backend críticos y lógica de negocio compleja (Objetivo 3).
+		\item Supervisión y validación del modelado de datos (Objetivo 1).
+		\item Revisión de la optimización de la base de datos (Objetivo 2).
+		\item Participación en pruebas unitarias y de integración (Objetivo 4).
+		\item Coordinación de las Pruebas de Aceptación del Usuario (UAT) y del plan de despliegue (Objetivo 4).
+	\end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{2. Carolina Silva}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Analista de Sistemas \& Diseñadora de Bases de Datos
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Liderazgo en el Objetivo 1:
+		\begin{itemize}
+			\item Elaboración de la sección técnica del informe inicial.
+			\item Análisis detallado de los requisitos del cliente.
+			\item Creación y documentación del Modelo Entidad-Relación (MER).
+		\end{itemize}
+		\item Liderazgo en el diseño de la BD (parte del Objetivo 2):
+		\begin{itemize}
+			\item Transformación del MER al Modelo Relacional.
+			\item Proceso de Normalización de la base de datos (hasta 3FN).
+			\item Especificación detallada de tablas, atributos, claves primarias y foráneas, y restricciones de integridad para los scripts DDL.
+		\end{itemize}
+		\item Colaboración en la validación de maquetas desde la perspectiva del flujo de datos (Objetivo 3).
+		\item Participación activa en la documentación técnica inicial.
+	\end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{3. Martín Pizarro}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Desarrollador Backend \& Administrador de Base de Datos (DBA) Junior
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Liderazgo en la implementación de la BD (parte del Objetivo 2):
+		\begin{itemize}
+			\item Escritura de los scripts DDL (\texttt{CREATE TABLE}) basados en el diseño de Carolina.
+			\item Carga de datos de prueba y verificación de consistencia inicial.
+			\item Implementación de índices, consultas y vistas predefinidas.
+		\end{itemize}
+		\item Liderazgo en el desarrollo backend (parte del Objetivo 3):
+		\begin{itemize}
+			\item Configuración de la conexión PHP a la base de datos.
+			\item Desarrollo de la lógica de negocio principal y funciones PHP para las operaciones CRUD.
+			\item Implementación de funciones y/o triggers (PL/SQL o similar, según SGBD) para automatización y asegurar integridad en la BD.
+			\item Optimización de consultas a la base de datos.
+		\end{itemize}
+		\item Colaboración en la configuración del entorno de desarrollo web.
+		\item Participación en pruebas unitarias y de integración del backend.
+	\end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{4. Sofía Castro}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Desarrolladora Full-Stack \& Diseñadora UI/UX
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Liderazgo en el diseño y desarrollo frontend (Objetivo 3):
+		\begin{itemize}
+			\item Diseño de maquetas del sistema (wireframes y mockups) para las interfaces de usuario y administrador.
+			\item Desarrollo de la estructura HTML5 y estilos CSS3, asegurando la apariencia distintiva para cada rol.
+			\item Implementación de la interfaz de usuario, enfocándose en la usabilidad y experiencia del usuario.
+		\end{itemize}
+		\item Colaboración en la definición de requisitos desde la perspectiva del usuario (Objetivo 1).
+		\item Desarrollo de componentes PHP para la integración del frontend con el backend y la lógica CRUD.
+		\item Participación activa en las pruebas funcionales y de usabilidad (Objetivo 4).
+		\item Soporte durante las Pruebas de Aceptación del Usuario (UAT), especialmente en aspectos de interfaz.
+	\end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{5. Diego Valdés}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Desarrollador Full-Stack \& Soporte de Entornos
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Liderazgo en la configuración del entorno de desarrollo y pruebas (Objetivo 3):
+		\begin{itemize}
+			\item Montaje del servidor web, PHP y SGBD local o en la nube.
+		\end{itemize}
+		\item Soporte en la carga de datos de prueba y verificaciones de consistencia (Objetivo 2).
+		\item Desarrollo de módulos frontend y backend según se requiera, apoyando a Martín y Sofía (Objetivo 3):
+		\begin{itemize}
+			\item Implementación de funcionalidades CRUD y lógica de negocio.
+		\end{itemize}
+		\item Participación activa en pruebas unitarias y de integración.
+		\item Elaboración de parte del manual técnico y guías de despliegue (Objetivo 4).
+		\item Apoyo en la corrección de errores detectados durante las pruebas.
+	\end{itemize}
+\end{itemize}
+\vspace{0.5em}
+
+\noindent \textbf{6. Valentina Herrera}
+\begin{itemize}
+	\item \textbf{Rol Principal:} Encargada de Calidad (QA) \& Documentación Técnica
+	\item \textbf{Responsabilidades Clave:}
+	\begin{itemize}
+		\item Liderazgo en el Objetivo 4 (Pruebas y Validación):
+		\begin{itemize}
+			\item Establecimiento del plan de pruebas y diseño de casos de prueba.
+			\item Ejecución de pruebas funcionales, de sistema y de regresión.
+			\item Registro y seguimiento de errores (bug tracking).
+			\item Coordinación de las pruebas de integración desde la perspectiva de QA.
+			\item Preparación del entorno y guía durante las Pruebas de Aceptación del Usuario (UAT).
+		\end{itemize}
+		\item Gestión de la Documentación del Proyecto:
+		\begin{itemize}
+			\item Consolidación y mantenimiento de la documentación técnica (MER, diseño de BD, manuales).
+			\item Elaboración del manual de usuario.
+			\item Revisión y corrección de estilo de la documentación generada por el equipo (incluido el informe inicial).
+		\end{itemize}
+		\item Apoyo en la redacción y estructuración del informe inicial (Objetivo 1).
+	\end{itemize}
+\end{itemize}
+\vspace{1em}
+
+\subsection{Responsabilidades Compartidas por Todo el Equipo}
+\begin{itemize}
+	\item \textbf{Comprensión de Requisitos:} Todos los miembros participarán en la discusión y comprensión de los requisitos del cliente.
+	\item \textbf{Revisiones de Código:} Se realizarán revisiones cruzadas de código para mejorar la calidad y compartir conocimiento.
+	\item \textbf{Pruebas:} Aunque Valentina lidera QA, todos los desarrolladores son responsables de las pruebas unitarias de su código y colaborarán en la identificación y corrección de errores.
+	\item \textbf{Reuniones de Equipo:} Participación activa en reuniones periódicas de seguimiento, planificación y resolución de problemas, siguiendo la metodología Scrum.
+	\item \textbf{Gestión del Conocimiento:} Compartir aprendizajes y soluciones encontradas durante el desarrollo.
+	\item \textbf{Adaptabilidad:} Estar dispuestos a asumir tareas fuera de su rol principal si el proyecto lo requiere, dada la dinámica de un equipo pequeño y un proyecto formativo.
+\end{itemize}
+
+
+
+\section{Plan del Proyecto}
+En base a la metodología de trabajo expuesta en la Sección \ref{sec:mettrabajo} y las asignaciones de la Sección \ref{equipo}, se presenta en las Figuras \ref{f:gantt1} a la \ref{f:gantt4} la Carta Gantt de este proyecto.
+
+\begin{landscape}
 \begin{figure}[hbt]
 \centering
- % \includegraphics[width=23cm]{}
-  \caption{Carta Gantt del proyecto \dots}
-  \label{f:gantt}
+ \includegraphics[width=22cm]{Gantt0E1.png}
+  \caption{Carta Gantt del proyecto para el Objetivo Especifico 1}
+  \label{f:gantt1}
 \end{figure}
 \end{landscape}
 
+\begin{landscape}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=22cm]{Gantt0E2.png}
+		\caption{Carta Gantt del proyecto para el Objetivo Especifico 2}
+		\label{f:gantt2}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=22cm]{Gantt0E3.png}
+		\caption{Carta Gantt del proyecto para el Objetivo Especifico 3}
+		\label{f:gantt3}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=22cm]{Gantt0E4.png}
+		\caption{Carta Gantt del proyecto para el Objetivo Especifico 4}
+		\label{f:gantt4}
+	\end{figure}
+\end{landscape}
+
+En las Tablas \ref{t:precedencia1} a la \ref{t:precedencia4} de presentan las precedencias de cada tarea de esta carta Gantt para cada Objetivo especifico.
+
+\begin{table}[htb]\centering	
+	\begin{tabular}{|c|c|c|c|c|}\hline
+		\textbf{WBS}&\textbf{Duración} &\textbf{Después de} & \textbf{Simultanea a} & \textbf{Antes de}\\\hline
+A (1.1.1) & 5& -&-&B\\\hline
+B (1.1.2) & 5& A&H&C,D,E\\\hline
+C (1.1.3) & 10& B&D,E&G\\\hline
+D (1.1.4) & 5&B &C,E&G\\\hline
+E (1.1.5) & 5&B &D,E&F\\\hline
+F (1.1.6) & 5& E &-&G\\\hline
+G (1.1.6) & 5& C,D,F&-&-\\\hline
+H (1.2.1) & 10&A &B&I\\\hline
+I (1.2.2) & 10& H&-&J\\\hline
+J (1.2.3) & 10&I &-&K\\\hline
+K (1.2.4) & 10&J&-&L\\\hline
+L (1.2.5) & 15&K&-&M\\\hline
+M (1.2.6) & 5&L &-&-\\\hline
+	\end{tabular}
+		\caption{Tabla de Precedencias para el Objetivo Especifico 1}
+\label{t:precedencia1}	
+\end{table}
+ 
+ \juaramir{Repetir proceso para completar...}
+ 
 \section[Justificación y Aporte]{Justificación del Proyecto, Utilidad y Aporte para la Universidad}
 
 \subsection{Justificación del Proyecto}
@@ -399,147 +595,6 @@ El cumplimiento de este cronograma dependerá de varios factores críticos:
 
 En conclusión, el plazo de 15 meses de trabajo efectivo, distribuido según el calendario propuesto y gestionado mediante la metodología ágil Scrum, ofrece un marco temporal realista y estructurado para la finalización exitosa del proyecto por parte del equipo de estudiantes.
 
-\section[Equipo de Trabajo]{Equipo de Desarrollo del Proyecto y Asignación de Responsabilidades}
-
-\noindent \textbf{1. Javier Rojas}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Jefe de Proyecto \& Desarrollador Full-Stack Senior
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Coordinación general del equipo y del proyecto.
-        \item Planificación de sprints/iteraciones y seguimiento del cronograma (Viabilidad de Plazos).
-        \item Principal punto de comunicación con el ``cliente'' (profesor/ayudante del curso).
-        \item Gestión de riesgos y resolución de impedimentos.
-        \item Supervisión técnica general y toma de decisiones arquitectónicas clave.
-        \item Desarrollo de componentes backend críticos y lógica de negocio compleja (Objetivo 3).
-        \item Supervisión y validación del modelado de datos (Objetivo 1).
-        \item Revisión de la optimización de la base de datos (Objetivo 2).
-        \item Participación en pruebas unitarias y de integración (Objetivo 4).
-        \item Coordinación de las Pruebas de Aceptación del Usuario (UAT) y del plan de despliegue (Objetivo 4).
-    \end{itemize}
-\end{itemize}
-\vspace{0.5em}
-
-\noindent \textbf{2. Carolina Silva}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Analista de Sistemas \& Diseñadora de Bases de Datos
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Liderazgo en el Objetivo 1:
-        \begin{itemize}
-            \item Elaboración de la sección técnica del informe inicial.
-            \item Análisis detallado de los requisitos del cliente.
-            \item Creación y documentación del Modelo Entidad-Relación (MER).
-        \end{itemize}
-        \item Liderazgo en el diseño de la BD (parte del Objetivo 2):
-        \begin{itemize}
-            \item Transformación del MER al Modelo Relacional.
-            \item Proceso de Normalización de la base de datos (hasta 3FN).
-            \item Especificación detallada de tablas, atributos, claves primarias y foráneas, y restricciones de integridad para los scripts DDL.
-        \end{itemize}
-        \item Colaboración en la validación de maquetas desde la perspectiva del flujo de datos (Objetivo 3).
-        \item Participación activa en la documentación técnica inicial.
-    \end{itemize}
-\end{itemize}
-\vspace{0.5em}
-
-\noindent \textbf{3. Martín Pizarro}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Desarrollador Backend \& Administrador de Base de Datos (DBA) Junior
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Liderazgo en la implementación de la BD (parte del Objetivo 2):
-        \begin{itemize}
-            \item Escritura de los scripts DDL (\texttt{CREATE TABLE}) basados en el diseño de Carolina.
-            \item Carga de datos de prueba y verificación de consistencia inicial.
-            \item Implementación de índices, consultas y vistas predefinidas.
-        \end{itemize}
-        \item Liderazgo en el desarrollo backend (parte del Objetivo 3):
-        \begin{itemize}
-            \item Configuración de la conexión PHP a la base de datos.
-            \item Desarrollo de la lógica de negocio principal y funciones PHP para las operaciones CRUD.
-            \item Implementación de funciones y/o triggers (PL/SQL o similar, según SGBD) para automatización y asegurar integridad en la BD.
-            \item Optimización de consultas a la base de datos.
-        \end{itemize}
-        \item Colaboración en la configuración del entorno de desarrollo web.
-        \item Participación en pruebas unitarias y de integración del backend.
-    \end{itemize}
-\end{itemize}
-\vspace{0.5em}
-
-\noindent \textbf{4. Sofía Castro}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Desarrolladora Full-Stack \& Diseñadora UI/UX
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Liderazgo en el diseño y desarrollo frontend (Objetivo 3):
-        \begin{itemize}
-            \item Diseño de maquetas del sistema (wireframes y mockups) para las interfaces de usuario y administrador.
-            \item Desarrollo de la estructura HTML5 y estilos CSS3, asegurando la apariencia distintiva para cada rol.
-            \item Implementación de la interfaz de usuario, enfocándose en la usabilidad y experiencia del usuario.
-        \end{itemize}
-        \item Colaboración en la definición de requisitos desde la perspectiva del usuario (Objetivo 1).
-        \item Desarrollo de componentes PHP para la integración del frontend con el backend y la lógica CRUD.
-        \item Participación activa en las pruebas funcionales y de usabilidad (Objetivo 4).
-        \item Soporte durante las Pruebas de Aceptación del Usuario (UAT), especialmente en aspectos de interfaz.
-    \end{itemize}
-\end{itemize}
-\vspace{0.5em}
-
-\noindent \textbf{5. Diego Valdés}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Desarrollador Full-Stack \& Soporte de Entornos
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Liderazgo en la configuración del entorno de desarrollo y pruebas (Objetivo 3):
-        \begin{itemize}
-            \item Montaje del servidor web, PHP y SGBD local o en la nube.
-        \end{itemize}
-        \item Soporte en la carga de datos de prueba y verificaciones de consistencia (Objetivo 2).
-        \item Desarrollo de módulos frontend y backend según se requiera, apoyando a Martín y Sofía (Objetivo 3):
-        \begin{itemize}
-            \item Implementación de funcionalidades CRUD y lógica de negocio.
-        \end{itemize}
-        \item Participación activa en pruebas unitarias y de integración.
-        \item Elaboración de parte del manual técnico y guías de despliegue (Objetivo 4).
-        \item Apoyo en la corrección de errores detectados durante las pruebas.
-    \end{itemize}
-\end{itemize}
-\vspace{0.5em}
-
-\noindent \textbf{6. Valentina Herrera}
-\begin{itemize}
-    \item \textbf{Rol Principal:} Encargada de Calidad (QA) \& Documentación Técnica
-    \item \textbf{Responsabilidades Clave:}
-    \begin{itemize}
-        \item Liderazgo en el Objetivo 4 (Pruebas y Validación):
-        \begin{itemize}
-            \item Establecimiento del plan de pruebas y diseño de casos de prueba.
-            \item Ejecución de pruebas funcionales, de sistema y de regresión.
-            \item Registro y seguimiento de errores (bug tracking).
-            \item Coordinación de las pruebas de integración desde la perspectiva de QA.
-            \item Preparación del entorno y guía durante las Pruebas de Aceptación del Usuario (UAT).
-        \end{itemize}
-        \item Gestión de la Documentación del Proyecto:
-        \begin{itemize}
-            \item Consolidación y mantenimiento de la documentación técnica (MER, diseño de BD, manuales).
-            \item Elaboración del manual de usuario.
-            \item Revisión y corrección de estilo de la documentación generada por el equipo (incluido el informe inicial).
-        \end{itemize}
-        \item Apoyo en la redacción y estructuración del informe inicial (Objetivo 1).
-    \end{itemize}
-\end{itemize}
-\vspace{1em}
-
-\subsection{Responsabilidades Compartidas por Todo el Equipo}
-\begin{itemize}
-    \item \textbf{Comprensión de Requisitos:} Todos los miembros participarán en la discusión y comprensión de los requisitos del cliente.
-    \item \textbf{Revisiones de Código:} Se realizarán revisiones cruzadas de código para mejorar la calidad y compartir conocimiento.
-    \item \textbf{Pruebas:} Aunque Valentina lidera QA, todos los desarrolladores son responsables de las pruebas unitarias de su código y colaborarán en la identificación y corrección de errores.
-    \item \textbf{Reuniones de Equipo:} Participación activa en reuniones periódicas de seguimiento, planificación y resolución de problemas, siguiendo la metodología Scrum.
-    \item \textbf{Gestión del Conocimiento:} Compartir aprendizajes y soluciones encontradas durante el desarrollo.
-    \item \textbf{Adaptabilidad:} Estar dispuestos a asumir tareas fuera de su rol principal si el proyecto lo requiere, dada la dinámica de un equipo pequeño y un proyecto formativo.
-\end{itemize}
 
 
 
