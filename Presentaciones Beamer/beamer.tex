@@ -75,7 +75,7 @@
 	\frametitle{Texto con cita}
 	\justifying
 Este es un ejemplo del uso para citar a un solo autor \cite{000}, a dos autores \cite{000,001}
-y a tres autorores \cite{002, 003, 004}.
+y a tres autores \cite{002, 003, 004}.
 
 \end{frame}
 
@@ -167,7 +167,7 @@ Y llegó a tanto su curiosidad y desatino en esto, que vendió muchas hanegas de
 
 
 
-\subsection{Códigos}
+\subsection{Ejemplos}
 \begin{frame}[fragile]
 	\justifying
 	\frametitle{Código}
@@ -214,7 +214,7 @@ int main(){
 		\end{lstlisting}
 	\end{minipage}
 \end{frame}
-\subsection{Matemática}
+
 \begin{frame}[fragile]
 	\frametitle{Ejemplo de Función Matemática}
 	\justifying
@@ -242,6 +242,33 @@ int main(){
 	\end{center}
 \end{frame}
 
+
+\begin{frame}[fragile]
+	\frametitle{Diapositiva con avances}
+	\justifying
+
+	\begin{minipage}[t]{0.49\textwidth}
+\only<1->{
+\begin{block}{}
+contenidos...
+\end{block}
+}
+	\end{minipage} \hfill
+	\begin{minipage}[t]{0.49\textwidth}
+\only<2->{
+\begin{exampleblock}{}
+contenidos...
+\end{exampleblock}
+}
+	\end{minipage}
+\only<3>{
+\begin{alertblock}{}
+contenidos...
+\end{alertblock}
+}
+\end{frame}
+
+
 \section{Conclusión y Trabajo Futuro}
 \begin{frame}[fragile]
 	\frametitle{Conclusión}
@@ -254,6 +281,7 @@ int main(){
 	\justifying
 
 \end{frame}
+
 
 \begin{frame}[allowframebreaks]
 	\frametitle{Referencias}
