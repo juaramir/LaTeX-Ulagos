@@ -48,6 +48,7 @@
 \usepackage{lipsum}
 \usepackage{multirow}
 \usepackage{longtable,mdframed}
+\usepackage{draftwatermark}
 % --- DEFINICIONES DE DATOS PARA LA PORTADA ---
 
 
@@ -167,23 +168,35 @@
 
 
   \providecommand{\keywords}[1]{\textbf{\textit{Palabras Clave---}} #1}
-  
+
 % --- COMANDOS Y ENTORNOS PERSONALIZADOS ---
 \newcommand\notaautor[1]{{\scriptsize\begin{flushright}\emph{(#1)}\end{flushright}}}
+\newcommand\cita[1]{{\scriptsize \begin{flushright}\emph{(#1)}\end{flushright}}}%formato cita: \cita{texto}
+
+
 %%%Entornos de desarrollo
 \newtheorem{ejemplo}{Ejemplo}
 \newtheorem{cuadro1}{}
 \newenvironment{cuadro}
   {\begin{mdframed}\begin{cuadro1}}
   {\end{cuadro1}\end{mdframed}}
-  
+
 \newtheorem{solucion}{Solución}
-\newtheorem{definir}{Definición}
-\newtheorem{prueba}{Prueba}
-\newtheorem{demo}{Demostración}
-\newtheorem{obs}{Observación}
 \newtheorem{entrada}{Entrada}
 \newtheorem{salida}{Salida}
+ \theoremstyle{definition}
+\newtheorem{teorema}{Teorema}
+\newtheorem{propiedad}{Propiedad}
+\newtheorem{proposition}{Proposición}
+\newtheorem{corolario}{Corolario}
+\newtheorem{example}{Ejemplo}
+\newtheorem{teclea}{Comando en Terminal}
+\newtheorem{prueba}{Prueba}
+\newtheorem{definition}{Definición}
+\newtheorem{observacion}{Observación}
+\newtheorem{demostracion}{Demostración}
+\newtheorem{sintaxis}{Sintaxis}
+\newcommand{\ignore}[1]{}
 
 % --- CONFIGURACIÓN PARA LISTINGS (CÓDIGO) ---
 % Tu definición de lenguaje HTML5 es muy extensa, la incluyo tal cual
@@ -213,22 +226,22 @@
 }
 
 \lstset{
-	frame=Ltb, 
-	framerule=0pt, 
-	aboveskip=0.5cm, 
-	tabsize=4, 
+	frame=Ltb,
+	framerule=0pt,
+	aboveskip=0.5cm,
+	tabsize=4,
 	rulecolor=,
 	basicstyle=\ttfamily,
 	inputpath=code,
-	upquote=true, 
-	aboveskip={1.5\baselineskip}, 
-	columns=fixed, 
-	showstringspaces=false, 
+	upquote=true,
+	aboveskip={1.5\baselineskip},
+	columns=fixed,
+	showstringspaces=false,
 	extendedchars=true,
-	breaklines=true, 
-	prebreak = {\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}}, 
-	showtabs=false, 
-	showspaces=false, 
+	breaklines=true,
+	prebreak = {\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}},
+	showtabs=false,
+	showspaces=false,
 	identifierstyle=\ttfamily,
 	keywordstyle=\ttfamily\bfseries\azul,
 	commentstyle= \ttfamily\scriptsize\verde,
@@ -236,13 +249,13 @@
 	framexleftmargin=0.1cm,
 	aboveskip=2.8mm,
 	belowskip=-1mm,
-	framesep=0pt, 
-	rulesep=.4pt, 
-	rulesepcolor=\color{black}, 
-	numbers=left, 
-	numbersep=6pt, 
-	numberstyle=\tiny, 
-	numberfirstline = false, 
+	framesep=0pt,
+	rulesep=.4pt,
+	rulesepcolor=\color{black},
+	numbers=left,
+	numbersep=6pt,
+	numberstyle=\tiny,
+	numberfirstline = false,
 	breaklines=true,
 	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
 	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1

@@ -15,7 +15,7 @@ En esta sección se presenta la inserción del Código \ref{CodC}, El Código \r
 
 int main(void){
 	int i,s,n;
-	
+
 	/* inicializar el valor de la sumatoria en 0 */
 	s=0;
 	printf("ingrese la cantidad de elementos de la sumatoria=");
@@ -24,7 +24,7 @@ int main(void){
 	/* 2 y lo va sumando a s*/
 	for(i=1;i<=n;i++){
 		s = s+ 2*i;
-	} 
+	}
 	printf("el resultado de la sumatoria es=%d\n",s);
 
 	return (0);
@@ -118,7 +118,7 @@ INSERT INTO peces VALUES (454, 'romo', 'blanco', 85, 93);
 
 -- select * from peces
 
-INSERT INTO eventos VALUES 
+INSERT INTO eventos VALUES
 (3456 , 347 , '2010-01-26'),
 (6653 , 164 , '2010-05-14'),
 (5644 , 347 , '2010-05-15'),
@@ -130,19 +130,19 @@ INSERT INTO eventos VALUES
 (9647 , 281 , '2011-12-06'),
 (5347 , 281 , '2011-01-01');
 
---INSERT INTO eventos VALUES (3456, 164, '2010-01-26'); 
---INSERT INTO eventos VALUES (6653, 347, '2010-05-14'); 
---INSERT INTO eventos VALUES (5644, 347, '2010-05-15'); 
---INSERT INTO eventos VALUES (5645, 347, '2010-05-30'); 
---INSERT INTO eventos VALUES (6789, 228, '2010-04-30'); 
---INSERT INTO eventos VALUES (5211, 119, '2010-08-20'); 
---INSERT INTO eventos VALUES (6719, 388, '2010-10-22'); 
---INSERT INTO eventos VALUES (4555, 164, '2011-11-03'); 
---INSERT INTO eventos VALUES (9647, 281, '2011-12-21'); 
---INSERT INTO eventos VALUES (5369, 281, '2011-01-01'); 
+--INSERT INTO eventos VALUES (3456, 164, '2010-01-26');
+--INSERT INTO eventos VALUES (6653, 347, '2010-05-14');
+--INSERT INTO eventos VALUES (5644, 347, '2010-05-15');
+--INSERT INTO eventos VALUES (5645, 347, '2010-05-30');
+--INSERT INTO eventos VALUES (6789, 228, '2010-04-30');
+--INSERT INTO eventos VALUES (5211, 119, '2010-08-20');
+--INSERT INTO eventos VALUES (6719, 388, '2010-10-22');
+--INSERT INTO eventos VALUES (4555, 164, '2011-11-03');
+--INSERT INTO eventos VALUES (9647, 281, '2011-12-21');
+--INSERT INTO eventos VALUES (5369, 281, '2011-01-01');
 
 
--- ALTER TABLE tanques ADD medida character varying(2); 
+-- ALTER TABLE tanques ADD medida character varying(2);
 
 -- UPDATE tanques SET medida = 'ml';
 
@@ -162,7 +162,7 @@ INSERT INTO eventos VALUES
 (define (length x)
     (if (list? x) (length-aux x)
         (error "x no es una lista")))
-        
+
 (define (length-aux x)
     (if (null? x) 0 (+1 (length-aux (cdr x)))))
 \end{lstlisting}
@@ -177,19 +177,19 @@ INSERT INTO eventos VALUES
 
 padre(juan,alberto).
 padre(luis,alberto).
-padre(alberto,leoncio). 
+padre(alberto,leoncio).
 padre(geronimo,leoncio).
-padre(luisa,geronimo). 
+padre(luisa,geronimo).
 
 % Ahora se define las condiciones para que dos individuos sean hermanos hermano(A,B), significa que A es hermano de B.
-hermano(A,B) :- 
-    padre(A,P), 
-    padre(B,P), 
+hermano(A,B) :-
+    padre(A,P),
+    padre(B,P),
     A \== B.
 % Ahora se define el parentesco abuelo-nieto.  nieto(A,B) significa que A es nieto de B.
-nieto(A,B) :- 
-    padre(A,P), 
-    padre(P,B). 
+nieto(A,B) :-
+    padre(A,P),
+    padre(P,B).
 \end{lstlisting}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -229,16 +229,16 @@ Ahora presentamos los entornos Ejemplo \ref{ejemplo1}, Solución \ref{solucion1}
 \lipsum[1] %reemplazar esta linea
 \end{prueba}
 
-\begin{demo} \label{demo1}
+\begin{demostracion} \label{demo1}
 \lipsum[1] %reemplazar esta linea
-\end{demo}
+\end{demostracion}
 
-\begin{obs}\label{obs1}
+\begin{observacion}\label{obs1}
 \lipsum[1] %reemplazar esta linea
-\end{obs}
+\end{observacion}
 
 \subsection{Tablas}
-Por otro lado también se muestra un ejemplo de Tabla \ref{tabla1} llenada, además de la Tabla \ref{tabla2} que tiene 3 columnas y filas con barras, la Tabla \ref{tabla3} que tiene 4 filas y 4 columnas sin barras, por último la Tabla \ref{tabla4} posee títulos que usan más de una columna y fila. 
+Por otro lado también se muestra un ejemplo de Tabla \ref{tabla1} llenada, además de la Tabla \ref{tabla2} que tiene 3 columnas y filas con barras, la Tabla \ref{tabla3} que tiene 4 filas y 4 columnas sin barras, por último la Tabla \ref{tabla4} posee títulos que usan más de una columna y fila.
 
 \begin{table}[hbt]
 \begin{center}
@@ -305,7 +305,7 @@ A continuación se presentan entornos matemáticos con la Ecuación \ref{ecuacio
 \begin{equation}\label{ecuacion1}
 C_L=\frac{(S_{22}-\delta S_{11}^*)^*}{|\varPi S_{22}|^2=-|\pi|^2}
 \end{equation}
-    
+
 \begin{equation}\label{ecuacion2}
 R_S=\frac{\sqrt{1-g_s}\cdot (1-|S_{11}|^2)}{1-(1-g_s)\cdot|S_{11}|^2}
 \end{equation}
@@ -357,7 +357,7 @@ Ejemplo de uso intercalado
 
 
 \subsection{Figuras}
-En la Figura \ref{foto1} se muestra el logo de la Universidad. En cambio en la Figura \ref{figuras} se pueden apreciar 3 imágenes, la primera sería la Figura \ref{fig1}, la segunda la Figura \ref{fig2} y la tercera la Figura \ref{fig3}. 
+En la Figura \ref{foto1} se muestra el logo de la Universidad. En cambio en la Figura \ref{figuras} se pueden apreciar 3 imágenes, la primera sería la Figura \ref{fig1}, la segunda la Figura \ref{fig2} y la tercera la Figura \ref{fig3}.
 
 \begin{figure}[htb]
     \centering
@@ -385,7 +385,7 @@ En la Figura \ref{foto1} se muestra el logo de la Universidad. En cambio en la F
     \caption{Tercera figura}
     \label{fig3}
 \end{subfigure}
-        
+
 \caption{Insertar subfiguras en \LaTeX.}
 \label{figuras}
 \end{figure}
@@ -397,6 +397,6 @@ En la Figura \ref{foto1} se muestra el logo de la Universidad. En cambio en la F
   \caption{Foto entre texto}
 \label{entretexto}
 \end{wrapfigure}
-A continuación se presenta la Figura \ref{entretexto} entre texto, esta figura debe estar antes del texto y la ubicación puede ser L: izquierda; C: centrado; R: derecha. 
+A continuación se presenta la Figura \ref{entretexto} entre texto, esta figura debe estar antes del texto y la ubicación puede ser L: izquierda; C: centrado; R: derecha.
 \lipsum[1]
 
