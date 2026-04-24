@@ -5,7 +5,7 @@
 %
 % The a0poster class was created by:
 % Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
-% 
+%
 % This template has been downloaded from:
 % http://www.LaTeXTemplates.com
 %
@@ -41,6 +41,27 @@
 %\usepackage{multicol,graphicx,fancyhdr,eso-pic,url,float,lmodern,listings,times,textcomp, amsthm,amsmath,amssymb,dsfont,color,colortbl,sidecap,xspace,epic,eepic,anysize,setspace, hyperref, multirow,algorithm,algpseudocode,enumitem,pdflscape,lscape,subfigure,csquotes}
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 %Colores Ulagos
+
+\makeatletter
+\renewenvironment{figure}[1][]{%
+  \def\@captype{figure}%
+  \vspace{1cm}%
+  \begin{center}%
+}{%
+  \end{center}%
+  \vspace{1cm}%
+}
+
+\renewenvironment{table}[1][]{%
+  \def\@captype{table}%
+  \vspace{1cm}%
+  \begin{center}%
+}{%
+  \end{center}%
+  \vspace{1cm}%
+}
+\makeatother
+
 %COLOREAR SISTEMA
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}

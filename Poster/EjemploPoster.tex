@@ -1,0 +1,216 @@
+\documentclass[a0,portrait]{a0poster}
+
+\input{macros}
+
+\def\TITULO{Proyecto Sistema Para Universidad}
+\def\autora{Juan Ramirez}
+\def\correoa{juan.ramirez@ulagos.cl}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
+\def\autorc{Autor}
+\def\correoc{correo@alumnos.ulagos.cl}
+\def\autord{Autor}
+\def\correod{correo@alumnos.ulagos.cl}
+\def\autore{Autor}
+\def\correoe{correo@alumnos.ulagos.cl}
+\def\autorf{Autor}
+\def\correof{correo@alumnos.ulagos.cl}
+\def\autorg{Autor}
+\def\correog{correo@alumnos.ulagos.cl}
+\def\campus{Osorno}
+\def\carrera{Ingenier\'ia Civil en Informática}
+\lstset{language=SQL}%Cambiar el Lenguaje de Programación
+%SQL, PYTHON, HTML5, PHP, JAVA, C
+\def\proyecto{Expo Ingenierías}
+
+\begin{document}
+\input{Cabecera}
+
+\begin{multicols}{3} % Aca pueden cambiar cuantas columnas quieren el poster, 2 a 3
+
+%%RESUMEN
+\begin{abstract}
+El proyecto consiste en el diseño e implementación de un sistema de base de datos web integral para una Universidad. Se aborda el problema de la información académica y de investigación que actualmente se encuentra dispersa en múltiples sistemas y formatos manuales. Mediante un riguroso análisis de requisitos, se aplicó un modelado conceptual y relacional, alcanzando la Tercera Forma Normal (3NF) para optimizar la estructura. Esto sienta las bases para una plataforma eficiente que mejorará la toma de decisiones institucionales y eliminará inconsistencias operativas[cite: 3590, 3611].
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCCION
+%----------------------------------------------------------------------------------------
+
+%\color{rojo} % Color de la introduccion
+\color{negro}
+\section*{Generalidades}
+
+El presente trabajo describe la formulación y diseño fundamental de un sistema de base de datos web orientado a la gestión de información académica y de investigación. El objetivo central es establecer una plataforma robusta, escalable y eficiente para administrar de manera integrada los datos relativos a profesores, alumnos, proyectos, departamentos y programas de postgrado.
+
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVOS
+%----------------------------------------------------------------------------------------
+
+ %Color del contenido
+
+\subsection*{Origen del Tema}
+Actualmente, la gestión de datos universitarios suele sufrir de una gran dispersión, operando en sistemas de archivos aislados, hojas de cálculo o formatos manuales. Esta fragmentación genera redundancia de datos, ineficiencias operativas y anomalías en la actualización, lo que dificulta la toma de decisiones estratégicas e impide el análisis integral del quehacer de la institución \cite{silberschatz2014fundamentos}.
+
+\subsection*{Justificación y Aporte}
+El desarrollo de este sistema se justifica por la imperativa necesidad de superar las limitaciones actuales mediante una administración integrada, ágil y precisa. Su implementación aportará los siguientes beneficios:
+
+\begin{itemize}
+    \item Centralización de la información académica, eliminando redundancias y mejorando la consistencia.
+    \item Automatización de procesos administrativos clave, disminuyendo la carga de trabajo y el error humano.
+    \item Fortalecimiento de la toma de decisiones estratégicas basadas en evidencia concreta.
+\end{itemize}
+
+\section*{Objetivo General}
+Desarrollar e implementar un sistema de base de datos web integral y eficiente que satisfaga los requisitos de gestión de información académica y de investigación, permitiendo una administración centralizada y estructurada.
+\subsection*{Específicos}
+\begin{enumerate}
+    \item Formular un modelo de datos conceptual y lógico que represente fielmente las entidades y relaciones identificadas.
+    \item Diseñar e implementar la base de datos física, aplicando técnicas de normalización y restricciones de integridad.
+    \item Diseñar y desarrollar un sistema web interactivo que permita operaciones CRUD integradas a la capa de datos.
+    \item Ejecutar pruebas exhaustivas, validación de usuarios y el despliegue del sistema.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+\section*{Metodología de Trabajo}
+El proyecto se gestiona bajo el marco de trabajo ágil Scrum \cite{scrumguide2020}, estructurado en un horizonte de 15 meses de trabajo efectivo. Esta metodología iterativa e incremental fomenta la adaptabilidad y la entrega continua de valor. El equipo asume roles definidos, trabajando en Sprints de 4 semanas para abordar secuencialmente el modelado, la implementación y las pruebas.
+
+\section*{Desarrollo}
+
+Para dar cumplimiento a los objetivos, el desarrollo se estructuró en fases. En la fase inicial se analizaron los requerimientos para construir el Modelo Entidad-Relación (MER). Posteriormente, este modelo fue transformado al Modelo Relacional, aplicando un riguroso proceso de normalización hasta la Tercera Forma Normal (3NF) \cite{elmasri2007fundamentos}. Esto es fundamental para garantizar la integridad referencial y evitar anomalías de inserción, actualización y borrado. La estructura final se ilustra en la \textbf{Figura \ref{foto1}}.
+
+\begin{figure}\centering
+\includegraphics[width=1\linewidth]{MR}
+\caption{Modelo Relacional Normalizado de la universidad}
+\label{foto1}
+\end{figure}
+
+Con el diseño lógico consolidado, se procedió a la implementación física de la base de datos utilizando el Lenguaje de Definición de Datos (DDL). Se generaron los scripts necesarios para la creación de entidades, asegurando la integridad referencial mediante claves primarias y foráneas, e implementando restricciones de dominio (como presupuestos no negativos y coherencia de fechas). El \textbf{Código \ref{codigo1}} exhibe un extracto de este proceso, mostrando la creación de la tabla principal \texttt{Profesor} y la tabla asociativa \texttt{Dirigir}.
+
+\begin{lstlisting}[caption=Creación de Tablas en SQL,label=codigo1]
+CREATE TABLE Profesor (
+    Run VARCHAR(10) PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(40),
+    Apellido VARCHAR(30),
+    Fechanac DATE,
+    Especialidad VARCHAR(30),
+    Rango INTEGER);
+
+CREATE TABLE Dirigir (
+    Proyecto_id INTEGER NOT NULL,
+    Profesor_id VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Proyecto_id) REFERENCES Proyecto(Numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Profesor_id) REFERENCES Profesor(Run) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Proyecto_id,Profesor_id));
+\end{lstlisting}
+
+Finalmente, tras poblar la base de datos, se procedió a la validación mediante el Lenguaje de Manipulación de Datos (DML). Se desarrollaron vistas y consultas de agregación complejas, esenciales para la inteligencia de negocios de la Universidad \cite{ramakrishnan2003database}. Un ejemplo de esto se observa en el \textbf{Código \ref{codigo2}}, donde se utiliza \texttt{INNER JOIN}, agrupamiento y \texttt{HAVING} para identificar a los académicos con mayor carga de proyectos. El resultado se evidencia en la \textbf{Tabla \ref{tabla1}}.
+
+%------------------------------------------------
+
+
+
+
+\paragraph*{Profesores que dirigen más de un proyecto}Utiliza \texttt{COUNT} para contar los proyectos por profesor y \texttt{HAVING} para filtrar y mostrar solo a aquellos que dirigen más de uno.
+\begin{lstlisting}[caption=Profesores que dirigen más de un proyecto, label=codigo2]
+SELECT P.Nombre, P.Apellido,
+  COUNT(D.Proyecto_id) AS ProyectosDirigidos
+FROM Profesor AS P
+INNER JOIN Dirigir AS D
+  ON P.Run = D.Profesor_id
+GROUP BY P.Run, P.Nombre, P.Apellido
+HAVING COUNT(D.Proyecto_id) > 1;
+\end{lstlisting}
+
+
+\begin{table}\centering
+\begin{tabular}{|l|l|c|}
+\hline
+\textbf{Nombre} & \textbf{Apellido} & \textbf{ProyectosDirigidos} \\ \hline
+Carla & Morales & 2 \\ \hline
+Luis & Gómez & 2 \\ \hline
+\end{tabular}
+\caption{Profesores que dirigen más de un proyecto}
+\label{tabla1}
+\end{table}
+
+
+\paragraph*{Restricciones de Integridad}
+Para asegurar la consistencia y validez de la información almacenada, se implementaron múltiples restricciones de dominio a nivel de tabla utilizando la cláusula \texttt{CHECK}. El \textbf{Código \ref{codigo3}} ejemplifica cómo se evita el registro de presupuestos negativos y cómo se garantiza la coherencia cronológica en las fechas de los proyectos.
+
+\begin{lstlisting}[caption=Restricciones de dominio en la tabla Proyecto, label=codigo3]
+ALTER TABLE Proyecto
+  ADD CONSTRAINT chk_proyecto_presupuesto
+  CHECK (Presupuesto >= '0' :: MONEY);
+
+ALTER TABLE Proyecto
+  ADD CONSTRAINT chk_proyecto_fechas
+  CHECK (FechaFin IS NULL OR FechaFin > FechaInicio);
+\end{lstlisting}
+
+\paragraph*{Implementación de Vistas}
+Con el fin de simplificar el acceso a datos que requieren uniones complejas, se encapsuló la lógica estructural en vistas predefinidas. El \textbf{Código \ref{codigo4}} expone la creación de \texttt{VistaProyectoDetallado}, la cual centraliza y facilita la consulta de la información esencial de cada proyecto, su investigador principal y el departamento de origen.
+
+\begin{lstlisting}[caption=Creación de vista para proyectos detallados, label=codigo4]
+CREATE VIEW VistaProyectoDetallado AS
+SELECT
+  Proy.Numero AS ProyectoNumero,
+  Proy.Patrocinador,
+  Prof.Nombre AS NombreDirector,
+  Dep.Nombre AS DepartamentoDirector
+FROM Proyecto AS Proy
+INNER JOIN Dirigir AS Dir
+  ON Proy.Numero = Dir.Proyecto_id
+INNER JOIN Profesor AS Prof
+  ON Dir.Profesor_id = Prof.Run
+INNER JOIN Departamento AS Dep
+  ON Prof.Run = Dep.Profesor_id;
+\end{lstlisting}
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+\subsection*{Resultados}
+Durante las primeras fases del proyecto, se logró modelar exitosamente las reglas del negocio, transformando el Modelo Entidad-Relación inicial a un Modelo Relacional Normalizado en Tercera Forma Normal (3NF). Se desarrollaron e implementaron los scripts DDL en el SGBD, incorporando restricciones de integridad complejas, tales como la validación de presupuestos no negativos y coherencia en fechas de proyectos. Finalmente, la base de datos fue poblada con datos de prueba, validando su consistencia mediante la creación de vistas y consultas analíticas.
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+%\color{rojo} % SaddleBrown color for the conclusions to make them stand out
+
+\section*{Conclusiones}
+
+El diseño exhaustivo y normalizado de la base de datos constituye el pilar fundamental para garantizar la integridad de la información y la adaptabilidad futura del sistema universitario. La adopción de metodologías ágiles como Scrum y un modelado sistemático aseguran que la solución tecnológica resuelva las ineficiencias actuales y potencie la capacidad de gestión estratégica de la Universidad.
+
+\subsection*{Trabajo Futuro}
+
+Las siguientes iteraciones del proyecto se enfocarán en el diseño y desarrollo del sistema web, abarcando el frontend y el backend (mediante PHP) para la conexión con la base de datos. Además, se diseñarán interfaces de usuario diferenciadas según perfiles de acceso (administrador y usuario limitado) , y se coordinarán las Pruebas de Aceptación del Usuario (UAT) para el despliegue productivo.
+
+ %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+\color{celeste}
+%\nocite{*} % mostrar todas las referencias aunque no esten citadas
+\bibliographystyle{IEEEtran} % Plain referencing style
+\bibliography{bibliografia.bib} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\section*{Agradecimientos}
+
+%Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdiet urna arcu a arcu. Donec nec ante a dui tempus consectetur. Cras nisi turpis, dapibus sit amet mattis sed, laoreet.
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}
+\input{Pie}
+\end{document}
