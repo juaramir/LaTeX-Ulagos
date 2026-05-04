@@ -19,7 +19,7 @@ La gran mayoría de las tablas en el esquema proporcionado se encuentran en 3NF.
         \item \textbf{PK:} \texttt{Codigo}.
         \item \textbf{Análisis:} Tiene una clave simple y un único atributo no-clave (\texttt{Nombre}) que depende directamente de ella. \textbf{Se encuentra en 3NF}.
     \end{itemize}
-    
+
     \item \textbf{\texttt{Profesor}:}
     \begin{itemize}
         \item \textbf{PK:} \texttt{Run}.
@@ -70,10 +70,40 @@ Basado en una interpretación lógica de los atributos, solo una tabla presenta 
         \end{enumerate}
     \end{itemize}
 \end{itemize}
-    
+
 \subsubsection{Proceso de Normalizar}
 
+Para llevar la tabla Departamento a la Tercera Forma Normal (3NF), debemos eliminar la dependencia transitiva. Esto se logra creando una nueva tabla que contenga el atributo determinante que no es clave principal (Profesor\_id) y los atributos que dependen de él (Despacho). Luego, dejamos el atributo determinante en la tabla original como una clave foránea (Foreign Key).
+\begin{itemize}
+    \item \textbf{Solución: Normalización a 3NF}
+    \begin{itemize}
+        \item Para cumplir con la Tercera Forma Normal (3NF), se debe eliminar la dependencia transitiva separando los atributos correspondientes en una nueva tabla. El atributo \texttt{Profesor\_id} se convierte en la clave primaria de esta nueva relación, y se mantiene en la tabla original como clave foránea.
+    \end{itemize}
 
+    \vspace{0.5cm}
+
+    \item \textbf{Tablas Resultantes en 3NF:}
+
+    \item \textbf{\texttt{Despacho}} (Nueva tabla para absorber la dependencia transitiva):
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Profesor\_id}.
+        \item \textbf{Atributos no-clave:} \texttt{Despacho}.
+    \end{itemize}
+
+    \item \textbf{\texttt{Departamento}} (Tabla original ajustada):
+    \begin{itemize}
+        \item \textbf{PK:} \texttt{Numero}.
+        \item \textbf{Atributos no-clave:} \texttt{Nombre}, \texttt{Profesor\_id}.
+        \item \textbf{FK:} \texttt{Profesor\_id} hace referencia a \texttt{Profesor}(\texttt{Profesor\_id}).
+    \end{itemize}
+
+    \item \textbf{Análisis de Cumplimiento 3NF:}
+    \begin{enumerate}
+        \item En la tabla \texttt{Despacho}, el único atributo no-clave (\texttt{Despacho}) depende directa y completamente de la clave primaria (\texttt{Profesor\_id}).
+        \item En la tabla \texttt{Departamento}, los atributos no-clave (\texttt{Nombre} y \texttt{Profesor\_id}) dependen directa y completamente de la clave primaria (\texttt{Numero}).
+        \item Al separar las tablas, se ha roto la cadena de dependencia $\texttt{Numero} \rightarrow \texttt{Profesor\_id} \rightarrow \texttt{Despacho}$. Dado que todos los atributos no-clave ahora dependen únicamente de sus respectivas claves primarias y no existen dependencias transitivas, \textbf{ambas relaciones se encuentran en 3NF}.
+    \end{enumerate}
+\end{itemize}
 
 \begin{landscape}
 \subsection{Modelo Relacional Normalizado}
