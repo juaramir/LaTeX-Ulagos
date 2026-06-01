@@ -73,7 +73,7 @@ Basado en una interpretación lógica de los atributos, solo una tabla presenta 
 
 \subsubsection{Proceso de Normalizar}
 
-Para llevar la tabla Departamento a la Tercera Forma Normal (3NF), debemos eliminar la dependencia transitiva. Esto se logra creando una nueva tabla que contenga el atributo determinante que no es clave principal (Profesor\_id) y los atributos que dependen de él (Despacho). Luego, dejamos el atributo determinante en la tabla original como una clave foránea (Foreign Key).
+Para llevar la tabla Departamento de la Figura \ref{f:normalizacion1} a la Tercera Forma Normal (3NF), debemos eliminar la dependencia transitiva. Esto se logra creando una nueva tabla que contenga el atributo determinante que no es clave principal (Profesor\_id) y los atributos que dependen de él (Despacho). Luego, dejamos el atributo determinante en la tabla original como una clave foránea (Foreign Key).
 \begin{itemize}
     \item \textbf{Solución: Normalización a 3NF}
     \begin{itemize}
@@ -84,13 +84,13 @@ Para llevar la tabla Departamento a la Tercera Forma Normal (3NF), debemos elimi
 
     \item \textbf{Tablas Resultantes en 3NF:}
 
-    \item \textbf{\texttt{Despacho}} (Nueva tabla para absorber la dependencia transitiva):
+    \item \textbf{\texttt{Despacho}} (Nueva tabla para absorber la dependencia transitiva) (Ver Figura \ref{f:normalizacion2}):
     \begin{itemize}
         \item \textbf{PK:} \texttt{Profesor\_id}.
         \item \textbf{Atributos no-clave:} \texttt{Despacho}.
     \end{itemize}
 
-    \item \textbf{\texttt{Departamento}} (Tabla original ajustada):
+    \item \textbf{\texttt{Departamento}} (Tabla original ajustada) (Ver Figura \ref{f:normalizacion3}):
     \begin{itemize}
         \item \textbf{PK:} \texttt{Numero}.
         \item \textbf{Atributos no-clave:} \texttt{Nombre}, \texttt{Profesor\_id}.
@@ -104,6 +104,30 @@ Para llevar la tabla Departamento a la Tercera Forma Normal (3NF), debemos elimi
         \item Al separar las tablas, se ha roto la cadena de dependencia $\texttt{Numero} \rightarrow \texttt{Profesor\_id} \rightarrow \texttt{Despacho}$. Dado que todos los atributos no-clave ahora dependen únicamente de sus respectivas claves primarias y no existen dependencias transitivas, \textbf{ambas relaciones se encuentran en 3NF}.
     \end{enumerate}
 \end{itemize}
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{0.31\textwidth}\centering
+		\includegraphics[width=\textwidth]{images/MR/departamento.png}
+		\caption{Tabla Departamento Original}
+		\label{f:normalizacion1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.31\textwidth}\centering
+		\includegraphics[width=\textwidth]{images/MR/despacho.png}
+		\caption{Tabla Despacho generada por la normalización}
+		\label{f:normalizacion2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.31\textwidth}\centering
+		\includegraphics[width=\textwidth]{images/MR/departamentonormalizado.png}
+		\caption{Nueva Tabla Departamento despues de normalizar}
+		\label{f:normalizacion3}
+	\end{subfigure}
+	
+	\caption{Normalización Tabla Departamento}
+	\label{f:normalizacion}
+\end{figure}
 
 \begin{landscape}
 \subsection{Modelo Relacional Normalizado}
