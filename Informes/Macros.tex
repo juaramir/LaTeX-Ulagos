@@ -58,6 +58,7 @@
 \fancyhf{} % Limpia todos los campos
 \rhead{\carrera}
 \lfoot{\asignatura}
+\cfoot{\thepage}
 \rfoot{Universidad de Los Lagos}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -179,20 +180,26 @@
   {\end{cuadro1}\end{mdframed}}
 
 \newtheorem{solucion}{Solución}
+\newtheorem{definir}{Definición}
+\newtheorem{prueba}{Prueba}
+\newtheorem{demostracion}{Demostración}
+\newtheorem{obs}{Observación}
 \newtheorem{entrada}{Entrada}
 \newtheorem{salida}{Salida}
- %\theoremstyle{definition}
-\newtheorem{teorema}{Teorema}
-\newtheorem{propiedad}{Propiedad}
-\newtheorem{proposition}{Proposición}
-\newtheorem{corolario}{Corolario}
-\newtheorem{example}{Ejemplo}
-\newtheorem{teclea}{Comando en Terminal}
-\newtheorem{prueba}{Prueba}
-\newtheorem{definir}{Definición}
-\newtheorem{observacion}{Observación}
-\newtheorem{demostracion}{Demostración}
-\newtheorem{sintaxis}{Sintaxis}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{teorema}[theorem]{Teorema}
+\newtheorem{lem}{Theorem}[chapter]
+\newtheorem{propiedad}[lem]{Propiedad}
+\newtheorem{prop}{Theorem}[chapter]
+\newtheorem{proposition}[prop]{Proposición}
+\newtheorem{coro}{Theorem}[chapter]
+\newtheorem{corolario}[coro]{Corolario}
+\newtheorem{exam}{Theorem}[chapter]
+\newtheorem{example}[exam]{Ejemplo}
+\newtheorem{test}{Theorem}[chapter]
+\newtheorem{defi}{Theorem}[chapter]
+\newtheorem{definition}[defi]{Definición}
+\newtheorem{observacion}[obs]{Observación}
 \newcommand{\ignore}[1]{}
 
 % --- CONFIGURACIÓN PARA LISTINGS (CÓDIGO) ---
