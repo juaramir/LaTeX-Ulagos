@@ -1,0 +1,67 @@
+\documentclass[letterpaper,10pt]{article}
+\input{macros}
+
+% Definición de variables globales
+\def\TITULO{Evaluación Parcial 1}
+\def\autora{Autor}
+\def\correoa{correo@ulagos.cl}
+\def\asignatura{Asignatura}
+\def\campus{Campus Osorno}
+\def\carrera{Ingeniería Civil en Informática}
+
+%\lhead{\begin{picture}(0,0) \put(0,0){\includegraphics[width=40mm]{images/Logo-ULagos.png}} \end{picture}}
+\rhead{\asignatura}
+\lfoot{}
+\rfoot{\carrera}
+\renewcommand{\headrulewidth}{0.0pt}
+\pagestyle{fancy}
+
+% Creación del comando paramétrico para el membrete
+\newcommand{\generarMembrete}[1]{
+    \newpage % Fuerza el inicio de una nueva página para cada forma
+
+    \noindent
+    \begin{minipage}{0.25\textwidth}
+        \includegraphics[width=5.5cm]{images/Logo-ULagos.png}
+    \end{minipage}%
+    \begin{minipage}{0.75\textwidth}
+        \begin{center}
+            {\Huge \textbf{\TITULO}} \\[0.2cm]
+            {\large \carrera, \campus} \\[0.2cm]
+            {\Large \textbf{FORMA #1}} \\[0.2cm]
+            {\small \autora ~|~ \correoa ~|~ \today}
+        \end{center}
+    \end{minipage}
+
+    \vspace{0.8cm}
+    \noindent\textbf{Nombre}: \rule{9cm}{0.4pt} \hfill \textbf{Puntaje: \_\_\_\_\_/100} \\[-0.2cm]
+
+    \begin{multicols}{2}
+        \noindent\textbf{Rut}: \rule{4cm}{0.4pt}
+
+        \noindent\textbf{Nº Lista}: \rule{2cm}{0.4pt} \hfill \textbf{Tiempo Total: 80 min}
+    \end{multicols}
+
+}
+
+\begin{document}
+
+% ================= FORMA A =================
+\generarMembrete{A}
+
+\section*{Preguntas de Desarrollo}
+1. Explique el concepto de interbloqueo (deadlock) considerando las condiciones de Coffman.
+
+% ================= FORMA B =================
+\generarMembrete{B}
+
+\section*{Preguntas de Desarrollo}
+1. Analice los algoritmos de planificación de procesos preemptivos frente a los no preemptivos.
+
+% ================= FORMA C =================
+\generarMembrete{C}
+
+\section*{Preguntas de Desarrollo}
+1. Diseñe una estrategia de paginación de memoria para un sistema con alta fragmentación externa.
+
+\end{document}
