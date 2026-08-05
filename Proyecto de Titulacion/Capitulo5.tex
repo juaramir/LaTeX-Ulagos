@@ -1,63 +1,105 @@
+\chapter{Análisis Económico y Presupuestario}\label{economico}
 
-\chapter{Análisis Económico}\label{economico}
-\juaramir{Este capítulo es obligatorio para todo proyecto que implique desarrollo de software y no sea de investigación}
-Este capítulo evalúa la viabilidad del proyecto desde una perspectiva de negocio y financiera. Es especialmente útil si el software tiene un potencial comercial.
-\section{Estudio de Mercado}
-Valida la idea del software como un producto viable en el mercado. Incluye un análisis de los posibles consumidores (demanda), la competencia (oferta y precios) y la estrategia de comercialización.
+\azul{Este capítulo evalúa la factibilidad económica y la asignación eficiente de recursos del proyecto. Dependiendo de la naturaleza de la iniciativa, el estudiante debe aplicar el enfoque correspondiente:
+	\begin{enumerate}
+		\item \textbf{Proyectos de Desarrollo Tecnológico o Aplicados:} Requieren un estudio de mercado, flujo de caja comercial e indicadores financieros tradicionales (VAN, TIR, PRI) \cite[p. ~15]{sapag1989preparacion}.
+		\item \textbf{Proyectos de Investigación Científica / Publicación (Paper):} Sustituyen la venta comercial por la estructuración detallada del costo de la investigación, el análisis de costo-efectividad, la presupuestación de la difusión científica (tarifas APC, congresos) y la valoración del retorno académico e institucional.
+	\end{enumerate}
+}
 
-\subsection{Consumidores y análisis de la demanda}
- Identificar el público objetivo, estimar el tamaño del mercado potencial y proyectar la demanda futura del software. Esto es fundamental para justificar que el proyecto es necesario.
-\subsection{Análisis de la oferta y los precios}
-Investigar a la competencia (otras soluciones de software) y definir un modelo de negocio y precios (ej. licencia, suscripción, freemium)
-\subsection{Comercialización}
-Describir cómo se dará a conocer y se distribuirá el software a los clientes
-\section{Evaluación de Proyectos de Inversión}
-Utiliza indicadores financieros para medir la rentabilidad del proyecto.
-\subsection{Criterios de evaluación}
-Utilizar los flujos de caja para calcular indicadores clave de rentabilidad
-\subsection{Valor Actual Neto (VAN)}
-Determinar si el proyecto crea valor, es decir, si los beneficios futuros superan la inversión inicial, a una tasa de descuento definida.
-\subsection{Tasa Interna de Retorno (TIR)}
- Calcular la rentabilidad intrínseca del proyecto para compararla con el costo de oportunidad del capital
-\subsection{Análisis de riesgo e incertidumbre}
-Plantear diferentes escenarios (optimista, pesimista) para evaluar la robustez financiera del proyecto de software ante cambios en la demanda o en los costos
+\section{Naturaleza del Proyecto y Enfoque Económico}
 
-\section{Viabilidad Económica}
-Detalla todos los costos asociados al proyecto y los beneficios esperados.
-\subsection{Costos de Desarrollo}
-Inversión inicial en personal, hardware y software.
-\subsubsection{Personal}
-\subsubsection{Software}
-Estimar la infraestructura necesaria (servidores, capacidad de base de datos) en función de la demanda de usuarios proyectada
-\subsubsection{Hardware/Infraestructura}
-Cuantificar la inversión inicial en hardware (computadores, servidores), software (licencias de sistemas operativos, IDEs) y otros activos
-\subsection{Costos Operativos (Post-Implementación)}
-Estimar los costos recurrentes como salarios del equipo de desarrollo y mantención, costos de hosting, dominios, soporte técnico, etc.
+\azul{El documento define la orientación del trabajo. En iniciativas investigativas cuyo entregable principal sea una publicación en una revista indexada (WoS/Scopus), un congreso o una patente, se justifica la omisión del flujo de caja de ventas. En su lugar, el análisis argumenta cómo los recursos financieros y de cómputo invertidos garantizan la viabilidad metodológica y la transferencia del conocimiento generado.}
+
+\moradoc{Ejemplo: El presente proyecto postula una investigación aplicada enfocada en la optimización de algoritmos de reparación de datos inconsistentes. Dado que el resultado primario corresponde a un artículo científico destinado a una conferencia internacional indexada y a la liberación de código abierto, el análisis económico no contempla la comercialización directa del software, sino la evaluación de costo-efectividad del desarrollo y la asignación del presupuesto de investigación.}
+
+\section{Presupuesto Detallado de la Investigación}
+
+\azul{Esta sección sistematiza la totalidad de los costos directos e indirectos requeridos para concebir, ejecutar y validar la investigación. La cuantificación rigurosa de los recursos evita subestimaciones presupuestarias durante la fase experimental.}
+
+\subsection{Costos de Personal y Horas de Investigación}
+
+\azul{Se valoriza el tiempo asignado por los investigadores, estudiantes tesistas y personal técnico de apoyo, calculando la tarifa horaria académica sobre la dedicación semanal comprometida.}
+
+\moradoc{Ejemplo de Costos de Personal:
+	\begin{itemize}
+		\item \textbf{Investigador/a Principal / Estudiante Tesista:} 20 horas/semana durante 16 semanas a \$12.000 CLP/hora = \$3.840.000 CLP.
+		\item \textbf{Asesoría Externa / Co-autoría:} 10 horas de consultoría especializada a \$25.000 CLP/hora = \$250.000 CLP.
+\end{itemize}}
+
+\subsection{Infraestructura, Equipamiento y Recursos Computacionales}
+
+\azul{Incluye la depreciación de hardware, adquisición de componentes, licencias de software, alquiler de instancias de cómputo en la nube (AWS, GCP, Azure) o uso de laboratorios especializados requeridos para las simulaciones y experimentos.}
+
+\moradoc{Ejemplo: Uso de instancias en la nube con aceleración por GPU (NVIDIA A100) para el entrenamiento y validación de los modelos analíticos durante 150 horas de cómputo = \$450.000 CLP.}
+
+\subsection{Costos de Difusión Científica y Propiedad Intelectual}
+
+\azul{Un proyecto enfocado en la producción de un \textit{paper} exige presupuestar los desembolsos asociados a la comunicación de los resultados. Esto contempla:}
+
 \begin{itemize}
-    \item Mantenimiento del software y la base de datos.
-\item Soporte técnico a usuarios.
-\item Costos continuos de infraestructura (energía, conectividad, cloud si aplica).
-\item Capacitación continua.
+	\item \azul{\textbf{Derechos de Publicación (APC - Article Processing Charge):} Tarifas de acceso abierto en revistas internacionales o congresos.}
+	\item \azul{\textbf{Inscripción y Asistencia a Eventos Académicos:} Registro en conferencias, pasajes, viáticos y alojamiento.}
+	\item \azul{\textbf{Servicios de Edición y Traducción Científica:} Corrección de estilo y traducción técnica al idioma inglés por servicios profesionales.}
 \end{itemize}
-\subsection{Retorno de la Inversión (ROI) y Beneficios}
-Cuantifica el retorno financiero y describe los beneficios cualitativos (ej. mejora de la eficiencia, reducción de errores). Aunque muchos beneficios son cualitativos, su impacto económico es considerable:
-\subsubsection{Reducción de Costos Directos}
-\subsubsection{Eficiencia Mejorada}
-\subsubsection{Mejora en la Toma de Decisiones}
-\subsubsection{Cumplimiento y Acreditación}
-\subsubsection{Reducción de Errores}
-Aquí hay que añadir secciones según materia vista en el curso de formulación y evaluación de proyectos.
 
+\moradoc{Ejemplo de Difusión:
+	\begin{itemize}
+		\item \textbf{Traducción y Edición Científica en Inglés:} \$180.000 CLP.
+		\item \textbf{Inscripción a Conferencia Internacional (ej. IEEE / SCCC):} \$350.000 CLP.
+		\item \textbf{Tarifa de Publicación Open Access (APC):} \$850.000 CLP.
+\end{itemize}}
 
-deben añadir análisis económico de carta planificación temporal como la gantt (Figura \ref{gantt}), y el desglose de actividades de la Sección \ref{s:PERT} y malla CPM (Figura \ref{CPMcritico})
+\section{Análisis de Costo-Efectividad y Fuentes de Financiamiento}
 
+\azul{En ausencia de ingresos monetarios, se evalúa la relación entre el presupuesto ejecutado y el impacto académico esperado. Se analizan indicadores indirectos y se identifican las fuentes de financiamiento que soportan el desarrollo (proyectos FONDECYT, fondos de investigación internos o becas institucionales).}
 
+\subsection{Indicadores de Costo-Efectividad Académica}
+
+\azul{Se sugiere calcular métricas de eficiencia que relacionen el costo total de la investigación con los productos generados, tales como:}
+
+\begin{itemize}
+	\item \azul{\textbf{Costo por Publicación Indexada:} Inversión total dividida por la cantidad de artículos aceptados.}
+	\item \azul{\textbf{Costo por Incremento de Rendimiento:} Relación entre el costo en recursos de cómputo y el porcentaje de optimización o precisión alcanzado por el algoritmo/sistema.}
+\end{itemize}
+
+\moradoc{Ejemplo: La inversión total de \$5.870.000 CLP se traduce en la producción de un artículo WoS Q2 y la liberación de un repositorio de código abierto, lo que representa una relación costo-efectividad óptima al contrastarse contra el costo promedio de proyectos de I+D universitarios.}
+
+\subsection{Identificación de Fondos y Sostenibilidad}
+
+\azul{Se explican los mecanismos de financiamiento del proyecto, declarando si los fondos provienen de asignaciones del Departamento de Ciencias de la Ingeniería, proyectos de investigación adjudicados o recursos propios, garantizando la sostenibilidad financiera de las actividades.}
+
+\section{Presupuestación Temporal del Camino Crítico (CPM/Gantt)}
+
+\azul{Se exige vincular directamente cada tarea de la fase investigativa (revisión bibliográfica, diseño del modelo, ejecución de pruebas de laboratorio, redacción del manuscrito) con su costo financiero correspondiente. Esto permite construir el flujo de caja presupuestario a lo largo del tiempo \cite[p.~112]{pmi2021pmbok}.}
+
+\moradoc{Ejemplo de descripción e integración narrativa:}
+	
+	\moradoc{La distribución temporal de las fases del proyecto y sus interdependencias operativas se sintetizan en el grafo CPM de la Figura~\ref{fig:CPM_investigacion}. En esta representación de red se aprecian las relaciones de precedencia entre la revisión bibliográfica, el modelado del sistema y la fase experimental, identificando la secuencia continua de actividades que condicionan la duración total del trabajo.}
+	
+\moradoc{	A su vez, la cuantificación monetaria pormenorizada por cada hito de trabajo se presenta en la Tabla~\ref{tab:presupuesto_investigacion}. La estructura de datos evidencia que las tareas de experimentación y redacción del artículo concentran la mayor proporción de los costos directos, debido a la asignación de recursos de cómputo de alto rendimiento y los aranceles de difusión científica. Puesto que estas actividades pertenecen a la ruta crítica identificada en la Figura~\ref{fig:CPM_investigacion}, cualquier desfase temporal o presupuestario en su ejecución afectará directamente el cumplimiento de los plazos comprometidos.
+}
 
 \begin{landscape}
-\begin{figure}[hbt]
-  \centering
-  %\includegraphics{}
-  \caption{Grafo de Actividades con duración y caminos críticos}
-  \label{CPMcritico}
-\end{figure}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Reemplazar.png}
+		\caption{Grafo CPM del proyecto de investigación con distribución de duraciones y costos}
+		\label{fig:CPM_investigacion}
+	\end{figure}
 \end{landscape}
+\begin{landscape}
+\begin{table}[hbt]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|c|c|}\hline
+		\textbf{Tarea de Investigación} & \textbf{Duración (días)} & \textbf{Costo Directo (\$)} & \textbf{Costo Indirecto (\$)} & \textbf{Ruta Crítica} \\\hline
+		Tarea 1.1 (Revision Bibliográfica) & 15 & \$200.000 & \$30.000 & Sí \\\hline
+		Tarea 2.1 (Diseño del Modelo) & 20 & \$600.000 & \$80.000 & Sí \\\hline
+		Tarea 3.1 (Experimentación y Cómputo) & 25 & \$1.200.000 & \$150.000 & Sí \\\hline
+		Tarea 4.1 (Redacción y Envío Paper) & 15 & \$1.380.000 & \$50.000 & Sí \\\hline
+		\textbf{Total} & \textbf{75} & \textbf{\$3.380.000} & \textbf{\$310.000} & -- \\\hline
+	\end{tabular}
+	\caption{Presupuesto temporalizado por tareas del ciclo de investigación}
+	\label{tab:presupuesto_investigacion}
+\end{table}\end{landscape}

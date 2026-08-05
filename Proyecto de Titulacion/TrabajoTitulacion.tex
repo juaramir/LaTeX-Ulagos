@@ -17,7 +17,6 @@
 \input{Macros}
 \lstset{language=Python}
 
-
      
 
 \begin{document}
@@ -52,12 +51,14 @@
 
 %%%%%%%%COMIENZO
 
-INDICACIONES BÁSICAS:
+\rojo{INDICACIONES BÁSICAS:
  \begin{itemize}
-     \item CADA IMÁGEN O LOGO, TABLA Y ALGORITMO DEBEN TENER CAPTION (PIE DE...) Y DEBEN SER REFERENCIADAS EN EL TEXTO.
-     \item CADA CITE DEBE SER ANTES DE UN PUNTO.
+     \item CADA IMÁGEN O LOGO, TABLA Y ALGORITMO DEBEN TENER CAPTION (PIE DE...) Y DEBEN SER REFERENCIADAS Y DESCRITAS EN EL TEXTO.
+     \item CADA CITE Y REF DEBE SER ANTES DE UN PUNTO.
+     \item QUITAR LOS COLORES AL TEXTO, EL TEXTO QUE ESTA EN AZUL Y MORADO ES SOLO PARA QUE SEPAN QUE HACER.
+     \item QUEDAN PROHIBIDAS IMÁGENES QUE PREDOMINE EL COLOR NEGRO DE FONDO.
  \end{itemize}
-
+}
 \input{Capitulo1}
 \input{Capitulo2}
 \input{Capitulo3}
@@ -71,7 +72,7 @@ INDICACIONES BÁSICAS:
 
 %%%%%REFERENCIAS
 \renewcommand{\refname}{Referencias}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{ieeetr}
 %\nocite{*} % mostrar todas las referencias aunque no esten citadas
 \bibliography{bibliografia}
 

@@ -1,64 +1,95 @@
+\chapter{Especificación de Requisitos del Software}\label{requisitos}
 
-\chapter{Requisitos del Proyecto}\label{requisitos}
-Especifica en detalle qué debe hacer el sistema. Es recomendable complementar esta sección con diagramas UML para mayor claridad.
-\section{Requisitos de Interfaces Externos (\rojo{OPCIONAL})}
-Detalla cómo el sistema interactuará con usuarios y otros sistemas.
+\azul{Este capítulo documenta las propiedades, servicios y restricciones operativas que el artefacto informático debe exhibir. La ingeniería de software postula que una especificación rigurosa constituye el contrato técnico fundamental para el desarrollo, mitigando desviaciones estructurales en fases avanzadas del ciclo de vida \cite[p.~83]{sommerville2011ingenieria}. Se sugiere acompañar la redacción con modelos UML, puesto que la representación gráfica podría indicar con mayor precisión la arquitectura del sistema.}
+
+\section{Interfaces Externas (\rojo{Opcional})}
+
+\azul{Esta sección detalla los protocolos, formatos y mecanismos mediante los cuales el sistema interactúa con su entorno operativo, abarcando operadores humanos, dispositivos físicos, aplicaciones complementarias y redes de comunicación \cite[p.~10]{ieee830_1998},\cite[p.~150]{pressman2010ingenieria}.}
+
 \subsection{Interfaces de Usuario}
+
+\azul{Describe las características lógicas y físicas de la interfaz con la que interactuará el usuario final. Se deben especificar aspectos como el tipo de interfaz (web, móvil, de consola), los principios ergonómicos o de accesibilidad aplicados, el flujo de navegación, los requerimientos de diseño visual y las reglas de presentación de información o captura de datos.}
+
+\moradoc{Ejemplo: La interfaz de usuario consistirá en un panel web responsivo optimizado para resoluciones de pantalla estándar y dispositivos móviles. El diseño adoptará componentes gráficos basados en el sistema de diseño Material UI, garantizando tiempos de carga reducidos y compatibilidad con lectores de pantalla según la pauta WCAG 2.1.}
+
 \subsection{Interfaces de Hardware}
+
+\azul{Especifica las características lógicas y físicas del soporte de hardware que requiere el software para su operación o integración. Incluye tipos de dispositivos soportados, sensores, actuadores, frecuencias de muestreo, direcciones de memoria, rangos de voltaje o protocolos de comunicación a nivel de circuito.}
+
+\moradoc{Ejemplo: El sistema se conectará a un módulo sensor de flujo mediante una interfaz serie UART/RS-485 operando a una velocidad de transmisión de 9600 baudios, 8 bits de datos, sin paridad y 1 bit de parada (9600-8-N-1).}
+
 \subsection{Interfaces de Software}
+
+\azul{Detalla las conexiones con otros productos de software o sistemas legados, tales como bases de datos, servicios web externos, bibliotecas del sistema operativo o marcos de trabajo específicos. Se debe indicar el nombre, versión y propósito de cada componente externo, además de las estructuras de datos o servicios compartidos.}
+
+\moradoc{Ejemplo: La aplicación conectará con la API RESTful del sistema de autenticación institucional mediante solicitudes HTTP/HTTPS codificadas en formato JSON, empleando tokens JWT (JSON Web Tokens) para el control de sesiones.}
+
 \subsection{Interfaces de Comunicación}
 
+\azul{Define los requerimientos para los enlaces y protocolos de red utilizados por la solución. Especifica los niveles de red (modelo OSI o TCP/IP), puertos de escucha, tasas de transferencia esperadas, formatos de paquetes de red y mecanismos de cifrado o tunelización para la transmisión de datos.}
+
+\moradoc{Ejemplo: Las transmisiones de datos telemétricos entre los nodos distribuidos y el servidor central utilizarán el protocolo ligero MQTT sobre socket seguro TLS (puerto 8883), implementando una calidad de servicio QoS de nivel 1 para mitigar la pérdida de paquetes.}
+
 \section{Requisitos Funcionales (\rojo{Obligatorio})}
-Describen las funciones que el sistema debe ser capaz de realizar.
-\begin{ejemplo}
-    \begin{itemize}
-        \item \textbf{RF-01}: El sistema debe permitir al administrador registrar nuevos usuarios.
-\item \textbf{RF-02}: El sistema debe generar un reporte de inscripciones en formato PDF.
-    \end{itemize}
-\end{ejemplo}
-\subsection{Requisito funcional x}
-\subsection{Requisito funcional y}
+
+\azul{Los requisitos funcionales describen los servicios específicos que el sistema proveerá frente a entradas particulares. Su redacción exige un lenguaje técnico inequívoco, estructurado mediante identificadores alfanuméricos únicos para asegurar la trazabilidad de los componentes durante la fase de pruebas de validación.}
+
+\moradoc{Ejemplo de Requisitos Funcionales:
+	\begin{itemize}
+		\item \textbf{RF-01:} El módulo de autenticación debe validar las credenciales del usuario contrastándolas mediante un algoritmo de hash criptográfico.
+		\item \textbf{RF-02:} El sistema debe exportar los registros de transacciones diarias en un documento estructurado bajo formato PDF.
+\end{itemize}}
+
 \section{Requisitos de Rendimiento (\rojo{Opcional})}
-Especifica qué tan bien debe funcionar el sistema en términos de velocidad, capacidad de respuesta y uso de recursos.
-\begin{ejemplo}
- El sistema debe cargar la página principal en menos de 2 segundos con 100 usuarios concurrentes.
-\end{ejemplo}
+
+\azul{Estas especificaciones delimitan las métricas de eficiencia computacional del sistema, abordando dimensiones como tiempos de respuesta, consumo de memoria o tolerancia a la concurrencia de sesiones. Una definición ambigua en este apartado podría desencadenar fallas críticas durante el despliegue.}
+
+\moradoc{Ejemplo: La arquitectura de microservicios debe procesar al menos 500 peticiones concurrentes de consulta, manteniendo un tiempo máximo de respuesta inferior a 2,5 segundos por transacción.}
+
 \section{Requisitos de Desarrollo (\rojo{Opcional})}
- Impone restricciones sobre el proceso de construcción del sistema, como el uso de un estándar de codificación específico o la obligación de usar un sistema de control de versiones.
-\section{Requisitos de Tecnológicos (\rojo{Obligatorio})}
-Detalla las tecnologías específicas (lenguajes, frameworks, bases de datos) que se utilizarán.
-\begin{ejemplo}
-    \begin{itemize}
-        \item \textbf{RT-01}: El backend se desarrollará en Python con el framework Django.
-\item \textbf{RT-02}: La base de datos a utilizar será PostgreSQL.
-    \end{itemize}
-\end{ejemplo}
-\section{Seguridad (\rojo{Obligatorio})}
-Define los requisitos para garantizar la seguridad del sistema y sus datos.
-\begin{ejemplo}
-    \begin{itemize}
-        \item \textbf{RS-01}: Todas las contraseñas de usuario deben almacenarse de forma cifrada
-    \end{itemize}
-\end{ejemplo}
-\section{Modelo de  Datos (\rojo{Obligatorio})}
-Describe la estructura de los datos. Se debe incluir un Modelo Entidad-Relación  y el Modelo Relacional normalizado.  Si se usan bases de datos no relacionales, se debe mostrar la estructura (ej. JSON).
 
+\azul{El apartado impone directrices metodológicas o normativas sobre el ciclo de construcción. Esto integra aspectos como estándares de codificación institucional, flujos de integración continua o el empleo de repositorios de control de versiones centralizados.}
+
+\section{Requisitos Tecnológicos (\rojo{Obligatorio})}\label{requtec}
+
+\azul{La investigación declara explícitamente el conjunto de lenguajes de programación, marcos de trabajo y herramientas que cimentarán la solución. Esta selección tecnológica debe guardar estricta coherencia con la viabilidad técnica analizada en las fases previas del proyecto.}
+
+\moradoc{Ejemplo de Pila Tecnológica:
+	\begin{itemize}
+		\item \textbf{RT-01:} La lógica de negocio (Backend) se programará en Python, utilizando el marco de trabajo Django.
+		\item \textbf{RT-02:} La capa de presentación (Frontend) implementará componentes reactivos mediante React.
+		\item \textbf{RT-03:} La persistencia de datos relacionales operará bajo el motor PostgreSQL.
+\end{itemize}}
+
+\section{Seguridad Informática (\rojo{Obligatorio})}
+
+\azul{Se requiere estructurar los mecanismos de protección del sistema contra accesos no autorizados, inyección de código o pérdida de integridad de los registros. Esta dimensión adquiere particular relevancia frente al manejo de datos sensibles institucionales.}
+
+\moradoc{Ejemplo de Seguridad:
+	\begin{itemize}
+		\item \textbf{RS-01:} Las contraseñas se almacenarán aplicando la función de derivación de claves Bcrypt con un factor de costo igual a 12.
+		\item \textbf{RS-02:} Las comunicaciones entre la aplicación cliente y la API se cifrarán obligatoriamente mediante el protocolo TLS 1.3.
+\end{itemize}}
+
+\section{Modelamiento de Datos (\rojo{Obligatorio ICINF})}
+
+\azul{Esta sección diseña la arquitectura de almacenamiento de la información. Dependiendo del paradigma seleccionado, se exige documentar el Modelo Entidad-Relación y el Modelo Relacional normalizado hasta la Tercera Forma Normal (3FN). En caso de adoptar motores NoSQL, el documento debe ilustrar la estructura de las colecciones o documentos JSON resultantes, garantizando la consistencia transaccional.}
+
+\moradoc{Ejemplo: Para garantizar la consistencia transaccional del sistema, se diseñó la estructura de persistencia reflejada en el Modelo Entidad-Relación de la Figura~\ref{fig:MER}. En dicha representación conceptual se ilustran las entidades fundamentales, sus atributos y las cardinalidades que rigen las interacciones entre los usuarios y los registros telemétricos. Posteriormente, esta abstracción se transformó en el Modelo Relacional normalizado en Tercera Forma Normal (3FN) expuesto en la Figura~\ref{fig:MR}, lo que sugiere una eliminación efectiva de redundancias y previene eventuales anomalías de inserción, modificación o borrado.}
 \begin{landscape}
-\begin{figure}[hbt]
-  \centering
-  %\includegraphics{}
-  \caption{Modelo Entidad Relación}
-  \label{f:MER}
-\end{figure}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Reemplazar.png}
+		\caption{Modelo Entidad-Relación del Sistema Informático}
+		\label{fig:MER}
+	\end{figure}
 \end{landscape}
 
 \begin{landscape}
-\begin{figure}[hbt]
-  \centering
-  %\includegraphics{}
-  \caption{Modelo Relación Relacional}
-  \label{f:MR}
-\end{figure}
+	\begin{figure}[hbt]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Reemplazar.png}
+		\caption{Modelo Relacional Normalizado en 3FN}
+		\label{fig:MR}
+	\end{figure}
 \end{landscape}
-
-

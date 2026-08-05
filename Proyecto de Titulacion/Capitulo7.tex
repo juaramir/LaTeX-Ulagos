@@ -1,30 +1,58 @@
+\chapter{Aseguramiento de la Calidad y Validación}\label{calidad_pruebas}
 
-\chapter{Aseguramiento de la Calidad (\rojo{Opcional})}\label{calidad}
-Define el plan y las técnicas que se utilizarán para garantizar que el software cumpla con los estándares de calidad definidos. Incluye el modelo de calidad, las técnicas a aplicar y cómo se implementarán.
-\section{Modelo}
-\section{Técnica}
-\section{Implementación}
+\azul{Este capítulo consolida los planes y técnicas aplicados para verificar que el artefacto desarrollado cumpla con los estándares de calidad, seguridad y funcionamiento estipulados. La calidad en ingeniería se define como el grado en que un conjunto de características inherentes cumple con los requisitos especificados \cite[p.~14]{iso29148_2018},\cite[p.~412]{pressman2010ingenieria}.}
 
-\chapter{Proceso de Prueba del Software (\rojo{Opcional})}\label{prueba}
-Describe la estrategia de pruebas para verificar que el software funciona correctamente y sin errores. Detalla los diferentes niveles de prueba que se aplicarán.
-\section{Criterios de Prueba}
- Define los enfoques, como pruebas de Caja Negra (sin ver el código) o Caja Blanca (conociendo el código).
-\subsection{Enfoque de Prueba de Caja Negra}
-\subsection{Enfoque de Prueba de Caja Blanca}
+\section{Aseguramiento de la Calidad (QA) (\rojo{Opcional})}
 
-\section{Prueba de Unidad}
-Probar componentes individuales.
-\section{Prueba de Integración}
- Probar cómo interactúan los componentes entre sí.
-\subsection{Integración Descendente}
-\subsection{Integración Ascendente}
-\subsection{Prueba de Regresión}
-\section{Prueba de Sistema}
-Probar el sistema completo contra los requisitos.
-\subsection{Prueba de Recuperación}
-\subsection{Prueba de Seguridad}
-\subsection{Prueba de Resistencia}
-\subsection{Prueba de Rendimiento}
-\section{Prueba de Aceptación}
-Realizada por el usuario final para validar que el sistema cumple sus necesidades
+\azul{Define el marco normativo y las técnicas utilizadas para garantizar el cumplimiento de los estándares de la disciplina.}
 
+\subsection{Modelo o Estándar de Calidad}
+
+\azul{Se especifica el modelo de referencia adoptado:}
+\begin{itemize}
+	\item \azul{\textbf{Exclusivo de Informática:} Modelos de calidad de software como ISO/IEC 25010 (SQuaRE) o McCall, evaluando atributos de mantenibilidad, usabilidad y eficiencia.}
+	\item \azul{\textbf{Otras Ingenierías:} Estándares ISO 9001, normas chilenas de construcción (NCh), especificaciones ASTM/ASME o normativas de seguridad ambiental.}
+\end{itemize}
+
+\subsection{Técnica y Plan de Implementación}
+
+\azul{Describe las auditorías, revisiones de código, inspecciones técnicas en terreno o controles de procesos que se ejecutaron de manera sistemática.}
+
+\section{Proceso de Prueba y Ensayos de Verificación (\rojo{Opcional})}\label{prueba}
+
+\azul{Detalla la estrategia experimental utilizada para constatar la ausencia de fallas en el diseño o implementación.}
+
+\subsection{Criterios y Enfoques de Prueba}
+
+\azul{Se definen las filosofías de evaluación aplicadas:}
+\begin{itemize}
+	\item \azul{\textbf{Enfoque de Caja Blanca (Estructural):} En \textbf{Informática}, consiste en la revisión directa de las líneas de código e itinerarios lógicos. En \textbf{otras ingenierías}, equivale al análisis de esfuerzo interno, inspección ultrasónica de soldaduras o ensayos no destructivos.}
+	\item \azul{\textbf{Enfoque de Caja Negra (Funcional):} Evaluación de las respuestas o salidas del sistema ante entradas específicas, desconociendo la estructura interna.}
+\end{itemize}
+
+\section{Niveles de Prueba y Ensayos Sistemáticos}
+
+\azul{Se detallan las pruebas ejecutadas en orden jerárquico de complejidad:}
+
+\subsection{Pruebas Unitarias o Ensayos de Componentes}
+
+\azul{\textbf{Exclusivo de Informática / Electrónica:} Verificación aislada de funciones, clases o módulos de código individual. En proyectos de infraestructura u obras físicas, esta subsección equivale a los ensayos de resistencia de probetas de hormigón o calibración individual de sensores.}
+
+\subsection{Pruebas de Integración}
+
+\azul{Evaluación de la interacción entre dos o más módulos, subsistemas o componentes acoplados. En software, se evalúa la comunicación entre la API y la base de datos; en otras ingenierías, la unión entre elementos estructurales o mecánicos.}
+
+\subsection{Pruebas de Sistema, Rendimiento y Resistencia}
+
+\azul{Evaluación global del artefacto en condiciones límite o bajo carga operacional:}
+\begin{itemize}
+	\item \azul{\textbf{Pruebas de Rendimiento y Carga:} Medición de tiempos de respuesta bajo peticiones masivas o evaluación de deformaciones bajo carga máxima.}
+	\item \azul{\textbf{Pruebas de Seguridad y Resistencia:} Vulnerabilidades informáticas o tolerancia del material ante estrés ambiental/térmico.}
+	\item \azul{\textbf{Pruebas de Recuperación:} Capacidad del sistema para restablecer su operación tras una falla imprevista.}
+\end{itemize}
+
+\subsection{Pruebas de Aceptación y Validación por el Usuario}
+
+\azul{Instancia final en la que los usuarios, clientes o contrapartes técnicas evalúan el producto en un entorno real o de marcha blanca, validando que satisface la problemática identificada en el Capítulo \ref{formulacion} \cite[p.~240]{sommerville2011ingenieria}.}
+
+\moradoc{Ejemplo: Se ejecutó una prueba de aceptación con tres operadores del comité de agua rural, registrando un 95\% de satisfacción en la usabilidad del panel de control y confirmando la correcta recepción de las alertas telemétricas.}

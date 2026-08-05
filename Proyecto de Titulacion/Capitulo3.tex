@@ -1,16 +1,67 @@
-\chapter{Descripción General del Sistema}\label{descripcion}
-Ofrece una vista general del producto de software, sus funciones, usuarios y las condiciones bajo las cuales operará.
+\chapter{Descripción General de la Solución}\label{descripcion}
 
-\section{Perspectiva del Producto}
-Describe el producto en relación con otros sistemas y el entorno en el que funcionará.
-\section{Funciones del Sistema}
-Acá se describen las partes más relevantes que tendrá el sistema.
-\section{Características de los Usuarios}
-Define los diferentes tipos de usuarios que interactuarán con el sistema (ej. administrador, usuario final, etc.) y sus niveles de conocimiento técnico.
-\section{Restricciones}
-Enumera las limitaciones o restricciones que afectan el desarrollo, como el uso de un sistema operativo específico, políticas de la empresa o un presupuesto limitado.
+\azul{Este capítulo ofrece una visión holística de la solución, sistema o artefacto de ingeniería diseñado. Se detallan su entorno de operación, las funciones principales que ejecuta, los perfiles de los usuarios u operadores beneficiados, así como las restricciones, suposiciones y dependencias que condicionan su desarrollo. La literatura en especificación de sistemas sostiene que una caracterización general rigurosa previene ambigüedades en las fases de modelado e implementación \cite[p.~4]{ieee830_1998},\cite[p.~22]{iso29148_2018}.}
+
+\section{Perspectiva del Artefacto o Solución}
+
+\azul{Se requiere ubicar el producto o sistema en su contexto operacional. Debe aclararse si la solución propuesta es un artefacto independiente (autónomo) o si forma parte de un sistema mayor preexistente. Asimismo, se describen los límites de interfaz con otros componentes físicos, lógicos o institucionales del entorno.}
+
+\moradoc{Ejemplo: El módulo telemétrico de monitoreo hídrico opera como un subsistema integrado a la red general de distribución de agua potable rural. Aunque funciona de manera autónoma en la recolección local de datos, depende de la infraestructura de telecomunicaciones móvil (red 4G/LTE) existente en la zona para transmitir paquetes de datos hacia el servidor central del comité de agua.}
+
+\section{Funciones Principales del Sistema}
+
+\azul{En este apartado se sintetizan, a alto nivel, las capacidades u operaciones fundamentales que realiza el artefacto o sistema. No se busca un nivel de detalle atómico de requerimientos, sino proporcionar un resumen ejecutivo de las prestaciones clave que justifican su construcción \cite[p. ~148]{pressman2010ingenieria}.}
+
+\begin{itemize}
+	\item \azul{\textbf{Captura y procesamiento:} Describir cómo el sistema recolecta datos o insumos del entorno.}
+	\item \azul{\textbf{Gestión y almacenamiento:} Explicar la lógica de administración interna de la información o recursos.}
+	\item \azul{\textbf{Interfaz y salida:} Detallar cómo se presentan los resultados o respuestas hacia el usuario o medio externo.}
+\end{itemize}
+
+\moradoc{Ejemplo de funciones principales:
+	\begin{enumerate}
+		\item \textbf{Adquisición telemétrica:} Medición continua del caudal hidráulico y la presión en los nodos de distribución a intervalos configurables.
+		\item \textbf{Detección automatizada de anomalias:} Evaluación de desviaciones respecto a los rangos operacionales normales y generación de alertas tempranas por fugas.
+		\item \textbf{Visualización analítica:} Despliegue de paneles de control (\textit{dashboards}) con series de tiempo para la gestión del comité operativo.
+	\end{enumerate}
+}
+
+\section{Caracterización de Usuarios u Operadores}
+
+\azul{Esta sección clasifica los distintos perfiles de personas o roles que interactuarán directa o indirectamente con el sistema. Para cada perfil se deben precisar sus responsabilidades, frecuencia de uso, nivel formativo o competencia técnica esperada \cite[p.~86]{sommerville2011ingenieria}.}
+
+\moradoc{Ejemplo de clasificación de usuarios:
+	\begin{itemize}
+		\item \textbf{Administrador/a del Sistema (Nivel Técnico Alto):} Profesional responsable de la configuración de parámetros globales, gestión de credenciales y mantenimiento de los nodos telemétricos.
+		\item \textbf{Operador/a de Campo (Nivel Técnico Medio):} Personal técnico encargado de la inspección física, calibración de sensores y atención de alertas operativas en terreno.
+		\item \textbf{Usuario/a Comunitario/a (Nivel Usuario Final):} Integrantes de la comunidad rural que acceden a reportes consolidados sobre el consumo y la disponibilidad del servicio.
+	\end{itemize}
+}
+
+\section{Restricciones de Diseño e Implementación}
+
+\azul{Las restricciones representan limitaciones externas impuestas al proyecto que reducen el abanico de opciones de diseño. Se deben identificar restricciones normativas, ambientales, tecnológicas, de hardware, de presupuesto o de tiempo que condicionen la construcción de la solución \cite[p.~7]{ieee830_1998}.}
+
+\moradoc{Ejemplo de restricciones:
+	\begin{itemize}
+		\item \textbf{Restricción Energética:} Los nodos telemétricos ubicados en zonas aisladas deben alimentarse exclusivamente mediante paneles solares de 12V con baterías de respaldo.
+		\item \textbf{Restricción Normativa:} Toda la instrumentación instalada en la red de agua debe cumplir con las especificaciones de la Norma Chilena NCh411 sobre calidad y muestreo hídrico.
+		\item \textbf{Restricción de Conectividad:} El volumen de datos transmitidos no debe exceder un ancho de banda de 100 KB/día por nodo debido a la cobertura limitada en sectores rurales.
+	\end{itemize}
+}
+
 \section{Suposiciones y Dependencias}
+
+\azul{Este apartado explicita los factores que influyen en el éxito del proyecto. Las suposiciones corresponden a condiciones que se asumen como verdaderas para el diseño, mientras que las dependencias son factores o recursos externos fuera del control directo del equipo de ingeniería.}
+
 \subsection{Suposiciones}
-Factores que se consideran verdaderos pero que no se pueden verificar al inicio del proyecto (ej. ``Se asume que la universidad proporcionará acceso a la API del sistema de matrículas'')
+
+\azul{Factores que se consideran ciertos, reales o ciertos durante la fase de formulación, pero cuya alteración podría impactar la planificación o la arquitectura propuesta.}
+
+\moradoc{Ejemplo: Se asume que los Comités de Agua Potable Rural mantendrán la provisión de suministro eléctrico continuo en las casetas centrales de bombeo durante todo el periodo de pruebas del proyecto.}
+
 \subsection{Dependencias}
-Factores externos que el proyecto necesita para poder completarse (ej. ``El proyecto depende de la compra de una licencia para el motor de base de datos Oracle'').
+
+\azul{Elementos, servicios, datos o autorizaciones proporcionados por terceros necesarios para la ejecución del proyecto.}
+
+\moradoc{Ejemplo: La fase de validación en terreno depende de la firma oportuna del convenio de colaboración entre la Universidad de Los Lagos y la Unión Comunal de Agua Potable Rural de Osorno.}

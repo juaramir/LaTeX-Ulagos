@@ -1,64 +1,60 @@
 
 \chapter{Formulación del Proyecto}\label{formulacion}
-Esta sección es la introducción formal del proyecto. Debe guiar al lector desde el contexto general hasta el problema específico, justificando la necesidad del trabajo y presentando la solución propuesta.
-
-
-Introduce la terminología, destaca las contribuciones del documento y da una breve descripción de la organización de éste
+\azul{Esta sección postula la introducción formal de la investigación. El texto debe guiar al lector desde un contexto global hacia el problema específico, justificando la intervención y delineando la solución propuesta. Asimismo, se sugiere introducir la terminología técnica desde un inicio, destacando las contribuciones fundamentales y proporcionando una visión general de la estructura del documento.}
 
 
 \section{Propósito}
-Contextualiza el proyecto en relación con otros trabajos o investigaciones existentes. Señala qué lo hace diferente o cómo se basa en investigaciones previas. Largo aproximado: 2 páginas.
+\azul{El análisis contextualiza el proyecto frente a trabajos previos afines. Se requiere evidenciar qué atributos hacen diferente a esta propuesta frente a la literatura existente, estimando una extensión cercana a las dos páginas.}
 
 \begin{ejemplo}
-    Mientras que existen múltiples sistemas de gestión académica, la mayoría son soluciones genéricas. Este proyecto se diferencia al proponer un sistema diseñado específicamente para los flujos de trabajo del Departamento de Ciencias de la Ingeniería de la Universidad de Los Lagos, integrando funcionalidades únicas de seguimiento de tesis que no se encuentran en alternativas comerciales.
+   \moradoc{Aunque coexisten diversos sistemas de gestión académica, gran parte de ellos postula soluciones genéricas. Esta iniciativa discrepa de los enfoques tradicionales al diseñar una arquitectura adaptada a los flujos del Departamento de Ciencias de la Ingeniería, integrando módulos de seguimiento de tesis que las alternativas comerciales omiten.}
 \end{ejemplo}
 
 \section{Identificación del Problema}
-Define clara y detalladamente el problema que el proyecto busca resolver. Expone las deficiencias de los métodos actuales y por qué es necesario encontrar una nueva solución.
+\azul{El documento define detalladamente la anomalía o necesidad que el diseño busca mitigar. Resulta vital exponer las deficiencias de los métodos actuales y argumentar por qué la implementación de una nueva tecnología se hace indispensable.}
 \section{Justificación y Aporte}
-Argumenta por qué el proyecto es importante y conveniente. Responde a preguntas como: ¿Para qué sirve? , ¿quiénes se benefician? , ¿resuelve un problema práctico?
+\azul{La argumentación sostiene la conveniencia del proyecto. Un planteamiento sólido responde interrogantes esenciales sobre su utilidad, los usuarios beneficiados y la naturaleza del problema práctico que se resuelve \cite[p. ~40]{hernandez2014metodologia}.}
 
 
 \subsection{Utilidad del Sistema}
-Explica cómo el sistema mejorará procesos como la centralización de información  o la optimización de tareas. 
+\azul{Esta subsección explica cómo la arquitectura propuesta mejorará los flujos de trabajo, optimizando procesos y centralizando información dispersa. Se sugiere organizar el contenido mediante los siguientes ejes:}
 
-Los siguientes subtítulos son algunas ideas:
-\subsubsection{Centralización e Integración de la Información}
-\subsubsection{Optimización de Procesos}
-\subsubsection{Facilitación del Acceso a la Información}
-\subsubsection{Soporte para la Generación de Informes y Estadísticas}
-\subsection{Aporte del Sistema a \dots...}
-Detalla los beneficios institucionales, como la mejora en la toma de decisiones  o la modernización tecnológica.
+\subsubsection{Centralización e Integración de Datos}
+\subsubsection{Optimización de Tiempos y Recursos}
+\subsubsection{Disponibilidad de la Información}
+\subsubsection{Generación Analítica y Estadísticas}
 
-Los siguientes subtítulos son algunas ideas:
 
-\subsubsection{Mejora de la Eficiencia Operativa}
-\subsubsection{Fortalecimiento de la Toma de Decisiones Estratégicas}
-\subsubsection{Impulso a la Gestión}
-\subsubsection{Mejora en la Gestión y Apoyo}
-\subsubsection{Incremento de la Transparencia y Rendición de Cuentas}
-\subsubsection{Modernización Tecnológica y Base para el Futuro}
+
+\subsection{Impacto y Aporte Institucional}
+
+\azul{El análisis detalla los beneficios estructurales del sistema a largo plazo, abordando áreas como el apoyo a la toma de decisiones o la actualización de la plataforma tecnológica. Las siguientes directrices orientan la redacción:}
+
+\subsubsection{Eficiencia Operativa Sistémica}
+\subsubsection{Toma de Decisiones Estratégicas}
+\subsubsection{Transparencia y Trazabilidad}
+\subsubsection{Modernización Tecnológica Escalable}
 
 \section{Marco Teórico}
-Presenta la base teórica que sustenta el proyecto. Aquí se definen los conceptos, modelos y tecnologías fundamentales que se utilizarán para interpretar los resultados.  Ayuda a centrar la investigación y a prevenir errores.  Se construye a partir de una revisión bibliográfica de fuentes primarias, secundarias y terciarias.
+\azul{El apartado agrupa los modelos, lenguajes y teorías que sustentan la construcción ingenieril. La revisión exhaustiva de literatura previene fallos de diseño y conduce al establecimiento de hipótesis o afirmaciones comprobables. Para ello, el estudiante recurre a diversas fuentes de información:}
 
-\begin{itemize}\justifying
-  \item \naranjo{Primarias (directas):} Libros, artículos, antologías, tesis, disertaciones, entre otros.
-  \item \naranjo{Secundarias:} Compilaciones, resúmenes de listados de referencias publicadas en un área en particular, bases de datos.
-  \item \naranjo{Terciarias:} Documentos que reúnen nombres y títulos de revistas y otras publicaciones.
+\begin{itemize}
+	\item \azul{Primarias (directas): Libros, artículos científicos de bases indexadas, repositorios de tesis y disertaciones.}
+	\item \azul{Secundarias: Compilaciones, bases de datos bibliográficas y resúmenes de publicaciones especializadas.}
+	\item \azul{Terciarias: Catálogos institucionales, revistas y otras publicaciones que agrupan fuentes de segunda mano.}
 \end{itemize}
 
 
- Ayuda a prevenir errores que se han cometido en otros estudios, conduce al establecimiento de la hipótesis o afirmaciones que se someterán a prueba.
- 
 
 
 
 \begin{ejemplo}
-Para el desarrollo de este proyecto, se aplicará la metodología de desarrollo ágil Scrum, ya que permite una adaptación continua a los requisitos cambiantes. El sistema se fundamentará en una arquitectura de microservicios para garantizar la escalabilidad. La base de datos utilizará el modelo relacional, específicamente la Tercera Forma Normal (3FN), para asegurar la integridad y evitar la redundancia de datos...
+\moradoc{El desarrollo del prototipo se rige bajo la metodología ágil Scrum, la cual sugiere una alta flexibilidad ante requisitos volátiles \cite[p. ~74]{pressman2010ingenieria}. La arquitectura se fundamentará en microservicios para garantizar la escalabilidad de las transacciones. Finalmente, la persistencia de datos aplicará la Tercera Forma Normal (3FN), lo que podría indicar una reducción significativa en la redundancia de registros.}
 \end{ejemplo} 
 
 \section{Estado del Arte}\label{alternativas}
-Investiga y describe las soluciones, herramientas o tecnologías existentes que ya intentan resolver el mismo problema o uno similar. Al final, se debe incluir una comparativa directa entre esas soluciones y la propuesta del proyecto, destacando las ventajas y novedades de esta última. 
+\azul{La investigación explora las herramientas de software, hardware o metodologías que actualmente abordan desafíos análogos en la industria. El levantamiento de información debe culminar con una evaluación crítica.}
 
-\subsection{Comparativa propuesta con estado del arte}
+\subsection{Comparativa Frente a Soluciones Actuales}
+
+\azul{Finalmente, se postula una comparativa directa —preferentemente mediante una matriz o tabla cruzada— que contraste las alternativas analizadas frente al sistema diseñado, evidenciando de manera objetiva el valor agregado y la innovación de la propuesta académica.}
