@@ -1,9 +1,34 @@
 \documentclass[12pt]{report}
-\def\TITULO{Título}
-\def\subtitulo{Práctica ???}
+
+
+%=====================================================
+% CONFIGURACIÓN DEL TIPO DE PRÁCTICA
+%=====================================================
+\newif\ifprofesional
+% Instrucción: Descomente la opción que corresponda a su práctica.
+
+%\profesionalfalse % Activar para Práctica Intermedia
+\profesionaltrue  % Activar para Práctica Profesional
+%=====================================================
+
+
+
+\def\TITULO{Título de la Práctica}
+
+% Asignación dinámica de variables según la configuración
+\ifprofesional
+\def\subtitulo{Práctica Profesional}
+\def\asignatura{Práctica Profesional}
+\else
+\def\subtitulo{Práctica Intermedia}
+\def\asignatura{Práctica Intermedia}
+\fi
+
+
 \def\autora{Autor}
 \def\correoa{correo@alumnos.ulagos.cl}
-\def\asignatura{Práctica ???}
+\def\autorb{Autor}
+\def\correob{correo@alumnos.ulagos.cl}
 \def\campus{Campus ???}
 \def\carrera{Ingeniería Civil en Informática}
 \input{Macros}
@@ -50,49 +75,53 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
-\section{Objetivos de la Práctica (Académicos)}
-\instruccion{Esta sección es estática y define lo que la Universidad espera de usted según el Reglamento. \textbf{NO BORRE NI MODIFIQUE EL TEXTO NEGRO}, solo seleccione la opción (Intermedia o Profesional) que corresponda a su caso y borre la otra.}
+\section{Objetivos Académicos de la Práctica}
+%Esta sección se autogenera según la configuración establecida en el preámbulo. Define lo que la Universidad espera según el Reglamento.
 
 \subsection{Objetivo General}
 
-% ELIMINAR LA OPCIÓN QUE NO CORRESPONDA
-\textbf{[OPCIÓN A: Práctica Intermedia (PP1)]}\\
-Permitir que la o el estudiante se familiarice con el ámbito laboral, desarrollando las actividades en contacto constante con el centro de práctica.
-
-\textbf{[OPCIÓN B: Práctica Profesional (PP2)]}\\
+% NO TOCAR ESTO
+\ifprofesional
 Permitir que la o el estudiante desempeñe labores relevantes que una o un Ingeniera/o Civil en Informática realiza en una organización.
+\else
+Permitir que la o el estudiante se familiarice con el ámbito laboral, desarrollando las actividades en contacto constante con el centro de práctica.
+\fi
 
 \subsection{Objetivos Específicos}
 
-% ELIMINAR LA OPCIÓN QUE NO CORRESPONDA
-\textbf{[OPCIÓN A: Práctica Intermedia (PP1)]}
+\subsection{Objetivos Específicos}
+\ifprofesional
 \begin{enumerate}\justifying
-    \item Conocer la estructura de la organización y formas de operación de las áreas que componen el Centro de Práctica.
-    \item Conocer y aprender métodos de trabajo y formas de comunicación utilizados en entornos multidisciplinarios y/o multiculturales.
-    \item Visualizar y proponer el método de ingeniería para concebir, diseñar, implementar y operar actividades colaborativas en la solución de problemas, en áreas informáticas o afines a esta.
+	\item Conocer la estructura de la organización y formas de operación de cada una de las áreas que componen el Centro de Práctica.
+	\item Insertarse en grupos multidisciplinarios y/o multiculturales, participando activamente en equipos de trabajo, con capacidad de adaptación y pensamiento crítico.
+	\item Aprender métodos de trabajo, tendientes a la operación, administración y gestión en áreas informáticas.
+	\item Concebir, diseñar, implementar y/o operar soluciones a problemas propuestos o detectados desde el enfoque de la Ingeniería Civil en Informática.
 \end{enumerate}
-
-\textbf{[OPCIÓN B: Práctica Profesional (PP2)]}
+\else
 \begin{enumerate}\justifying
-    \item Conocer la estructura de la organización y formas de operación de cada una de las áreas que componen el Centro de Práctica.
-    \item Insertarse en grupos multidisciplinarios y/o multiculturales, participando activamente en equipos de trabajo, con capacidad de adaptación y pensamiento crítico.
-    \item Aprender métodos de trabajo, tendientes a la operación, administración y gestión en áreas informáticas.
-    \item Concebir, diseñar, implementar y/o operar soluciones a problemas propuestos o detectados desde el enfoque de la Ingeniería Civil en Informática.
+	\item Conocer la estructura de la organización y formas de operación de las áreas que componen el Centro de Práctica.
+	\item Conocer y aprender métodos de trabajo y formas de comunicación utilizados en entornos multidisciplinarios y/o multiculturales.
+	\item Visualizar y proponer el método de ingeniería para concebir, diseñar, implementar y operar actividades colaborativas en la solución de problemas, en áreas informáticas o afines a esta.
 \end{enumerate}
+\fi
 
-\section{Objetivos del Trabajo de Práctica (Del Proyecto)}
-\instruccion{Aquí debe definir los objetivos técnicos de las tareas que su supervisor le asignó. Deben ser medibles y alcanzables.}
+\section{Objetivos del Trabajo de Práctica}
+\azul{Aquí debe definir los objetivos técnicos de las tareas asignadas. Deben ser medibles y alcanzables.}
 
-\subsection{Objetivo General del Trabajo}
+\subsection{Objetivo General}
 \instruccion{Ejemplo: Desarrollar un módulo de facturación electrónica para el sistema ERP de la empresa para optimizar los tiempos de emisión de documentos.}
 
 \subsection{Objetivos Específicos del Trabajo}
-\begin{enumerate}\justifying
-    \item Levantar requerimientos funcionales con el departamento de contabilidad.
-    \item Diseñar la base de datos para el almacenamiento de DTEs.
-    \item Implementar la API de conexión con el Servicio de Impuestos Internos.
-    \item Realizar pruebas unitarias y de integración del módulo desarrollado.
-\end{enumerate}
+\instruccion{Ejemplo: Desarrollar un módulo de facturación electrónica para optimizar los tiempos de emisión de documentos.}
+
+\subsection{Objetivos Específicos del Trabajo}
+\moradoc{Ejemplo: Desarrollar un módulo de facturación electrónica para optimizar los tiempos de emisión de documentos.}
+\moradoc{\begin{enumerate}\justifying
+	\item Levantar requerimientos funcionales con el departamento de contabilidad.
+	\item Diseñar la base de datos para el almacenamiento de DTEs.
+	\item Implementar la API de conexión con el Servicio de Impuestos Internos.
+	\item Realizar pruebas unitarias y de integración del módulo desarrollado.
+\end{enumerate}}
 
 \section{Datos del Alumno}
 \begin{description}\justifying

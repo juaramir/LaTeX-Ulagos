@@ -1,11 +1,36 @@
-
-
 \renewcommand{\appendixname}{Anexos}
 \appendix
-\chapter{Anexos}
 
-\section{Anexos del Trabajo}
-\lipsum %reemplazar esta linea
 
-\section{Anexo de ejemplo con código}
-\input{Ejemplos}
+\newpage \rojo{Los anexos agrupan el material técnico complementario que, por su extensión o densidad de datos, interrumpiría la fluidez narrativa de los capítulos principales. \textbf{Regla metodológica ineludible:} Todo documento, tabla, fragmento de código, plano o catálogo incluido en esta sección debe ser mencionado, referenciado o descrito explícitamente dentro del cuerpo principal del informe (por ejemplo: "El detalle de la parametrización de los sensores se encuentra en el Anexo B"). Si un anexo no es citado en el texto principal, se asume que carece de aporte argumentativo para el proyecto de título y debe ser eliminado.}
+
+\chapter{Definiciones, Acrónimos y Abreviaturas}\label{definiciones}
+
+
+\azul{Este apartado funciona como un glosario unificado. Permite homologar el lenguaje para que cualquier profesional o miembro de la comisión evaluadora comprenda la terminología técnica empleada en el documento.}
+
+\section{Definiciones}
+\azul{Listado alfabético de los conceptos técnicos especializados.}
+
+\moradoc{Ejemplo: 
+	\begin{itemize}
+		\item \textbf{Caudalímetro:} Instrumento de medición empleado para registrar el flujo volumétrico o másico de un fluido a través de un conducto.
+		\item \textbf{Microservicio:} Enfoque arquitectónico de software donde una aplicación se construye como un conjunto de pequeños servicios independientes.
+\end{itemize}}
+
+\section{Acrónimos y Abreviaturas}
+\azul{Desglose de las siglas utilizadas a lo largo del manuscrito.}
+
+\moradoc{Ejemplo:
+	\begin{itemize}
+		\item \textbf{API:} Interfaz de Programación de Aplicaciones (\textit{Application Programming Interface}).
+		\item \textbf{ASTM:} Sociedad Americana para Pruebas y Materiales (\textit{American Society for Testing and Materials}).
+		\item \textbf{PMBOK:} Guía de los Fundamentos para la Dirección de Proyectos (\textit{Project Management Body of Knowledge}).
+\end{itemize}}
+
+\chapter{Material Complementario y Configuraciones}\label{configuracion}
+
+\azul{En este anexo (y en los capítulos de anexos subsiguientes) el o la estudiante adjunta los respaldos técnicos que sostienen el desarrollo. Dependiendo de la especialidad de la ingeniería civil, esto puede incluir: archivos de configuración de servidores, fragmentos extensos de código fuente, manuales de usuario, memorias de cálculo estructural, planos de arquitectura, fichas técnicas (datasheets) de componentes electrónicos, o pautas de evaluación utilizadas durante las pruebas de terreno.}
+
+\moradoc{Ejemplo: 
+	Se adjunta el archivo de configuración \texttt{docker-compose.yml} utilizado para el despliegue del entorno de base de datos detallado en la Sección \ref{requtec}.}
