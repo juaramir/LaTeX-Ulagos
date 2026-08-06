@@ -1,6 +1,4 @@
 \documentclass[12pt]{report}
-
-
 %=====================================================
 % CONFIGURACIÓN DEL TIPO DE PRÁCTICA
 %=====================================================
@@ -12,25 +10,14 @@
 %=====================================================
 
 
-
 \def\TITULO{Título de la Práctica}
-
-% Asignación dinámica de variables según la configuración
-\ifprofesional
-\def\subtitulo{Práctica Profesional}
-\def\asignatura{Práctica Profesional}
-\else
-\def\subtitulo{Práctica Intermedia}
-\def\asignatura{Práctica Intermedia}
-\fi
-
 
 \def\autora{Autor}
 \def\correoa{correo@alumnos.ulagos.cl}
-\def\autorb{Autor}
-\def\correob{correo@alumnos.ulagos.cl}
 \def\campus{Campus ???}
 \def\carrera{Ingeniería Civil en Informática}
+\def\ingreso{Año de Ingreso a la Carrera: 20XX} %%COMPLETAR
+\def\realizacion{DD de MM de 20XX - DD de MM de 20XX }%%COMPLETAR
 \input{Macros}
 %LENGUAJE DE PROGRAMACIÓN POR DEFECTO
 \lstset{language=Python}
@@ -88,8 +75,6 @@ Permitir que la o el estudiante se familiarice con el ámbito laboral, desarroll
 \fi
 
 \subsection{Objetivos Específicos}
-
-\subsection{Objetivos Específicos}
 \ifprofesional
 \begin{enumerate}\justifying
 	\item Conocer la estructura de la organización y formas de operación de cada una de las áreas que componen el Centro de Práctica.
@@ -109,29 +94,15 @@ Permitir que la o el estudiante se familiarice con el ámbito laboral, desarroll
 \azul{Aquí debe definir los objetivos técnicos de las tareas asignadas. Deben ser medibles y alcanzables.}
 
 \subsection{Objetivo General}
-\instruccion{Ejemplo: Desarrollar un módulo de facturación electrónica para el sistema ERP de la empresa para optimizar los tiempos de emisión de documentos.}
+\moradoc{Ejemplo: Desarrollar un módulo de facturación electrónica para el sistema ERP de la empresa para optimizar los tiempos de emisión de documentos.}
 
 \subsection{Objetivos Específicos del Trabajo}
-\instruccion{Ejemplo: Desarrollar un módulo de facturación electrónica para optimizar los tiempos de emisión de documentos.}
-
-\subsection{Objetivos Específicos del Trabajo}
-\moradoc{Ejemplo: Desarrollar un módulo de facturación electrónica para optimizar los tiempos de emisión de documentos.}
 \moradoc{\begin{enumerate}\justifying
 	\item Levantar requerimientos funcionales con el departamento de contabilidad.
 	\item Diseñar la base de datos para el almacenamiento de DTEs.
 	\item Implementar la API de conexión con el Servicio de Impuestos Internos.
 	\item Realizar pruebas unitarias y de integración del módulo desarrollado.
 \end{enumerate}}
-
-\section{Datos del Alumno}
-\begin{description}\justifying
-  \item [Nombre del alumno] Nombre completo
-  \item [Año de ingreso] 20XX
-  \item [Campus] Osorno / Puerto Montt
-  \item [Tipo de práctica] Intermedia / Profesional
-  \item [Fecha de realización] DD de MM de 20XX - DD de MM de 20XX
-  \item [Total de horas] (Mínimo 162 hrs para PP1, 360 hrs para PP2)
-\end{description}
 
 \chapter{Empresa y Contexto Laboral}
 

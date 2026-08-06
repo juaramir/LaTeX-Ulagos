@@ -56,6 +56,7 @@
 \fancyhf{} % Limpia todos los campos
 \rhead{\carrera}
 \lfoot{\asignatura}
+\cfoot{\thepage}
 \rfoot{Universidad de Los Lagos}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -102,9 +103,10 @@
 	\large \MakeUppercase{\campus, Chile}
 }
 \author{
-	\href{mailto:\correoa}{\autora}
+	\href{mailto:\correoa}{\autora}\\
+	\ingreso
 }
-\date{\vspace{3cm}\today}
+\date{\vspace{3cm}\realizacion}
 
 % Se redefine el comando \maketitle para crear la portada personalizada
 \makeatletter
@@ -264,3 +266,12 @@
         \textbf{INSTRUCCIÓN:} #1
     \end{quote}
 }
+
+% Asignación dinámica de variables según la configuración
+\ifprofesional
+\def\subtitulo{Práctica Profesional (360 hs)}
+\def\asignatura{Práctica Profesional}
+\else
+\def\subtitulo{Práctica Intermedia ()162 hs)}
+\def\asignatura{Práctica Intermedia}
+\fi
