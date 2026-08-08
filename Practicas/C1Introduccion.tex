@@ -1,0 +1,72 @@
+\chapter{Fundamentación de la Práctica}
+
+\section{Introducción al Contexto Laboral}
+\azul{Esta sección postula la introducción formal al trabajo de práctica. El texto debe guiar al lector desde el ecosistema global de la organización hacia el rol específico asumido por el estudiante, justificando la inserción laboral y delineando las tareas encomendadas. Se sugiere articular sin subtítulos explícitos: el lugar y periodo de ejecución, la motivación técnica para elegir dicho centro de práctica, un resumen operativo de las labores desarrolladas y una síntesis de la estructura capitular del documento.}
+
+\section{Propósito de la Intervención Tecnológica}
+\azul{El análisis contextualiza el proyecto o rol asignado frente a los procesos productivos vigentes en la empresa. Se requiere evidenciar qué necesidad operativa motivó la incorporación del practicante, detallando el valor esperado de la solución informática o de las funciones ejecutadas durante el periodo. Esta sección sugiere una extensión de una a dos páginas.}
+
+\moradoc{\begin{ejemplo}
+		Aunque la organización contaba con procedimientos manuales para el control de inventario, dichos métodos generaban inconsistencias en las bases de datos relacionales. Esta intervención discrepa de los flujos preexistentes al proponer una automatización que sincroniza el ``Data Warehouse'' corporativo mediante scripts transaccionales nocturnos, reduciendo la redundancia de datos.
+\end{ejemplo}}
+
+\section{Identificación del Problema Organizacional}
+\azul{El documento define detalladamente la anomalía técnica o la necesidad de negocio que el trabajo de práctica busca mitigar. Resulta vital exponer las deficiencias de los métodos actuales en el departamento asignado y argumentar por qué la construcción de una nueva herramienta computacional o la optimización de un algoritmo se hace indispensable para el equipo de trabajo.}
+
+\moradoc{\begin{ejemplo}
+		El equipo de soporte técnico registraba tiempos de respuesta prolongados al gestionar consultas de usuarios. Esta saturación operativa se atribuía a la ausencia de un módulo de categorización, lo que sugiere la viabilidad de implementar un algoritmo de clasificación preliminar basado en árboles de decisión para derivar los requerimientos automáticamente.
+\end{ejemplo}}
+
+\section{Justificación y Aporte del Proyecto}
+\azul{La argumentación sostiene la conveniencia del desarrollo ejecutado durante la estadía en la empresa. Un planteamiento sólido responde interrogantes esenciales sobre su factibilidad corporativa, los usuarios directos beneficiados y la naturaleza del problema de ingeniería que se resuelve de manera práctica \cite[p. ~40]{hernandez2014metodologia}.}
+
+\subsection{Utilidad Práctica del Sistema}
+\azul{Esta subsección explica cómo la arquitectura o herramienta propuesta optimizará los flujos de trabajo del área, acelerando tiempos de procesamiento o garantizando la integridad de los datos estructurados que manipula la institución.}
+
+\section{Impacto Estructural y Formativo}
+\azul{El análisis detalla los beneficios que la solución tecnológica aportará a la empresa a mediano y largo plazo, abordando áreas como la escalabilidad de sus servicios o el soporte a la toma de decisiones gerenciales. Secuencialmente, se evalúa el impacto del entorno laboral sobre el perfil de egreso del practicante. Las siguientes directrices orientan la redacción de este apartado:}
+
+\moradoc{\begin{ejemplo}
+		La integración de este módulo de facturación no solo aceleraría los ciclos de cobro de la organización, sino que además provee un escenario empírico donde se validan metodologías ágiles de desarrollo. Esta interacción continua consolida las competencias de modelamiento de sistemas del estudiante, enfrentándolo a restricciones reales de tiempo y arquitectura en un ambiente de alta demanda.
+\end{ejemplo}}
+
+
+
+\section{Objetivos Académicos de la Práctica}
+%Esta sección se autogenera según la configuración establecida en el preámbulo. Define lo que la Universidad espera según el Reglamento.
+
+\objetivospractica
+
+\section{Objetivos del Trabajo de Práctica}\label{trabajopractica}
+\azul{Aquí debe definir los objetivos técnicos de las tareas asignadas. Deben ser medibles y alcanzables.}
+
+\section{Objetivos}\label{objetivos}
+\azul{Esta sección enuncia los propósitos medibles de la labor desempeñada. Se sugiere que cada objetivo inicie con un verbo en infinitivo que denote una acción cognitiva o técnica evaluable \cite[p. ~37]{hernandez2014metodologia}.}
+
+\subsection{Objetivo General}
+\azul{Se declara la meta central de la práctica en un párrafo continuo. Su redacción integra la solución tecnológica desarrollada, el contexto corporativo o institucional de aplicación y la finalidad operativa esperada.}
+\moradoc{\begin{ejemplo}
+		Desarrollar un módulo de integración para el sistema ERP corporativo que permita sincronizar los catálogos de inventario, optimizando el tiempo de respuesta en las distintas sucursales de la organización.
+\end{ejemplo}}
+
+\subsection{Objetivos Específicos}
+\azul{Se formulan entre tres y cinco objetivos específicos estructurados en alineación con el ciclo de vida CDIO (Concebir, Diseñar, Implementar, Operar) \cite[p. ~34]{crawley2014rethinking}. Dado el carácter estrictamente individual del informe, la progresión metodológica delimita el alcance de la intervención personal del practicante. Esta desagregación técnica deriva directamente en las actividades concretas a ejecutar en el centro de práctica.}
+
+\moradoc{\begin{ejemplo}{Objetivos Específicos (Caso - CDIO Práctica)}
+		\begin{enumerate}
+			\item\label{oe1} \textbf{[Concebir]} Levantar los requerimientos funcionales y las reglas de negocio operantes, interactuando con los analistas de sistemas de la empresa.
+			\item\label{oe2} \textbf{[Diseñar]} Modelar la estructura de la base de datos relacional y la arquitectura de los servicios requeridos para la integración de la información.
+			\item\label{oe3} \textbf{[Implementar]} Construir los componentes de software del módulo, codificando la lógica algorítmica y las consultas estructuradas necesarias.
+			\item\label{oe4} \textbf{[Operar]} Desplegar la solución en un entorno de pruebas controlado, validando la consistencia transaccional del código mediante métricas de rendimiento y pruebas con usuarios finales.
+		\end{enumerate}
+	\end{ejemplo}
+}
+
+
+\section{Alcance: Delimitación de la Intervención}
+
+\azul{Es necesario definir con precisión los límites del desarrollo. El texto debe precisar las funcionalidades, estructuras o módulos que construirá el sistema y enunciar explícitamente aquellos elementos que quedarán fuera de la intervención. Esta delimitación evita la expansión descontrolada del proyecto durante su ejecución.}
+
+\moradoc{Ejemplo: El sistema de monitoreo de caudales procesará datos hidrológicos mediante sensores telemétricos. La implementación contempla exclusivamente la instalación de hardware en los puntos de captación y el desarrollo de un panel web de visualización. Sin embargo, el diseño excluye la automatización de compuertas físicas de apertura y el mantenimiento de la red hidráulica preexistente.}
+
+

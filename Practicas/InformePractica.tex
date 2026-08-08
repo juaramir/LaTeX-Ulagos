@@ -11,13 +11,13 @@
 
 
 \def\TITULO{Título de la Práctica}
-
 \def\autora{Autor}
 \def\correoa{correo@alumnos.ulagos.cl}
 \def\campus{Campus ???}
-\def\carrera{Ingeniería Civil en Informática}
+\def\carrera{Ingeniería Civil en XX}
 \def\ingreso{Año de Ingreso a la Carrera: 20XX} %%COMPLETAR
 \def\realizacion{DD de MM de 20XX - DD de MM de 20XX }%%COMPLETAR
+\def\horastotales{XX hs}
 \input{Macros}
 %LENGUAJE DE PROGRAMACIÓN POR DEFECTO
 \lstset{language=Python}
@@ -50,170 +50,18 @@
 \cleardoublepage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\chapter{Fundamentación}
-\section{Introducción}
-\instruccion{Escriba una introducción general que contextualice su práctica. Debe incluir:
-\begin{itemize}
-    \item Contexto: ¿Dónde y cuándo se realizó la práctica?
-    \item Motivación: ¿Por qué eligió este centro de práctica?
-    \item Resumen breve: ¿En qué consistió el trabajo a grandes rasgos?
-    \item Estructura del informe: Describa brevemente qué se encontrará en los capítulos siguientes.
-\end{itemize}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-
-\section{Objetivos Académicos de la Práctica}
-%Esta sección se autogenera según la configuración establecida en el preámbulo. Define lo que la Universidad espera según el Reglamento.
-
-\subsection{Objetivo General}
-
-% NO TOCAR ESTO
-\ifprofesional
-Permitir que la o el estudiante desempeñe labores relevantes que una o un Ingeniera/o Civil en Informática realiza en una organización.
-\else
-Permitir que la o el estudiante se familiarice con el ámbito laboral, desarrollando las actividades en contacto constante con el centro de práctica.
-\fi
-
-\subsection{Objetivos Específicos}
-\ifprofesional
-\begin{enumerate}\justifying
-	\item Conocer la estructura de la organización y formas de operación de cada una de las áreas que componen el Centro de Práctica.
-	\item Insertarse en grupos multidisciplinarios y/o multiculturales, participando activamente en equipos de trabajo, con capacidad de adaptación y pensamiento crítico.
-	\item Aprender métodos de trabajo, tendientes a la operación, administración y gestión en áreas informáticas.
-	\item Concebir, diseñar, implementar y/o operar soluciones a problemas propuestos o detectados desde el enfoque de la Ingeniería Civil en Informática.
-\end{enumerate}
-\else
-\begin{enumerate}\justifying
-	\item Conocer la estructura de la organización y formas de operación de las áreas que componen el Centro de Práctica.
-	\item Conocer y aprender métodos de trabajo y formas de comunicación utilizados en entornos multidisciplinarios y/o multiculturales.
-	\item Visualizar y proponer el método de ingeniería para concebir, diseñar, implementar y operar actividades colaborativas en la solución de problemas, en áreas informáticas o afines a esta.
-\end{enumerate}
-\fi
-
-\section{Objetivos del Trabajo de Práctica}
-\azul{Aquí debe definir los objetivos técnicos de las tareas asignadas. Deben ser medibles y alcanzables.}
-
-\subsection{Objetivo General}
-\moradoc{Ejemplo: Desarrollar un módulo de facturación electrónica para el sistema ERP de la empresa para optimizar los tiempos de emisión de documentos.}
-
-\subsection{Objetivos Específicos del Trabajo}
-\moradoc{\begin{enumerate}\justifying
-	\item Levantar requerimientos funcionales con el departamento de contabilidad.
-	\item Diseñar la base de datos para el almacenamiento de DTEs.
-	\item Implementar la API de conexión con el Servicio de Impuestos Internos.
-	\item Realizar pruebas unitarias y de integración del módulo desarrollado.
-\end{enumerate}}
-
-\chapter{Empresa y Contexto Laboral}
-
-\section{Identificación de la Empresa}
-\begin{description}\justifying
-  \item [Razón Social] Nombre legal
-  \item [Nombre de Fantasía] Nombre comercial
-  \item [RUT] XX.XXX.XXX-X
-  \item [Rubro] Giro de la empresa
-  \item [Dirección] Dirección completa
-  \item [Sitio Web] \url{www.empresa.cl}
-\end{description}
-
-\section{Datos del Supervisor}
-\instruccion{Esta información es vital para la validación de su práctica.}
-\begin{description}\justifying
-  \item [Nombre] Nombre del supervisor
-  \item [Cargo] Cargo que ocupa
-  \item [Correo electrónico] email@empresa.com
-  \item [Teléfono] +56 9 XXXX XXXX
-\end{description}
-
-\section{Descripción de la Organización}
-\instruccion{Describa la empresa más allá de su "misión y visión". Enfóquese en:
-\begin{itemize}
-    \item ¿Qué problema resuelve la empresa en el mercado?
-    \item Tamaño (número de empleados, sucursales).
-    \item Cultura organizacional (¿Es jerárquica? ¿Es ágil?).
-\end{itemize}
-}
-
-\subsection{Organigrama General}
-\instruccion{Inserte el organigrama de la empresa. Si es muy grande, simplifíquelo pero asegúrese de marcar dónde se encuentra el departamento de informática. Si no existe debe crearlo.}
-\begin{figure}[H]
-\centering
-%\includegraphics[width=0.8\textwidth]{figures/organigrama_empresa}
-\caption{Organigrama General de la Empresa}
-\label{fig:organigrama}
-\end{figure}
-
-\section{Descripción del Área de Trabajo}
-\instruccion{Profundice en el departamento donde usted trabajó (Gerencia de Sistemas, Área de Desarrollo, Soporte, etc.). Describa:
-\begin{itemize}
-    \item Estructura interna del equipo.
-    \item Metodologías utilizadas por el equipo (Scrum, Kanban, Tradicional).
-    \item Tecnologías que el equipo utiliza habitualmente.
-\end{itemize}
-}
-
-\chapter{Desarrollo de la Práctica}
-
-\section{Definición del Problema u Oportunidad}
-\instruccion{Describa la necesidad que originó su trabajo. ¿Qué estaba "mal" o qué faltaba antes de que usted llegara? Esto demuestra su capacidad de detectar problemas (Art. 4, punto d).}
-
-\section{Marco Tecnológico (Stack Técnico)}
-\instruccion{Liste y describa brevemente las herramientas utilizadas, justificando su elección o imposición por la empresa.}
-\begin{itemize}
-    \item \textbf{Lenguajes:} Python, Java, etc.
-    \item \textbf{Frameworks:} React, Django, Spring Boot.
-    \item \textbf{Herramientas de Gestión:} Jira, Trello, Git.
-    \item \textbf{Infraestructura:} AWS, Azure, Docker.
-\end{itemize}
-
-\section{Planificación (Plan de Trabajo)}
-\instruccion{Presente cómo organizó su tiempo. Se recomienda encarecidamente incluir una Carta Gantt comparando lo Planificado vs. lo Realizado.}
-
-\section{Descripción Detallada de Actividades}
-\instruccion{Esta es la sección principal. No haga solo un listado tipo bitácora (Día 1: Hice esto). Agrupe por hitos o proyectos relevantes.
-Para cada actividad relevante describa:
-\begin{enumerate}
-    \item \textbf{El desafío:} ¿Qué debía resolver?
-    \item \textbf{La solución:} ¿Cómo aplicó la ingeniería para resolverlo? (Diseño, Algoritmos, Lógica).
-    \item \textbf{La implementación:} Fragmentos de código clave, diagramas de arquitectura, capturas de pantalla.
-\end{enumerate}
-}
-
-% Ejemplo de inclusión de código
-%\begin{lstlisting}[caption={Algoritmo de conexión a la API}, label={lst:api}]
-% def connect_to_api(url):
-%     response = requests.get(url)
-%     return response.json()
-%\end{lstlisting}
-
-\section{Resultados Obtenidos}
-\instruccion{Muestre el producto final. ¿Funciona? ¿Se implementó? Muestre gráficos de rendimiento, interfaces finales o métricas de éxito (ej: "Se redujo el tiempo de carga en un 20\%").}
 
 
+\input{C1Introduccion.tex}
+\input{C2Empresa.tex}
+\input{C3Desarrollo.tex}
+\input{C4Conclusion.tex}
 
-\chapter{Discusión y Conclusiones}
 
-\section{Análisis Crítico y Discusión}
-\instruccion{Reflexione sobre su desempeño.
-\begin{itemize}
-    \item ¿Logró aplicar las competencias de la carrera?.
-    \item ¿Cómo fue la integración con el equipo multidisciplinario?
-    \item Comparación teoría (universidad) vs. práctica (empresa).
-\end{itemize}
-}
-
-\section{Detección de Mejoras y Aportes}
-\instruccion{Basado en su observación, proponga mejoras para la empresa (técnicas o de gestión) y mejoras para la carrera (malla curricular). Esto es parte del objetivo de proponer soluciones con pensamiento crítico.}
-
-\section{Conclusión General}
-\instruccion{Cierre el informe resumiendo el impacto de la práctica en su formación profesional.}
 %%%%%
 \renewcommand{\refname}{Referencias}
-
-%agregar referencias
-\bibliographystyle{IEEEtran}
-%\nocite{*} % mostrar todas las referencias aunque no esten citadas
-\bibliography{bibliografia}
+\bibliographystyle{ieeetr}
+\bibliography{bibliografia.bib}
 
 %\input{Ejemplos}%comentar/eliminar esta línea
 \end{document}

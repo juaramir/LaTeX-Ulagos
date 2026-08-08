@@ -1,0 +1,45 @@
+\chapter{Discusiones, Aportes y Conclusiones Finales}
+
+\section{Análisis Crítico de la Inserción Laboral}
+\azul{Esta sección exige una evaluación profunda sobre el desempeño técnico en la empresa. El texto debe contrastar el conocimiento teórico adquirido en la universidad frente a la realidad práctica de la industria. Asimismo, se requiere analizar la integración del estudiante con los equipos multidisciplinarios, identificando brechas de conocimiento que surgieron durante la resolución de problemas operacionales.}
+
+\moradoc{\begin{ejemplo}
+		La interacción con el equipo de arquitectos de \textit{software} develó una asimetría entre los fundamentos teóricos de bases de datos y la gestión empírica de entornos distribuidos. Si bien la academia provee bases sólidas en normalización relacional, la necesidad de configurar esquemas de alta disponibilidad requirió asimilar metodologías no contempladas en el plan de estudios tradicional. Esta dinámica sugiere que la adaptabilidad algorítmica supera a la mera memorización de lenguajes.
+\end{ejemplo}}
+
+\section{Propuestas de Mejora Organizacional y Curricular}
+\azul{Basado en su observación crítica, el estudiante formula propuestas de mejora viables. Este apartado se divide en dos enfoques: sugerencias tecnológicas o procedimentales para optimizar el área de trabajo de la empresa, y recomendaciones académicas para actualizar la malla curricular de la carrera. Toda propuesta debe sustentarse empíricamente.}
+
+\moradoc{\begin{ejemplo}
+		A nivel corporativo, se postula la migración progresiva del sistema legado hacia una arquitectura de microservicios, lo que mitigaría las caídas recurrentes del servidor principal reportadas durante el mes de mayo. En el ámbito académico, la experiencia sugiere integrar módulos prácticos de \textit{Docker} y herramientas de integración continua (CI/CD) dentro de la asignatura de Sistemas Operativos, acercando el perfil de egreso a los estándares de despliegue modernos.
+\end{ejemplo}}
+
+\section{Impacto Formativo y Crecimiento Personal}
+\azul{Se detalla la contribución integral de la práctica profesional. A diferencia de las secciones técnicas, este apartado permite documentar el desarrollo de habilidades blandas (comunicación, resiliencia, tolerancia a la frustración). Excepcionalmente, en esta subsección se autoriza redactar en primera persona para reflejar el proceso subjetivo de maduración profesional.}
+
+\moradoc{\begin{ejemplo}
+		El enfrentamiento empírico con fallos transaccionales en tiempo real consolidó mi capacidad analítica bajo escenarios de presión. Más allá del dominio en lenguajes de programación, esta experiencia fortaleció mi tolerancia a la frustración al lidiar con códigos heredados sin documentación. A nivel personal, el trabajo colaborativo forjó una ética laboral fundamentada en la responsabilidad compartida y la comunicación asertiva con profesionales ajenos a la informática.
+\end{ejemplo}}
+
+\section{Conclusión General y Cumplimiento de Objetivos}
+\azul{Este apartado final dictamina el cierre formal del proyecto. La redacción debe declarar explícitamente si el trabajo fue culminado con éxito, argumentando el grado de cumplimiento de las metas técnicas declaradas previamente. Es obligatorio referenciar la Sección \ref{trabajopractica} y detallar la consecución de cada objetivo específico delineado al inicio del informe. Se sugiere el uso de una tabla de síntesis para organizar la evaluación.}
+
+\begin{ejemplo}
+	\moradoc{	Se concluye que el desarrollo del sistema de integración transaccional satisfizo integralmente los propósitos delineados en la Sección \ref{trabajopractica}. Como sintetiza la Tabla \ref{tab:cumplimiento_objetivos}, el objetivo general se alcanzó mediante el despliegue del módulo operativo en el servidor principal.}
+		
+	\moradoc{	La evaluación de los propósitos específicos arroja los siguientes resultados: el levantamiento de requerimientos (Objetivo 1) se completó sin desviaciones operativas; el diseño de la base de datos (Objetivo 2) requirió optimizaciones imprevistas en los índices, logrando estabilizar las consultas; finalmente, las pruebas de integración (Objetivo 3) certificaron una tasa de éxito del 98\% en la transmisión de datos, lo que podría indicar una arquitectura altamente resiliente.}
+\end{ejemplo}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{0.15\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
+		\hline
+		\textbf{Fase CDIO} & \textbf{Objetivo Específico (Sec. \ref{trabajopractica})} & \textbf{Estado Final} \\ \hline
+		Concebir & Levantar requerimientos funcionales con contabilidad. & Cumplido (100\%) \\ \hline
+		Diseñar & Modelar el esquema para almacenamiento de DTEs. & Cumplido (100\%) \\ \hline
+		Implementar & Codificar la API de conexión con el SII. & Cumplido con retraso \\ \hline
+		Operar & Validar consistencia mediante pruebas unitarias. & Cumplido (100\%) \\ \hline
+	\end{tabular}
+		\caption{Matriz de cumplimiento de objetivos del proyecto de práctica}
+	\label{tab:cumplimiento_objetivos}
+\end{table}

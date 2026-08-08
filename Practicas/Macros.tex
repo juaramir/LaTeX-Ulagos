@@ -269,9 +269,36 @@
 
 % Asignación dinámica de variables según la configuración
 \ifprofesional
-\def\subtitulo{Práctica Profesional (360 hs)}
+\def\subtitulo{Práctica Profesional (\horastotales)}
 \def\asignatura{Práctica Profesional}
 \else
-\def\subtitulo{Práctica Intermedia ()162 hs)}
+\def\subtitulo{Práctica Intermedia (\horastotales)}
 \def\asignatura{Práctica Intermedia}
 \fi
+
+
+\def\objetivospractica{
+\subsection{Objetivo General}
+
+% NO TOCAR ESTO
+\ifprofesional
+Permitir que la o el estudiante desempeñe labores relevantes que una o un Ingeniera/o Civil en Informática realiza en una organización.
+\else
+Permitir que la o el estudiante se familiarice con el ámbito laboral, desarrollando las actividades en contacto constante con el centro de práctica.
+\fi
+
+\subsection{Objetivos Específicos}
+\ifprofesional
+\begin{enumerate}\justifying
+	\item Conocer la estructura de la organización y formas de operación de cada una de las áreas que componen el Centro de Práctica.
+	\item Insertarse en grupos multidisciplinarios y/o multiculturales, participando activamente en equipos de trabajo, con capacidad de adaptación y pensamiento crítico.
+	\item Aprender métodos de trabajo, tendientes a la operación, administración y gestión en áreas informáticas.
+	\item Concebir, diseñar, implementar y/o operar soluciones a problemas propuestos o detectados desde el enfoque de la Ingeniería Civil en Informática.
+\end{enumerate}
+\else
+\begin{enumerate}\justifying
+	\item Conocer la estructura de la organización y formas de operación de las áreas que componen el Centro de Práctica.
+	\item Conocer y aprender métodos de trabajo y formas de comunicación utilizados en entornos multidisciplinarios y/o multiculturales.
+	\item Visualizar y proponer el método de ingeniería para concebir, diseñar, implementar y operar actividades colaborativas en la solución de problemas, en áreas informáticas o afines a esta.
+\end{enumerate}
+\fi}

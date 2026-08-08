@@ -1,0 +1,112 @@
+\chapter{Ejecución y Desarrollo de la Práctica}
+
+\section{Definición del Problema u Oportunidad}
+\azul{Esta sección expone la brecha existente entre la situación actual de la organización y el estado tecnológico deseado. Para formular un problema en ingeniería, se requiere estructurar el diagnóstico en tres dimensiones: identificar los síntomas (deficiencias operativas observables), establecer las causas subyacentes (limitaciones arquitectónicas, algorítmicas o procedimentales) y proyectar las consecuencias si el escenario no se interviene. La redacción culmina con la formulación explícita de la necesidad que justifica el trabajo desarrollado.}
+
+\moradoc{\begin{ejemplo}
+		El departamento de finanzas presenta una latencia de 48 horas en la consolidación de reportes mensuales (síntoma). Esta demora se origina por la extracción manual de registros desde tres bases de datos relacionales aisladas, careciendo de un proceso ETL unificado (causa). De persistir esta fragmentación, la gerencia continuará operando con información desactualizada, ralentizando las decisiones estratégicas (consecuencia). Por consiguiente, se requiere diseñar un mecanismo automatizado de integración de datos que garantice la consistencia de la información.
+\end{ejemplo}}
+
+\section{Marco Tecnológico y Arquitectura}
+\azul{Se detallan las herramientas informáticas empleadas durante el desarrollo. El texto exige justificar si la adopción de un lenguaje, \textit{framework} o motor de base de datos respondió a requerimientos de sistemas legados de la empresa o a decisiones arquitectónicas tomadas por el estudiante para optimizar la solución.}
+\moradoc{\begin{ejemplo}
+		El entorno de desarrollo corporativo integra múltiples herramientas para garantizar la continuidad operativa de los servicios legados. La Tabla \ref{tab:stack_tecnico} desglosa las tecnologías impuestas por la arquitectura de la organización, donde la adopción del motor relacional PostgreSQL responde directamente a la necesidad de preservar la integridad en transacciones concurrentes.
+\end{ejemplo}}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Categoría} & \textbf{Tecnología} \\ \hline
+		Lenguaje de Programación & Python 3.10 \\ \hline
+		Motor de Base de Datos & PostgreSQL 14 \\ \hline
+		Control de Versiones & Git (GitLab corporativo) \\ \hline
+		Infraestructura de Despliegue & Docker / AWS EC2 \\ \hline
+	\end{tabular}
+		\caption{Stack tecnológico utilizado durante el periodo de práctica}
+	\label{tab:stack_tecnico}
+\end{table}
+
+\section{Desglose de Actividades y Tareas}\label{s:actividades}
+\azul{El desglose de actividades constituye la descomposición jerárquica del proyecto informático. Cada objetivo específico se divide en operaciones algorítmicas o administrativas atómicas, carentes de ambigüedad. Esta precisión representa el insumo directo para asignar recursos y estimar duraciones \cite[p. ~106]{pmi2021pmbok}, mitigando tempranamente los riesgos en la calendarización del software.}
+
+\begin{ejemplo}
+	\moradoc{	\textbf{Objetivo Específico 1 [Concebir]: Levantar los requerimientos funcionales y reglas de negocio operantes.}
+		\begin{itemize}
+			\item \textbf{Actividad 1.1: Diagnóstico de los flujos de información actuales.}
+			\begin{itemize}
+				\item \textit{Tarea 1.1.1:} Entrevistar a los analistas del área contable para identificar latencias en la emisión de reportes.
+				\item \textit{Tarea 1.1.2:} Tabular los volúmenes transaccionales históricos desde el sistema legado.
+			\end{itemize}
+		\end{itemize}}
+		
+		\moradoc{\textbf{Objetivo Específico 2 [Diseñar]: Modelar la estructura de la base de datos relacional.}
+		\begin{itemize}
+			\item \textbf{Actividad 2.1: Diseño de la arquitectura de persistencia.}
+			\begin{itemize}
+				\item \textit{Tarea 2.1.1:} Elaborar el esquema entidad-relación en Tercera Forma Normal (3FN) para el almacenamiento de facturas.
+				\item \textit{Tarea 2.1.2:} Diagramar la secuencia de comunicación asíncrona para la integración con la API del Servicio de Impuestos Internos.
+			\end{itemize}
+		\end{itemize}}
+		
+	\moradoc{\textbf{Objetivo Específico 3 [Implementar]: Construir los componentes de software del módulo.}
+		\begin{itemize}
+			\item \textbf{Actividad 3.1: Codificación e integración de servicios.}
+			\begin{itemize}
+				\item \textit{Tarea 3.1.1:} Programar los \textit{endpoints} RESTful para la recepción de cargas útiles en formato JSON.
+				\item \textit{Tarea 3.1.2:} Configurar el contenedor Docker aislando el entorno de despliegue.
+			\end{itemize}
+		\end{itemize}}
+		
+		\moradoc{\textbf{Objetivo Específico 4 [Operar]: Desplegar la solución en un entorno de pruebas controlado.}
+		\begin{itemize}
+			\item \textbf{Actividad 4.1: Validación de consistencia transaccional.}
+			\begin{itemize}
+				\item \textit{Tarea 4.1.1:} Ejecutar pruebas de estrés inyectando concurrencia simulada en el servidor de pruebas.
+				\item \textit{Tarea 4.1.2:} Consolidar las métricas de rendimiento y tiempos de respuesta en el repositorio documental corporativo.
+			\end{itemize}
+		\end{itemize}}
+\end{ejemplo}
+
+
+\section{Planificación Temporal y Carta Gantt}
+\azul{Formalizada la descomposición de tareas, se establece su precedencia lógica. Este apartado vincula las actividades con el cronograma corporativo, calculando la ruta crítica e ilustrando la ejecución mediante una Carta Gantt \cite[p. ~192]{pmi2021pmbok}. Todo elemento gráfico o tabular exige una etiqueta formal y su respectivo análisis semántico en los párrafos circundantes.}
+
+\begin{ejemplo}
+	\moradoc{	La calendarización de las iteraciones de desarrollo se ilustra en el Diagrama de Gantt expuesto en la Figura \ref{fig:gantt}. Esta representación visual esquematiza un horizonte operativo de 16 semanas, revelando un solapamiento programado entre la codificación de los \textit{endpoints} y la escritura de pruebas unitarias.}
+		
+	\moradoc{	Para determinar las holguras del proceso informático, se estructuró la matriz de precedencias detallada en la Tabla \ref{tab:caminocritico}. Los tiempos tabulados evidencian que las labores asociadas al diseño del esquema relacional (Tarea 2.1.1) y a la configuración del contenedor de despliegue (Tarea 3.1.2) carecen de holgura total. Por consiguiente, dicha secuencia constituye el camino crítico del sistema, lo que podría indicar que desviaciones temporales en estas fases retrasarán irrevocablemente el paso a producción del módulo completo.}
+\end{ejemplo}
+
+\section{Descripción Detallada de Actividades}
+\azul{Esta sección constituye el núcleo técnico del documento. Todo fragmento de código incorporado para evidenciar su trabajo exige una etiqueta formal (\texttt{label}) y una descripción analítica previa. El texto debe diseccionar la lógica de programación aplicada antes de presentar el bloque algorítmico.}
+
+\moradoc{\begin{ejemplo}
+		La integración con el servicio de facturación requirió encapsular las peticiones HTTP para evitar bloqueos en el hilo principal del servidor. El Código \ref{lst:api} expone la implementación de la función de conexión transaccional. Este bloque captura excepciones de red mediante secuencias \texttt{try-except}, lo que podría indicar una mejora sustancial en la resiliencia del software frente a fluctuaciones de latencia externas.
+\end{ejemplo}}
+
+% Ejemplo de inclusión de código en LaTeX
+\begin{lstlisting}[caption={Algoritmo de conexión y validación de la API}, label={lst:api}]
+	def connect_to_api(url, payload):
+	try:
+	response = requests.post(url, json=payload, timeout=5)
+	response.raise_for_status()
+	return response.json()
+	except requests.exceptions.RequestException as e:
+	log_error(f"Falla de conexión transaccional: {e}")
+	return None
+\end{lstlisting}
+
+section{Análisis de Resultados Obtenidos}
+\azul{Se evalúa el producto tecnológico final. Si el análisis incorpora gráficos de rendimiento o interfaces de usuario, estos elementos visuales se deben enumerar, etiquetar y discutir en base a métricas empíricas.}
+
+\moradoc{\begin{ejemplo}
+		La ejecución del nuevo mecanismo de limpieza de datos disminuyó el costo computacional de las consultas. Como evidencia la Figura \ref{fig:rendimiento}, el tiempo de procesamiento transaccional descendió de 15 minutos a 45 segundos tras aplicar la indexación. Este comportamiento empírico sostiene que el cuello de botella original radicaba en las búsquedas secuenciales sobre tablas no normalizadas.
+\end{ejemplo}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Reemplazar.png}
+	\caption{Comparativa de tiempos de respuesta antes y después de la optimización}
+	\label{fig:rendimiento}
+\end{figure}
