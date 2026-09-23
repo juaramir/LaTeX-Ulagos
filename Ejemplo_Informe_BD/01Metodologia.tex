@@ -14,339 +14,160 @@ Confiamos en que este análisis y la propuesta de diseño que se presenta a cont
 Perfecto. A continuación, te presento una propuesta para el objetivo general y los objetivos específicos del proyecto, considerando las etapas que mencionaste:
 
 \section{Objetivos del Proyecto}
+
+La arquitectura metodológica de este trabajo asume los lineamientos de la iniciativa CDIO, marco que postula un ciclo de vida estructurado para el desarrollo de sistemas ingenieriles[cite: 1]. Considerando los límites operativos del encargo, el proyecto transita exclusivamente por las fases de Concepción, Diseño e Implementación (CDI)[cite: 1], delegando la etapa de Operación comercial y sustituyéndola por una validación funcional a nivel de prototipo computacional.
+
 \subsection{Objetivo General}
-Desarrollar e implementar un sistema de base de datos web integral y eficiente que satisfaga los requisitos de gestión de información académica y de investigación de [Nombre del Cliente o Empresa Cliente], permitiendo la administración centralizada y estructurada de datos relativos a profesores, alumnos, proyectos, departamentos y asignaturas, y facilitando el acceso y la operatividad a los usuarios designados.
+Desarrollar un sistema de base de datos web para la gestión de información académica e investigativa en el contexto de [Nombre del Cliente o Empresa Cliente], con el propósito de optimizar el acceso concurrente y centralizar la administración de los registros institucionales.
+
 \subsection{Objetivos Específicos}
 \begin{enumerate}
-    \item \textbf{Formulación y Modelado Conceptual}:
-   Analizar exhaustivamente los requisitos funcionales y de datos proporcionados por el cliente, para formular el presente informe técnico y diseñar un modelo de datos conceptual y lógico que represente fielmente las entidades, atributos y relaciones identificadas, sirviendo como base para la estructura de la base de datos.
-   \item \textbf{Diseño e Implementación de la Base de Datos}:
-   Traducir el modelo de datos lógico a un diseño físico de base de datos optimizado, seleccionando un sistema gestor de base de datos (SGBD) adecuado, y proceder con la creación de la estructura de la base de datos, incluyendo tablas, relaciones, restricciones de integridad y los índices necesarios para asegurar la eficiencia y consistencia de los datos.
-   \item \textbf{Diseño y Desarrollo del Sistema Web con Integración de Datos}:
-   Diseñar la arquitectura del sistema web y desarrollar una interfaz de usuario intuitiva y funcional que permita la interacción con la base de datos implementada. Esto incluye la implementación de los procesos CRUD (Crear, Leer, Actualizar, Eliminar) para todas las entidades gestionadas, asegurando una correcta integración entre la capa de presentación y la capa de datos.
-   \item \textbf{Pruebas, Validación y Despliegue}:
-   Ejecutar un plan de pruebas exhaustivo que abarque pruebas unitarias, de integración, de sistema y de aceptación del usuario, con el fin de validar el correcto funcionamiento del sistema web y la base de datos, asegurar el cumplimiento de los requisitos iniciales, corregir posibles errores y preparar el sistema para su despliegue en el entorno productivo del cliente.
+	\item \textbf{Concebir:} Formular los requerimientos técnicos y operacionales mediante el diagnóstico de las necesidades organizacionales del cliente, delimitando la factibilidad del sistema de información.
+	\item \textbf{Diseñar:} Modelar la arquitectura de software y los esquemas lógicos de la base de datos relacional que estructurarán la solución tecnológica subyacente.
+	\item \textbf{Implementar:} Construir el artefacto informático a nivel de prototipo, integrando los lenguajes de programación web/móvil y los motores de datos seleccionados en un entorno de desarrollo controlado.
+	\item Evaluar la consistencia y rendimiento del prototipo funcional mediante simulaciones de carga y pruebas estructurales, verificando las métricas de calidad sin contemplar su despliegue en un entorno operativo de producción.
 \end{enumerate}
 
 \section{Metodología de Trabajo}\label{sec:mettrabajo}
 
-A continuación, se presenta el desglose de actividades y tareas necesarias para la consecución de cada objetivo específico del proyecto.
+El desglose de actividades se estructura en subordinación a los propósitos planteados, estableciendo un flujo lógico desde la abstracción teórica hasta la verificación empírica del código fuente. Esta configuración asegura una trazabilidad coherente a lo largo del ciclo de vida del software, alineando el desarrollo del prototipo con los requerimientos académicos.
 
-\subsection{Objetivo Específico 1: Formulación y Modelado Conceptual}
+\subsection{Objetivo Específico 1: Fase de Concepción y Formulación}
 \subsubsection{Actividades y Tareas}
 \begin{enumerate}
-    \item  Elaboración del Informe Técnico y Planificación Temporal del Informe
- \begin{enumerate}
-
-     \item Revisión y validación final de la comprensión de los requisitos del cliente.
-     \item Definición detallada de la estructura y secciones del presente informe (Índice).
-     \item Redacción de la Introducción y Justificación del proyecto (ya avanzado).
-     \item Redacción de los Objetivos General y Específicos (ya avanzado).
-    \item Desarrollo de la sección de Planificación de Actividades y Tareas (en curso).
-    \item Estimación de tiempos para cada sección del informe y elaboración de un cronograma para la entrega del mismo.
-    \item Consolidación y revisión general del informe técnico.
-     \end{enumerate}
-\item  Análisis de Requisitos y Modelado Entidad-Relación (MER)
-\begin{enumerate}
-    \item  Identificación de Entidades: Extraer y listar todas las entidades principales a partir de los requisitos del cliente (Profesor, Proyecto, Alumno, ProgramaPostgrado, Departamento, Asignatura).
-     \item  Definición de Atributos: Para cada entidad, detallar sus atributos, especificando el tipo de dato preliminar y las restricciones conocidas (ej. RUN como identificador único).
-      \begin{enumerate}
-          \item Profesor: RUN (PK), nombre, edad, rango, especialidad\_investigacion.
-       \item Proyecto: numero\_proyecto (PK), nombre\_patrocinador, fecha\_comienzo, fecha\_finalizacion, presupuesto.
-       \item Alumno: RUN (PK), nombre, edad.
-       \item ProgramaPostgrado: codigo\_programa (PK), nombre\_programa.
-       \item Departamento: numero\_departamento (PK), nombre\_departamento, despacho\_principal.
-       \item Asignatura: (Se necesitará un identificador, ej. codigo\_asignatura (PK), nombre\_asignatura).
-       \end{enumerate}
-     \item Identificación de Relaciones: Determinar las relaciones entre las entidades basándose en los requisitos.
-     \begin{enumerate}
-         \item Profesor dirige Proyecto (Investigador Principal).
-       \item Profesor trabaja en Proyecto (Investigador).
-       \item  Alumno Postgrado trabaja en Proyecto (Ayudante).
-       \item  Profesor supervisa Alumno en Proyecto.
-       \item  Alumno pertenece (o no) a ProgramaPostgrado.
-       \item  Departamento tiene un Profesor Director.
-      \item  Profesor trabaja en Departamento (con \% de tiempo).
-       \item  Alumno Postgrado tiene un Departamento Principal.
-      \item  Alumno Postgrado tiene un Alumno Asesor.
-       \item  Profesor dicta Asignatura.
-     \end{enumerate}
-       
-     \item Especificación de Cardinalidad y Opcionalidad: Definir la cardinalidad (uno a uno, uno a muchos, muchos a muchos) y la opcionalidad (obligatoria o opcional) para cada relación.
-    \item Creación del Diagrama Entidad-Relación (DER): Elaborar el diagrama visual utilizando una notación estándar (Chen, Crow's Foot, etc.) que represente las entidades, atributos y relaciones con su cardinalidad.
-     \item Documentación y Validación del MER: Describir textualmente el MER, justificando las decisiones de diseño y validarlo contra los requisitos para asegurar que toda la información y reglas de negocio estén correctamente representadas.
-     \end{enumerate}
+	\item Diagnóstico de Requerimientos y Extracción de Entidades:
+	\begin{enumerate}
+		\item Levantar los requerimientos funcionales extrayendo las entidades principales del dominio del problema (Profesor, Proyecto, Alumno, ProgramaPostgrado, Departamento, Asignatura).
+		\item Evaluar la factibilidad tecnológica preliminar para la plataforma web, delimitando el alcance del prototipo.
+	\end{enumerate}
+	\item Consolidación Documental y Planificación Temporal:
+	\begin{enumerate}
+		\item Estructurar el informe técnico inicial, argumentando la justificación del desarrollo y definiendo la matriz de planificación temporal (Carta Gantt) para las iteraciones.
+		\item Revisar y validar la comprensión de los requerimientos, asegurando que el modelo mental concuerda con las necesidades institucionales.
+	\end{enumerate}
 \end{enumerate}
 
-\subsection{Objetivo Específico 2: Diseño e Implementación de la Base de Datos}
+\subsection{Objetivo Específico 2: Fase de Diseño y Modelado}
 \subsubsection{Actividades y Tareas}
 \begin{enumerate}
-    \item  Transformación del Modelo Entidad-Relación a Modelo Relacional
-  \begin{enumerate}
-      \item Mapear cada entidad del MER a una tabla en el modelo relacional.
-     \item Mapear los atributos de las entidades a columnas en sus respectivas tablas, definiendo tipos de datos SQL específicos.
-     \item Convertir las relaciones del MER:
-     \begin{enumerate}
-         \item Relaciones 1:N se implementan mediante claves foráneas en la tabla del lado ``N''.
-       \item Relaciones M:N se convierten en una nueva tabla asociativa con claves foráneas a las tablas originales.
-       \item Relaciones 1:1 se analizan para decidir la ubicación de la clave foránea o si se fusionan las tablas.
-     \end{enumerate}
-
-     \item Definir formalmente las Claves Primarias (PK) para cada tabla y las Claves Foráneas (FK) para implementar las relaciones.
-  \end{enumerate}
-
- \item Normalización de la Base de Datos
-\begin{enumerate}
-    \item Analizar las dependencias funcionales en cada tabla propuesta.
-     \item Verificar y aplicar la Primera Forma Normal (1FN): Asegurar que todos los atributos sean atómicos y no haya grupos repetitivos.
-     \item Verificar y aplicar la Segunda Forma Normal (2FN): Asegurar que la tabla esté en 1FN y que todos los atributos no clave dependan completamente de la clave primaria completa (relevante para claves primarias compuestas).
-    \item Verificar y aplicar la Tercera Forma Normal (3FN): Asegurar que la tabla esté en 2FN y que no existan dependencias transitivas (atributos no clave que dependan de otros atributos no clave).
-     \item Documentar el proceso de normalización y las decisiones tomadas para cada tabla.
-     \end{enumerate}
-\item Creación de Scripts de Creación de Tablas (DDL) con Restricciones de Integridad
-\begin{enumerate}
-    \item  Escribir las sentencias SQL CREATE TABLE para cada tabla definida en el modelo relacional normalizado.
-     \item Incluir la definición de columnas con sus tipos de datos SQL precisos.
-     \item Especificar las restricciones de PRIMARY KEY para cada tabla.
-     \item Especificar las restricciones de FOREIGN KEY con las cláusulas REFERENCES y acciones referenciales (ej. ON DELETE CASCADE, ON UPDATE RESTRICT).
-     \item Añadir otras restricciones de integridad necesarias: NOT NULL, UNIQUE, CHECK (ej. para rangos de valores, formatos específicos como el RUN, etc.).
-     \item Organizar los scripts en un orden lógico que respete las dependencias referenciales para su correcta ejecución.
-     \end{enumerate}
-\item Carga de Datos de Prueba y Verificación de Consistencia
-\begin{enumerate}
-    \item  Diseñar un conjunto de datos de prueba coherentes y representativos que cubran diversas casuísticas (ej. profesores con y sin proyectos, alumnos en distintos programas, proyectos con múltiples investigadores y ayudantes).
-     \item Escribir sentencias SQL INSERT INTO para poblar las tablas con los datos de prueba.
-     \item Ejecutar los scripts de carga de datos.
-     \item Verificar la consistencia de los datos cargados mediante consultas SELECT, comprobando que las relaciones y restricciones se cumplen (ej. un alumno de postgrado tiene un departamento principal válido, un proyecto tiene un investigador principal existente).
-     \end{enumerate}
-\item Implementación de Índices y Definición de Consultas y Vistas Predefinidas
-\begin{enumerate}
-    \item  Identificar columnas frecuentemente usadas en cláusulas WHERE, JOIN, ORDER BY que podrían beneficiarse de la creación de índices.
-     \item Crear índices (CREATE INDEX) sobre dichas columnas para optimizar el rendimiento de las consultas.
-     \item Diseñar y escribir consultas SQL complejas que el sistema podría requerir frecuentemente (ej. Listar todos los proyectos de un profesor, obtener los ayudantes de un proyecto específico con sus supervisores, mostrar profesores por departamento con su porcentaje de tiempo).
-    \item Crear vistas (CREATE VIEW) para simplificar el acceso a datos que requieren uniones complejas o para presentar subconjuntos específicos de datos a ciertos roles de usuario.
-     \item Evaluar la capacidad de respuesta y fiabilidad del sistema ejecutando las consultas y vistas predefinidas con los datos de prueba, analizando sus planes de ejecución si es necesario.
+	\item Modelado Conceptual y Lógico de Datos:
+	\begin{enumerate}
+		\item Proyectar el Modelo Entidad-Relación (MER), definiendo atributos clave (por ejemplo, el RUN como identificador único) y estableciendo las cardinalidades y restricciones (1:N, M:N).
+		\item Transformar el MER al modelo relacional lógico, ejecutando un proceso de normalización riguroso hasta la Tercera Forma Normal (3FN) para evitar anomalías transaccionales y dependencias transitivas.
+	\end{enumerate}
+	\item Arquitectura de Interfaces y Experiencia de Usuario:
+	\begin{enumerate}
+		\item Elaborar wireframes de bajo nivel para esquematizar la estructura y navegación del sistema.
+		\item Construir mockups de alta fidelidad que proyecten la apariencia visual, considerando el diseño diferenciado de interfaces para usuarios con privilegios limitados frente a los administradores.
+	\end{enumerate}
 \end{enumerate}
-     \end{enumerate}
-\subsection{Objetivo Específico 3: Diseño y Desarrollo del Sistema Web con Integración de Datos}
+
+\subsection{Objetivo Específico 3: Fase de Implementación del Prototipo}
 \subsubsection{Actividades y Tareas}
 \begin{enumerate}
-\item Configuración del Entorno de Desarrollo Web
-\begin{enumerate}
-    \item  Seleccionar e instalar un servidor web (ej. Apache, Nginx).
-     Instalar y configurar el intérprete de PHP y las extensiones necesarias (ej. para la conexión con la base de datos).
-     Asegurar que el entorno de desarrollo tenga acceso al servidor de base de datos.
+	\item Construcción y Poblamiento del Motor de Datos:
+	\begin{enumerate}
+		\item Escribir los scripts DDL (Data Definition Language) para la creación de esquemas, implementando sentencias \texttt{CREATE TABLE} junto con sus restricciones de integridad (\texttt{PRIMARY KEY}, \texttt{FOREIGN KEY}, \texttt{NOT NULL}).
+		\item Poblar las estructuras relacionales con un conjunto de datos de prueba (mock data) representativo mediante sentencias \texttt{INSERT INTO}, preparando el terreno para las pruebas funcionales.
+	\end{enumerate}
+	\item Programación de la Capa de Aplicación y Presentación:
+	\begin{enumerate}
+		\item Desarrollar el frontend utilizando semántica HTML5 y reglas de presentación CSS3, garantizando una correcta adaptabilidad en la visualización.
+		\item Codificar la lógica de negocio en el backend mediante PHP, estableciendo conectores seguros (por ejemplo, PDO o conectores nativos para PostgreSQL/MySQL) hacia el SGBD.
+		\item Implementar las rutinas transaccionales (CRUD) para todas las entidades y desarrollar funciones lógicas o \textit{triggers} en la base de datos que automaticen la integridad referencial profunda.
+	\end{enumerate}
 \end{enumerate}
-    
-\item  Diseño de Maquetas del Sistema (Wireframes y Mockups)
- \begin{enumerate}
-     \item Crear wireframes de bajo nivel para esbozar la estructura y navegación de las principales pantallas del sistema web (ej. login, listados, formularios de alta/edición).
-     \item Desarrollar mockups de mayor fidelidad que muestren la apariencia visual (colores, tipografía, disposición de elementos) para la interfaz de usuario general, la interfaz de usuario limitado y la interfaz de administrador.
-      \end{enumerate}
-\item  Desarrollo del Frontend (HTML, CSS)
-\begin{enumerate}
-    \item  Traducir los mockups a código HTML5 semántico para estructurar las páginas web.
-     \item  Desarrollar hojas de estilo CSS3 para aplicar el diseño visual, la tipografía, colores y el layout definido en los mockups.
-     \item  Crear estilos CSS diferenciados para la interfaz de usuario con funcionalidades limitadas y la interfaz de administrador, asegurando una apariencia distintiva para cada una.
-     \item  Considerar principios de diseño responsivo básico para la correcta visualización en diferentes tamaños de pantalla.
-     \end{enumerate}
-\item  Desarrollo del Backend (PHP) y Conexión a la Base de Datos
-\begin{enumerate}
-    \item  Establecer la lógica de conexión segura desde PHP a la base de datos implementada (ej. usando PDO o MySQLi para MySQL, pg\_connect para PostgreSQL, etc.).
-     \item Organizar el código PHP en una estructura modular y mantenible (ej. separando lógica de presentación, lógica de negocio y acceso a datos).
-     \end{enumerate}
-\item  Implementación de Lógica de Negocio, Procesos CRUD y Automatización (PHP, Funciones/Triggers PL/SQL o similar)
-\begin{enumerate}
-    \item Desarrollar scripts PHP para manejar las solicitudes HTTP (GET, POST) y ejecutar la lógica de negocio.
-      \item  Implementar funciones PHP para realizar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para cada entidad gestionable a través del sistema web.
-      \item  Realizar validaciones de datos tanto en el lado del cliente (JavaScript, opcional) como, fundamentalmente, en el lado del servidor (PHP) antes de interactuar con la base de datos.
-      \item  Diseñar e implementar funciones y/o procedimientos almacenados en el SGBD (ej. en PL/pgSQL para PostgreSQL, T-SQL para SQL Server, PL/SQL para Oracle) para encapsular lógica de negocio compleja, mejorar la seguridad o el rendimiento.
-      \item  Diseñar e implementar triggers en la base de datos para automatizar procesos (ej. actualizar una fecha de modificación, mantener logs de auditoría básicos, verificar ciertas condiciones antes de una inserción/actualización) y asegurar la integridad referencial o de negocio que no se pueda cubrir con restricciones declarativas.
-     \end{enumerate}
-\item  Diseño e Implementación de Interfaces de Usuario Específicas por Rol
-\begin{enumerate}
-    \item  Desarrollar la interfaz de usuario  ``estándar'' o  ``limitada'', enfocada en las necesidades de usuarios con permisos restringidos, ofreciendo las funcionalidades CRUD que les correspondan (ej. un alumno podría ver sus datos y proyectos, pero no modificar datos de profesores).
-     \item  Desarrollar la interfaz de ``administrador'' con acceso completo a todas las funcionalidades CRUD del sistema, gestión de usuarios (si aplica), y posiblemente otras herramientas de mantenimiento o configuración.
-     \item  Implementar un sistema de autenticación y autorización para controlar el acceso a las diferentes interfaces y funcionalidades según el rol del usuario.
-     \item  Asegurar que cada interfaz tenga la apariencia distintiva definida con CSS.
-     \end{enumerate}
-     \end{enumerate}
-\subsection{Objetivo Específico 4: Pruebas, Validación y Despliegue}
+
+\subsection{Objetivo Específico 4: Fase de Validación y Pruebas (Simulación)}
 \subsubsection{Actividades y Tareas}
 \begin{enumerate}
-    \item  Establecimiento del Plan de Pruebas y Validación
-\begin{enumerate}
-     \item  Definir la estrategia general de pruebas: tipos de pruebas a realizar, alcance, criterios de aceptación.
-     \item Diseñar casos de prueba detallados para cada funcionalidad del sistema, cubriendo flujos exitosos, casos límite y manejo de errores.
-     \item Especificar los datos de entrada y los resultados esperados para cada caso de prueba.
-     \item Preparar el entorno de pruebas, asegurando que sea lo más similar posible al entorno de producción.
-      \end{enumerate}
-\item  Ejecución de Pruebas Unitarias y de Integración
-\begin{enumerate}
-     \item  Probar individualmente los módulos de código PHP, funciones PL/SQL (o similar) y otros componentes para verificar su correcto funcionamiento aislado (pruebas unitarias).
-     \item Probar la interacción entre los componentes del sistema: frontend con backend, backend con la base de datos, y la correcta ejecución de funciones/triggers en la BD al ser invocados por la aplicación (pruebas de integración).
-      \end{enumerate}
-\item  Ejecución de Pruebas de Sistema y Funcionales
-\begin{enumerate}
-     \item Realizar pruebas del sistema completo para verificar que todas las funcionalidades implementadas operan según los requisitos especificados.
-     \item Probar la correcta implementación de las operaciones CRUD para todas las entidades y roles de usuario.
-     \item Verificar la lógica de negocio, las reglas de validación y la integridad de los datos.
-     \item Evaluar la usabilidad y navegabilidad de las interfaces de usuario (general, limitada y administrador).
-     \item Realizar pruebas de seguridad básicas para identificar vulnerabilidades comunes (ej. Cross-Site Scripting, Inyección SQL, manejo de sesiones).
-      \end{enumerate}
-\item  Pruebas de Aceptación del Usuario (UAT)
-\begin{enumerate}
-    \item  Coordinar y facilitar sesiones de prueba con el cliente o usuarios finales designados.
-     \item Guiar a los usuarios en la ejecución de los casos de prueba definidos o en la exploración libre del sistema.
-     \item Recopilar y documentar el feedback de los usuarios, incluyendo errores encontrados, sugerencias de mejora y confirmación de funcionalidades.
-     \end{enumerate}
-\item  Corrección de Errores y Refinamiento del Sistema
-\begin{enumerate}
-    \item  Analizar los errores y problemas reportados durante todas las fases de prueba.
-     \item  Priorizar y asignar la corrección de errores al equipo de desarrollo.
-     \item  Implementar las correcciones necesarias en el código y/o en la base de datos.
-     \item  Realizar pruebas de regresión para asegurar que las correcciones no hayan introducido nuevos problemas.
-     \item  Refinar la interfaz de usuario y las funcionalidades basándose en el feedback recibido, si se considera pertinente y dentro del alcance.
-     \end{enumerate}
-\item  Preparación para el Despliegue (Actividades Preliminares)
-\begin{enumerate}
-    \item  Elaborar la documentación final del sistema: manual de usuario (dirigido a los distintos roles), manual técnico (para mantenimiento y futuras ampliaciones).
-      \item  Preparar los scripts y procedimientos necesarios para el despliegue del sistema en un entorno de producción.
-      \item  Planificar la capacitación de los usuarios finales, si es necesario.
-\end{enumerate}
+	\item Ejecución de Pruebas Unitarias y de Integración:
+	\begin{enumerate}
+		\item Diseñar casos de prueba aislados para validar las funciones críticas del backend PHP y el comportamiento de los \textit{triggers} en la base de datos.
+		\item Comprobar la correcta intercomunicación de datos (integración) entre los formularios web, el servidor de aplicaciones y las tablas relacionales.
+	\end{enumerate}
+	\item Validación Estructural y de Seguridad del Prototipo:
+	\begin{enumerate}
+		\item Evaluar el rendimiento del motor de base de datos ejecutando consultas predefinidas y verificando el impacto en los tiempos de respuesta tras la creación de índices.
+		\item Ejecutar pruebas de seguridad perimetral sobre el prototipo, orientadas a mitigar vulnerabilidades comunes como la Inyección SQL (SQLi) y el Cross-Site Scripting (XSS), consolidando la validación del sistema sin requerir un paso a producción.
+	\end{enumerate}
 \end{enumerate}
 
 \section[Equipo de Trabajo]{Equipo de Desarrollo del Proyecto y Asignación de Responsabilidades}\label{equipo}
 
+La estructura del equipo asume una distribución funcional basada en las fases CDI, delegando responsabilidades específicas para la conceptualización y construcción del prototipo tecnológico[cite: 1]. Esta configuración sugiere un trabajo interdisciplinario donde cada rol nutre las distintas etapas de modelado e implementación.
+
 \noindent \textbf{1. Javier Rojas}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Jefe de Proyecto \& Desarrollador Full-Stack Senior
+	\item \textbf{Rol Principal:} Jefe de Proyecto \& Desarrollador Full-Stack Senior.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Coordinación general del equipo y del proyecto.
-		\item Planificación de sprints/iteraciones y seguimiento del cronograma (Viabilidad de Plazos).
-		\item Principal punto de comunicación con el ``cliente'' (profesor/ayudante del curso).
-		\item Gestión de riesgos y resolución de impedimentos.
-		\item Supervisión técnica general y toma de decisiones arquitectónicas clave.
-		\item Desarrollo de componentes backend críticos y lógica de negocio compleja (Objetivo 3).
-		\item Supervisión y validación del modelado de datos (Objetivo 1).
-		\item Revisión de la optimización de la base de datos (Objetivo 2).
-		\item Participación en pruebas unitarias y de integración (Objetivo 4).
-		\item Coordinación de las Pruebas de Aceptación del Usuario (UAT) y del plan de despliegue (Objetivo 4).
+		\item Coordinar los \textit{Sprints} y facilitar las ceremonias del marco metodológico Scrum.
+		\item Supervisar la arquitectura del software, garantizando la viabilidad técnica entre el diseño y la implementación.
+		\item Construir componentes complejos de la lógica de negocio en el backend (Objetivo 3).
+		\item Guiar la transición entre las fases de implementación y validación, asegurando la consistencia del prototipo (Objetivo 4).
 	\end{itemize}
 \end{itemize}
 \vspace{0.5em}
 
 \noindent \textbf{2. Carolina Silva}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Analista de Sistemas \& Diseñadora de Bases de Datos
+	\item \textbf{Rol Principal:} Analista de Sistemas \& Diseñadora de Bases de Datos.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Liderazgo en el Objetivo 1:
-		\begin{itemize}
-			\item Elaboración de la sección técnica del informe inicial.
-			\item Análisis detallado de los requisitos del cliente.
-			\item Creación y documentación del Modelo Entidad-Relación (MER).
-		\end{itemize}
-		\item Liderazgo en el diseño de la BD (parte del Objetivo 2):
-		\begin{itemize}
-			\item Transformación del MER al Modelo Relacional.
-			\item Proceso de Normalización de la base de datos (hasta 3FN).
-			\item Especificación detallada de tablas, atributos, claves primarias y foráneas, y restricciones de integridad para los scripts DDL.
-		\end{itemize}
-		\item Colaboración en la validación de maquetas desde la perspectiva del flujo de datos (Objetivo 3).
-		\item Participación activa en la documentación técnica inicial.
+		\item Dirigir la Fase de Concepción, diagnosticando requerimientos y extrayendo las entidades del dominio (Objetivo 1).
+		\item Liderar el Modelado Conceptual y Lógico, proyectando el Modelo Entidad-Relación (MER) y ejecutando la normalización estructural hasta la 3FN (Objetivo 2).
+		\item Elaborar la documentación técnica vinculada a la viabilidad y planificación inicial.
 	\end{itemize}
 \end{itemize}
 \vspace{0.5em}
 
 \noindent \textbf{3. Martín Pizarro}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Desarrollador Backend \& Administrador de Base de Datos (DBA) Junior
+	\item \textbf{Rol Principal:} Desarrollador Backend \& Administrador de Base de Datos (DBA) Junior.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Liderazgo en la implementación de la BD (parte del Objetivo 2):
-		\begin{itemize}
-			\item Escritura de los scripts DDL (\texttt{CREATE TABLE}) basados en el diseño de Carolina.
-			\item Carga de datos de prueba y verificación de consistencia inicial.
-			\item Implementación de índices, consultas y vistas predefinidas.
-		\end{itemize}
-		\item Liderazgo en el desarrollo backend (parte del Objetivo 3):
-		\begin{itemize}
-			\item Configuración de la conexión PHP a la base de datos.
-			\item Desarrollo de la lógica de negocio principal y funciones PHP para las operaciones CRUD.
-			\item Implementación de funciones y/o triggers (PL/SQL o similar, según SGBD) para automatización y asegurar integridad en la BD.
-			\item Optimización de consultas a la base de datos.
-		\end{itemize}
-		\item Colaboración en la configuración del entorno de desarrollo web.
-		\item Participación en pruebas unitarias y de integración del backend.
+		\item Materializar la estructura de datos mediante la escritura de scripts DDL y el poblamiento inicial con \textit{mock data} (Objetivo 3).
+		\item Codificar las rutinas transaccionales (CRUD) en PHP y establecer los conectores persistentes hacia el SGBD (Objetivo 3).
+		\item Implementar \textit{triggers} en el motor de base de datos para automatizar la integridad referencial.
 	\end{itemize}
 \end{itemize}
 \vspace{0.5em}
 
 \noindent \textbf{4. Sofía Castro}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Desarrolladora Full-Stack \& Diseñadora UI/UX
+	\item \textbf{Rol Principal:} Desarrolladora Full-Stack \& Diseñadora UI/UX.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Liderazgo en el diseño y desarrollo frontend (Objetivo 3):
-		\begin{itemize}
-			\item Diseño de maquetas del sistema (wireframes y mockups) para las interfaces de usuario y administrador.
-			\item Desarrollo de la estructura HTML5 y estilos CSS3, asegurando la apariencia distintiva para cada rol.
-			\item Implementación de la interfaz de usuario, enfocándose en la usabilidad y experiencia del usuario.
-		\end{itemize}
-		\item Colaboración en la definición de requisitos desde la perspectiva del usuario (Objetivo 1).
-		\item Desarrollo de componentes PHP para la integración del frontend con el backend y la lógica CRUD.
-		\item Participación activa en las pruebas funcionales y de usabilidad (Objetivo 4).
-		\item Soporte durante las Pruebas de Aceptación del Usuario (UAT), especialmente en aspectos de interfaz.
+		\item Esquematizar la experiencia de usuario mediante wireframes y mockups diferenciados por perfiles de acceso (Objetivo 2).
+		\item Programar la capa de presentación utilizando semántica HTML5 y reglas de diseño CSS3 (Objetivo 3).
+		\item Acoplar la interfaz gráfica con las rutinas del backend, evaluando la fluidez de interacción en el prototipo funcional.
 	\end{itemize}
 \end{itemize}
 \vspace{0.5em}
 
 \noindent \textbf{5. Diego Valdés}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Desarrollador Full-Stack \& Soporte de Entornos
+	\item \textbf{Rol Principal:} Desarrollador Full-Stack \& Soporte de Entornos.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Liderazgo en la configuración del entorno de desarrollo y pruebas (Objetivo 3):
-		\begin{itemize}
-			\item Montaje del servidor web, PHP y SGBD local o en la nube.
-		\end{itemize}
-		\item Soporte en la carga de datos de prueba y verificaciones de consistencia (Objetivo 2).
-		\item Desarrollo de módulos frontend y backend según se requiera, apoyando a Martín y Sofía (Objetivo 3):
-		\begin{itemize}
-			\item Implementación de funcionalidades CRUD y lógica de negocio.
-		\end{itemize}
-		\item Participación activa en pruebas unitarias y de integración.
-		\item Elaboración de parte del manual técnico y guías de despliegue (Objetivo 4).
-		\item Apoyo en la corrección de errores detectados durante las pruebas.
+		\item Configurar el entorno de desarrollo controlado, habilitando el servidor web y los intérpretes necesarios para el sistema.
+		\item Brindar apoyo transversal en la implementación de módulos CRUD y la escritura de funciones complementarias (Objetivo 3).
+		\item Ejecutar evaluaciones estructurales preliminares sobre el motor de base de datos (Objetivo 4).
 	\end{itemize}
 \end{itemize}
 \vspace{0.5em}
 
 \noindent \textbf{6. Valentina Herrera}
 \begin{itemize}
-	\item \textbf{Rol Principal:} Encargada de Calidad (QA) \& Documentación Técnica
+	\item \textbf{Rol Principal:} Encargada de Calidad (QA) \& Documentación Técnica.
 	\item \textbf{Responsabilidades Clave:}
 	\begin{itemize}
-		\item Liderazgo en el Objetivo 4 (Pruebas y Validación):
-		\begin{itemize}
-			\item Establecimiento del plan de pruebas y diseño de casos de prueba.
-			\item Ejecución de pruebas funcionales, de sistema y de regresión.
-			\item Registro y seguimiento de errores (bug tracking).
-			\item Coordinación de las pruebas de integración desde la perspectiva de QA.
-			\item Preparación del entorno y guía durante las Pruebas de Aceptación del Usuario (UAT).
-		\end{itemize}
-		\item Gestión de la Documentación del Proyecto:
-		\begin{itemize}
-			\item Consolidación y mantenimiento de la documentación técnica (MER, diseño de BD, manuales).
-			\item Elaboración del manual de usuario.
-			\item Revisión y corrección de estilo de la documentación generada por el equipo (incluido el informe inicial).
-		\end{itemize}
-		\item Apoyo en la redacción y estructuración del informe inicial (Objetivo 1).
+		\item Estructurar y ejecutar la Fase de Validación, diseñando casos de prueba unitaria y de integración para el prototipo (Objetivo 4).
+		\item Realizar auditorías de seguridad perimetral (mitigación de SQLi y XSS) en un entorno simulado, sin pasar a producción.
+		\item Consolidar la documentación técnica del proyecto, verificando la consistencia semántica y el apego a las normas académicas vigentes.
 	\end{itemize}
 \end{itemize}
-\vspace{1em}
 
 \subsection{Responsabilidades Compartidas por Todo el Equipo}
 \begin{itemize}
@@ -360,69 +181,146 @@ A continuación, se presenta el desglose de actividades y tareas necesarias para
 
 
 
-\section{Plan del Proyecto}
-En base a la metodología de trabajo expuesta en la Sección \ref{sec:mettrabajo} y las asignaciones de la Sección \ref{equipo}, se presenta en las Figuras \ref{f:gantt1} a la \ref{f:gantt4} la Carta Gantt de este proyecto.
 
-\begin{landscape}
-\begin{figure}[hbt]
-\centering
- \includegraphics[width=22cm]{Gantt0E1.png}
-  \caption{Carta Gantt del proyecto para el Objetivo Especifico 1}
-  \label{f:gantt1}
-\end{figure}
-\end{landscape}
-
-\begin{landscape}
-	\begin{figure}[hbt]
+	\section{Planificación Gantt del Proyecto}
+	
+	La distribución cronológica presentada en la Figura \ref{fig:gantt_semanal} establece una secuencia trazable desde la abstracción de requerimientos hasta la validación empírica del prototipo computacional. El margen de tiempo semanal permite gestionar con precisión la concurrencia de tareas; por ejemplo, la estructuración del Modelo Entidad-Relación (MER) avanza en paralelo con la elaboración de la documentación técnica. Esta arquitectura de planificación podría facilitar una evaluación continua del rendimiento del equipo, mitigando el riesgo de desviaciones durante la fase de codificación.
+	
+	Los meses de enero y febrero de 2026 han sido excluidos deliberadamente del flujo continuo, considerándose periodos de inactividad académica.
+	
+	En la Tabla \ref{t:precedencia_wbs}  muestra las precedencias de cada tarea de esta carta Gantt.
+\begin{landscape}	
+	\begin{figure}[htb]
 		\centering
-		\includegraphics[width=22cm]{Gantt0E2.png}
-		\caption{Carta Gantt del proyecto para el Objetivo Especifico 2}
-		\label{f:gantt2}
+		\resizebox{\linewidth}{!}{
+			\begin{ganttchart}[
+				x unit=0.25cm,
+				y unit title=0.5cm,
+				y unit chart=0.55cm,
+				vgrid,
+				hgrid,
+				title height=1,
+				bar/.style={fill=blue!70, draw=blue!90},
+				bar incomplete/.append style={fill=blue!10, draw=blue!40},
+				progress label text={#1\%},
+				group incomplete/.append style={draw=black, fill=black!20},
+				group/.append style={draw=black, fill=black},
+				link/.style={-latex, line width=1pt, blue!80},
+				link label font=\scriptsize\bfseries
+				]{1}{60}
+				
+				% Títulos de años y meses (4 semanas por mes = 60 semanas total)
+				\gantttitle{Año 2025}{40} \gantttitle{Año 2026 (Excluye Ene-Feb)}{20} \\
+				\gantttitle{Mar}{4} \gantttitle{Abr}{4} \gantttitle{May}{4} \gantttitle{Jun}{4} \gantttitle{Jul}{4} \gantttitle{Ago}{4} \gantttitle{Sep}{4} \gantttitle{Oct}{4} \gantttitle{Nov}{4} \gantttitle{Dic}{4} 
+				\gantttitle{Mar}{4} \gantttitle{Abr}{4} \gantttitle{May}{4} \gantttitle{Jun}{4} \gantttitle{Jul}{4} \\
+				% Escala Semanal
+				\gantttitlelist{1,...,60}{1} \\
+				
+				% ==========================================
+				% OBJETIVO 1: CONCEBIR (100%)
+				% ==========================================
+				\ganttgroup[progress=100]{O.E.1: Fase de Concepción}{1}{16} \\
+				\ganttgroup[progress=100]{Actividad 1.1: Diagnóstico y Entidades}{1}{8} \\
+				\ganttbar[progress=100, name=T111]{T1.1.1: Levantamiento de requerimientos}{1}{4} \\
+				\ganttbar[progress=100, name=T112]{T1.1.2: Evaluación de factibilidad técnica}{5}{8} \\
+				\ganttgroup[progress=100]{Actividad 1.2: Consolidación Documental}{9}{16} \\
+				\ganttbar[progress=100, name=T121]{T1.2.1: Estructuración informe técnico}{9}{12} \\
+				\ganttbar[progress=100, name=T122]{T1.2.2: Planificación Gantt (Simultánea)}{9}{12} \\
+				\ganttbar[progress=100, name=T123]{T1.2.3: Validación con cliente académico}{13}{16} \\
+				
+				% ==========================================
+				% OBJETIVO 2: DISEÑAR (50%)
+				% ==========================================
+				\ganttgroup[progress=50]{O.E.2: Fase de Diseño}{17}{32} \\
+				\ganttgroup[progress=75]{Actividad 2.1: Modelado de Datos}{17}{24} \\
+				\ganttbar[progress=100, name=T211]{T2.1.1: Proyección del MER y atributos}{17}{20} \\
+				\ganttbar[progress=50, name=T212]{T2.1.2: Transformación relacional y 3FN}{21}{24} \\
+				\ganttgroup[progress=25]{Actividad 2.2: Arquitectura de Interfaces}{21}{32} \\
+				\ganttbar[progress=50, name=T221]{T2.2.1: Wireframes de bajo nivel (Simultánea)}{21}{24} \\
+				\ganttbar[progress=0, name=T222]{T2.2.2: Mockups alta fidelidad y UX}{25}{32} \\
+				
+				% ==========================================
+				% OBJETIVO 3: IMPLEMENTAR (0%)
+				% ==========================================
+				\ganttgroup[progress=0]{O.E.3: Fase de Implementación}{33}{48} \\
+				\ganttgroup[progress=0]{Actividad 3.1: Motor de Datos}{33}{40} \\
+				\ganttbar[progress=0, name=T311]{T3.1.1: Scripts DDL y despliegue SGBD}{33}{36} \\
+				\ganttbar[progress=0, name=T312]{T3.1.2: Poblamiento con Mock Data}{37}{40} \\
+				% Salto lógico: semanas 41 a 48 corresponden a Marzo-Abril 2026 tras el receso.
+				\ganttgroup[progress=0]{Actividad 3.2: Sistema Web y Lógica}{41}{48} \\
+				\ganttbar[progress=0, name=T321]{T3.2.1: Programación Frontend (HTML5/CSS3)}{41}{44} \\
+				\ganttbar[progress=0, name=T322]{T3.2.2: Conectores y CRUD Backend (PHP)}{45}{48} \\
+				\ganttbar[progress=0, name=T323]{T3.2.3: Triggers de integridad (Simultánea)}{45}{48} \\
+				
+				% ==========================================
+				% OBJETIVO 4: VALIDAR (0%)
+				% ==========================================
+				\ganttgroup[progress=0]{O.E.4: Fase de Validación}{49}{60} \\
+				\ganttgroup[progress=0]{Actividad 4.1: Pruebas Unitarias e Integración}{49}{54} \\
+				\ganttbar[progress=0, name=T411]{T4.1.1: Casos de prueba backend}{49}{51} \\
+				\ganttbar[progress=0, name=T412]{T4.1.2: Verificación de flujos transaccionales}{52}{54} \\
+				\ganttgroup[progress=0]{Actividad 4.2: Evaluación Estructural}{55}{60} \\
+				\ganttbar[progress=0, name=T421]{T4.2.1: Análisis de rendimiento en consultas}{55}{57} \\
+				\ganttbar[progress=0, name=T422]{T4.2.2: Pruebas mitigación SQLi/XSS (Simultánea)}{55}{57} \\
+				\ganttbar[progress=0, name=T423]{T4.2.3: Consolidación final del prototipo}{58}{60} \\
+				
+				% ==========================================
+				% DEPENDENCIAS LÓGICAS (ENLACES)
+				% ==========================================
+				\ganttlink{T111}{T112}
+				\ganttlink{T112}{T121}
+				\ganttlink{T121}{T123}
+				\ganttlink{T123}{T211}
+				\ganttlink{T211}{T212}
+				\ganttlink{T222}{T311}
+				\ganttlink{T311}{T312}
+				\ganttlink{T312}{T321}
+				\ganttlink{T321}{T322}
+				\ganttlink{T322}{T411}
+				\ganttlink{T411}{T412}
+				\ganttlink{T412}{T421}
+				\ganttlink{T421}{T423}
+				
+			\end{ganttchart}
+		}
+		\caption{Desglose semanal de la Carta Gantt del proyecto, visibilizando objetivos, actividades y tareas. Se evidencia el estado actual de progreso y el paralelismo operativo aplicado.}
+		\label{fig:gantt_semanal}
 	\end{figure}
+	
 \end{landscape}
 
-\begin{landscape}
-	\begin{figure}[hbt]
-		\centering
-		\includegraphics[width=22cm]{Gantt0E3.png}
-		\caption{Carta Gantt del proyecto para el Objetivo Especifico 3}
-		\label{f:gantt3}
-	\end{figure}
-\end{landscape}
 
-\begin{landscape}
-	\begin{figure}[hbt]
-		\centering
-		\includegraphics[width=22cm]{Gantt0E4.png}
-		\caption{Carta Gantt del proyecto para el Objetivo Especifico 4}
-		\label{f:gantt4}
-	\end{figure}
-\end{landscape}
 
-En las Tablas \ref{t:precedencia1} a la \ref{t:precedencia4} de presentan las precedencias de cada tarea de esta carta Gantt para cada Objetivo especifico.
 
-\begin{table}[htb]\centering	
+\begin{table}[htb]
+	\centering	
 	\begin{tabular}{|c|c|c|c|c|}\hline
 		\textbf{WBS}&\textbf{Duración} &\textbf{Después de} & \textbf{Simultanea a} & \textbf{Antes de}\\\hline
-A (1.1.1) & 5& -&-&B\\\hline
-B (1.1.2) & 5& A&H&C,D,E\\\hline
-C (1.1.3) & 10& B&D,E&G\\\hline
-D (1.1.4) & 5&B &C,E&G\\\hline
-E (1.1.5) & 5&B &D,E&F\\\hline
-F (1.1.6) & 5& E &-&G\\\hline
-G (1.1.6) & 5& C,D,F&-&-\\\hline
-H (1.2.1) & 10&A &B&I\\\hline
-I (1.2.2) & 10& H&-&J\\\hline
-J (1.2.3) & 10&I &-&K\\\hline
-K (1.2.4) & 10&J&-&L\\\hline
-L (1.2.5) & 15&K&-&M\\\hline
-M (1.2.6) & 5&L &-&-\\\hline
+		T1.1.1 & 4 & - & - & T1.1.2 \\\hline
+		T1.1.2 & 4 & T1.1.1 & - & T1.2.1, T1.2.2 \\\hline
+		T1.2.1 & 4 & T1.1.2 & T1.2.2 & T1.2.3 \\\hline
+		T1.2.2 & 4 & T1.1.2 & T1.2.1 & T1.2.3 \\\hline
+		T1.2.3 & 4 & T1.2.1, T1.2.2 & - & T2.1.1 \\\hline
+		T2.1.1 & 4 & T1.2.3 & - & T2.1.2, T2.2.1 \\\hline
+		T2.1.2 & 4 & T2.1.1 & T2.2.1 & T2.2.2 \\\hline
+		T2.2.1 & 4 & T2.1.1 & T2.1.2 & T2.2.2 \\\hline
+		T2.2.2 & 8 & T2.1.2, T2.2.1 & - & T3.1.1 \\\hline
+		T3.1.1 & 4 & T2.2.2 & - & T3.1.2 \\\hline
+		T3.1.2 & 4 & T3.1.1 & - & T3.2.1 \\\hline
+		T3.2.1 & 4 & T3.1.2 & - & T3.2.2, T3.2.3 \\\hline
+		T3.2.2 & 4 & T3.2.1 & T3.2.3 & T4.1.1 \\\hline
+		T3.2.3 & 4 & T3.2.1 & T3.2.2 & T4.1.1 \\\hline
+		T4.1.1 & 3 & T3.2.2, T3.2.3 & - & T4.1.2 \\\hline
+		T4.1.2 & 3 & T4.1.1 & - & T4.2.1, T4.2.2 \\\hline
+		T4.2.1 & 3 & T4.1.2 & T4.2.2 & T4.2.3 \\\hline
+		T4.2.2 & 3 & T4.1.2 & T4.2.1 & T4.2.3 \\\hline
+		T4.2.3 & 3 & T4.2.1, T4.2.2 & - & - \\\hline
 	\end{tabular}
-		\caption{Tabla de Precedencias para el Objetivo Especifico 1}
-\label{t:precedencia1}	
+	\caption{Matriz de precedencias estructurada según nomenclatura WBS, evidenciando dependencias y tareas concurrentes.}
+	\label{t:precedencia_wbs}	
 \end{table}
  
- \juaramir{Repetir proceso para completar...}
+
  
 \section[Justificación y Aporte]{Justificación del Proyecto, Utilidad y Aporte para la Universidad}
 
@@ -492,7 +390,7 @@ La implementación de este sistema representará un aporte significativo para la
 En resumen, este sistema no solo resolverá problemas operativos existentes, sino que también se convertirá en una herramienta estratégica que potenciará la capacidad de gestión, la calidad de la investigación y la formación académica, y la eficiencia general de la Universidad, contribuyendo directamente al cumplimiento de su misión y visión institucional.
 
 \section{Análisis de Viabilidad del Proyecto}
-La implementación del sistema de base de datos web propuesto para la Universidad se considera viable tras analizar los siguientes aspectos:
+La implementación del sistema propuesto para la Universidad se considera viable tras analizar los siguientes aspectos:
 
 \subsection{Viabilidad Técnica}
 El proyecto es técnicamente viable por las siguientes razones:
@@ -657,78 +555,74 @@ Aunque otras metodologías ágiles como Kanban podrían ser consideradas por su 
 
 \section[Planificación Temporal]{Planificación Temporal del Desarrollo del Proyecto (Metodología Scrum)}
 
-\noindent\textbf{Consideraciones Generales de la Planificación:}
-\begin{itemize}
-    \item \textbf{Inicio del Proyecto:} Septiembre 2025.
-    \item \textbf{Duración Total:} 15 meses de trabajo efectivo.
-    \item \textbf{Meses No Laborables (Receso Académico):} Febrero 2026 y Agosto 2026 no se consideran meses de trabajo.
-    \item \textbf{Sprints:} Se asumen Sprints de 4 semanas de duración. Un mes de trabajo tiene aproximadamente un Sprint.
-    \item \textbf{Planificación Adaptativa:} El contenido exacto de cada Sprint (Sprint Backlog) será definido por el equipo al inicio de cada uno, tomando tareas del Product Backlog priorizado. La  Tabla \ref{tab:planificacion} ofrece una guía de alto nivel sobre el foco de cada Sprint.
-\end{itemize}
+El marco ágil Scrum estructura el avance en iteraciones, ajustando los incrementos al ciclo de vida del prototipo[cite: 1]. La calendarización distribuye el esfuerzo a lo largo de quince meses efectivos, omitiendo los recesos académicos y fragmentando el trabajo en bloques orientados a las fases CDI y su consecuente validación funcional.
 
-\noindent\textbf{Notas Importantes para el Equipo:}
+\noindent\textbf{Consideraciones Metodológicas de la Planificación:}
 \begin{itemize}
-    \item \textbf{Flexibilidad del Product Backlog:} Aunque se presenta un foco, el equipo priorizará las tareas del Product Backlog al inicio de cada Sprint (Sprint Planning) según el valor que aporten y el estado del proyecto.
-    \item \textbf{Reuniones Scrum:} Se deben llevar a cabo todas las ceremonias de Scrum: Sprint Planning, Daily Scrums, Sprint Review y Sprint Retrospective.
-    \item \textbf{Testing Continuo:} Aunque el Bloque 3 tiene un fuerte componente del Objetivo 4 (Pruebas), las pruebas unitarias y de integración deben ser una actividad continua desde que se empieza a escribir código.
-    \item \textbf{Objetivo del Sprint:} Cada Sprint debe tener un ``Sprint Goal'' claro, que es un objetivo conciso de lo que el Sprint intentará lograr.
+	\item \textbf{Inicio del Proyecto:} Septiembre 2025.
+	\item \textbf{Duración Total:} 15 meses de trabajo efectivo (excluyendo recesos de Febrero y Agosto 2026).
+	\item \textbf{Iteraciones:} Sprints de 4 semanas, subordinados al refinamiento continuo del \textit{Product Backlog}.
+	\item \textbf{Delimitación del Alcance:} Las entregas finales se evalúan bajo métricas de prototipado, descartando actividades de despliegue operativo comercial.
 \end{itemize}
 
 \begin{landscape}
-{\small % Reduce font size for the table if needed
-\begin{longtable}{>{\RaggedRight}p{2.8cm} >{\Centering}p{1.3cm} >{\RaggedRight}p{2cm} >{\Centering}p{1cm} >{\RaggedRight}p{1.8cm} >{\RaggedRight}p{5.5cm} >{\RaggedRight}p{5cm}}
-\caption{Planificación Temporal del Proyecto (Metodología Scrum)}\label{tab:planificacion}\\
-\toprule
-\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada del Sprint} & \textbf{Foco Principal y Actividades Clave del Sprint (basado en Objetivos)} & \textbf{Entregables Clave del Sprint (Ejemplos)} \\
-\midrule
-\endfirsthead
-\caption[]{Planificación Temporal del Proyecto (Metodología Scrum) (Continuación)}\\
-\toprule
-\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada del Sprint} & \textbf{Foco Principal y Actividades Clave del Sprint (basado en Objetivos)} & \textbf{Entregables Clave del Sprint (Ejemplos)} \\
-\midrule
-\endhead
-\midrule
-\multicolumn{7}{r}{{\footnotesize Continuará en la página siguiente...}} \\
-\midrule
-\endfoot
-\bottomrule
-\endlastfoot
-
-\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 1 & Sep 2025 & 1 & 4 semanas & Inicio del proyecto, configuración del equipo y entorno Scrum. Revisión detallada de requisitos. Estructura del informe técnico. Planificación inicial del Product Backlog. & Acta de constitución del proyecto (simplificada), Plan de trabajo inicial, Product Backlog inicial. \\
-\midrule
-\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 2 & Oct 2025 & 2 & 4 semanas & Redacción secciones clave del informe (Introducción, Objetivos, Justificación, Viabilidad, Metodología). Identificación inicial de entidades y atributos. & Borrador avanzado del informe técnico. Lista de entidades y atributos preliminares. \\
-\midrule
-\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 3 & Nov 2025 & 3 & 4 semanas & Detalle de atributos. Identificación de relaciones y cardinalidad. Inicio del diseño del Diagrama Entidad-Relación (DER). & Especificación detallada de atributos. Borrador inicial del DER. \\
-\midrule
-\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 4 & Dic 2025 & 4 & 4 semanas & Finalización y refinamiento del DER. Documentación del Modelo Entidad-Relación (MER). & Diagrama Entidad-Relación (DER) finalizado. Documentación completa del MER. \\
-\midrule
-\textbf{Bloque 1: Obj. Específico 1} (Formulación y Modelado Conceptual) & 5 & Ene 2026 & 5 & 4 semanas & Validación final del MER y del informe técnico con el ``cliente'' (profesor). Consolidación del informe. Preparación para el Bloque 2. Refinamiento del Product Backlog para Obj. 2. & Informe técnico final (Obj. 1). Modelo Conceptual de Datos aprobado. \\
-\midrule
-\textit{Receso Académico} & -- & \textit{Feb 2026} & -- & -- & \textit{Mes no laborable} & -- \\
-\midrule
-\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 6 & Mar 2026 & 6 & 4 semanas & Transformación del MER al Modelo Relacional. Inicio de Normalización (1FN, 2FN). & Modelo Relacional preliminar. Tablas identificadas con atributos y PK/FK iniciales. \\
-\midrule
-\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 7 & Abr 2026 & 7 & 4 semanas & Finalización de Normalización (3FN). Diseño detallado de tablas, tipos de datos y restricciones de integridad. & Modelo Relacional Normalizado (3FN) y documentado. Especificaciones detalladas para scripts DDL. \\
-\midrule
-\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 8 & May 2026 & 8 & 4 semanas & Desarrollo de scripts DDL (\texttt{CREATE TABLE}). Creación de la estructura de la base de datos en el SGBD elegido. & Scripts DDL funcionales. Base de datos creada (estructura vacía). \\
-\midrule
-\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 9 & Jun 2026 & 9 & 4 semanas & Diseño y carga de un conjunto inicial de datos de prueba representativos. Verificación de consistencia de datos y restricciones. & Base de datos poblada con datos de prueba. Informe de consistencia de datos. \\
-\midrule
-\textbf{Bloque 2: Obj. Específico 2} (Diseño e Implementación de BD) & 10 & Jul 2026 & 10 & 4 semanas & Implementación de Índices en columnas clave. Diseño y creación de Consultas y Vistas predefinidas importantes. Evaluación inicial de rendimiento. Preparación para el Bloque 3. & Índices creados. Vistas y consultas predefinidas funcionales. \\
-\midrule
-\textit{Receso Académico} & -- & \textit{Ago 2026} & -- & -- & \textit{Mes no laborable} & -- \\
-\midrule
-\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 11 & Sep 2026 & 11 & 4 semanas & \textbf{O3:} Configuración del entorno de desarrollo web. Diseño de maquetas (wireframes/mockups) V1. Inicio desarrollo Frontend (HTML/CSS estructura base). \newline \textbf{O4:} Elaboración del Plan de Pruebas detallado. & Maquetas V1. Estructura base del frontend. Plan de Pruebas V1. \\
-\midrule
-\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 12 & Oct 2026 & 12 & 4 semanas & \textbf{O3:} Desarrollo Frontend (vistas principales). Inicio desarrollo Backend (PHP, conexión BD). Implementación CRUD básico para 1-2 entidades. \newline \textbf{O4:} Diseño de casos de prueba (unitarios, integración). Ejecución de pruebas unitarias del código desarrollado. & Vistas principales del frontend. CRUD funcional para 1-2 entidades. Casos de prueba documentados. \\
-\midrule
-\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 13 & Nov 2026 & 13 & 4 semanas & \textbf{O3:} Desarrollo Frontend (interfaces Admin/Usuario). Desarrollo Backend (más entidades CRUD, lógica de negocio). Implementación de Funciones/Triggers PL/SQL (o similar) según necesidad. \newline \textbf{O4:} Ejecución de Pruebas de Integración (Frontend-Backend-DB). & Interfaces Admin/Usuario funcionales para módulos desarrollados. Funciones/Triggers implementados. Informe de pruebas de integración. \\
-\midrule
-\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 14 & Dic 2026 & 14 & 4 semanas & \textbf{O3:} Finalización desarrollo de funcionalidades principales. Refinamiento UI/UX. Integración completa. \newline \textbf{O4:} Ejecución de Pruebas de Sistema. Inicio Pruebas de Aceptación del Usuario (UAT) con ``cliente''. Corrección de errores identificados. & Sistema integrado con funcionalidades clave. Informe de pruebas de sistema. Feedback inicial de UAT. \\
-\midrule
-\textbf{Bloque 3: Obj. Específicos 3 y 4} (Desarrollo Web, Pruebas) & 15 & Ene 2027 & 15 & 4 semanas & \textbf{O3:} Últimos ajustes basados en feedback de UAT. \newline \textbf{O4:} Finalización de UAT. Corrección de errores finales. Preparación para el despliegue (documentación final: manual de usuario, manual técnico). Sprint Review y Retrospectiva final del proyecto. & Sistema validado y listo para ``entrega''. Documentación final completa. Lecciones aprendidas del proyecto. \\
-\end{longtable}
-} % End \small
+	{\small
+		\begin{longtable}{>{\RaggedRight}p{2.8cm} >{\Centering}p{1.3cm} >{\RaggedRight}p{2cm} >{\Centering}p{1cm} >{\RaggedRight}p{1.8cm} >{\RaggedRight}p{5.5cm} >{\RaggedRight}p{5cm}}
+			\caption{Planificación Temporal del Proyecto Orientado a Prototipo}\label{tab:planificacion}\\
+			\toprule
+			\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada} & \textbf{Foco Principal y Actividades Clave} & \textbf{Entregables Clave del Sprint} \\
+			\midrule
+			\endfirsthead
+			\caption[]{Planificación Temporal del Proyecto (Continuación)}\\
+			\toprule
+			\textbf{Fase / Bloque de Objetivos} & \textbf{Mes de Trabajo} & \textbf{Mes y Año Calendario} & \textbf{Sprint \#} & \textbf{Duración Estimada} & \textbf{Foco Principal y Actividades Clave} & \textbf{Entregables Clave del Sprint} \\
+			\midrule
+			\endhead
+			\midrule
+			\multicolumn{7}{r}{{\footnotesize Continuará en la página siguiente...}} \\
+			\midrule
+			\endfoot
+			\bottomrule
+			\endlastfoot
+			
+			\textbf{Bloque 1: Fase de Concepción} (Obj. Específico 1) & 1 & Sep 2025 & 1 & 4 semanas & Configuración del entorno Scrum. Levantamiento de requerimientos funcionales y extracción de entidades del dominio académico. & Acta de constitución, \textit{Product Backlog} inicial, listado de requerimientos y entidades. \\
+			\midrule
+			\textbf{Bloque 1: Fase de Concepción} (Obj. Específico 1) & 2 & Oct 2025 & 2 & 4 semanas & Estructuración del informe técnico preliminar. Evaluación de factibilidad técnica para el desarrollo web. & Borrador de informe técnico, matriz de viabilidad. \\
+			\midrule
+			\textbf{Bloque 1: Fase de Concepción} (Obj. Específico 1) & 3 & Nov 2025 & 3 & 4 semanas & Definición exhaustiva de atributos y restricciones. Inicio del diseño del Modelo Entidad-Relación (MER). & Especificación de atributos, borrador inicial del MER. \\
+			\midrule
+			\textbf{Bloque 1: Fase de Concepción} (Obj. Específico 1) & 4 & Dic 2025 & 4 & 4 semanas & Refinamiento del diagrama conceptual. Consolidación de cardinalidades (1:N, M:N). & Modelo Entidad-Relación finalizado. \\
+			\midrule
+			\textbf{Bloque 1: Fase de Concepción} (Obj. Específico 1) & 5 & Ene 2026 & 5 & 4 semanas & Validación del modelo conceptual con contraparte académica. Revisión final del informe técnico. & Documento de formulación aprobado. \\
+			\midrule
+			\textit{Receso Académico} & -- & \textit{Feb 2026} & -- & -- & \textit{Suspensión temporal de actividades} & -- \\
+			\midrule
+			\textbf{Bloque 2: Fase de Diseño} (Obj. Específico 2) & 6 & Mar 2026 & 6 & 4 semanas & Transformación del MER al modelo relacional. Aplicación de normalización hasta Primera Forma Normal (1FN). & Modelo relacional preliminar. \\
+			\midrule
+			\textbf{Bloque 2: Fase de Diseño} (Obj. Específico 2) & 7 & Abr 2026 & 7 & 4 semanas & Culminación de normalización estructural (3FN). Elaboración de wireframes de bajo nivel para interfaces. & Esquemas en 3FN, wireframes de estructura base. \\
+			\midrule
+			\textbf{Bloque 2: Fase de Diseño} (Obj. Específico 2) & 8 & May 2026 & 8 & 4 semanas & Diseño de mockups de alta fidelidad diferenciando perfiles (administrador/limitado). Arquitectura de datos final. & Interfaces gráficas conceptuales, arquitectura de software. \\
+			\midrule
+			\textbf{Bloque 3: Fase de Implementación} (Obj. Específico 3) & 9 & Jun 2026 & 9 & 4 semanas & Escritura de scripts DDL. Creación física de tablas y llaves foráneas. Poblamiento con \textit{mock data}. & Base de datos estructurada y con datos de prueba. \\
+			\midrule
+			\textbf{Bloque 3: Fase de Implementación} (Obj. Específico 3) & 10 & Jul 2026 & 10 & 4 semanas & Desarrollo de maquetación HTML5 y reglas CSS3. Configuración del servidor de desarrollo controlado. & Vistas frontend estáticas operativas. \\
+			\midrule
+			\textit{Receso Académico} & -- & \textit{Ago 2026} & -- & -- & \textit{Suspensión temporal de actividades} & -- \\
+			\midrule
+			\textbf{Bloque 3: Fase de Implementación} (Obj. Específico 3) & 11 & Sep 2026 & 11 & 4 semanas & Programación de conectores PDO/PHP. Implementación de operaciones CRUD para entidades primarias (Profesores, Alumnos). & Módulos CRUD funcionales integrados a la BD. \\
+			\midrule
+			\textbf{Bloque 3: Fase de Implementación} (Obj. Específico 3) & 12 & Oct 2026 & 12 & 4 semanas & Desarrollo de lógica de negocio compleja (asignaciones a proyectos). Implementación de \textit{triggers} en el SGBD. & Prototipo web funcional con automatizaciones de motor. \\
+			\midrule
+			\textbf{Bloque 4: Fase de Validación} (Obj. Específico 4) & 13 & Nov 2026 & 13 & 4 semanas & Diseño de plan de pruebas. Ejecución de pruebas unitarias sobre el código PHP y funciones de motor. & Informes de cobertura de pruebas unitarias. \\
+			\midrule
+			\textbf{Bloque 4: Fase de Validación} (Obj. Específico 4) & 14 & Dic 2026 & 14 & 4 semanas & Comprobación de integración Frontend-Backend. Auditoría de vulnerabilidades (XSS, SQLi) en entorno simulado. & Reporte de integración y mitigación de fallas de seguridad. \\
+			\midrule
+			\textbf{Bloque 4: Fase de Validación} (Obj. Específico 4) & 15 & Ene 2027 & 15 & 4 semanas & Refinamiento del prototipo. Evaluación final de rendimiento con índices. Documentación de cierre del sistema. & Prototipo validado empíricamente, Manuales técnicos. \\
+		\end{longtable}
+	}
 \end{landscape}
 
 \section{Diagramas UML}
+
+
+
