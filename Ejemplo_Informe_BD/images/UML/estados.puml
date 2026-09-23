@@ -1,0 +1,12 @@
+@startuml
+[*] --> Formulacion
+Formulacion --> Aprobado : Asignar Presupuesto (> 0)
+note left of Formulacion : Sin FechaInicio
+Aprobado --> EnEjecucion : Registrar FechaInicio
+EnEjecucion --> Suspendido : Cancelación de fondos
+Suspendido --> EnEjecucion : Reanudación
+EnEjecucion --> Finalizado : Registrar FechaFin
+note right of Finalizado : Regla: FechaFin > FechaInicio
+Suspendido --> [*] : Cierre prematuro
+Finalizado --> [*]
+@enduml

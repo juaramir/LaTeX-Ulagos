@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Profesor" as prof
+actor "Alumno" as alum
+actor "Administrador" as admin
+
+package "Gestión Académica e Investigación" {
+  usecase "Dirigir Proyecto" as UC1
+  usecase "Trabajar en Proyecto" as UC2
+  usecase "Supervisar Alumno" as UC3
+  usecase "Dirigir Departamento" as UC4
+  usecase "Asesorar Alumno" as UC6
+  usecase "Inscribir Postgrado" as UC7
+  usecase "Gestionar Entidades" as UC8
+}
+
+prof --> UC1
+prof --> UC2
+prof --> UC3
+prof --> UC4
+alum --> UC2
+alum --> UC6
+alum --> UC7
+admin --> UC8
+@enduml

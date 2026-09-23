@@ -1,0 +1,19 @@
+@startuml
+start
+:Seleccionar Proyecto;
+if (¿Proyecto en ejecución?) then (Sí)
+  :Seleccionar Alumno;
+  :Registrar en tabla 'Trabajar';
+  :Seleccionar Supervisor;
+  note right: Regla: Un único profesor \nsupervisa a un alumno\nen un proyecto específico.
+  if (¿Profesor válido?) then (Sí)
+    :Registrar en tabla 'Supervisar';
+  else (No)
+    :Rechazar asignación;
+    stop
+  endif
+else (No)
+  :Rechazar operación;
+endif
+stop
+@enduml

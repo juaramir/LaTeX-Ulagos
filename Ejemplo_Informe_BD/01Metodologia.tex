@@ -624,5 +624,79 @@ El marco ágil Scrum estructura el avance en iteraciones, ajustando los incremen
 
 \section{Diagramas UML}
 
+\subsection{Diagrama de Casos de Uso (Interacción de Usuarios)}
+El diagrama de la Figura \ref{f:UMLCaso} modela las interacciones principales de los dos actores centrales del sistema: el Profesor y el Alumno. Las funcionalidades reflejan directamente las reglas de negocio establecidas, como la dirección de proyectos, la supervisión de investigación y la jerarquía de asesorías entre pares y son descritas en la Tabla \ref{tab:cu_asignar_supervisor}.
 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/UML/casos.png}
+	\caption{Caso de Uso interacción Profesor y Alumno}
+	\label{f:UMLCaso}
+\end{figure}
+
+Justificación:
+\begin{itemize}
+	\item Profesor: Puede dirigir varios proyectos (relación N:M \texttt{Dirigir}), trabajar en ellos, administrar un departamento (relación 1:1 \texttt{Administrar}) y supervisar el trabajo de los alumnos.   
+		\item Alumno: Puede trabajar en proyectos de investigación, pertenecer a un programa de postgrado (relación 1:N \texttt{Cursar}) y asumir el rol de asesor para orientar a un alumno menos veterano (relación reflexiva 1:N \texttt{Asesorar}).
+\end{itemize}
+
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Caso de Uso: Asignar Alumno y Supervisor a Proyecto}} \\ \hline
+		\textbf{Actores} & Administrador del Sistema, Profesor (Director del Proyecto) \\ \hline
+		\textbf{Precondiciones} & El proyecto se encuentra en estado de ejecución (su atributo \texttt{FechaFin} posee un valor \texttt{NULL}). El alumno y el profesor existen previamente en los registros relacionales. \\ \hline
+		\multicolumn{2}{|c|}{\textbf{Flujo Normal de Eventos}} \\ \hline
+		\textbf{Acción del Actor} & \textbf{Respuesta del Sistema} \\ \hline
+		1. Selecciona la opción para gestionar los participantes de un proyecto de investigación específico. & 2. Despliega la interfaz de administración, listando los estudiantes vinculados y el personal académico disponible. \\ \hline
+		3. Ingresa el identificador (RUN) del alumno que se integrará al equipo de trabajo. & 4. Verifica en la tabla \texttt{Trabajar} que el alumno no esté previamente registrado en el proyecto[cite: 4]. Habilita el módulo de selección de supervisor. \\ \hline
+		5. Asigna el RUN del profesor que ejercerá el rol de supervisor directo sobre las actividades del estudiante. & 6. Valida la integridad referencial de los datos. Ejecuta una transacción atómica que inserta la vinculación en la tabla \texttt{Trabajar} y registra la tutela en la tabla \texttt{Supervisar}[cite: 4]. \\ \hline
+		7. Confirma la operación de almacenamiento. & 8. Confirma la persistencia de los datos mediante un mensaje de éxito y refresca la vista del proyecto. \\ \hline
+		\multicolumn{2}{|c|}{\textbf{Flujos Alternativos}} \\ \hline
+		\multicolumn{2}{|p{0.9\textwidth}|}{
+			\textbf{4a. Duplicidad de participante:} Si el motor de base de datos detecta que el alumno ya integra el proyecto, el sistema aborta el flujo y despliega una advertencia.\newline
+			\textbf{6a. Violación de restricción funcional:} Si se intenta registrar un segundo supervisor para el mismo alumno dentro del mismo proyecto, el SGBD rechaza la inserción mediante la llave primaria compuesta (\texttt{Proyecto\_id}, \texttt{Alumno\_id}) de la tabla \texttt{Supervisar}, garantizando la regla de negocio institucional[cite: 4].} \\ \hline
+		\textbf{Postcondiciones} & La base de datos consolida la nueva relación ternaria, manteniendo la coherencia de las dependencias funcionales sin anomalías de inserción. \\ \hline
+	\end{tabular}
+	\caption{Especificación del Caso de Uso para la asignación controlada de alumnos y supervisores en investigaciones.}
+	\label{tab:cu_asignar_supervisor}
+\end{table}
+
+\subsection{Diagrama de Actividades (Asignación a Proyecto)}
+
+El diagrama de la Figura \ref{f:UMLactividad} detalla el flujo lógico que el sistema debe seguir al incorporar un alumno de postgrado a un proyecto de investigación. Este proceso es crítico porque la base de datos exige que todo alumno que trabaje en un proyecto cuente obligatoriamente con un profesor supervisor exclusivo para ese contexto.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/UML/actividades.png}
+	\caption{Diagrama de actividad de incorporar un alumno de postgrado a un proyecto}
+	\label{f:UMLactividad}
+\end{figure}
+
+Justificación:
+\begin{itemize}
+	\item El flujo aborda la relación ternaria \texttt{Supervisar} (Proyecto, Alumno, Profesor), asegurando que se respete la dependencia funcional donde un par (Alumno, Proyecto) determina a un único Profesor supervisor.   
+	\item Se asegura la inserción transaccional tanto en la tabla \texttt{Trabajar} (vinculación al proyecto) como en la tabla \texttt{Supervisar} (asignación de tutela).   
+\end{itemize}
+
+\subsection{Diagrama de Estados (Ciclo de Vida de un Proyecto)}
+
+El diagrama de la Figura \ref{f:UMLestado} representa los diferentes estados por los que transita la entidad Proyecto dentro de la base de datos. Los estados están directamente condicionados por las fechas de inicio y finalización, así como por la asignación presupuestaria.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/UML/estados.png}
+	\caption{Estado de la entidad proyectos}
+	\label{f:UMLestado}
+\end{figure}
+
+Justificación:
+\begin{itemize}
+	\item    En Formulación / Aprobado: El sistema exige mediante restricciones (\texttt{CHECK}) que el presupuesto no sea un valor negativo y que la fecha de inicio no pueda evadir la lógica temporal del servidor (aunque la restricción de fecha actual fue eliminada para permitir datos históricos). 
+	\item En Ejecución vs Finalizado: Un proyecto se considera activo (``En Ejecución'') mientras el atributo \texttt{FechaFin} tenga valor \texttt{NULL}. Una vez que se registra una \texttt{FechaFin}, el sistema valida estructuralmente que esta sea estrictamente posterior a la \texttt{FechaInicio}.   
+\end{itemize}
